@@ -1,7 +1,16 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "General": [
+        "doc1",
+        "general/browsermatrix",
+        "general/reporeadmetemplate"
+    ],
+    "Project Setup": [
+        "setup/setupbackend",
+        "setup/setupfrontend"
+    ],
+    "Backend": [
+        "doc3"
+    ]
   }
 }
