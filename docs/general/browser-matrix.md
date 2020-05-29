@@ -1,5 +1,5 @@
 ---
-id: browsermatrix
+id: browser-matrix
 title: Browser Matrix
 ---
 

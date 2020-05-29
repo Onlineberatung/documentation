@@ -1,5 +1,5 @@
 ---
-id: reporeadmetemplate
+id: repo-readme-template
 title: [Template] Repository Readme
 ---
 

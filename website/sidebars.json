@@ -1,16 +1,27 @@
 {
   "docs": {
+    "Temporary": [
+        "repo-readme-template"
+    ],
     "General": [
-        "doc1",
-        "general/browsermatrix",
-        "general/reporeadmetemplate"
+        "general/home",
+        "general/browser-matrix"
     ],
     "Project Setup": [
-        "setup/setupbackend",
-        "setup/setupfrontend"
+        "setup/setup-backend",
+        "setup/setup-frontend"
     ],
     "Backend": [
-        "doc3"
+        "backend/online-beratung",
+        "backend/install-and-running-on-server",
+        "backend/component-API-addresses",
+        "backend/build-and-load-docker-image",
+        "backend/file-permissions",
+        "backend/first-start",
+        "backend/service-configuration",
+        "backend/starting-and-stopping-the-services",
+        "backend/openldap-configuration",
+        "backend/ssl-certificate"
     ]
   }
 }

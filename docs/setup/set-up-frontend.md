@@ -1,5 +1,5 @@
 ---
-id: setupfrontend
+id: setup-frontend
 title: Setting up the frontend
 ---
 
