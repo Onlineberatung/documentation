@@ -22,6 +22,9 @@
         "backend/starting-and-stopping-the-services",
         "backend/openldap-configuration",
         "backend/ssl-certificate"
+    ],
+    "Frontend": [
+        "frontend/biotope"
     ]
   }
 }
