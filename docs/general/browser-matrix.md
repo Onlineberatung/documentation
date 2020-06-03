@@ -1,6 +1,6 @@
 ---
 id: browser-matrix
-title: Browser Matrix
+title: Browser matrix
 ---
 
 In general: A distinction is made between a test browser matrix and the matrix of supported browsers.
