@@ -6,7 +6,6 @@
     "General": [
         "general/home",
         "general/git-workflow",
-        "general/versioning",
         "general/browser-matrix"
     ],
     "Project Setup": [
