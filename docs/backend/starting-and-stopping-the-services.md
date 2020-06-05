@@ -2,9 +2,19 @@
 id: starting-and-stopping-the-services
 title: Starting and stopping the services
 ---
-
 ## Alle Services starten
-Gestartet werden alle Services mit folgendem Befehl im (Haupt-)Verzeichnis, wo die Datei *docker-compose.yml* liegt: *docker-compose up -d*  
+Gestartet werden alle Services mit folgendem Befehl im (Haupt-)Verzeichnis, wo die Datei *docker-compose.yml* liegt: *docker-compose up -d*
+
+### Set master keys
+After the start of Message- and UserService one has to provide the master keys for message encryption to the services.
+Therefore you need to call the [REST API endpoints](../backend/login-data-access-links.md) to set the master key with the technical (Keycloak) user and correct CSRF header and cookie key value pairs. In the body you should provide the key, e.q.:
+
+``{
+	"masterKey": "<masterKey>"
+}``
+
+* MessageService: POST on https://<host>/service/messages/key
+* UserService: POST on https://<host>/service/users/messages/key
 
 ## Alle Services stoppen
 Stoppen aller Services mit folgendem Befehl im Verzeichnis, wo die Datei *docker-compose.yml* liegt: *docker-compose down*

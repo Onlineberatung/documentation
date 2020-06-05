@@ -2,7 +2,6 @@
 id: ssl-certificate
 title: SSL certificate
 ---
-
 Nachfolgend wird beschrieben wie ein SSL-Zertifikat von Let's Encrypt eingerichtet wird. Alternative Zertifikatsanbieter sind natürlich auch für den Einsatz in der ❌Onlineberatung möglich.
 
 ## acme.sh
