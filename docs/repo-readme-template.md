@@ -7,7 +7,7 @@ title: [Template] Repository Readme
 This is the repository containing all frontend logic for the Caritas Online Beratung.
 
 ## Help and Documentation
-In the [wiki](https://github.com/CaritasDeutschland/.github/wiki/Online-Beratung) you'll find information for setting up and running the project.
+In the project [documentation](https://github.com/CaritasDeutschland/.github/wiki/Online-Beratung) you'll find information for setting up and running the project.
 
 ## License
 The project is licensed under the AGPLv3 which you'll find [here](LICENSE.md).

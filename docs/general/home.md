@@ -5,7 +5,7 @@ title: Home
 
 **PLACEHOLDER FOR PROJECT DESCRIPTION**
 
-Here in the wiki you will find information on how to set up, run and contribute to the project.
+In this documentation you will find information on how to set up, run and contribute to the project.
 
 ## License
 The project is licensed under the AGPLv3. More information about the licence can be found [here](LICENSE.md).
