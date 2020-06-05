@@ -23,6 +23,17 @@ Unter Windows in der Git-Bash:
 
 Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
 
+### Node.js und NPM
+
+**Node.js** is a JavaScript runtime which will allow us to run a host of tools. 
+
+**NPM** is the Node Package Manager and is used to install all packages needed in this project. This includes packages for the conventional commits process and versioning management.
+
+1. Install Node.js as instructed on <http://nodejs.org>.
+2. (On Windows if asked) choose to also install [NPM](https://www.npmjs.com/get-npm) and add Node.js to your path.
+3. Check the installation of Node.js and NPM by running `node -v` or `npm -v` from your command line.
+4. Run `npm install` in your project directory to install the dependencies in the local node_modules folder.
+
 ### IDE
 Folgende Plugins sollten in der IDE installiert sein:
 * Lombok

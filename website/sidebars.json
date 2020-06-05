@@ -23,6 +23,6 @@
       "backend/nginx",
       "backend/ssl-certificate"
     ],
-    "Frontend": ["frontend/biotope"]
+    "Frontend": ["frontend/biotope", "frontend/tools"]
   }
 }
