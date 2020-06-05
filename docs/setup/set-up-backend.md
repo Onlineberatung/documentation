@@ -11,3 +11,11 @@ After the installation you can adapt the application to your own needs with the 
 
 * [Create core data and import users](../backend/create-core-data-import-users.md)
 * [Adapt the mail templates](../backend/mailservice-templates.md)
+
+> ⚠️Current application limits ⚠️
+> 
+> Please note that currently Kreuzbund consultants can only be in one agency (which has to be of consulting type Kreuzbung).
+>
+> There can be only one session per asker at the moment.
+>
+> U25 consultants can't be active in any different consulting type.
