@@ -161,6 +161,9 @@ Für die Registrierung neuer Ratsuchender in Keycloak muss ein technischer Benut
     * view-realm
 2. Unter _"Client Roles"_ → _"account"_ auswählen und alle unter _"Assigned Roles"_ entfernen
 
+### Password policies
+The same password policies that are defined in keycloak are deposited hard-coded in the UserService (UserHelper.java).
+
 ## Verbindungen im Nosqlclient einrichten
 Damit man sich mit dem Nosqlclient mit der MongoDB verbinden kann müssen entsprechende Verbindungen eingerichtet werden. Dazu muss der Nosqlclient aufgerufen werden und oben rechts _"Connect"_ und im folgenden Dialog _"Create New"_ ausgewählt werden.
 
