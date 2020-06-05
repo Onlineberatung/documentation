@@ -30,7 +30,8 @@
         "backend/ssl-certificate"
     ],
     "Frontend": [
-        "frontend/biotope"
+        "frontend/biotope",
+        "frontend/tools"
     ]
   }
 }
