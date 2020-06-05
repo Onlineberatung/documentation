@@ -1,36 +1,28 @@
 {
   "docs": {
-    "Temporary": [
-        "repo-readme-template"
-    ],
     "General": [
-        "general/home",
-        "general/git-workflow",
-        "general/browser-matrix"
+      "general/home",
+      "general/git-workflow",
+      "general/browser-matrix"
     ],
-    "Project Setup": [
-        "setup/setup-backend",
-        "setup/setup-frontend"
-    ],
+    "Project Setup": ["setup/setup-backend", "setup/setup-frontend"],
     "Backend": [
-        "backend/install-and-running-on-server",
-        "backend/install-and-running-locally",
-        "backend/first-start",
-        "backend/service-configuration",
-        "backend/starting-and-stopping-the-services",
-        "backend/login-data-access-links",
-        "backend/file-permissions",
-        "backend/build-and-load-docker-image",
-        "backend/openldap-configuration",
-        "backend/create-core-data-import-users",
-        "backend/liquibase",
-        "backend/mailservice-templates",
-        "backend/jenkins",
-        "backend/nginx",
-        "backend/ssl-certificate"
+      "backend/install-and-running-on-server",
+      "backend/install-and-running-locally",
+      "backend/first-start",
+      "backend/service-configuration",
+      "backend/starting-and-stopping-the-services",
+      "backend/login-data-access-links",
+      "backend/file-permissions",
+      "backend/build-and-load-docker-image",
+      "backend/openldap-configuration",
+      "backend/create-core-data-import-users",
+      "backend/liquibase",
+      "backend/mailservice-templates",
+      "backend/jenkins",
+      "backend/nginx",
+      "backend/ssl-certificate"
     ],
-    "Frontend": [
-        "frontend/biotope"
-    ]
+    "Frontend": ["frontend/biotope"]
   }
 }
