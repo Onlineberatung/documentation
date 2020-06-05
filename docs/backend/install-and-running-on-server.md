@@ -1,11 +1,7 @@
 ---
 id: install-and-running-on-server
-title: Installing and running on the server
+title: Installing and running the backend on the server
 ---
-
-* auto-gen TOC:
-{:toc}
-
 Im Folgenden werden die speziellen Voraussetzungen und Tools genannt welche für den Betrieb der ❌Onlineberatung auf dem (Production-)Server benötigt werden.
 
 ## Voraussetzungen
@@ -16,7 +12,7 @@ Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann
 Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. JFrog Artifactory) bereitgestellt werden.
 Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung am Artifactory erfolgt:
 
-``docker login https://<artifactNam>.jfrog.io``
+``docker login https://<artifactName>.jfrog.io``
 
 Unter Windows in der Git-Bash:
 
@@ -37,16 +33,25 @@ MAIL_SERVICE_VERSION=master-12
 ```
 
 ### Dateiberechtigungen
-* [Dateiberechtigungen](https://github.com/CaritasDeutschland/.github/wiki/File-permissions)
+* [Dateiberechtigungen](../backend/file-permissions.md)
 
 ### SSL-Zertifikat installieren
-* [SSL-Zertifikat installieren](https://github.com/CaritasDeutschland/.github/wiki/SSL-certificate)
+* [SSL-Zertifikat installieren](../backend/ssl-certificate.md)
 
-## First start
-* ❌[First Start](https://github.com/CaritasDeutschland/.github/wiki/First-start)
+### First start
+* [First Start](../backend/first-start.md)
 
-## Configuration
-* ❌[Service configuration](https://github.com/CaritasDeutschland/.github/wiki/Service-configuration)
+### Configuration
+* [Service configuration](../backend/service-configuration.md)
 
-## Starting/stopping the services
-* ❌[Starting and stopping the services](https://github.com/CaritasDeutschland/.github/wiki/Starting-and-stopping-the-services)
+### Login data/access links
+* [Login data and access links](../backend/login-data-access-links.md)
+
+### Starting/stopping the services
+* [Starting and stopping the services](../backend/starting-and-stopping-the-services.md)
+
+### Building with Jenkins
+* [Building the services with Jenkins](../backend/jenkins.md)
+
+### NGINX configuration
+* [NGINX configuration](../backend/nginx.md)

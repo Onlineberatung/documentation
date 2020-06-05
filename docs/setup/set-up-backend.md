@@ -2,94 +2,12 @@
 id: setup-backend
 title: Setting up the backend
 ---
+Setting up the backend takes a number of manual steps which can differ for local development and server operation.
 
-* auto-gen TOC:
-{:toc}
+* [Installing and running on the server](../backend/install-and-running-on-server.md)
+* [Setting up the backend for local development](../backend/install-and-running-locally.md)
 
-Im Folgenden werden die speziellen Voraussetzungen und Tools genannt welche für die lokale Entwicklung benötigt werden.
+After the installation you can adapt the application to your own needs with the following steps:
 
-## Voraussetzungen
-### docker-compose
-Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann, wird Docker und Docker Compose vorausgesetzt.
-
-### Domainname
-_**❌onlineberatung❌.local**_ muss auf die eigene IP-Adresse zeigen. Hier darf *nicht* die 127.0.0.1 verwendet werden, sondern die IP-Adresse, die dem Netzwerk-Adapter zugewiesen wurde (Einzustellen in der Betriebssystem hosts Datei, bei Windows *C:\Windows\System32\drivers\etc\hosts*).
-
-### _optional_: Docker Registry
-Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. JFrog Artifactory) bereitgestellt werden. Sollte kein solcher Dienst zur Verfügung stehen, können die Docker Images auch ❌[lokal gebaut](../backend/build-and-load-docker-image.md) werden.
-Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung am Artifactory erfolgt:
-
-``docker login https://viartifacts-docker.jfrog.io``
-
-Unter Windows in der Git-Bash:
-
-``winpty docker login https://viartifacts-docker.jfrog.io``
-
-Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
-
-### IDE
-Folgende Plugins sollten in der IDE installiert sein:
-* Lombok
-* Maven
-* Codestyle Checker für Google Java Code Style (https://github.com/google/styleguide)
-
-Zudem sollte beim Compiler Compliance Level Version 1.8.0 (OpenJDK) gewählt werden.
-
-## Pre-Configuration
-### Festlegen der Microservices-Service-Versionen
-In der Datei ```.env``` müssen die Versionen bzw. Tags für die eigenen Microservices angegeben werden, z.B.
-
-```
-USER_SERVICE_VERSION=master-19
-FRONTEND_VERSION=develop-39
-AGENCY_SERVICE_VERSION=master-7
-MESSAGE_SERVICE_VERSION=master-15
-MAIL_SERVICE_VERSION=master-12
-```
-
-Sollte keine Docker Registry verfügbar sein müssen die Services zuerst ❌[lokal gebaut](../backend/build-and-load-docker-image.md) werden und anschließend in der ```docker-compose.yml``` hinterlegt werden, z.B.
-
-```
-    userservice:
-        image: cob/userservice:development
-```
-Andernfalls muss in der ```docker-compose.yml``` lediglich die ```<image_server_url>``` mit der URL zur Registry ersetzt werden, der Imagename wird dann durch die jeweiligen Variablen aus Datei ```.env``` ersetzt.
-
-### UserService-Konfiguration anpassen
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable gesetzt werden:
-
-``KEYCLOAK_CORS=true``
-
-### MessageService-Konfiguration anpassen
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable In der Environment-Datei für den AgencyService (``./AgencyService/AgencyService.env``) gesetzt werden:
-
-``KEYCLOAK_CORS=true``
-
-### AgencyService-Konfiguration anpassen
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss folgende Environment-Variable gesetzt werden:
-
-``KEYCLOAK_CORS=true``
-
-### _optional_: Frontend-Konfiguration anpassen
-Diese Konfiguration ist nur notwendig, sofern man beim Frontend nicht den Docker-Container, sondern lokale Dateien, verwenden möchte.
-
-Hierzu muss in der ``docker-compose.yml`` des Backends ein zusätzliches Volume für den Frontend-Container definiert werden (zusätzlich unter "volumes:"):
-
-``- <LOKALER_ORDNER>:/usr/share/nginx/html``
-
-Die Fronted-Dateien müssen dann in den lokalen Ordner gelegt werden und werden dann anstelle der Frontend-Dateien im Container ausgeliefert.
-
-### Dateiberechtigungen unter Linux einstellen
-* [Dateiberechtigungen (nur Linux)](../backend/file-permissions.md)
-
-## First start
-* ❌[First Start](../backend/first-start.md)
-
-## Configuration
-* ❌[Service configuration](../backend/service-configuration.md)
-
-## Starting/stopping the services
-* ❌[Starting and stopping the services](../backend/starting-and-stopping-the-services.md)
-
-## Docker-Image lokal bauen
-* ❌[Docker Images lokal bauen und einbinden](../backend/build-and-load-docker-image.md)
+* [Create core data and import users](../backend/create-core-data-import-users.md)
+* [Adapt the mail templates](../backend/mailservice-templates.md)

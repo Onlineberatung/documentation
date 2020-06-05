@@ -1,8 +1,7 @@
 ---
-id: component-API-addresses
-title: Component and API addresses
+id: login-data-access-links
+title: Login data and access links
 ---
-
 ## Adressen
 Die einzelnen Komponenten sind unter folgenden Adressen erreichbar:
 
@@ -10,6 +9,8 @@ Die einzelnen Komponenten sind unter folgenden Adressen erreichbar:
 * Nosqlclient: http://`<HOST>`:3001
 * Keycloak: http://`<HOST>`/auth
 * Adminer: http://`<HOST>`:3002
+    * Init-Benutzer: root
+    * Init-Passwort: root
 
 Die Anwendung selbst ist unter http://`<HOST>` erreichbar
 

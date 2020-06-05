@@ -14,15 +14,20 @@
         "setup/setup-frontend"
     ],
     "Backend": [
-        "backend/online-beratung",
         "backend/install-and-running-on-server",
-        "backend/component-API-addresses",
-        "backend/build-and-load-docker-image",
-        "backend/file-permissions",
+        "backend/install-and-running-locally",
         "backend/first-start",
         "backend/service-configuration",
         "backend/starting-and-stopping-the-services",
+        "backend/login-data-access-links",
+        "backend/file-permissions",
+        "backend/build-and-load-docker-image",
         "backend/openldap-configuration",
+        "backend/create-core-data-import-users",
+        "backend/liquibase",
+        "backend/mailservice-templates",
+        "backend/jenkins",
+        "backend/nginx",
         "backend/ssl-certificate"
     ],
     "Frontend": [

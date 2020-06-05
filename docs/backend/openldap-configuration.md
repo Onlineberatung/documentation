@@ -2,7 +2,6 @@
 id: openldap-configuration
 title: OpenLDAP konfigurieren
 ---
-
 OpenLDAP speichert in der Grundkonfiguration Passwörter im Klartext. Dies muss über eine Konfigurationsänderung angepasst werden.
 
 *Hinweis:* Alle Konfigurationsdateien der folgenden Abschnitte sind im Container im Verzeichnis ```/cob-config``` zu finden.
@@ -84,5 +83,3 @@ Diese Datei ist für die Ausführung des obigen Befehls bereits im Container gem
 
 Die Struktur kann auch von außerhalb dieses Containers über diesen Befehl angelegt werden:
 ```docker exec openldap bash -c "ldapadd -x -D "cn=admin,dc=❌onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /cob-config/ou-conf.ldif"```
-
-
