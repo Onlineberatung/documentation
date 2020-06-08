@@ -13,13 +13,13 @@ The master branch stores the official release history, and the develop branch se
 
 ### Feature Branches
 
-**naming convention:** feature/title-of-feature _or_ bugfix/title-of-bug
+**naming convention:** feature-title-of-feature _or_ bugfix-title-of-bug
 
 Each new feature or bugfix should reside in its own feature branch, which use the latest version of the develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should never interact directly with master.
 
 ### Release Branches
 
-**naming convention:** release/x.x.x
+**naming convention:** release-x.x.x
 
 the automated versioning process is based on the name of the release branch. Therefore, it is important that the naming convention is followed and the branch begins with the keyword "release". More information about the versioning process can be found [here](#version-management).
 
@@ -27,7 +27,7 @@ Once develop has acquired enough features for a release (or a predetermined rele
 
 ### Hotfix Branches
 
-**naming convention:** hotfix/title-of-hotfix
+**naming convention:** hotfix-title-of-hotfix
 
 Maintenance or “hotfix” branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on master instead of develop. This is the only branch that should fork directly off of master. As soon as the fix is complete, it should be merged into both master and develop (or the current release branch)
 
