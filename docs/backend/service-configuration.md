@@ -153,13 +153,14 @@ Zum Schluss das ganze noch mit dem _"save"_ Button ganz unten speichern.
 ### Technischer Benutzer für E-Mail-Prüfung
 Für die Überprüfung auf bereits vergebene E-Mail-Adressen in Keycloak muss ein technischer Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt nur einen Namen aber kein Passwort oder sonstige Daten und Einstellungen.
 
-### Technischer Benutzer für Registrierung
+### Technischer Benutzer für Registrierung und Masterkey
 Für die Registrierung neuer Ratsuchender in Keycloak muss ein technischer Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt einen Namen, ein Passwort und folgende Rollen-Einstellungen:
 
 1. Unter _"Client Roles"_ → _"realm-management"_ auswählen und unter _"Assigned Roles"_ sollten folgende Rollen stehen:
     * manage-users
     * view-realm
 2. Unter _"Client Roles"_ → _"account"_ auswählen und alle unter _"Assigned Roles"_ entfernen
+3. Zuätzlich muss dem Benutzer noch die Rolle "technical" hinzugefügt werden
 
 ### Password policies
 The same password policies that are defined in keycloak are deposited hard-coded in the UserService (UserHelper.java).
