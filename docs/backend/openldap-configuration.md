@@ -82,4 +82,4 @@ ou: users
 Diese Datei ist für die Ausführung des obigen Befehls bereits im Container gemounted.
 
 Die Struktur kann auch von außerhalb dieses Containers über diesen Befehl angelegt werden:
-```docker exec openldap bash -c "ldapadd -x -D "cn=admin,dc=❌onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /cob-config/ou-conf.ldif"```
+```docker exec openldap bash -c "ldapadd -x -D "cn=admin,dc=❌onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /cob-config/ou-conf.ldif```
