@@ -87,7 +87,7 @@ Die Rocket.Chat-Datenbank und der zugehörige Benutzer müssen mit folgendem Bef
 
 (Unter Windows muss noch *winpty* vor *docker* ergänzt werden)
 
-Initiale Admin-Benutzerdaten: admin/admin (ADMIN_USER/ADMIN_PASSWORD)
+Initiale Admin-Benutzerdaten stehen in der mongoDB/mongoDB.env (ADMIN_USER/ADMIN_PASSWORD)
 
 ## LDAP Konfigurieren
 **Hinweis:** Beim ersten Start auf einem Linux-System gab es ein Problem mit dem Verzeichnis ``./OpenLDAP/slap.d``. Dieses hatte die falschen Benutzerrechte. Die Rechte müssen entsprechend geändert werden oder der Ordner neu angelegt werden. Danach kann der Container gestartet werden:
