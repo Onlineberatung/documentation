@@ -98,7 +98,7 @@ Initiale Admin-Benutzerdaten stehen in der mongoDB/mongoDB.env (ADMIN_USER/ADMIN
 * [OpenLDAP konfigurieren](../backend/openldap-configuration.md)
 
 ## MariaDB Config zurücksetzen
-Die oben gemachten Änderungen an der Zeitzohnenkonfiguration zurücksetzen.
+Die oben gemachten Änderungen an der Zeitzonenkonfiguration zurücksetzen.
 
 ## Restart aller Services
 Nun sollten alle Services durch *docker-compose restart* neugestartet werden.
