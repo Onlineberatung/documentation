@@ -176,6 +176,10 @@ Folgende Verbindungsdaten müssen für die Rocket.Chat-DB verwendet werden:
 
 \* Es handelt sich hierbei um das initiale Passwort bei der Erstinstallation. Dieses muss ggf. noch angepasst werden.
 
+## Microservices
+
+Für alle folgenden Microservices muss ein Hosts-Eintrag in der Datei `docker-compose.yml` erfolgen. Bitte ersetzen Sie die Platzhalter `<app_domain>` und `<internal_server_ip_address>` entsprechend mit Ihren Werten bei der jeweiligen Property `extra_hosts`. Darüber wird sichergestellt, dass die Microservices Verbindungen zu den Services auf dem Server herstellen können.
+
 ## AgencyService
 Die Konfiguration des Services auf dem Server erfolgt in der AgencyService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden.
 
