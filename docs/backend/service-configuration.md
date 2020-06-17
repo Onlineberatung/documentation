@@ -27,11 +27,11 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | Encryption | No Encryption | |
 | CA Cert | | |
 | Reject Unauthorized | True | |
-| Base DN | ou=users,ou=cob,dc=❌onlineberatung,dc=de | |
+| Base DN | ou=users,ou=cob,dc=onlineberatung,dc=de | |
 | Internal Log Level | INFO | |
 | **Authentication **| | |
 | Enable | True | |
-| User DN | cn=admin,dc=❌onlineberatung,dc=de | |
+| User DN | cn=admin,dc=onlineberatung,dc=de | |
 | Password | <PASSWORT> | → Standard-PW: admin |
 | **Sync / Import** | | |
 | Username Field | uid | |
