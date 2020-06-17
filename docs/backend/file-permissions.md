@@ -3,7 +3,7 @@ id: file-permissions
 title: File permissions
 ---
 Bei einer Installation des Backends auf einem Server sollten bestimmte Dateiberechtigungen gesetzt werden, damit nicht jeder Benutzer z.B. auf die Konfigurationsdateien mit den Passwörter zugreifen darf.
-Die Berechtigungen unterscheidene sich dabei zwischen dem Live-Deploy-/Dev-/Staging-System und dem Production-System. Dies liegt daran, dass für das Live-Deploy-/Dev-/Staging-System ein CD über den Jenkins eingerichtet werden kann. Hierzu sind andere Berechtigungen notwendig, da ein Remote-Zugriff erfolgt.
+Die Berechtigungen unterscheiden sich dabei zwischen dem Live-Deploy-/Dev-/Staging-System und dem Production-System. Dies liegt daran, dass für das Live-Deploy-/Dev-/Staging-System ein CD über den Jenkins eingerichtet werden kann. Hierzu sind andere Berechtigungen notwendig, da ein Remote-Zugriff erfolgt.
 
 #### Rechte unter Linux rekursiv getrennt nach Dateien und Verzeichnissen
 

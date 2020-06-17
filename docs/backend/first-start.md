@@ -7,7 +7,7 @@ Nachfolgende Schritte sind in Reihenfolge auszuführen.
 
 ## Keycloak Hostname festlegen
 
-In der Environment-Datei für Keycloak (`./Keycloak/Keycloak.env`) muss der Hostname und die Datenbank Zugangsinformationen festgelegt werden:
+In der Environment-Datei für Keycloak (`./Keycloak/Keycloak.env`) müssen der Hostname und die Datenbank-Zugangsinformationen festgelegt werden:
 
 `DB_ADDR=Host/Adresse zur MariaDB innerhalb Docker (z.B. db)`\
 `DB_DATABASE=`\
@@ -15,11 +15,11 @@ In der Environment-Datei für Keycloak (`./Keycloak/Keycloak.env`) muss der Host
 `DB_PASSWORD=`\
 `KEYCLOAK_HOSTNAME=<host>`
 
-Hostname für lokale Entwicklung: onlineberatung.local
+Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 ## MariaDB Config anpassen
 
-Im Ordner ./MariaDB/config/ befindet sich die Datei config-file.cnf
+Im Ordner ``./MariaDB/config/`` befindet sich die Datei ``config-file.cnf``
 Diese Datei enthält eine Zeitzonenkonfiguration, welche beim ersten Start von MariaDB für Probleme sorgt.
 Daher muss diese Konfiguration beim ersten Start auskommentiert werden.
 
@@ -39,9 +39,9 @@ In der nginx-Konfiguration muss der server_name in den folgenden Dateien auf den
 
 In der Environment-Datei (`./nginx/nginx.env`) muss die Application URL festgelegt werden:
 
-`APPLICATION_URL=https://anwendung.de`
+`APPLICATION_URL=<applikations-url-inkl-protokoll>` (z.B. https://onlineberatung.de)
 
-Hostname für lokale Entwicklung: onlineberatung.local
+Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 ## MongoDB-Konfiguration anpassen
 
@@ -49,7 +49,7 @@ In der Environment-Datei für die MongoDB (`./mongoDB/mongoDB.env`) müssen die 
 
 `MONGO_INITDB_ROOT_USERNAME=`\
 `MONGO_INITDB_ROOT_PASSWORD=`\
-`MONGO_INITDB_DATABASE=`\
+`MONGO_INITDB_DATABASE=`
 
 ## Nosqlclient-Konfiguration anpassen
 
@@ -58,7 +58,7 @@ In der Environment-Datei für den Nosqlclient (`./Nosqlclient/Nosqlclient.env`) 
 `MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<rocketchat_db_name>`\
 `ROOT_URL=<host>:3001`
 
-Hostname für lokale Entwicklung: onlineberatung.local
+Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 ## Rocket.Chat-Konfiguration anpassen
 
@@ -67,16 +67,16 @@ In der Environment-Datei für den Rocket.Chat (`./Rocket.Chat/Rocket.Chat.env`) 
 `MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<rocketchat_db_name>`\
 `ROOT_URL=<host>:3000`
 
-Hostname für lokale Entwicklung: onlineberatung.local
+Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 ## OpenLDAP-Konfiguration anpassen
 
-In der Environment-Datei für OpenLDAP (`./OpenLDAP/OpenLDAP.env`) muss die LDAP Konfiguratino angegeben werden:
+In der Environment-Datei für OpenLDAP (`./OpenLDAP/OpenLDAP.env`) muss die LDAP Konfiguration angegeben werden:
 
 `LDAP_ORGANISATION=`\
 `LDAP_DOMAIN=`\
 `LDAP_ADMIN_PASSWORD=`\
-`LDAP_CONFIG_PASSWORD=`\
+`LDAP_CONFIG_PASSWORD=`
 
 ## Alle Services starten
 
@@ -87,7 +87,7 @@ Beim ersten Start ist es normal, dass verschiedene Dienste Fehler im Log anzeige
 
 ## Keycloak Administrator Account anlegen
 
-Anlegen des Administrator-Accounts für Keycloak:
+Anlegen des Administrator-Accounts für Keycloak:\
 `docker exec keycloak keycloak/bin/add-user-keycloak.sh -u <USERNAME> -p <PASSWORD>`
 
 ## Anlegen der Rocket.Chat-Datenbank in der mongoDB

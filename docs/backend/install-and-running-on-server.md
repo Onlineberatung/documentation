@@ -16,11 +16,11 @@ Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann
 Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. JFrog Artifactory) bereitgestellt werden.
 Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung am Artifactory erfolgt:
 
-`docker login https://<artifactName>.jfrog.io`
+``docker login <artifactory-url>``
 
 Unter Windows in der Git-Bash:
 
-`winpty docker login https://<artifactName>.jfrog.io`
+``winpty docker login <artifactory-url>``
 
 Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
 

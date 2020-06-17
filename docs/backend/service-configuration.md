@@ -120,9 +120,9 @@ Unter den Berechtigungen muss für user, technical und systemuser jeweils _[api-
 
 ## Keycloak
 ### Realm
-Es muss der Realm aus dem Projektverzeichnis importiert werden (Verzeichnis im Repo: _caritas-online-beratung-backend\Keycloak_).
+Es muss der Realm aus dem Projektverzeichnis importiert werden (Verzeichnis im Repo: _./Keycloak_).
 
-Before importing the basic settings you need to change some realm settings manually in the _realm-export.json_ file:
+Vor dem Import der Basis-Einstellungen müssen folgende Anpassungen manuell in der Datei _realm-export.json_ vorgenommen werden:
 
 | Name | Value |
 | ---- | ----- |
@@ -163,7 +163,7 @@ Für die Registrierung neuer Ratsuchender in Keycloak muss ein technischer Benut
 3. Zuätzlich muss dem Benutzer noch die Rolle "technical" hinzugefügt werden
 
 ### Password policies
-The same password policies that are defined in keycloak are deposited hard-coded in the UserService (UserHelper.java).
+Die gleichen Password Policies sind auch im UserService implementiert (UserHelper.java).
 
 ## Verbindungen im Nosqlclient einrichten
 Damit man sich mit dem Nosqlclient mit der MongoDB verbinden kann müssen entsprechende Verbindungen eingerichtet werden. Dazu muss der Nosqlclient aufgerufen werden und oben rechts _"Connect"_ und im folgenden Dialog _"Create New"_ ausgewählt werden.
