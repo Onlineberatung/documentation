@@ -9,12 +9,10 @@
 // site configuration options.
 
 // List of projects/orgs using your project for the users page.
-const users = [
-];
+const users = [];
 
 const siteConfig = {
-  title: 'enter title here', // Title for your website.
-  tagline: 'enter tagline here',
+  title: 'Caritas Online-Beratung', // Title for your website.
   url: 'https://CaritasDeutschland.github.io', // Your website URL
   baseUrl: '/documentation/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -29,9 +27,7 @@ const siteConfig = {
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
-  headerLinks: [
-    {doc: 'general/home', label: 'Docs'}
-  ],
+  headerLinks: [{ doc: 'general/home', label: 'Docs' }],
 
   // If you have users set above, you add it here:
   users,
