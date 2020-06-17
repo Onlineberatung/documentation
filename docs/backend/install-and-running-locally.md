@@ -13,18 +13,18 @@ Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann
 
 ### Domainname
 
-_**onlineberatung.local**_ muss auf die eigene IP-Adresse zeigen. Hier darf _nicht_ die 127.0.0.1 verwendet werden, sondern die IP-Adresse, die dem Netzwerk-Adapter zugewiesen wurde (Einzustellen in der Betriebssystem hosts Datei, bei Windows _C:\Windows\System32\drivers\etc\hosts_).
+Der lokale Hostname (z.B. _**onlineberatung.local**_) muss auf die eigene IP-Adresse zeigen. Hier darf _nicht_ die 127.0.0.1 verwendet werden, sondern die IP-Adresse, die dem Netzwerk-Adapter zugewiesen wurde (Einzustellen in der Betriebssystem hosts Datei, bei Windows _C:\Windows\System32\drivers\etc\hosts_).
 
 ### _optional_: Docker Registry
 
 Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. JFrog Artifactory) bereitgestellt werden. Sollte kein solcher Dienst zur Verfügung stehen, können die Docker Images auch [lokal gebaut](../backend/build-and-load-docker-image.md) werden.
 Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung am Artifactory erfolgt:
 
-`docker login https://viartifacts-docker.jfrog.io`
+`docker login <artifactory-url>`
 
 Unter Windows in der Git-Bash:
 
-`winpty docker login https://viartifacts-docker.jfrog.io`
+`winpty docker login <artifactory-url>`
 
 Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
 
