@@ -47,6 +47,8 @@ Folgende Plugins sollten in der IDE installiert sein:
 - Maven
 - Codestyle Checker für Google Java Code Style (https://github.com/google/styleguide)
 
+Für intelliJ kann unter folgendem Link der Google Code Style zum Importieren heruntergeladen werden: https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
+
 Zudem sollte beim Compiler Compliance Level Version 1.8.0 (OpenJDK) gewählt werden.
 
 Beispielhaft wird die Konfiguration in Eclipse im Folgenden beschrieben:
