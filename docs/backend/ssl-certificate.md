@@ -3,9 +3,26 @@ id: ssl-certificate
 title: SSL certificate
 ---
 
-Nachfolgend wird beschrieben wie ein SSL-Zertifikat von Let's Encrypt eingerichtet werden kann. Alternative Zertifikatsanbieter sind natürlich auch für den Einsatz in der Caritas Online-Beratung möglich.
+## Eigene Zertifikate einbinden
 
-## acme.sh
+Nachfolgend wird beschrieben wie ein SSL-Zertifikat eingebunden werden kann.
+
+# Konfiguration
+
+Die Zertifikatsdaten müssen auf dem Server abgelegt werden, es werden eine .pem-Datei sowie die zugehörige Schlüssel-Datei (.key) benötigt. Darüber hinaus sollte man eine indiduelle Diffie-Hellman-Parameter-Datei erstellen. Dies kann über openssl mit folgenden Befehl erfolgen:
+
+```openssl dhparam -out <filename> 4096```
+
+Die Pfade zu den entsprechenden Dateien müssen dann in folgenden Dateien hinterlegt werden:
+
+`./nginx/conf/server-ssl.conf` \
+`./nginx/conf/adminer.conf`
+
+## Let's encrypt
+
+Nachfolgend wird beschrieben wie ein SSL-Zertifikat von Let's Encrypt eingerichtet werden kann.
+
+### acme.sh
 
 Das Anfordern und Erneuern des Zertifikats erfolgt über **acme.sh**:
 
@@ -15,7 +32,7 @@ https://hub.docker.com/r/neilpang/acme.sh
 
 Der acme.sh-Container ist für das Anfordern und Erneuern des Zertifikats zuständig.
 
-### SSL-Zertifikat anfordern
+#### SSL-Zertifikat anfordern
 
 Das Zertifikat wird über folgenden Befehl bei Let's Encrypt erzeugt und abgeholt:
 
@@ -23,7 +40,7 @@ Das Zertifikat wird über folgenden Befehl bei Let's Encrypt erzeugt und abgehol
 
 Dieser Befehl ist i.d.R. nur einmal durchzuführen.
 
-### SSL-Zertifikat installieren
+#### SSL-Zertifikat installieren
 
 Das Installieren des Zertifikats erfolgt über folgenden Befehl:
 
@@ -31,7 +48,7 @@ Das Installieren des Zertifikats erfolgt über folgenden Befehl:
 
 Hierbei werden die Zertifikatsdatei sowie die zugehörige Schlüssel-Datei in den Backend-Order /ssl kopiert. Auf diesen Ordner hat auch der nginx Zugriff, so dass darüber das Zertifikat eingebunden ist.
 
-### SSL-Zertifikat erneuern
+#### SSL-Zertifikat erneuern
 
 **acme.sh** kümmert sich normalerweise selbstständig um das Erneuern des SSL-Zertifikats bevor dieses abläuft. Allerdings muss der nginx neu gestartet werden damit das erneuterte Zertifikat geladen wird.
 
