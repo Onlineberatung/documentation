@@ -13,7 +13,7 @@ For offering this professional counseling service online it is important that:
 
 - anonymity is possible,
 - different fields of expertise can be reached and combined,
-- varying consulting settings can be chosen.,
+- varying consulting settings can be chosen.
 
 There is also a need for such advisory platforms in other sectors, so that we would like to make our developments available to the general public and encourage joint further development.
 Caritas' work on this platform is supported by the German Federal Ministry of Family Affairs.
