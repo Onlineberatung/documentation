@@ -22,7 +22,7 @@ In this documentation you will find information on how to set up, run and contri
 
 ## License
 
-The project is licensed under the AGPLv3. More information about the licence can be found [here](LICENSE.md).
+The project is licensed under the AGPLv3. More information about the licence can be found [here](https://github.com/CaritasDeutschland/caritas-onlineBeratung-backend/blob/master/LICENSE.md).
 
 ## Code of Conduct
 
