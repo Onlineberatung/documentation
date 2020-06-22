@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Biotope · Caritas Online-Beratung</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The project was initially set up with the Biotope Boilerplate Version 5.4.0. Biotope is a framework which enables you to develop scalabale, platform-agnostic frontend component ecosystems. [Here](https://boilerplate.biotope.sh/) you can find the documentation."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Biotope · Caritas Online-Beratung"/><meta property="og:type" content="website"/><meta property="og:url" content="https://CaritasDeutschland.github.io/documentation/"/><meta property="og:description" content="The project was initially set up with the Biotope Boilerplate Version 5.4.0. Biotope is a framework which enables you to develop scalabale, platform-agnostic frontend component ecosystems. [Here](https://boilerplate.biotope.sh/) you can find the documentation."/><meta property="og:image" content="https://CaritasDeutschland.github.io/documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://CaritasDeutschland.github.io/documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/documentation/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/documentation/css/main.css"/><script src="/documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/documentation/"><img class="logo" src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung"/><h2 class="headerTitleWithLogo">Caritas Online-Beratung</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/documentation/docs/general/home" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Frontend</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/general/home">Home</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/general/git-workflow">Git workflow</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/general/browser-matrix">Browser matrix</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Project Setup</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/setup/setup-backend">Setting up the backend</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/setup/setup-frontend">Setting up the frontend</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Backend</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/install-and-running-on-server">Installing and running the backend on the server</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/install-and-running-locally">Installing and running the backend for local development</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/first-start">First start</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/service-configuration">Service configuration</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/starting-and-stopping-the-services">Starting and stopping the services</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/login-data-access-links">Login data and access links</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/file-permissions">File permissions</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/build-and-load-docker-image">Docker Image lokal bauen und in Docker laden</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/openldap-configuration">OpenLDAP konfigurieren</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/create-core-data-import-users">Create core data and import users</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/liquibase">Database versioning with liquibase</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/mailservice-templates">Mail templates</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/jenkins">Einrichten des Build-Prozesses über Jenkins</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/nginx">NGINX configuration</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/ssl-certificate">SSL certificate</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Frontend</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/documentation/docs/frontend/biotope">Biotope</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/tools">Tools</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Biotope</h1></header><article><div><span><p>The project was initially set up with the Biotope Boilerplate Version 5.4.0. Biotope is a framework which enables you to develop scalabale, platform-agnostic frontend component ecosystems. <a href="https://boilerplate.biotope.sh/">Here</a> you can find the documentation.</p>
+<p>The project is based on the Biotope Build version 6.2.1 and the Biotope Resource Loader with version 1.3.</p>
+<h2><a class="anchor" aria-hidden="true" id="custom-configuration"></a><a href="#custom-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom Configuration</h2>
+<p>How to set up your personal boilerplate, with dependencies you really need.</p>
+<h3><a class="anchor" aria-hidden="true" id="projectconfigjson"></a><a href="#projectconfigjson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>projectConfig.json</h3>
+<p>This file lets you override any settings of biotope-build that are exposed in its <code>config.js</code> file such as enabling or disabling of certain tasks as well as specifying additional resource folders. Find biotope-build's <code>config.js</code> file <a href="https://github.com/biotope/biotope-build/blob/master/config.js">here</a>.</p>
+<p><strong>resource folders</strong>
+To add additional resource folders, create the folders and add the paths to the global.resources array.
+The path needs to be prepended with a &quot;/&quot; and relative to the src folder.
+The default resource folder is &quot;/resources&quot;</p>
+<p><strong>component folders</strong>
+To add additional component folders, create the folders and add the paths to the global.components array.
+The path needs to be prepended with a &quot;/&quot; and relative to the src folder.
+The default components folder is &quot;/components&quot;
+If an additinal component folder is added create an additional resource Folder since every components folder nees its own corresponding resource folder.</p>
+<p><strong>tasks</strong>
+To disable certain tasks, simply set the specific task to false.
+At the moment the tasks that can be disabled are: &quot;linting&quot;, &quot;iconfont&quot;, &quot;handlebars&quot;, &quot;uglify&quot;, &quot;cleanCss&quot;, &quot;favicons&quot;, &quot;cssStats&quot;.
+Per default all tasks are enabled.</p>
+<p><strong>uglifyExceptions</strong>
+You can add files which should not be uglified during the uglify task (e.g. files that are already uglified)</p>
+<p><strong>externalResources</strong>
+Add file paths of files that are needed for the build package. The path must be relative to each package inside node_modules.</p>
+<h2><a class="anchor" aria-hidden="true" id="patterns"></a><a href="#patterns" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Patterns</h2>
+<p>We use different boilerplates to keep our code structure as homogeneous as possible.</p>
+<h3><a class="anchor" aria-hidden="true" id="javascript--typescript"></a><a href="#javascript--typescript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JavaScript / TypeScript</h3>
+<p>We also provide the possibility to compile to ES5 or ES6. Depending on the projects browser matrix.</p>
+<h3><a class="anchor" aria-hidden="true" id="css--sass"></a><a href="#css--sass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CSS / SASS</h3>
+<p>We compile the CSS stylesheets with a SASS compiler. We use the <a href="http://getbem.com/naming/">BEM</a> methodology to ensure that the component based approach is also reflected in the css (sass) code we write.</p>
+<h3><a class="anchor" aria-hidden="true" id="folder-structure"></a><a href="#folder-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Folder structure</h3>
+<ul>
+<li><code>/src</code> is where all of the actual frontend code is stored</li>
+<li><code>/src/_assets</code> holds static placeholder files like images, audio- and video files.</li>
+<li><code>/src/_mock</code> holds files that would be generated dynamically by the cms implementing the frontend and not explicitly corresponding to a component</li>
+<li><code>/src/_config</code> holds the js configuration file</li>
+<li><code>/src/pages</code> holds the base html files to create the index preview</li>
+<li><code>/src/resources</code> holds global resources: JavaScript, TypeScript, SASS/CSS and other files</li>
+<li><code>/src/components</code> holds reusable components and the corresponding resource files</li>
+<li><code>/test</code> is where we put automated tests for Travis CI</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="handlebars"></a><a href="#handlebars" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handlebars</h2>
+<p>Biotope comes with Handlebars for templating and demonstrating different component scenarios.</p>
+<h3><a class="anchor" aria-hidden="true" id="handlebar-helpers"></a><a href="#handlebar-helpers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handlebar Helpers</h3>
+<ul>
+<li><code>{{&gt; partial}}</code> - include a handlebars partial. Partials are automatically created from components and partial folders. The partials can be _.hbs or _.html. Example: For the file components/foldername/handlebarsfile.html use the partial identifier foldername/handlebarsfile.</li>
+<li><code>{{bioInclude 'partial'}}</code> - custom partial helper, allows the use of json data as files or a string</li>
+<li><code>{{bioDef variable 'default value'}}</code> - set a default value for a variable</li>
+<li><code>{{bioText count max}}</code> - a filler text with a variable count of letters and an added variance (max)</li>
+<li><code>{{bioImg width height src}}</code> - creates the image src path for generated assets. This helper only creates the path and the image itself. Example: {{bioImg 300 400 srcName.jpg}} gets to '_assets/generated/srcName_300x400.jpg'</li>
+<li><code>{{#bioCompare left, operator, right, options}}</code> – block helper to compare two values (left, right) with a variable operator.</li>
+<li><code>{{bioMath left, operator, right, options}}</code> – allows math operations between two values (left, right) and a variable operator. Example: {{bioMath 10 '+' 15}} returns 25</li>
+<li><code>{{bioCode content}}</code> – defines a code block to allow curly brackets for other frameworks. Use with {{{{code}}}} {{{{/code}}}} (4 curly brackets for literal string contents)</li>
+<li><code>{{bioStringify object}}</code> – Convert a JSON/JavaScript Object into a string for debugging</li>
+<li><code>{{bioParseJSON data options}}</code> – block helper to parse a String to JSON for debugging</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
+<h3><a class="anchor" aria-hidden="true" id="line-break-errors-in-eslint"></a><a href="#line-break-errors-in-eslint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Line-break errors in eslint</h3>
+<p>If there are line-break errors in eslint, it may be because false line endings set by git. Try to check out the repo again.
+To prevent this check the git config &quot;core.autocrlf&quot;.</p>
+<h3><a class="anchor" aria-hidden="true" id="gulp-serve-malloc-error-unix-only"></a><a href="#gulp-serve-malloc-error-unix-only" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>gulp serve malloc error (Unix Only)</h3>
+<p>************** gulp(975,0x104c15000) malloc: <strong>_ error for object 0x10164201c: pointer being freed was not allocated _</strong> set a breakpoint in malloc_error_break to debug **************</p>
+<p>This is caused by missing sass files. Be sure you've done a bower install before <code>npm start</code>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/backend/ssl-certificate"><span class="arrow-prev">← </span><span>SSL certificate</span></a><a class="docs-next button" href="/documentation/docs/frontend/tools"><span>Tools</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#custom-configuration">Custom Configuration</a><ul class="toc-headings"><li><a href="#projectconfigjson">projectConfig.json</a></li></ul></li><li><a href="#patterns">Patterns</a><ul class="toc-headings"><li><a href="#javascript--typescript">JavaScript / TypeScript</a></li><li><a href="#css--sass">CSS / SASS</a></li><li><a href="#folder-structure">Folder structure</a></li></ul></li><li><a href="#handlebars">Handlebars</a><ul class="toc-headings"><li><a href="#handlebar-helpers">Handlebar Helpers</a></li></ul></li><li><a href="#troubleshooting">Troubleshooting</a><ul class="toc-headings"><li><a href="#line-break-errors-in-eslint">Line-break errors in eslint</a></li><li><a href="#gulp-serve-malloc-error-unix-only">gulp serve malloc error (Unix Only)</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a><a href="/documentation/docs/setup/setup-backend.html">Setting up Backend</a><a href="/documentation/docs/setup/setup-frontend.html">Setting up Frontend</a></div><div><h5>More</h5><a href="https://github.com/CaritasDeutschland">GitHub</a></div></section><section class="copyright">Copyright © 2020 Caritas Deutschland</section></footer></div></body></html>

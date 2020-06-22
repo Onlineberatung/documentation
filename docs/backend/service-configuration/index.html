@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Service configuration · Caritas Online-Beratung</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Für manche Komponenten ist eine Ersteinrichtung erforderlich."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Service configuration · Caritas Online-Beratung"/><meta property="og:type" content="website"/><meta property="og:url" content="https://CaritasDeutschland.github.io/documentation/"/><meta property="og:description" content="Für manche Komponenten ist eine Ersteinrichtung erforderlich."/><meta property="og:image" content="https://CaritasDeutschland.github.io/documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://CaritasDeutschland.github.io/documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/documentation/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/documentation/css/main.css"/><script src="/documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/documentation/"><img class="logo" src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung"/><h2 class="headerTitleWithLogo">Caritas Online-Beratung</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/documentation/docs/general/home" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Backend</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/general/home">Home</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/general/git-workflow">Git workflow</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/general/browser-matrix">Browser matrix</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Project Setup</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/setup/setup-backend">Setting up the backend</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/setup/setup-frontend">Setting up the frontend</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Backend</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/install-and-running-on-server">Installing and running the backend on the server</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/install-and-running-locally">Installing and running the backend for local development</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/first-start">First start</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/documentation/docs/backend/service-configuration">Service configuration</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/starting-and-stopping-the-services">Starting and stopping the services</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/login-data-access-links">Login data and access links</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/file-permissions">File permissions</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/build-and-load-docker-image">Docker Image lokal bauen und in Docker laden</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/openldap-configuration">OpenLDAP konfigurieren</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/create-core-data-import-users">Create core data and import users</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/liquibase">Database versioning with liquibase</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/mailservice-templates">Mail templates</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/jenkins">Einrichten des Build-Prozesses über Jenkins</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/nginx">NGINX configuration</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/ssl-certificate">SSL certificate</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Frontend</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/biotope">Biotope</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/tools">Tools</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Service configuration</h1></header><article><div><span><p>Für manche Komponenten ist eine Ersteinrichtung erforderlich.
+Diese sind hier aufgeführt.</p>
+<h2><a class="anchor" aria-hidden="true" id="rocketchat"></a><a href="#rocketchat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rocket.Chat</h2>
+<p>Bei der ersten Anmeldung muss der Administratoren Account eingerichtet werden.
+Dazu wird einfach den Schritten im Assistenten gefolgt (http://<code>&lt;HOST&gt;</code>:3000).
+Als Typ wird dabei eine lokale Installation gewählt.</p>
+<p><strong>Weitere Konfigurationsschritte:</strong></p>
+<h3><a class="anchor" aria-hidden="true" id="ldap-konfigurieren"></a><a href="#ldap-konfigurieren" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LDAP konfigurieren:</h3>
+<p>Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im Administrationsbereich, Menüpunkt <em>LDAP</em>, übernehmen:</p>
+<table>
+<thead>
+<tr><th>Feld</th><th>Wert</th><th>Bemerkung</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Basic Settings</strong></td><td></td><td></td></tr>
+<tr><td>Enable</td><td>True</td><td></td></tr>
+<tr><td>Login Fallback</td><td>True</td><td>Wichtig, da sich der initiale Admin ansonsten nicht mehr einloggen kann, da nicht im LDAP vorhanden</td></tr>
+<tr><td>Find user after login</td><td>False</td><td></td></tr>
+<tr><td>Host</td><td>openldap</td><td></td></tr>
+<tr><td>Port</td><td>389</td><td></td></tr>
+<tr><td>Reconnect</td><td>True</td><td></td></tr>
+<tr><td>Encryption</td><td>No Encryption</td><td></td></tr>
+<tr><td>CA Cert</td><td></td><td></td></tr>
+<tr><td>Reject Unauthorized</td><td>True</td><td></td></tr>
+<tr><td>Base DN</td><td>ou=users,ou=cob,dc=onlineberatung,dc=de</td><td></td></tr>
+<tr><td>Internal Log Level</td><td>INFO</td><td></td></tr>
+<tr><td>**Authentication **</td><td></td><td></td></tr>
+<tr><td>Enable</td><td>True</td><td></td></tr>
+<tr><td>User DN</td><td>cn=admin,dc=onlineberatung,dc=de</td><td></td></tr>
+<tr><td>Password</td><td><PASSWORT></td><td>→ Standard-PW: admin</td></tr>
+<tr><td><strong>Sync / Import</strong></td><td></td><td></td></tr>
+<tr><td>Username Field</td><td>uid</td><td></td></tr>
+<tr><td>Unique Identifier Field</td><td>objectGUID,ibm-entryUUID,GUID,dominoUNID,nsuniqueId,uidNumber</td><td></td></tr>
+<tr><td>Default Domain</td><td></td><td></td></tr>
+<tr><td>Merge Existing Users</td><td>True</td><td></td></tr>
+<tr><td>Sync User Data</td><td>False</td><td></td></tr>
+<tr><td>User Data Field Map</td><td>{&quot;cn&quot;:&quot;name&quot;, &quot;mail&quot;:&quot;email&quot;}</td><td></td></tr>
+<tr><td>Sync User Avatar</td><td>False</td><td></td></tr>
+<tr><td>Background Sync</td><td>False</td><td></td></tr>
+<tr><td><strong>Timeouts</strong></td><td></td><td></td></tr>
+<tr><td>Timeout (ms)</td><td>60000</td><td></td></tr>
+<tr><td>Connection Timeout (ms)</td><td>1000</td><td></td></tr>
+<tr><td>Idle Timeout (ms)</td><td>1000</td><td></td></tr>
+<tr><td><strong>User Search</strong></td><td></td><td></td></tr>
+<tr><td>Filter</td><td>(objectclass=*)</td><td></td></tr>
+<tr><td>Scope</td><td>sub</td><td></td></tr>
+<tr><td>Search Field</td><td>uid,mail</td><td></td></tr>
+<tr><td>Search Page Size</td><td>250</td><td></td></tr>
+<tr><td>Search Limit Size</td><td>1000</td><td></td></tr>
+<tr><td><strong>User Search (Group Validation)</strong></td><td></td><td></td></tr>
+<tr><td>Enable LDAP User Group Filter</td><td>False</td><td></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="technischen-benutzer-und-rolle-anlegen"></a><a href="#technischen-benutzer-und-rolle-anlegen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technischen Benutzer und Rolle anlegen</h3>
+<ol>
+<li>Rolle anlegen/Rechte festlegen</li>
+</ol>
+<ul>
+<li>Unter <em>&quot;Permissions&quot;</em> über den Button <em>&quot;New Role&quot;</em> die Rolle <em>&quot;technical&quot;</em> mit Scope <em>&quot;Global&quot;</em> anlegen.</li>
+<li>Der Rolle folgende Rechte hinzufügen (Haken setzen):
+<ul>
+<li><em>[add-user-to-any-p-room]</em></li>
+<li><em>[api-bypass-rate-limit]</em></li>
+<li><em>[clean-channel-history]</em></li>
+<li><em>[delete-p]</em></li>
+<li><em>[delete-user]</em></li>
+<li><em>[remove-user]</em></li>
+<li><em>[view-room-administration]</em></li>
+</ul></li>
+</ul>
+<ol start="2">
+<li>Benutzer anlegen</li>
+</ol>
+<ul>
+<li>Unter <em>&quot;Users&quot;</em> einen neuen Benutzer <em>&quot;technical&quot;</em> anlegen und die eben erstellte Rolle <em>&quot;technical&quot;</em> zuweisen.</li>
+<li><strong>Weitere Einstellungen des technischen Benutzer:</strong>
+<ul>
+<li>Verified = ja</li>
+<li>Require password change = nein</li>
+<li>Join default channels = Nicht selektiert</li>
+<li>Send welcome email = Nicht selektiert</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="benutzer-und-rolle-für-system-nachrichten-anlegen"></a><a href="#benutzer-und-rolle-für-system-nachrichten-anlegen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Benutzer und Rolle für System-Nachrichten anlegen</h3>
+<ol>
+<li>Rolle anlegen/Rechte festlegen</li>
+</ol>
+<ul>
+<li>Unter <em>&quot;Permissions&quot;</em> über den Button <em>&quot;New Role&quot;</em> die Rolle <em>&quot;system&quot;</em> mit Scope <em>&quot;Global&quot;</em> anlegen.</li>
+<li>Dieser Rolle nun die folgende Rechte zuweisen:
+<ul>
+<li><em>[api-bypass-rate-limit]</em></li>
+<li><em>[create-p]</em></li>
+<li><em>[view-room-administration]</em></li>
+</ul></li>
+</ul>
+<ol start="2">
+<li>Benutzer anlegen</li>
+</ol>
+<ul>
+<li>Unter <em>&quot;Users&quot;</em> einen neuen Benutzer <em>&quot;system&quot;</em> anlegen und die Rollen <em>&quot;user&quot;</em> und <em>&quot;system&quot;</em> zuweisen.</li>
+<li><strong>Weitere Einstellungen des System-Benutzer:</strong>
+<ul>
+<li>Verified = ja</li>
+<li>Require password change = nein</li>
+<li>Join default channels = Nicht selektiert</li>
+<li>Send welcome email = Nicht selektiert</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="bot-user-löschen"></a><a href="#bot-user-löschen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bot-User löschen</h3>
+<p>Unter <em>&quot;Users&quot;</em> muss noch der BOT (Rocket Cat) gelöscht werden.</p>
+<h3><a class="anchor" aria-hidden="true" id="gelesen-status-konfigurieren"></a><a href="#gelesen-status-konfigurieren" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gelesen-Status konfigurieren</h3>
+<p>Damit der Gelesen-Status für Nachrichten korrekt von Rocket.Chat getracked wird muss unter <em>&quot;Administration&quot;</em> → <em>&quot;General</em>&quot; → <em>&quot;Unread Count</em>&quot; folgende Einstellung gesetzt werden: <em>&quot;All Messages</em>&quot;</p>
+<h3><a class="anchor" aria-hidden="true" id="file-upload-konfigurieren"></a><a href="#file-upload-konfigurieren" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File-Upload konfigurieren</h3>
+<p>Für die File-Uploads wird das Filesystem bevorzugt. Der Upload-Ordner kann über ein Volume dann außerhalb des Docker-Containers gehalten werden.
+Dafür muss unter <em>&quot;Administration&quot;</em> → <em>&quot;File Upload&quot;</em> die Konfiguration wie folgt angepasst werden:</p>
+<table>
+<thead>
+<tr><th>Feld</th><th>Wert</th><th>Bemerkung</th></tr>
+</thead>
+<tbody>
+<tr><td>File Uploads Enabled</td><td>True</td><td></td></tr>
+<tr><td>Maximum File Upload Size (in bytes)</td><td>5242880</td><td>5MB</td></tr>
+<tr><td>Accepted Media Types</td><td>image/jpeg,image/png,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</td><td>jpg, png, pdf, docx, xlsx</td></tr>
+<tr><td>Protect Uploaded Files</td><td>True</td><td></td></tr>
+<tr><td>Storage Type</td><td>FileSystem</td><td></td></tr>
+<tr><td>File Uploads Enabled in Direct Messages</td><td>True</td><td></td></tr>
+<tr><td>File System</td><td></td><td></td></tr>
+<tr><td>System Path</td><td>/app/user_uploads</td><td>Dieses Verzeichnis wird auf das Host-System gemounted, damit die hochgeladenen Dateien nicht im Container liegen. Da Rocket.Chat die als eigenen RocketChat-Benutzer mit der UID 99999 ablegt, wird der Besitzer des Verzeichnisses auf dem Host-System auf die UID 99999 gesetzt. Diesen Benutzer gibts es auf dem Linux nicht, aber dadurch können die Rechte für das Verzeichnis eingeschränkt werden. Besitzer: 99999 Gruppe: docker Permissions: 744</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="nur-lokal-cors-für-frontend-entwicklung-aktivieren"></a><a href="#nur-lokal-cors-für-frontend-entwicklung-aktivieren" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nur lokal: CORS für Frontend-Entwicklung aktivieren</h3>
+<p>Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss in Rocket.Chat in der Administration unter dem Punkt <em>&quot;General&quot;</em> → <em>&quot;REST API&quot;</em> die Einstellung <em>&quot;Enable Cors&quot;</em> auf <em>&quot;true&quot;</em> gesetzt werden.</p>
+<h3><a class="anchor" aria-hidden="true" id="api-rate-limiter"></a><a href="#api-rate-limiter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Rate Limiter</h3>
+<p>Unter den Berechtigungen muss für user, technical und systemuser jeweils <em>[api-bypass-rate-limit]</em> angehakt werden. Sowie unter <em>&quot;Rate Limiter&quot;</em> → <em>&quot;API Rate Limiter&quot;</em> dieser für Development/lokal deaktiviert werden und am besten die erlaubten Calls auf 10k+ hochgesetzt werden.</p>
+<p>⚠️Für Produktiv sollte das Rate Limiting nicht deaktiviert werden, bzw. sollte mit den Einstellungen des nginx ausbalanciert sein! ⚠️</p>
+<h2><a class="anchor" aria-hidden="true" id="keycloak"></a><a href="#keycloak" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keycloak</h2>
+<h3><a class="anchor" aria-hidden="true" id="realm"></a><a href="#realm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Realm</h3>
+<p>Es muss der Realm aus dem Projektverzeichnis importiert werden (Verzeichnis im Repo: <em>./Keycloak</em>).</p>
+<p>Vor dem Import der Basis-Einstellungen müssen folgende Anpassungen manuell in der Datei <em>realm-export.json</em> vorgenommen werden:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>redirectUris</td><td>Host mit Wildcard eintragen (z.B. <a href="https://anwendung.de/*">https://anwendung.de/*</a>)</td></tr>
+<tr><td>webOrigins</td><td>Erlaubte Origins eintragen (z.B. <a href="https://anwendung.de">https://anwendung.de</a>)</td></tr>
+<tr><td>&quot;clientId&quot;: &quot;account&quot; {baseUrl}</td><td>Keycloak URL zum Keycloak Account GUI (z.B. /auth/realms/&lt;anwendungs_realm_name&gt;/account)</td></tr>
+<tr><td>&quot;clientId&quot;: &quot;account&quot; {redirectUris}</td><td>Keycloak Redirect URIs zum Keycloak Account GUI (z.B. /auth/realms/&lt;anwendungs_realm_name&gt;/account)</td></tr>
+<tr><td>&quot;clientId&quot;: &quot;security-admin-console&quot; {baseUrl}</td><td>Keycloak URL zum Keycloak Admin GUI (z.B. &quot;/auth/admin/&lt;anwendungs_realm_name&gt;/console/index.html&quot;)</td></tr>
+<tr><td>&quot;clientId&quot;: &quot;security-admin-console&quot; {redirectUris}</td><td>Keycloak Redirect URIs zum Keycloak Admin GUI (z.B. &quot;/auth/admin/&lt;anwendungs_realm_name&gt;/console/index.html&quot;)</td></tr>
+<tr><td>&quot;smtpServer&quot;: {port}</td><td>SMTP Server Port</td></tr>
+<tr><td>&quot;smtpServer&quot;: {host}</td><td>SMTP Server Host</td></tr>
+<tr><td>&quot;smtpServer&quot;: {from}</td><td>SMTP Absender Adresse</td></tr>
+<tr><td>&quot;smtpServer&quot;: {fromDisplayName}</td><td>SMTP Absender Name</td></tr>
+<tr><td>&quot;smtpServer&quot;: {user}</td><td>SMTP Server Benutzer</td></tr>
+<tr><td>&quot;org.keycloak.storage.UserStorageProvider&quot; : &quot;config&quot; : &quot;usersDn&quot;</td><td>Distinguished Names für User (z.B. &quot;ou=users,ou=WebApp,dc=anwendung,dc=de&quot;)</td></tr>
+<tr><td>&quot;org.keycloak.storage.UserStorageProvider&quot; : &quot;config&quot; : &quot;bindDn&quot;</td><td>Distinguished Names für Admin (z.B. &quot;cn=admin,dc=anwendung,dc=de&quot;)</td></tr>
+</tbody>
+</table>
+<p>Um die JSON-Datei zu importieren muss man einen neuen Realm in Keycloak anlegen.
+Dazu öffnet man das DropDownMenü direkt unterhalb des Keycloak-Logos (derzeit ist dort der Master-Realm ausgewählt) und klick auf <em>&quot;Add realm&quot;</em>.
+In der sich daraufhin öffnenden Maske lädt man die JSON Datei hoch.</p>
+<h3><a class="anchor" aria-hidden="true" id="ldap"></a><a href="#ldap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LDAP</h3>
+<p>Im Anschluss muss noch die Verbindung zu LDAP aktualisiert werden, da in dem Realm-Export das Passwort nicht mit exportiert wird.
+Dazu geht man auf <em>&quot;User Federation&quot;</em> und wählt dort <em>&quot;ldap&quot;</em> aus. In den sich daraufhin öffnenden Konfigurationsfeldern aktualisiert man das Feld <em>&quot;Bind Credential&quot;</em> mit dem für den LDAP-Admin gesetzten Passwort (Initial-Passwort: admin).
+Die Funktionstüchtigkeit kann mit <em>&quot;Test authentication&quot;</em> geprüft werden.
+Zum Schluss das ganze noch mit dem <em>&quot;save&quot;</em> Button ganz unten speichern.</p>
+<h3><a class="anchor" aria-hidden="true" id="technischer-benutzer-für-e-mail-prüfung"></a><a href="#technischer-benutzer-für-e-mail-prüfung" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technischer Benutzer für E-Mail-Prüfung</h3>
+<p>Für die Überprüfung auf bereits vergebene E-Mail-Adressen in Keycloak muss ein technischer Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt nur einen Namen aber kein Passwort oder sonstige Daten und Einstellungen.</p>
+<h3><a class="anchor" aria-hidden="true" id="technischer-benutzer-für-registrierung-und-masterkey"></a><a href="#technischer-benutzer-für-registrierung-und-masterkey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technischer Benutzer für Registrierung und Masterkey</h3>
+<p>Für die Registrierung neuer Ratsuchender in Keycloak muss ein technischer Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt einen Namen, ein Passwort und folgende Rollen-Einstellungen:</p>
+<ol>
+<li>Unter <em>&quot;Client Roles&quot;</em> → <em>&quot;realm-management&quot;</em> auswählen und unter <em>&quot;Assigned Roles&quot;</em> sollten folgende Rollen stehen:
+<ul>
+<li>manage-users</li>
+<li>view-realm</li>
+</ul></li>
+<li>Unter <em>&quot;Client Roles&quot;</em> → <em>&quot;account&quot;</em> auswählen und alle unter <em>&quot;Assigned Roles&quot;</em> entfernen</li>
+<li>Zuätzlich muss dem Benutzer noch die Rolle &quot;technical&quot; hinzugefügt werden</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="password-policies"></a><a href="#password-policies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Password policies</h3>
+<p>Die gleichen Password Policies sind auch im UserService implementiert (UserHelper.java).</p>
+<h2><a class="anchor" aria-hidden="true" id="verbindungen-im-nosqlclient-einrichten"></a><a href="#verbindungen-im-nosqlclient-einrichten" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verbindungen im Nosqlclient einrichten</h2>
+<p>Damit man sich mit dem Nosqlclient mit der MongoDB verbinden kann müssen entsprechende Verbindungen eingerichtet werden. Dazu muss der Nosqlclient aufgerufen werden und oben rechts <em>&quot;Connect&quot;</em> und im folgenden Dialog <em>&quot;Create New&quot;</em> ausgewählt werden.</p>
+<p>Folgende Verbindungsdaten müssen für die Rocket.Chat-DB verwendet werden:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Host</th><th>Port</th><th>Database name</th><th>Authentication type</th><th>Username</th><th>Passwort</th><th>Authentication DB</th></tr>
+</thead>
+<tbody>
+<tr><td>Rocket.Chat</td><td>mongodb</td><td>27017</td><td>rocketchat</td><td>Scram-Sha-1</td><td>rocketchat*</td><td>rocketchat*</td><td>rocketchat</td></tr>
+</tbody>
+</table>
+<p>* Es handelt sich hierbei um das initiale Passwort bei der Erstinstallation. Dieses muss ggf. noch angepasst werden.</p>
+<h2><a class="anchor" aria-hidden="true" id="microservices"></a><a href="#microservices" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Microservices</h2>
+<p>Für alle folgenden Microservices muss ein Hosts-Eintrag in der Datei <code>docker-compose.yml</code> erfolgen. Bitte ersetzen Sie die Platzhalter <code>&lt;app_domain&gt;</code> und <code>&lt;internal_server_ip_address&gt;</code> entsprechend mit Ihren Werten bei der jeweiligen Property <code>extra_hosts</code>. Darüber wird sichergestellt, dass die Microservices Verbindungen zu den Services auf dem Server herstellen können.</p>
+<h2><a class="anchor" aria-hidden="true" id="agencyservice"></a><a href="#agencyservice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AgencyService</h2>
+<p>Die Konfiguration des Services auf dem Server erfolgt in der AgencyService.env. Für die lokale Entwicklung muss dafür die entsprechende <em>application-X.properties</em>-Datei angepasst werden.</p>
+<p>Folgende Werte müssen zwingend gesetzt werden:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>SPRING_PROFILES_ACTIVE</td><td><em>local</em> for local development, <em>prod</em> for production system</td></tr>
+<tr><td>SPRING_DATASOURCE_URL</td><td>Connection URL: jdbc:mariadb://<host>:<port>/agencyservice</td></tr>
+<tr><td>SPRING_DATASOURCE_USERNAME</td><td>Username for AgencyService database user</td></tr>
+<tr><td>SPRING_DATASOURCE_PASSWORD</td><td>Password for AgencyService database user</td></tr>
+<tr><td>SPRING_LIQUIBASE_USER</td><td>Username for AgencyService liquibase database user</td></tr>
+<tr><td>SPRING_LIQUIBASE_PASSWORD</td><td>Password for AgencyService liquibase database user</td></tr>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://<host>/auth</td></tr>
+<tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
+<tr><td>KEYCLOAK_PRINCIPAL-ATTRIBUTE</td><td>Keycloak principal attribute: preferred_username</td></tr>
+<tr><td>KEYCLOAK_RESOURCE</td><td>agency-service</td></tr>
+<tr><td>KEYCLOAK_CORS</td><td>false for production system!</td></tr>
+<tr><td>KEYCLOAKSERVICE_ADMIN_CLIENTID</td><td>Keycloak admin client ID</td></tr>
+<tr><td>KEYCLOAKSERVICE_APP_CLIENTID</td><td>Keycloak app client ID</td></tr>
+<tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
+<tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
+<tr><td>[CONSULTING_TYPE_NAME]_WHITE_SPOT_AGENCY_ID</td><td>Define the white spot agency IDs where needed for every consulting type</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="mailservice"></a><a href="#mailservice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MailService</h2>
+<p>Die Konfiguration des Services auf dem Server erfolgt in der MailService.env. Für die lokale Entwicklung muss dafür die entsprechende <em>application-X.properties</em>-Datei angepasst werden.</p>
+<p>Folgende Werte müssen zwingend gesetzt werden:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>APP_IMPRINT_URL</td><td>Imprint URL</td></tr>
+<tr><td>APP_DATAPRIVACY_URL</td><td>Data privacy URL</td></tr>
+<tr><td>SPRING_PROFILES_ACTIVE</td><td><em>local</em> for local development, <em>prod</em> for production system</td></tr>
+<tr><td>SPRING_MAIL_HOST</td><td>SMTP server host</td></tr>
+<tr><td>SPRING_MAIL_PORT</td><td>SMTP server port</td></tr>
+<tr><td>SPRING_MAIL_USERNAME</td><td>SMTP server username</td></tr>
+<tr><td>SPRING_MAIL_PASSWORD</td><td>SMTP server password</td></tr>
+<tr><td>MAIL_SENDER</td><td>Mail sender address</td></tr>
+<tr><td>MAIL_FIX_RECIPIENT</td><td>For testing: enter e-mail address to which every e-mail is send instead of original recipient</td></tr>
+<tr><td>MAIL_ERROR_RECIPIENTS</td><td>e-mail address for mail failures</td></tr>
+<tr><td>MAIL_USESMTP</td><td>true for STMP, false for MS Exchange Server</td></tr>
+<tr><td>MAIL_EXCHANGE_USER</td><td>MS Exchange Server username</td></tr>
+<tr><td>MAIL_EXCHANGE_PASSWORD</td><td>MS Exchange Server password</td></tr>
+<tr><td>MAIL_EXCHANGE_URL</td><td>MS Exchange Server URL</td></tr>
+<tr><td>MAIL_EXCHANGE_VERSION</td><td>MS Exchange Server version (from enum microsoft.exchange.webservices.data.core.enumeration.misc.ExchangeVersion)</td></tr>
+<tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
+<tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="messageservice"></a><a href="#messageservice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MessageService</h2>
+<p>Die Konfiguration des Services auf dem Server erfolgt in der MessageService.env. Für die lokale Entwicklung muss dafür die entsprechende <em>application-X.properties</em>-Datei angepasst werden.</p>
+<p>Folgende Werte müssen zwingend gesetzt werden:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>APP_BASE_URL</td><td>Application host, e.g. <em><a href="https://anwendung.local">https://anwendung.local</a></em></td></tr>
+<tr><td>SPRING_PROFILES_ACTIVE</td><td><em>local</em> for local development, <em>prod</em> for production system</td></tr>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: <em>http://<host>/auth</em></td></tr>
+<tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
+<tr><td>KEYCLOAK_PRINCIPAL-ATTRIBUTE</td><td>Keycloak principal attribute: preferred_username</td></tr>
+<tr><td>KEYCLOAK_RESOURCE</td><td>agency-service</td></tr>
+<tr><td>KEYCLOAK_CORS</td><td>false for production system!</td></tr>
+<tr><td>KEYCLOAKSERVICE_ADMIN_CLIENTID</td><td>Keycloak admin client ID</td></tr>
+<tr><td>KEYCLOAKSERVICE_APP_CLIENTID</td><td>Keycloak app client ID</td></tr>
+<tr><td>ROCKET_CHAT_API_URL</td><td>Rocket.Chat REST API URL, e.q. <em>http://<host>/api/v1</em></td></tr>
+<tr><td>ROCKET_TECHNICAL_USERNAME</td><td>Rocket.Chat technical user username (see <a href="#-technischen-benutzer-und-rolle-anlegen">here</a>)</td></tr>
+<tr><td>ROCKET_SYSTEMUSER_USERNAME</td><td>Rocket.Chat system user username (see <a href="#-benutzer-und-rolle-für-system-nachrichten-anlegen">here</a>)</td></tr>
+<tr><td>ROCKET_SYSTEMUSER_PASSWORD</td><td>Rocket.Chat system user password</td></tr>
+<tr><td>USER_SERVICE_API_URL</td><td>URL to the UserService REST API, e.g. <em>http://<host>/service/users</em></td></tr>
+<tr><td>SERVICE_ENCRYPTION_APPKEY</td><td>Key for message encryption (must match the one defined in the UserService!)</td></tr>
+<tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
+<tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="userservice"></a><a href="#userservice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UserService</h2>
+<p>Die Konfiguration des Services auf dem Server erfolgt in der UserService.env. Für die lokale Entwicklung muss dafür die entsprechende <em>application-X.properties</em>-Datei angepasst werden. Die User-ID des technischen Keycloak Benutzers kann direkt in Keycloak eingesehen werden (Menüpunkt <em>&quot;Users&quot;</em>).
+Die Rocket.Chat User-ID für den Rocket.Chat Systemuser muss direkt in der MongoDB über den NoSqlClient ermittelt werden. Dazu im NoSqlClient an der Rocket.Chat-Datenbank anmelden und folgende Suchabfrage auf die Collection <em>users</em> ausführen:</p>
+<pre><code class="hljs">{<span class="hljs-attr">"username"</span>:<span class="hljs-string">"&lt;GESUCHTER USERNAME&gt;"</span>}
+</code></pre>
+<p>Folgende Werte müssen in der UserService.env zwingend gesetzt werden:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>APP_BASE_URL</td><td>Application host, e.g. <em><a href="https://anwendung.local">https://anwendung.local</a></em></td></tr>
+<tr><td>CONSULTANT_IMPORT_FILENAME</td><td>Path to consultant import file, e.g. <em>import/consultants.csv</em></td></tr>
+<tr><td>CONSULTANT_IMPORT_PROTOCOL_FILENAME</td><td>Path to consultant import log file, e.g. <em>import/consultants-import.txt</em></td></tr>
+<tr><td>ASKER_IMPORT_FILENAME</td><td>Path to asker import file, e.g. <em>import/askers.csv</em></td></tr>
+<tr><td>ASKER_IMPORT_WITHOUTSESSION_FILENAME</td><td>Path to asker without session import file, e.g. <em>import/askers-without-session.csv</em></td></tr>
+<tr><td>ASKER_IMPORT_PROTOCOL_FILENAME</td><td>Path to asker import log file, e.g. <em>import/askers-import.txt</em></td></tr>
+<tr><td>ASKER_IMPORT_WELCOME_MESSAGE_FILENAME</td><td>Path to welcome messages (enquiry response), e.g. <em>import/welcome_consulting_type</em>[ConsultingType].txt_</td></tr>
+<tr><td>ASKER_IMPORT_WELCOME_MESSAGE_FILENAME_REPLACE_VALUE</td><td>Replacement value for welcome message files, e.g. <em>[ConsultingType]</em></td></tr>
+<tr><td>SPRING_PROFILES_ACTIVE</td><td><em>local</em> for local development, <em>prod</em> for production system</td></tr>
+<tr><td>SPRING_DATASOURCE_URL</td><td>Connection URL: jdbc:mariadb://<host>:<port>/agencyservice</td></tr>
+<tr><td>SPRING_DATASOURCE_USERNAME</td><td>Username for AgencyService database user</td></tr>
+<tr><td>SPRING_DATASOURCE_PASSWORD</td><td>Password for AgencyService database user</td></tr>
+<tr><td>SPRING_LIQUIBASE_USER</td><td>Username for AgencyService liquibase database user</td></tr>
+<tr><td>SPRING_LIQUIBASE_PASSWORD</td><td>Password for AgencyService liquibase database user</td></tr>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://<host>/auth</td></tr>
+<tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
+<tr><td>KEYCLOAK_PRINCIPAL-ATTRIBUTE</td><td>Keycloak principal attribute: preferred_username</td></tr>
+<tr><td>KEYCLOAK_RESOURCE</td><td>agency-service</td></tr>
+<tr><td>KEYCLOAK_CORS</td><td>false for production system!</td></tr>
+<tr><td>KEYCLOAKSERVICE_ADMIN_CLIENTID</td><td>Keycloak admin client ID</td></tr>
+<tr><td>KEYCLOAKSERVICE_APP_CLIENTID</td><td>Keycloak app client ID</td></tr>
+<tr><td>KEYCLOAKSERVICE_TECHUSER_ID</td><td>Keycloak technical user ID (see <a href="#-technischer-benutzer-für-e-mail-prüfung">here</a>)</td></tr>
+<tr><td>KEYCLOAKSERVICE_ADMIN_USERNAME</td><td>Keycloak technical user username (see <a href="#-technischer-benutzer-für-registrierung">here</a>)</td></tr>
+<tr><td>KEYCLOAKSERVICE_ADMIN_PASSWORD</td><td>Keycloak technical user password</td></tr>
+<tr><td>ROCKET_CHAT_API_URL</td><td>Rocket.Chat REST API URL, e.q. <em>http://<host>/api/v1</em></td></tr>
+<tr><td>ROCKET_TECHNICAL_USERNAME</td><td>Rocket.Chat technical user username (see <a href="#-technischen-benutzer-und-rolle-anlegen">here</a>)</td></tr>
+<tr><td>ROCKET_TECHNICAL_PASSWORD</td><td>Rocket.Chat technical user password</td></tr>
+<tr><td>ROCKET_SYSTEMUSER_USERNAME</td><td>Rocket.Chat system user username (see <a href="#-benutzer-und-rolle-für-system-nachrichten-anlegen">here</a>)</td></tr>
+<tr><td>ROCKET_SYSTEMUSER_PASSWORD</td><td>Rocket.Chat system user password</td></tr>
+<tr><td>ROCKET_SYSTEMUSER_ID</td><td>Rocket.Chat system user ID</td></tr>
+<tr><td>AGENCY_SERVICE_API_URL</td><td>URL to the AgencyService REST API, e.g. <em>http://<host>/service/agencies</em></td></tr>
+<tr><td>MESSAGE_SERVICE_API_URL</td><td>URL to the MessageService REST API, e.g. <em>http://<host>/service/messages</em></td></tr>
+<tr><td>MAIL_SERVICE_API_MAILS_SEND</td><td>URL to the MailService send mails endpoint, e.g. <em>http://<host>/service/mails/send</em></td></tr>
+<tr><td>SERVICE_ENCRYPTION_APPKEY</td><td>Key for message encryption (must match the one defined in the UserService!)</td></tr>
+<tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
+<tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="restart-aller-services"></a><a href="#restart-aller-services" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Restart aller Services</h2>
+<p>Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch <em>docker-compose restart</em> neugestartet werden.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/backend/first-start"><span class="arrow-prev">← </span><span>First start</span></a><a class="docs-next button" href="/documentation/docs/backend/starting-and-stopping-the-services"><span>Starting and stopping the services</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#rocketchat">Rocket.Chat</a><ul class="toc-headings"><li><a href="#ldap-konfigurieren">LDAP konfigurieren:</a></li><li><a href="#technischen-benutzer-und-rolle-anlegen">Technischen Benutzer und Rolle anlegen</a></li><li><a href="#benutzer-und-rolle-für-system-nachrichten-anlegen">Benutzer und Rolle für System-Nachrichten anlegen</a></li><li><a href="#bot-user-löschen">Bot-User löschen</a></li><li><a href="#gelesen-status-konfigurieren">Gelesen-Status konfigurieren</a></li><li><a href="#file-upload-konfigurieren">File-Upload konfigurieren</a></li><li><a href="#nur-lokal-cors-für-frontend-entwicklung-aktivieren">Nur lokal: CORS für Frontend-Entwicklung aktivieren</a></li><li><a href="#api-rate-limiter">API Rate Limiter</a></li></ul></li><li><a href="#keycloak">Keycloak</a><ul class="toc-headings"><li><a href="#realm">Realm</a></li><li><a href="#ldap">LDAP</a></li><li><a href="#technischer-benutzer-für-e-mail-prüfung">Technischer Benutzer für E-Mail-Prüfung</a></li><li><a href="#technischer-benutzer-für-registrierung-und-masterkey">Technischer Benutzer für Registrierung und Masterkey</a></li><li><a href="#password-policies">Password policies</a></li></ul></li><li><a href="#verbindungen-im-nosqlclient-einrichten">Verbindungen im Nosqlclient einrichten</a></li><li><a href="#microservices">Microservices</a></li><li><a href="#agencyservice">AgencyService</a></li><li><a href="#mailservice">MailService</a></li><li><a href="#messageservice">MessageService</a></li><li><a href="#userservice">UserService</a></li><li><a href="#restart-aller-services">Restart aller Services</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a><a href="/documentation/docs/setup/setup-backend.html">Setting up Backend</a><a href="/documentation/docs/setup/setup-frontend.html">Setting up Frontend</a></div><div><h5>More</h5><a href="https://github.com/CaritasDeutschland">GitHub</a></div></section><section class="copyright">Copyright © 2020 Caritas Deutschland</section></footer></div></body></html>
