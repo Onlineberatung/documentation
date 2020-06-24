@@ -14,7 +14,7 @@ After the installation you can adapt the application to your own needs with the 
 
 > ⚠️Current application limits ⚠️
 > 
-> Please note that currently Kreuzbund consultants can only be in one agency (which has to be of consulting type Kreuzbung).
+> Please note that currently Kreuzbund consultants can only be in one agency (which has to be of consulting type Kreuzbund).
 >
 > There can be only one session per asker at the moment.
 >
