@@ -37,7 +37,7 @@ We use the specification [Conventional Commits](https://www.conventionalcommits.
 
 We recommend using the command line tool [Commitizen](http://commitizen.github.io/cz-cli/) in order to comply with this convention without much effort.
 
-To ensure that all commits are conform to the convention, we trigger the commit message linter [Commitlint](https://github.com/conventional-changelog/commitlint) with the tool [Husky](https://github.com/typicode/husky) on git hook (before each commit).
+To ensure that all commits are conform to the convention, we trigger the commit message linter [Commitlint](https://github.com/conventional-changelog/commitlint) with the tool [Husky](https://github.com/typicode/husky) on the "pre-commit" git hook.
 
 ## Version management
 
