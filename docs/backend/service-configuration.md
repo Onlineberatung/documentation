@@ -188,12 +188,12 @@ Folgende Werte müssen zwingend gesetzt werden:
 | Name | Description |
 | ---- | ----------- |
 | SPRING_PROFILES_ACTIVE | _local_ for local development, _prod_ for production system |
-| SPRING_DATASOURCE_URL | Connection URL: jdbc:mariadb://<host>:<port>/agencyservice |
+| SPRING_DATASOURCE_URL | Connection URL: jdbc:mariadb://\<host\>:\<port\>/agencyservice |
 | SPRING_DATASOURCE_USERNAME | Username for AgencyService database user |
 | SPRING_DATASOURCE_PASSWORD | Password for AgencyService database user |
 | SPRING_LIQUIBASE_USER | Username for AgencyService liquibase database user |
 | SPRING_LIQUIBASE_PASSWORD | Password for AgencyService liquibase database user |
-| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://<host>/auth |
+| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
 | KEYCLOAK_RESOURCE | agency-service |
@@ -238,18 +238,18 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ---- | ----------- |
 | APP_BASE_URL | Application host, e.g. _https://anwendung.local_ |
 | SPRING_PROFILES_ACTIVE | _local_ for local development, _prod_ for production system |
-| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: _http://<host>/auth_ |
+| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: _http://\<host\>/auth_ |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
 | KEYCLOAK_RESOURCE | agency-service |
 | KEYCLOAK_CORS | false for production system! |
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
-| ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://<host>/api/v1_ |
+| ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
 | ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-technischen-benutzer-und-rolle-anlegen)) |
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
-| USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://<host>/service/users_ |
+| USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -275,12 +275,12 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | ASKER_IMPORT_WELCOME_MESSAGE_FILENAME | Path to welcome messages (enquiry response), e.g. _import/welcome_consulting_type_[ConsultingType].txt_ |
 | ASKER_IMPORT_WELCOME_MESSAGE_FILENAME_REPLACE_VALUE | Replacement value for welcome message files, e.g. _[ConsultingType]_ |
 | SPRING_PROFILES_ACTIVE | _local_ for local development, _prod_ for production system |
-| SPRING_DATASOURCE_URL | Connection URL: jdbc:mariadb://<host>:<port>/agencyservice |
+| SPRING_DATASOURCE_URL | Connection URL: jdbc:mariadb://\<host\>:\<port\>/agencyservice |
 | SPRING_DATASOURCE_USERNAME | Username for AgencyService database user |
 | SPRING_DATASOURCE_PASSWORD | Password for AgencyService database user |
 | SPRING_LIQUIBASE_USER | Username for AgencyService liquibase database user |
 | SPRING_LIQUIBASE_PASSWORD | Password for AgencyService liquibase database user |
-| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://<host>/auth |
+| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
 | KEYCLOAK_RESOURCE | agency-service |
@@ -290,15 +290,38 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | KEYCLOAKSERVICE_TECHUSER_ID | Keycloak technical user ID (see [here](#-technischer-benutzer-für-e-mail-prüfung)) |
 | KEYCLOAKSERVICE_ADMIN_USERNAME | Keycloak technical user username (see [here](#-technischer-benutzer-für-registrierung)) |
 | KEYCLOAKSERVICE_ADMIN_PASSWORD | Keycloak technical user password |
-| ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://<host>/api/v1_ |
+| ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
 | ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-technischen-benutzer-und-rolle-anlegen)) |
 | ROCKET_TECHNICAL_PASSWORD | Rocket.Chat technical user password |
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | ROCKET_SYSTEMUSER_ID | Rocket.Chat system user ID |
-| AGENCY_SERVICE_API_URL | URL to the AgencyService REST API, e.g. _http://<host>/service/agencies_ |
-| MESSAGE_SERVICE_API_URL | URL to the MessageService REST API, e.g. _http://<host>/service/messages_ |
-| MAIL_SERVICE_API_MAILS_SEND | URL to the MailService send mails endpoint, e.g. _http://<host>/service/mails/send_ |
+| AGENCY_SERVICE_API_URL | URL to the AgencyService REST API, e.g. _http://\<host\>/service/agencies_ |
+| MESSAGE_SERVICE_API_URL | URL to the MessageService REST API, e.g. _http://\<host\>/service/messages_ |
+| MAIL_SERVICE_API_MAILS_SEND | URL to the MailService send mails endpoint, e.g. _http://\<host\>/service/mails/send_ |
+| SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
+| CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
+| CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+
+## UploadService
+Die Konfiguration des Services auf dem Server erfolgt in der UploadService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden. 
+
+Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
+
+| Name | Description |
+| ---- | ----------- |
+| APP_BASE_URL | Application host, e.g. _https://anwendung.local_ |
+| SPRING_PROFILES_ACTIVE | _local_ for local development, _prod_ for production system |
+| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
+| KEYCLOAK_REALM | Keycloak realm name |
+| KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
+| KEYCLOAK_CORS | false for production system! |
+| KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
+| KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
+| ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
+| ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
+| ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
+| USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |

@@ -21,3 +21,4 @@ The REST API documentation of the single services can be found under the followi
 * MailService: https://`<HOST>`/service/mails/docs/swagger-ui.html
 * MessageService: https://`<HOST>`/service/messages/docs/swagger-ui.html
 * UserService: https://`<HOST>`/service/users/docs/swagger-ui.html
+* UploadService: https://`<HOST>`/service/uploads/docs/swagger-ui.html
