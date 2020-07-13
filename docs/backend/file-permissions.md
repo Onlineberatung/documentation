@@ -45,6 +45,7 @@ drwx------ 2 root root 4096 Mar  1 10:59 Keycloak
 drwx------ 3 root root 4096 Mar  1 11:48 Rocket.Chat
 drwx------ 2 root root 4096 Mar  1 11:48 Nosqlclient
 drwx------ 3 root root 4096 Mar  1 14:20 MessageService
+drwx------ 3 root root 4096 Mar  1 14:20 UploadService
 
 _<ProjectRoot>_/Adminer:
 -rw------- 1 root root 32 Feb 14 15:01 Adminer.env
@@ -119,6 +120,11 @@ _<ProjectRoot>_/Nosqlclient:
 _<ProjectRoot>_/MessageService:
 drwx------ 2 root root 4096 Mar  1 08:12 log
 -rw------- 1 root root  271 Mar  1 14:20 MessageService.env
+
+_<ProjectRoot>_/UploadService:
+-rw------- 1 root root  587 Feb 28 10:58 UploadService.env
+drwx------ 2 root root 4096 Feb 28 13:14 log
+
 ```
 
 ## Live-Deploy/Dev/Staging system
@@ -143,6 +149,7 @@ drwxrwx--- 3 root docker 4096 Feb 27 10:38 MessageService
 drwxrwx--- 6 root docker 4096 Feb 27 10:40 nginx
 drwxrwx--- 3 root docker 4096 Feb 27 10:42 UserService
 drwxrwx--- 3 root docker 4096 Feb 27 10:44 MailService
+drwxrwx--- 3 root docker 4096 Feb 27 10:44 UploadService
 
 _<ProjectRoot>_/frontend:
 drwxrwx--- 2 root docker 4096 Jan 18 15:18 log
@@ -225,4 +232,9 @@ drwxrwx--- 2 root docker 4096 Mar  1 11:34 log
 _<ProjectRoot>_/MailService:
 drwxrwx--- 2 root docker 4096 Feb 26 10:55 log
 -rw-rw---- 1 root docker  561 Feb 27 10:37 MailService.env
+
+_<ProjectRoot>_/UploadService:
+-rw-rw---- 1 root docker  289 Feb 18 14:10 UploadService.env
+drwxrwx--- 2 root docker 4096 Mar  1 08:32 log
+
 ```
