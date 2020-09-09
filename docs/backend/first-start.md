@@ -114,10 +114,6 @@ Initiale Admin-Benutzerdaten stehen in der mongoDB/mongoDB.env (ADMIN_USER/ADMIN
 
 Die oben gemachten Änderungen an der Zeitzonenkonfiguration zurücksetzen.
 
-## Restart aller Services
-
-Nun sollten alle Services durch _docker-compose restart_ neugestartet werden.
-
 ## Configuration
 
 Anschließend sollten die [Services konfiguriert](../backend/service-configuration.md) werden.
