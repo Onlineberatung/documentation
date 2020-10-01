@@ -26,7 +26,7 @@ The following services or third party applications do have whitelist restriction
 - UploadService (`./nginx/conf/locations/uploadservice.conf`)
 - UserService (`./nginx/conf/locations/userservice.conf`)
 
-These define that only paths needed by the client are allowed for external access. All other paths can only be accessed by IP adresses listed in `./nginx/conf/ip-restrictions.conf`.
+These define that only paths needed by the client are allowed for external access. All other paths can only be accessed by IP addresses listed in `./nginx/conf/ip-restrictions.conf`.
 
 ## Logrotate configuration
 
