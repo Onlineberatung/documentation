@@ -328,13 +328,13 @@ Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 
 ## LiveService
 Die Konfiguration des Services auf dem Server erfolgt in der LiveService.env. Für die lokale
- Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden. 
+Entwicklung muss die application.properties-Datei angepasst werden. 
 
 Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 
 | Name | Description |
 | ---- | ----------- |
-| SPRING_MAIN_ALLOW-BEAN-DEFINITION-OVERRIDING=true | Needed for using keycloak security session bean_ |
+| SPRING_MAIN_ALLOW-BEAN-DEFINITION-OVERRIDING=true | Needed for using keycloak security session bean |
 | KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_RESOURCE | Keycloak resource name |
