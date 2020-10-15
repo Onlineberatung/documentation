@@ -326,5 +326,20 @@ Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
+## LiveService
+Die Konfiguration des Services auf dem Server erfolgt in der LiveService.env. Für die lokale
+Entwicklung muss die application.properties-Datei angepasst werden. 
+
+Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
+
+| Name | Description |
+| ---- | ----------- |
+| SPRING_MAIN_ALLOW-BEAN-DEFINITION-OVERRIDING=true | Needed for using keycloak security session bean |
+| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
+| KEYCLOAK_REALM | Keycloak realm name |
+| KEYCLOAK_RESOURCE | Keycloak resource name |
+| APP_BASE_URL | Client base URL used for cors restriction: http://\<host\>|
+
+
 ## Restart aller Services
 Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.

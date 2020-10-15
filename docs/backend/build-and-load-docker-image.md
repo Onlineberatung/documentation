@@ -86,3 +86,20 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 
 **Import**
 `docker load -i uploadservice.tar`
+
+## LiveService
+### Docker-Image lokal bauen
+Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
+
+`build-docker.cmd`
+
+Das Image wird mit dem Tag `development` in der lokale Docker-Registry abgelegt und kann lokal für die Entwicklung verwendet werden.
+
+### Docker-Image übertragen
+Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertragen können folgende Befehle verwendet werden:
+
+**Export**
+`docker save -o liveservice.tar cob/liveservice:development`
+
+**Import**
+`docker load -i liveservice.tar`

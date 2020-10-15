@@ -16,11 +16,11 @@ Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann
 Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. JFrog Artifactory) bereitgestellt werden.
 Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung am Artifactory erfolgt:
 
-``docker login <artifactory-url>``
+``docker login docker.pkg.github.com``
 
 Unter Windows in der Git-Bash:
 
-``winpty docker login <artifactory-url>``
+``winpty docker login docker.pkg.github.com``
 
 Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
 
@@ -31,12 +31,13 @@ Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige
 In der Datei `.env` müssen die Versionen bzw. Tags für die eigenen Microservices angegeben werden, z.B.
 
 ```
-USER_SERVICE_VERSION=master-19
-FRONTEND_VERSION=develop-39
-AGENCY_SERVICE_VERSION=master-7
-MESSAGE_SERVICE_VERSION=master-15
-UPLOAD_SERVICE_VERSION=master-1
-MAIL_SERVICE_VERSION=master-12
+USER_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+FRONTEND_VERSION=dockerimage.v.7-release-2020-10-13
+AGENCY_SERVICE_VERSION=dockerimage.v.3
+MESSAGE_SERVICE_VERSION=dockerimage.v.3-release-2020-10-13
+MAIL_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+UPLOAD_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+LIVE_SERVICE_VERSION=dockerImage.v.1
 ```
 
 ### Dateiberechtigungen
