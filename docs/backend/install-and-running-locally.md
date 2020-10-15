@@ -20,11 +20,11 @@ Der lokale Hostname (z.B. _**onlineberatung.local**_) muss auf die eigene IP-Adr
 Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. JFrog Artifactory) bereitgestellt werden. Sollte kein solcher Dienst zur Verfügung stehen, können die Docker Images auch [lokal gebaut](../backend/build-and-load-docker-image.md) werden.
 Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung am Artifactory erfolgt:
 
-`docker login <artifactory-url>`
+`docker login docker.pkg.github.com`
 
 Unter Windows in der Git-Bash:
 
-`winpty docker login <artifactory-url>`
+`winpty docker login docker.pkg.github.com`
 
 Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
 
@@ -73,12 +73,13 @@ Beispielhaft wird die Konfiguration in Eclipse im Folgenden beschrieben:
 In der Datei `.env` müssen die Versionen bzw. Tags für die eigenen Microservices angegeben werden, z.B.
 
 ```
-USER_SERVICE_VERSION=master-19
-FRONTEND_VERSION=develop-39
-AGENCY_SERVICE_VERSION=master-7
-MESSAGE_SERVICE_VERSION=master-15
-UPLOAD_SERVICE_VERSION=master-1
-MAIL_SERVICE_VERSION=master-12
+USER_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+FRONTEND_VERSION=dockerimage.v.7-release-2020-10-13
+AGENCY_SERVICE_VERSION=dockerimage.v.3
+MESSAGE_SERVICE_VERSION=dockerimage.v.3-release-2020-10-13
+MAIL_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+UPLOAD_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+LIVE_SERVICE_VERSION=dockerImage.v.1
 ```
 
 Sollte keine Docker Registry verfügbar sein müssen die Services zuerst [lokal gebaut](../backend/build-and-load-docker-image.md) werden und anschließend in der `docker-compose.yml` hinterlegt werden, z.B.
