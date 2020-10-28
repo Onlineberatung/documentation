@@ -250,6 +250,7 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
+| USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -299,6 +300,7 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | AGENCY_SERVICE_API_URL | URL to the AgencyService REST API, e.g. _http://\<host\>/service/agencies_ |
 | MESSAGE_SERVICE_API_URL | URL to the MessageService REST API, e.g. _http://\<host\>/service/messages_ |
 | MAIL_SERVICE_API_MAILS_SEND | URL to the MailService send mails endpoint, e.g. _http://\<host\>/service/mails/send_ |
+| LIVE_SERVICE_API_URL | URL to the LiveService REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -322,6 +324,7 @@ Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
+| USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
