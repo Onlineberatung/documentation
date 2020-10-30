@@ -238,6 +238,11 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ---- | ----------- |
 | APP_BASE_URL | Application host, e.g. _https://anwendung.local_ |
 | SPRING_PROFILES_ACTIVE | _local_ for local development, _prod_ for production system |
+| SPRING_DATASOURCE_URL | Connection URL: jdbc:mariadb://\<host\>:\<port\>/messageservice |
+| SPRING_DATASOURCE_USERNAME | Username for MessageService database user |
+| SPRING_DATASOURCE_PASSWORD | Password for MessageService database user |
+| SPRING_LIQUIBASE_USER | Username for MessageService liquibase database user |
+| SPRING_LIQUIBASE_PASSWORD | Password for MessageService liquibase database user |
 | KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: _http://\<host\>/auth_ |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
