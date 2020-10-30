@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          echo "${{ secrets.GH_PACKAGE_RELEASE_TOKEN }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.GH_PAGES_PUBLISH_TOKEN }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           cat <<EOT >> ~/.ssh/config
           Host github.com
@@ -45,10 +45,10 @@ jobs:
           EOT  
       - name: Release to GitHub Pages 
         env:
+          USE_SSH: true
           GIT_USER: caritasdeutschland        
         run: |
           git config --global user.email "actions@gihub.com"
           git config --global user.name "gh-actions"
           cd website
-          npm install
-          yarn deploy
+          npx docusaurus deploy
