@@ -1,0 +1,29 @@
+name: Publish documentation
+
+on:
+  push:
+    branches: [ gh-pages ]
+
+jobs:
+  gh-release:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Release to GitHub Pages
+        env:
+          GIT_USER: ${{ secrets.GH_PACKAGE_RELEASE_USER }}
+        run: |
+          git config --global user.email "actions@gihub.com"
+          git config --global user.name "gh-actions"
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
+          npx docusaurus deploy
