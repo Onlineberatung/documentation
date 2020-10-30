@@ -238,11 +238,11 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ---- | ----------- |
 | APP_BASE_URL | Application host, e.g. _https://anwendung.local_ |
 | SPRING_PROFILES_ACTIVE | _local_ for local development, _prod_ for production system |
-| SPRING_DATASOURCE_URL | Connection URL: jdbc:mariadb://\<host\>:\<port\>/messageservice |
-| SPRING_DATASOURCE_USERNAME | Username for MessageService database user |
-| SPRING_DATASOURCE_PASSWORD | Password for MessageService database user |
-| SPRING_LIQUIBASE_USER | Username for MessageService liquibase database user |
-| SPRING_LIQUIBASE_PASSWORD | Password for MessageService liquibase database user |
+| SPRING_DATASOURCE_URL **`!upcoming with release 2020-11-24`** | Connection URL: jdbc:mariadb://\<host\>:\<port\>/messageservice |
+| SPRING_DATASOURCE_USERNAME **`!upcoming with release 2020-11-24`** | Username for MessageService database user |
+| SPRING_DATASOURCE_PASSWORD **`!upcoming with release 2020-11-24`** | Password for MessageService database user |
+| SPRING_LIQUIBASE_USER **`!upcoming with release 2020-11-24`** | Username for MessageService liquibase database user |
+| SPRING_LIQUIBASE_PASSWORD **`!upcoming with release 2020-11-24`** | Password for MessageService liquibase database user |
 | KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: _http://\<host\>/auth_ |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
@@ -334,7 +334,9 @@ Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
-## LiveService
+## LiveService 
+**`!upcoming with release 2020-11-24`**
+
 Die Konfiguration des Services auf dem Server erfolgt in der LiveService.env. Für die lokale
 Entwicklung muss die application.properties-Datei angepasst werden. 
 
