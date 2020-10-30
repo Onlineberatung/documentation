@@ -44,12 +44,9 @@ jobs:
           IdentityFile ~/.ssh/id_rsa
           EOT  
       - name: Release to GitHub Pages
-        env:
-          USE_SSH: true
-          GIT_USER: ${{ secrets.GH_PACKAGE_RELEASE_USER }}
         run: |
           git config --global user.email "actions@gihub.com"
           git config --global user.name "gh-actions"
           cd website
           npm install
-          npm run publish-gh-pages
+          GIT_USER=${{ secrets.GH_PACKAGE_RELEASE_USER }} CURRENT_BRANCH=master npm run publish-gh-pages
