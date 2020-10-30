@@ -51,4 +51,4 @@ jobs:
           git config --global user.name "gh-actions"
           cd website
           npm install
-          npx docusaurus
+          yarn deploy
