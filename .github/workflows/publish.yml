@@ -51,5 +51,5 @@ jobs:
           git config --global user.email "actions@gihub.com"
           git config --global user.name "gh-actions"
           cd website
-          npm run build
+          npm install
           npm run publish-gh-pages
