@@ -44,6 +44,9 @@ jobs:
           IdentityFile ~/.ssh/id_rsa
           EOT  
       - name: Release to GitHub Pages
+        env:
+          GIT_PASSWORD: ${{ secrets.GH_PACKAGE_RELEASE_TOKEN }}
+          GIT_USER: ${{ secrets.GH_PACKAGE_RELEASE_USER }}
         run: |
           git config --global user.email "actions@gihub.com"
           git config --global user.name "gh-actions"
