@@ -45,7 +45,7 @@ jobs:
           EOT  
       - name: Release to GitHub Pages 
         env:
-          GIT_USER: ${{ secrets.GH_PACKAGE_RELEASE_USER }}         
+          GIT_USER: caritasdeutschland        
         run: |
           git config --global user.email "actions@gihub.com"
           git config --global user.name "gh-actions"
