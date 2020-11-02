@@ -38,6 +38,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           echo "${{ secrets.GH_VI_SUDO_SSH }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          cat <<EOT >> ~/.ssh/config
           Host github.com
           HostName github.com
           IdentityFile ~/.ssh/id_rsa
@@ -50,6 +51,11 @@ jobs:
           git config --global user.email "actions@gihub.com"
           git config --global user.name "gh-actions"
           cd website
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
           npm i
-          npm run build
-          npm run publish-gh-pages
+          fi
+          npx docusaurus deploy
