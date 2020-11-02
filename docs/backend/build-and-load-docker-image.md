@@ -88,6 +88,7 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 `docker load -i uploadservice.tar`
 
 ## LiveService
+**`!upcoming with release 2020-11-24`**
 ### Docker-Image lokal bauen
 Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
 
