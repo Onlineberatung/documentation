@@ -57,11 +57,22 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">NGINX configuration</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="app-domain"></a><a href="#app-domain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App domain</h2>
 <p>In several files of the nginx configuration is a placeholder for the app domain. Please replace the placeholde <code>&lt;app_domain&gt;</code> with your domain name.</p>
 <h2><a class="anchor" aria-hidden="true" id="ip-restrictions"></a><a href="#ip-restrictions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IP restrictions</h2>
-<p>Some critical application parts (e.g. Keycloak) should only be accessible from authorized organizations and should only be reachable from specific ip addresses.</p>
+<p>Some critical application parts (e.g. Keycloak) should only be accessible from authorized organizations and should only be reachable from specific IP addresses.</p>
 <p>A whitelist with ip addresses have to be inserted in these files:</p>
 <p><code>./nginx/conf/ip-restrictions.conf</code> <br>
 <code>./nginx/conf/nginx.conf</code></p>
 <p><strong>These whitelists have to contain also the ip address ranges of the docker network and the internal server ip address.</strong></p>
+<p>The following services or third party applications do have whitelist restrictions:</p>
+<ul>
+<li>AgencyService (<code>./nginx/conf/locations/agencyservice.conf</code>)</li>
+<li>Keycloak (<code>./nginx/conf/locations/keycloak.conf</code>)</li>
+<li>MessageService (<code>./nginx/conf/locations/messageservice.conf</code>)</li>
+<li>Rocket.Chat (<code>./nginx/conf/locations/rocketchat.conf</code>)</li>
+<li>UploadService (<code>./nginx/conf/locations/uploadservice.conf</code>)</li>
+<li>UserService (<code>./nginx/conf/locations/userservice.conf</code>)</li>
+<li>LiveService (<code>./nginx/conf/locations/liveservice.conf</code>)</li>
+</ul>
+<p>These define that only paths needed by the client are allowed for external access. All other paths can only be accessed by IP addresses listed in <code>./nginx/conf/ip-restrictions.conf</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="logrotate-configuration"></a><a href="#logrotate-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logrotate configuration</h2>
 <p>The configuration file nginx-logroate for lograte is placed in the hosts filesystem and mounted into the docker container.</p>
 <p>The permissions for the configuration file have to be 640 (owner root, no permission for the world). Otherwise lograte will skip the execution.</p>

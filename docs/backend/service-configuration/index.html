@@ -260,12 +260,12 @@ Zum Schluss das ganze noch mit dem <em>&quot;save&quot;</em> Button ganz unten s
 </thead>
 <tbody>
 <tr><td>SPRING_PROFILES_ACTIVE</td><td><em>local</em> for local development, <em>prod</em> for production system</td></tr>
-<tr><td>SPRING_DATASOURCE_URL</td><td>Connection URL: jdbc:mariadb://<host>:<port>/agencyservice</td></tr>
+<tr><td>SPRING_DATASOURCE_URL</td><td>Connection URL: jdbc:mariadb://&lt;host&gt;:&lt;port&gt;/agencyservice</td></tr>
 <tr><td>SPRING_DATASOURCE_USERNAME</td><td>Username for AgencyService database user</td></tr>
 <tr><td>SPRING_DATASOURCE_PASSWORD</td><td>Password for AgencyService database user</td></tr>
 <tr><td>SPRING_LIQUIBASE_USER</td><td>Username for AgencyService liquibase database user</td></tr>
 <tr><td>SPRING_LIQUIBASE_PASSWORD</td><td>Password for AgencyService liquibase database user</td></tr>
-<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://<host>/auth</td></tr>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://&lt;host&gt;/auth</td></tr>
 <tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
 <tr><td>KEYCLOAK_PRINCIPAL-ATTRIBUTE</td><td>Keycloak principal attribute: preferred_username</td></tr>
 <tr><td>KEYCLOAK_RESOURCE</td><td>agency-service</td></tr>
@@ -314,18 +314,24 @@ Zum Schluss das ganze noch mit dem <em>&quot;save&quot;</em> Button ganz unten s
 <tbody>
 <tr><td>APP_BASE_URL</td><td>Application host, e.g. <em><a href="https://anwendung.local">https://anwendung.local</a></em></td></tr>
 <tr><td>SPRING_PROFILES_ACTIVE</td><td><em>local</em> for local development, <em>prod</em> for production system</td></tr>
-<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: <em>http://<host>/auth</em></td></tr>
+<tr><td>SPRING_DATASOURCE_URL</td><td>Connection URL: jdbc:mariadb://&lt;host&gt;:&lt;port&gt;/messageservice</td></tr>
+<tr><td>SPRING_DATASOURCE_USERNAME</td><td>Username for MessageService database user</td></tr>
+<tr><td>SPRING_DATASOURCE_PASSWORD</td><td>Password for MessageService database user</td></tr>
+<tr><td>SPRING_LIQUIBASE_USER</td><td>Username for MessageService liquibase database user</td></tr>
+<tr><td>SPRING_LIQUIBASE_PASSWORD</td><td>Password for MessageService liquibase database user</td></tr>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: <em>http://&lt;host&gt;/auth</em></td></tr>
 <tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
 <tr><td>KEYCLOAK_PRINCIPAL-ATTRIBUTE</td><td>Keycloak principal attribute: preferred_username</td></tr>
 <tr><td>KEYCLOAK_RESOURCE</td><td>agency-service</td></tr>
 <tr><td>KEYCLOAK_CORS</td><td>false for production system!</td></tr>
 <tr><td>KEYCLOAKSERVICE_ADMIN_CLIENTID</td><td>Keycloak admin client ID</td></tr>
 <tr><td>KEYCLOAKSERVICE_APP_CLIENTID</td><td>Keycloak app client ID</td></tr>
-<tr><td>ROCKET_CHAT_API_URL</td><td>Rocket.Chat REST API URL, e.q. <em>http://<host>/api/v1</em></td></tr>
+<tr><td>ROCKET_CHAT_API_URL</td><td>Rocket.Chat REST API URL, e.q. <em>http://&lt;host&gt;/api/v1</em></td></tr>
 <tr><td>ROCKET_TECHNICAL_USERNAME</td><td>Rocket.Chat technical user username (see <a href="#-technischen-benutzer-und-rolle-anlegen">here</a>)</td></tr>
 <tr><td>ROCKET_SYSTEMUSER_USERNAME</td><td>Rocket.Chat system user username (see <a href="#-benutzer-und-rolle-für-system-nachrichten-anlegen">here</a>)</td></tr>
 <tr><td>ROCKET_SYSTEMUSER_PASSWORD</td><td>Rocket.Chat system user password</td></tr>
-<tr><td>USER_SERVICE_API_URL</td><td>URL to the UserService REST API, e.g. <em>http://<host>/service/users</em></td></tr>
+<tr><td>USER_SERVICE_API_URL</td><td>URL to the UserService REST API, e.g. <em>http://&lt;host&gt;/service/users</em></td></tr>
+<tr><td>USER_SERVICE_API_LIVEPROXY_URL</td><td>URL to the UserService live proxy REST API, e.g. <em>http://&lt;host&gt;</em></td></tr>
 <tr><td>SERVICE_ENCRYPTION_APPKEY</td><td>Key for message encryption (must match the one defined in the UserService!)</td></tr>
 <tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
 <tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
@@ -351,12 +357,12 @@ Die Rocket.Chat User-ID für den Rocket.Chat Systemuser muss direkt in der Mongo
 <tr><td>ASKER_IMPORT_WELCOME_MESSAGE_FILENAME</td><td>Path to welcome messages (enquiry response), e.g. <em>import/welcome_consulting_type</em>[ConsultingType].txt_</td></tr>
 <tr><td>ASKER_IMPORT_WELCOME_MESSAGE_FILENAME_REPLACE_VALUE</td><td>Replacement value for welcome message files, e.g. <em>[ConsultingType]</em></td></tr>
 <tr><td>SPRING_PROFILES_ACTIVE</td><td><em>local</em> for local development, <em>prod</em> for production system</td></tr>
-<tr><td>SPRING_DATASOURCE_URL</td><td>Connection URL: jdbc:mariadb://<host>:<port>/agencyservice</td></tr>
+<tr><td>SPRING_DATASOURCE_URL</td><td>Connection URL: jdbc:mariadb://&lt;host&gt;:&lt;port&gt;/agencyservice</td></tr>
 <tr><td>SPRING_DATASOURCE_USERNAME</td><td>Username for AgencyService database user</td></tr>
 <tr><td>SPRING_DATASOURCE_PASSWORD</td><td>Password for AgencyService database user</td></tr>
 <tr><td>SPRING_LIQUIBASE_USER</td><td>Username for AgencyService liquibase database user</td></tr>
 <tr><td>SPRING_LIQUIBASE_PASSWORD</td><td>Password for AgencyService liquibase database user</td></tr>
-<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://<host>/auth</td></tr>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://&lt;host&gt;/auth</td></tr>
 <tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
 <tr><td>KEYCLOAK_PRINCIPAL-ATTRIBUTE</td><td>Keycloak principal attribute: preferred_username</td></tr>
 <tr><td>KEYCLOAK_RESOURCE</td><td>agency-service</td></tr>
@@ -366,20 +372,63 @@ Die Rocket.Chat User-ID für den Rocket.Chat Systemuser muss direkt in der Mongo
 <tr><td>KEYCLOAKSERVICE_TECHUSER_ID</td><td>Keycloak technical user ID (see <a href="#-technischer-benutzer-für-e-mail-prüfung">here</a>)</td></tr>
 <tr><td>KEYCLOAKSERVICE_ADMIN_USERNAME</td><td>Keycloak technical user username (see <a href="#-technischer-benutzer-für-registrierung">here</a>)</td></tr>
 <tr><td>KEYCLOAKSERVICE_ADMIN_PASSWORD</td><td>Keycloak technical user password</td></tr>
-<tr><td>ROCKET_CHAT_API_URL</td><td>Rocket.Chat REST API URL, e.q. <em>http://<host>/api/v1</em></td></tr>
+<tr><td>ROCKET_CHAT_API_URL</td><td>Rocket.Chat REST API URL, e.q. <em>http://&lt;host&gt;/api/v1</em></td></tr>
 <tr><td>ROCKET_TECHNICAL_USERNAME</td><td>Rocket.Chat technical user username (see <a href="#-technischen-benutzer-und-rolle-anlegen">here</a>)</td></tr>
 <tr><td>ROCKET_TECHNICAL_PASSWORD</td><td>Rocket.Chat technical user password</td></tr>
 <tr><td>ROCKET_SYSTEMUSER_USERNAME</td><td>Rocket.Chat system user username (see <a href="#-benutzer-und-rolle-für-system-nachrichten-anlegen">here</a>)</td></tr>
 <tr><td>ROCKET_SYSTEMUSER_PASSWORD</td><td>Rocket.Chat system user password</td></tr>
 <tr><td>ROCKET_SYSTEMUSER_ID</td><td>Rocket.Chat system user ID</td></tr>
-<tr><td>AGENCY_SERVICE_API_URL</td><td>URL to the AgencyService REST API, e.g. <em>http://<host>/service/agencies</em></td></tr>
-<tr><td>MESSAGE_SERVICE_API_URL</td><td>URL to the MessageService REST API, e.g. <em>http://<host>/service/messages</em></td></tr>
-<tr><td>MAIL_SERVICE_API_MAILS_SEND</td><td>URL to the MailService send mails endpoint, e.g. <em>http://<host>/service/mails/send</em></td></tr>
+<tr><td>AGENCY_SERVICE_API_URL</td><td>URL to the AgencyService REST API, e.g. <em>http://&lt;host&gt;/service/agencies</em></td></tr>
+<tr><td>MESSAGE_SERVICE_API_URL</td><td>URL to the MessageService REST API, e.g. <em>http://&lt;host&gt;/service/messages</em></td></tr>
+<tr><td>MAIL_SERVICE_API_MAILS_SEND</td><td>URL to the MailService send mails endpoint, e.g. <em>http://&lt;host&gt;/service/mails/send</em></td></tr>
+<tr><td>LIVE_SERVICE_API_URL</td><td>URL to the LiveService REST API, e.g. <em>http://&lt;host&gt;</em></td></tr>
 <tr><td>SERVICE_ENCRYPTION_APPKEY</td><td>Key for message encryption (must match the one defined in the UserService!)</td></tr>
 <tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
 <tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
 </tbody>
 </table>
+<h2><a class="anchor" aria-hidden="true" id="uploadservice"></a><a href="#uploadservice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UploadService</h2>
+<p>Die Konfiguration des Services auf dem Server erfolgt in der UploadService.env. Für die lokale Entwicklung muss dafür die entsprechende <em>application-X.properties</em>-Datei angepasst werden.</p>
+<p>Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>APP_BASE_URL</td><td>Application host, e.g. <em><a href="https://anwendung.local">https://anwendung.local</a></em></td></tr>
+<tr><td>SPRING_PROFILES_ACTIVE</td><td><em>local</em> for local development, <em>prod</em> for production system</td></tr>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://&lt;host&gt;/auth</td></tr>
+<tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
+<tr><td>KEYCLOAK_PRINCIPAL-ATTRIBUTE</td><td>Keycloak principal attribute: preferred_username</td></tr>
+<tr><td>KEYCLOAK_CORS</td><td>false for production system!</td></tr>
+<tr><td>KEYCLOAKSERVICE_ADMIN_CLIENTID</td><td>Keycloak admin client ID</td></tr>
+<tr><td>KEYCLOAKSERVICE_APP_CLIENTID</td><td>Keycloak app client ID</td></tr>
+<tr><td>ROCKET_CHAT_API_URL</td><td>Rocket.Chat REST API URL, e.q. <em>http://&lt;host&gt;/api/v1</em></td></tr>
+<tr><td>ROCKET_SYSTEMUSER_USERNAME</td><td>Rocket.Chat system user username (see <a href="#-benutzer-und-rolle-für-system-nachrichten-anlegen">here</a>)</td></tr>
+<tr><td>ROCKET_SYSTEMUSER_PASSWORD</td><td>Rocket.Chat system user password</td></tr>
+<tr><td>USER_SERVICE_API_URL</td><td>URL to the UserService REST API, e.g. <em>http://&lt;host&gt;/service/users</em></td></tr>
+<tr><td>USER_SERVICE_API_LIVEPROXY_URL</td><td>URL to the UserService live proxy REST API, e.g. <em>http://&lt;host&gt;</em></td></tr>
+<tr><td>SERVICE_ENCRYPTION_APPKEY</td><td>Key for message encryption (must match the one defined in the UserService!)</td></tr>
+<tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
+<tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="liveservice"></a><a href="#liveservice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LiveService</h2>
+<p>Die Konfiguration des Services auf dem Server erfolgt in der LiveService.env. Für die lokale
+Entwicklung muss die application.properties-Datei angepasst werden.</p>
+<p>Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>SPRING_MAIN_ALLOW-BEAN-DEFINITION-OVERRIDING=true</td><td>Needed for using keycloak security session bean</td></tr>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://&lt;host&gt;/auth</td></tr>
+<tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
+<tr><td>KEYCLOAK_RESOURCE</td><td>Keycloak resource name</td></tr>
+<tr><td>APP_BASE_URL</td><td>Client base URL used for cors restriction: http://&lt;host&gt;</td></tr>
+</tbody>
+</table>
 <h2><a class="anchor" aria-hidden="true" id="restart-aller-services"></a><a href="#restart-aller-services" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Restart aller Services</h2>
 <p>Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch <em>docker-compose restart</em> neugestartet werden.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/backend/first-start"><span class="arrow-prev">← </span><span>First start</span></a><a class="docs-next button" href="/documentation/docs/backend/starting-and-stopping-the-services"><span>Starting and stopping the services</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#rocketchat">Rocket.Chat</a><ul class="toc-headings"><li><a href="#ldap-konfigurieren">LDAP konfigurieren:</a></li><li><a href="#technischen-benutzer-und-rolle-anlegen">Technischen Benutzer und Rolle anlegen</a></li><li><a href="#benutzer-und-rolle-für-system-nachrichten-anlegen">Benutzer und Rolle für System-Nachrichten anlegen</a></li><li><a href="#bot-user-löschen">Bot-User löschen</a></li><li><a href="#gelesen-status-konfigurieren">Gelesen-Status konfigurieren</a></li><li><a href="#file-upload-konfigurieren">File-Upload konfigurieren</a></li><li><a href="#nur-lokal-cors-für-frontend-entwicklung-aktivieren">Nur lokal: CORS für Frontend-Entwicklung aktivieren</a></li><li><a href="#api-rate-limiter">API Rate Limiter</a></li></ul></li><li><a href="#keycloak">Keycloak</a><ul class="toc-headings"><li><a href="#realm">Realm</a></li><li><a href="#ldap">LDAP</a></li><li><a href="#technischer-benutzer-für-e-mail-prüfung">Technischer Benutzer für E-Mail-Prüfung</a></li><li><a href="#technischer-benutzer-für-registrierung-und-masterkey">Technischer Benutzer für Registrierung und Masterkey</a></li><li><a href="#password-policies">Password policies</a></li></ul></li><li><a href="#verbindungen-im-nosqlclient-einrichten">Verbindungen im Nosqlclient einrichten</a></li><li><a href="#microservices">Microservices</a></li><li><a href="#agencyservice">AgencyService</a></li><li><a href="#mailservice">MailService</a></li><li><a href="#messageservice">MessageService</a></li><li><a href="#userservice">UserService</a></li><li><a href="#restart-aller-services">Restart aller Services</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a><a href="/documentation/docs/setup/setup-backend.html">Setting up Backend</a><a href="/documentation/docs/setup/setup-frontend.html">Setting up Frontend</a></div><div><h5>More</h5><a href="https://github.com/CaritasDeutschland">GitHub</a></div></section><section class="copyright">Copyright © 2020 Caritas Deutschland</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/backend/first-start"><span class="arrow-prev">← </span><span>First start</span></a><a class="docs-next button" href="/documentation/docs/backend/starting-and-stopping-the-services"><span>Starting and stopping the services</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#rocketchat">Rocket.Chat</a><ul class="toc-headings"><li><a href="#ldap-konfigurieren">LDAP konfigurieren:</a></li><li><a href="#technischen-benutzer-und-rolle-anlegen">Technischen Benutzer und Rolle anlegen</a></li><li><a href="#benutzer-und-rolle-für-system-nachrichten-anlegen">Benutzer und Rolle für System-Nachrichten anlegen</a></li><li><a href="#bot-user-löschen">Bot-User löschen</a></li><li><a href="#gelesen-status-konfigurieren">Gelesen-Status konfigurieren</a></li><li><a href="#file-upload-konfigurieren">File-Upload konfigurieren</a></li><li><a href="#nur-lokal-cors-für-frontend-entwicklung-aktivieren">Nur lokal: CORS für Frontend-Entwicklung aktivieren</a></li><li><a href="#api-rate-limiter">API Rate Limiter</a></li></ul></li><li><a href="#keycloak">Keycloak</a><ul class="toc-headings"><li><a href="#realm">Realm</a></li><li><a href="#ldap">LDAP</a></li><li><a href="#technischer-benutzer-für-e-mail-prüfung">Technischer Benutzer für E-Mail-Prüfung</a></li><li><a href="#technischer-benutzer-für-registrierung-und-masterkey">Technischer Benutzer für Registrierung und Masterkey</a></li><li><a href="#password-policies">Password policies</a></li></ul></li><li><a href="#verbindungen-im-nosqlclient-einrichten">Verbindungen im Nosqlclient einrichten</a></li><li><a href="#microservices">Microservices</a></li><li><a href="#agencyservice">AgencyService</a></li><li><a href="#mailservice">MailService</a></li><li><a href="#messageservice">MessageService</a></li><li><a href="#userservice">UserService</a></li><li><a href="#uploadservice">UploadService</a></li><li><a href="#liveservice">LiveService</a></li><li><a href="#restart-aller-services">Restart aller Services</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a><a href="/documentation/docs/setup/setup-backend.html">Setting up Backend</a><a href="/documentation/docs/setup/setup-frontend.html">Setting up Frontend</a></div><div><h5>More</h5><a href="https://github.com/CaritasDeutschland">GitHub</a></div></section><section class="copyright">Copyright © 2020 Caritas Deutschland</section></footer></div></body></html>
