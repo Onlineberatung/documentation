@@ -238,6 +238,11 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ---- | ----------- |
 | APP_BASE_URL | Application host, e.g. _https://anwendung.local_ |
 | SPRING_PROFILES_ACTIVE | _local_ for local development, _prod_ for production system |
+| SPRING_DATASOURCE_URL **`!upcoming with release 2020-11-24`** | Connection URL: jdbc:mariadb://\<host\>:\<port\>/messageservice |
+| SPRING_DATASOURCE_USERNAME **`!upcoming with release 2020-11-24`** | Username for MessageService database user |
+| SPRING_DATASOURCE_PASSWORD **`!upcoming with release 2020-11-24`** | Password for MessageService database user |
+| SPRING_LIQUIBASE_USER **`!upcoming with release 2020-11-24`** | Username for MessageService liquibase database user |
+| SPRING_LIQUIBASE_PASSWORD **`!upcoming with release 2020-11-24`** | Password for MessageService liquibase database user |
 | KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: _http://\<host\>/auth_ |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
@@ -250,6 +255,7 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
+| USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -299,6 +305,7 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | AGENCY_SERVICE_API_URL | URL to the AgencyService REST API, e.g. _http://\<host\>/service/agencies_ |
 | MESSAGE_SERVICE_API_URL | URL to the MessageService REST API, e.g. _http://\<host\>/service/messages_ |
 | MAIL_SERVICE_API_MAILS_SEND | URL to the MailService send mails endpoint, e.g. _http://\<host\>/service/mails/send_ |
+| LIVE_SERVICE_API_URL | URL to the LiveService REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -322,11 +329,14 @@ Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
+| USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
-## LiveService
+## LiveService 
+**`!upcoming with release 2020-11-24`**
+
 Die Konfiguration des Services auf dem Server erfolgt in der LiveService.env. Für die lokale
 Entwicklung muss die application.properties-Datei angepasst werden. 
 

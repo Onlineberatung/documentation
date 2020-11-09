@@ -1,0 +1,54 @@
+name: Publish documentation
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Test Build
+        run: |
+          cd website
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
+          npm run build
+  gh-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Add key to allow access to repository
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          echo "${{ secrets.GH_VI_SUDO_SSH }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          cat <<EOT >> ~/.ssh/config
+          Host github.com
+          HostName github.com
+          IdentityFile ~/.ssh/id_rsa
+      - name: Release to GitHub Pages 
+        env:
+          GIT_USER: ${{ secrets.GH_PACKAGE_RELEASE_USER }}   
+          USE_SSH: true  
+        run: |
+          git config --global user.email "actions@gihub.com"
+          git config --global user.name "gh-actions"
+          cd website
+          npm i
+          npm run publish-gh-pages
