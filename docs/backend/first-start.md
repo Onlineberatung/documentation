@@ -99,7 +99,7 @@ In der Environment-Datei für OpenLDAP (`./OpenLDAP/OpenLDAP.env`) muss die LDAP
 `# Das Kennwort für die Konfiguration von OpenLDAP`\
 `LDAP_CONFIG_PASSWORD=config`
 
-## Optional: Die restart-policy aller Service auf "no" setzen
+## Optional: Die restart-policy aller Services auf "no" setzen
 
 Um bei Problemen nicht ein andauernd neustartendes System zu erhalten kann die restart-policy aller Services auf `"no"` gesetzt werden.
 

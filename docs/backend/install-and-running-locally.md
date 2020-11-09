@@ -11,10 +11,10 @@ Im Folgenden werden die speziellen Voraussetzungen und Tools genannt welche für
 
 Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann, wird Docker und Docker Compose vorausgesetzt.
 
-### docker resourcen
+### docker Ressourcen
 
-Um das Backend lokal stabil laufen lassen zu können, müssen Docker genügend Resourcen zur verfügung stehen.\
-Unter Windows sollte darauf geachtet werden, dass in den Docker Settings / Resourcen mindestens `7GB RAM` und `3GB SWAP` sowie `2 CPUs` bereitgestellt werden. 
+Um das Backend lokal stabil laufen lassen zu können, müssen Docker genügend Ressourcen zur verfügung stehen.\
+Unter Windows sollte darauf geachtet werden, dass in den Docker Settings / Ressourcen mindestens `7GB RAM` und `3GB SWAP` sowie `2 CPUs` bereitgestellt werden. 
 
 ### Domainname
 
