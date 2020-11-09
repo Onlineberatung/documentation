@@ -3,16 +3,27 @@ id: first-start
 title: First start
 ---
 
+> ⚠️Sicherheitshinweis ⚠️
+> 
+> Die hier beschriebene Konfiguration dient der Einrichtung eines Entwicklersystems.
+>
+> Bei einer Einrichtung als Produktivsystem müssen individuelle Benutzer und Kennwörter anstelle der hier beschriebenen vergeben werden!
+
 Nachfolgende Schritte sind in Reihenfolge auszuführen.
 
 ## Keycloak Hostname festlegen
 
 In der Environment-Datei für Keycloak (`./Keycloak/Keycloak.env`) müssen der Hostname und die Datenbank-Zugangsinformationen festgelegt werden:
 
-`DB_ADDR=Host/Adresse zur MariaDB innerhalb Docker (z.B. db)`\
-`DB_DATABASE=`\
-`DB_USER=`\
-`DB_PASSWORD=`\
+`# Host/Adresse zur MariaDB innerhalb Docker`\
+`DB_ADDR=mariadb`\
+`# Datenbankname (aus der ./MariaDB/init.sql)`\
+`DB_DATABASE=keycloak`\
+`# Passwort für die Datenbank (aus der ./MariaDB/init.sql)`\
+`DB_USER=keycloak`\
+`# Passwort für die Datenbank (aus der ./MariaDB/init.sql)`\
+`DB_PASSWORD=keycloak`\
+`# Host/Adresse zur MariaDB innerhalb Docker`\
 `KEYCLOAK_HOSTNAME=<host>`
 
 Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
@@ -21,11 +32,12 @@ Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 Im Ordner ``./MariaDB/config/`` befindet sich die Datei ``config-file.cnf``
 Diese Datei enthält eine Zeitzonenkonfiguration, welche beim ersten Start von MariaDB für Probleme sorgt.
-Daher muss diese Konfiguration beim ersten Start auskommentiert werden.
+Daher muss diese Konfiguration beim ersten Start mit `#` auskommentiert werden.
 
 In der Environment-Datei (`./MariaDB/MariaDB.env`) muss das Root Passwort festgelegt werden:
 
-`MYSQL_ROOT_PASSWORD=`
+`# Passwort für den Benutzer root`\
+`MYSQL_ROOT_PASSWORD=root`
 
 ## nginx-Konfiguration anpassen
 
@@ -47,14 +59,18 @@ Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 In der Environment-Datei für die MongoDB (`./mongoDB/mongoDB.env`) müssen die initialen Zugangsdaten festgelegt werden:
 
-`MONGO_INITDB_ROOT_USERNAME=`\
-`MONGO_INITDB_ROOT_PASSWORD=`\
-`MONGO_INITDB_DATABASE=`
+`# Adminbenutzer-Name für die MongoDB Verbindung`\
+`MONGO_INITDB_ROOT_USERNAME=admin`\
+`# Adminbenutzer-Passwort für die MongoDB Verbindung`\
+`MONGO_INITDB_ROOT_PASSWORD=admin`\
+`# Initiale Datenbank der MongoDB`\
+`MONGO_INITDB_DATABASE=nosqlclient`
 
 ## Nosqlclient-Konfiguration anpassen
 
 In der Environment-Datei für den Nosqlclient (`./Nosqlclient/Nosqlclient.env`) muss der Hostname und die MongoDB Connection URL festgelegt werden:
 
+`# MongoDB Verbindung mit den Daten aus ./mongoDB/init-nosqlclient-user.js`\
 `MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<rocketchat_db_name>`\
 `ROOT_URL=<host>:3001`
 
@@ -64,6 +80,7 @@ Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 In der Environment-Datei für den Rocket.Chat (`./Rocket.Chat/Rocket.Chat.env`) muss der Hostname und die MongoDB Connection URL festgelegt werden:
 
+`# MongoDB Verbindung mit den Daten aus ./mongoDB/init-rocketchat-user.js`\
 `MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<rocketchat_db_name>`\
 `ROOT_URL=<host>:3000`
 
@@ -73,10 +90,20 @@ Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 In der Environment-Datei für OpenLDAP (`./OpenLDAP/OpenLDAP.env`) muss die LDAP Konfiguration angegeben werden:
 
-`LDAP_ORGANISATION=`\
-`LDAP_DOMAIN=`\
-`LDAP_ADMIN_PASSWORD=`\
-`LDAP_CONFIG_PASSWORD=`
+`# Organisation, in welcher die Benutzer angelegt werden`\
+`LDAP_ORGANISATION=Onlineberatung`\
+`# Domain, mit der die Benutzer angelegt werden`\
+`LDAP_DOMAIN=onlineberatung.de`\
+`# Das Administrator Kennwort für die LDAP Verbindung`\
+`LDAP_ADMIN_PASSWORD=admin`\
+`# Das Kennwort für die Konfiguration von OpenLDAP`\
+`LDAP_CONFIG_PASSWORD=config`
+
+## Optional: Die restart-policy aller Service auf "no" setzen
+
+Um bei Problemen nicht ein andauernd neustartendes System zu erhalten kann die restart-policy aller Services auf `"no"` gesetzt werden.
+
+Dadurch können Probleme behoben und die Services anschließend kontrolliert gestartet werden.
 
 ## Alle Services starten
 
@@ -98,7 +125,7 @@ Die Rocket.Chat-Datenbank und der zugehörige Benutzer müssen mit folgendem Bef
 
 (Unter Windows muss noch _winpty_ vor _docker_ ergänzt werden)
 
-Initiale Admin-Benutzerdaten stehen in der mongoDB/mongoDB.env (ADMIN_USER/ADMIN_PASSWORD)
+Initiale Admin-Benutzerdaten stehen in der `mongoDB/mongoDB.env`: `MONGO_INITDB_ROOT_USERNAME` und `MONGO_INITDB_ROOT_PASSWORD`
 
 ## LDAP Konfigurieren
 

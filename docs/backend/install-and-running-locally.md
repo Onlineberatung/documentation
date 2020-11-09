@@ -11,14 +11,19 @@ Im Folgenden werden die speziellen Voraussetzungen und Tools genannt welche für
 
 Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann, wird Docker und Docker Compose vorausgesetzt.
 
+### docker resourcen
+
+Um das Backend lokal stabil laufen lassen zu können, müssen Docker genügend Resourcen zur verfügung stehen.\
+Unter Windows sollte darauf geachtet werden, dass in den Docker Settings / Resourcen mindestens `7GB RAM` und `3GB SWAP` sowie `2 CPUs` bereitgestellt werden. 
+
 ### Domainname
 
 Der lokale Hostname (z.B. _**onlineberatung.local**_) muss auf die eigene IP-Adresse zeigen. Hier darf _nicht_ die 127.0.0.1 verwendet werden, sondern die IP-Adresse, die dem Netzwerk-Adapter zugewiesen wurde (Einzustellen in der Betriebssystem hosts Datei, bei Windows _C:\Windows\System32\drivers\etc\hosts_).
 
 ### _optional_: Docker Registry
 
-Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. JFrog Artifactory) bereitgestellt werden. Sollte kein solcher Dienst zur Verfügung stehen, können die Docker Images auch [lokal gebaut](../backend/build-and-load-docker-image.md) werden.
-Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung am Artifactory erfolgt:
+Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. GitHub Packages) bereitgestellt werden. Sollte kein solcher Dienst zur Verfügung stehen, können die Docker Images auch [lokal gebaut](../backend/build-and-load-docker-image.md) werden.
+Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung an GitHub Packages erfolgt:
 
 `docker login docker.pkg.github.com`
 
@@ -26,7 +31,7 @@ Unter Windows in der Git-Bash:
 
 `winpty docker login docker.pkg.github.com`
 
-Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
+Anschließend werden die Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
 
 ### Node.js und NPM
 
