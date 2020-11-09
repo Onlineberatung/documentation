@@ -88,7 +88,7 @@ Beim ersten Start ist es normal, dass verschiedene Dienste Fehler im Log anzeige
 ## Keycloak Administrator Account anlegen
 
 Anlegen des Administrator-Accounts für Keycloak:\
-`docker exec keycloak keycloak/bin/add-user-keycloak.sh -u <USERNAME> -p <PASSWORD>`
+`docker exec keycloak /opt/jboss/keycloak/bin/add-user-keycloak.sh -u <USERNAME> -p <PASSWORD>`
 
 ## Anlegen der Rocket.Chat-Datenbank in der mongoDB
 
