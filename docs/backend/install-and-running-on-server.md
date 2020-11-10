@@ -13,8 +13,8 @@ Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann
 
 ### Docker Registry
 
-Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. JFrog Artifactory) bereitgestellt werden.
-Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung am Artifactory erfolgt:
+Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. GitHub Packages) bereitgestellt werden.
+Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung an GitHub Packages erfolgt:
 
 ``docker login docker.pkg.github.com``
 
@@ -22,7 +22,7 @@ Unter Windows in der Git-Bash:
 
 ``winpty docker login docker.pkg.github.com``
 
-Anschließend werden die Artifactory Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
+Anschließend werden die Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
 
 ## Pre-Configuration
 
