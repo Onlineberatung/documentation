@@ -125,7 +125,23 @@ Die Rocket.Chat-Datenbank und der zugehörige Benutzer müssen mit folgendem Bef
 
 (Unter Windows muss noch _winpty_ vor _docker_ ergänzt werden)
 
-Initiale Admin-Benutzerdaten stehen in der `mongoDB/mongoDB.env`: `MONGO_INITDB_ROOT_USERNAME` und `MONGO_INITDB_ROOT_PASSWORD`
+Initiale Admin-Benutzerdaten stehen in der `mongoDB/mongoDB.env`: `MONGO_INITDB_ROOT_USERNAME` und `MONGO_INITDB_ROOT_PASSWORD`.
+
+Anschließend muss noch der Oplog-Benutzer über folgenden Befehl angelegt werden:
+
+`docker exec mongodb bash -c "mongo -u <ADMIN_USER> -p <ADMIN_PASSWORD> --authenticationDatabase admin admin /setup/init-oplog-user.js"`
+
+Um in MongoDB ein Replica-Set (zwingend erfordlerich) verwenden zu können muss die docker-compose.yml angepasst werden. Dazu wird die command-Option wie folgt geändert:
+
+`command: --smallfiles --oplogSize 128 --replSet rs0 --storageEngine mmapv1`
+
+Nun muss MongoDB neugestartet werden damit das Replica-Set initialisiert werden kann:
+
+`docker-compose up -d --no-deps mongodb`
+
+Sobald MongoDB gestartet wurde wird das Replica-Set mit folgendem Befehl initialisiert:
+
+`docker exec mongodb bash -c "mongo -u <ADMIN_USER> -p <ADMIN_PASSWORD> --authenticationDatabase admin local /setup/init-replica-set.js"`
 
 ## LDAP Konfigurieren
 
