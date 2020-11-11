@@ -16,6 +16,33 @@ Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann
 Um das Backend lokal stabil laufen lassen zu können, müssen Docker genügend Ressourcen zur verfügung stehen.\
 Unter Windows sollte darauf geachtet werden, dass in den Docker Settings / Ressourcen mindestens `7GB RAM` und `3GB SWAP` sowie `2 CPUs` bereitgestellt werden. 
 
+### Zeit und Zeitzonen der Docker-Container
+
+Damit die Docker-Container die Zeit und Zeitzonen des Host-Systems übernehmen besteht ein Mapping über ein Volume zwischen `/etc/localtime` des Host-Systems und des Docker-Containers. Dieses ist in der der Datei `docker-compose.yml` für jeden Service hinterlegt:
+
+```
+volumes:
+    ...
+    - /etc/localtime:/etc/localtime:ro
+```
+
+Da `/etc/localtime` nur auf Linux-Systemen zur Verfügung steht muss die Zeile
+
+```
+- /etc/localtime:/etc/localtime:ro
+```
+
+für den Betrieb auf Windows-System bei allen Services in der Datei `docker-compose.yml` entfernt werden.
+
+### 
+
+Auf lokalen Windows-Umgebungen wird kein Hosts-Eintrag für die Services benötigt. Darum muss bei jedem Service der folgende Eintrag in der Datei `docker-compose.yml` entfernt werden:
+
+```
+extra_hosts:
+    - "<app_domain>:<internal_server_ip_address>"
+```
+
 ### Domainname
 
 Der lokale Hostname (z.B. _**onlineberatung.local**_) muss auf die eigene IP-Adresse zeigen. Hier darf _nicht_ die 127.0.0.1 verwendet werden, sondern die IP-Adresse, die dem Netzwerk-Adapter zugewiesen wurde (Einzustellen in der Betriebssystem hosts Datei, bei Windows _C:\Windows\System32\drivers\etc\hosts_).
