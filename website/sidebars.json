@@ -23,6 +23,25 @@
       "backend/nginx",
       "backend/ssl-certificate"
     ],
-    "Frontend": ["frontend/biotope", "frontend/tools"]
+    "Frontend": ["frontend/biotope", "frontend/tools"],
+    "Releases": [
+      "releases/overview",
+      "releases/versionhistory",
+      "releases/agencyservice",
+      "releases/frontend",
+      "releases/liveservice",
+      "releases/mailservice",
+      "releases/messageservice",
+      "releases/nginx",
+      "releases/uploadservice",
+      "releases/userservice",
+      "releases/adminer",
+      "releases/keycloak",
+      "releases/mariadb",
+      "releases/mongodb",
+      "releases/nosqlclient",
+      "releases/openldap",
+      "releases/rocketchat"
+    ]
   }
 }
