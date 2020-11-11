@@ -19,7 +19,5 @@ Update tag to `dockerImage.v.4.release-2020-11-03` - no additional changes neces
 
 ### 2020-10-13
 
-Whitelist configuration needs to be updated:\
-`put the config changes here` \
-`put the config changes here` \
-`put the config changes here` 
+Whitelist configuration needs to be updated:
+ - see `rocketchat.conf` and `keycloak.conf` in [Backend-Repository](https://github.com/CaritasDeutschland/caritas-onlineBeratung-backend/tree/master/nginx/conf/locations)

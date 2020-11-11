@@ -13,4 +13,4 @@ If you want a changelog, please see the project page at https://www.nosqlclient.
 
 ### Unreleased
 
-Update tag to `10.x.x` - no other actions necessary
+Update tag to `4.0.1` - no other actions necessary
