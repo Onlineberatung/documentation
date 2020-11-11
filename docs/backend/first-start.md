@@ -78,11 +78,12 @@ Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 ## Rocket.Chat-Konfiguration anpassen
 
-In der Environment-Datei für den Rocket.Chat (`./Rocket.Chat/Rocket.Chat.env`) muss der Hostname und die MongoDB Connection URL festgelegt werden:
+In der Environment-Datei für den Rocket.Chat (`./Rocket.Chat/Rocket.Chat.env`) muss der Hostname und die MongoDB Connection URLs festgelegt werden:
 
 `# MongoDB Verbindung mit den Daten aus ./mongoDB/init-rocketchat-user.js`\
 `MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<rocketchat_db_name>`\
-`ROOT_URL=<host>:3000`
+`ROOT_URL=<host>:3000`\
+`MONGO_OPLOG_URL=mongodb://<oplog_user>:<oplog_user_password>@<db_host>:<db_port>/local?authSource=admin&replicaSet=rs0`
 
 Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
