@@ -131,7 +131,7 @@ Anschließend muss noch der Oplog-Benutzer über folgenden Befehl angelegt werde
 
 `docker exec mongodb bash -c "mongo -u <ADMIN_USER> -p <ADMIN_PASSWORD> --authenticationDatabase admin admin /setup/init-oplog-user.js"`
 
-Um in MongoDB ein Replica-Set (zwingend erfordlerich) verwenden zu können muss die docker-compose.yml angepasst werden. Dazu wird die command-Option für den MongoDB Container wie folgt geändert:
+Um in MongoDB ein Replica-Set (zwingend erforderlich) verwenden zu können muss die docker-compose.yml angepasst werden. Dazu wird die command-Option für den MongoDB Container wie folgt geändert:
 
 `command: --smallfiles --oplogSize 128 --replSet rs0 --storageEngine mmapv1`
 
