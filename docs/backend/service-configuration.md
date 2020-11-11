@@ -27,7 +27,7 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | Encryption | No Encryption | |
 | CA Cert | | |
 | Reject Unauthorized | True | |
-| Base DN | ou=users,ou=cob,dc=onlineberatung,dc=de | |
+| Base DN | ou=users,ou=ob,dc=onlineberatung,dc=de | |
 | Internal Log Level | INFO | |
 | **Authentication **| | |
 | Enable | True | |
@@ -60,7 +60,6 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 * Unter _"Permissions"_ über den Button _"New Role"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen.
 * Der Rolle folgende Rechte hinzufügen (Haken setzen):
     * _[add-user-to-any-p-room]_
-    * _[api-bypass-rate-limit]_
     * _[clean-channel-history]_
     * _[delete-p]_
     * _[delete-user]_
@@ -78,7 +77,6 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 1. Rolle anlegen/Rechte festlegen
 * Unter _"Permissions"_ über den Button _"New Role"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen.
 * Dieser Rolle nun die folgende Rechte zuweisen:
-    * _[api-bypass-rate-limit]_
     * _[create-p]_ 
     * _[view-room-administration]_
 2. Benutzer anlegen
@@ -105,6 +103,8 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 | Maximum File Upload Size (in bytes) | 5242880 | 5MB |
 | Accepted Media Types | image/jpeg,image/png,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet | jpg, png, pdf, docx, xlsx |
 | Protect Uploaded Files | True | |
+| Rotate images on upload | False | |
+| Enable Json Web Tokens protection to file uploads | False | |
 | Storage Type | FileSystem | |
 | File Uploads Enabled in Direct Messages | True | |
 | File System | | |
@@ -114,7 +114,7 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss in Rocket.Chat in der Administration unter dem Punkt _"General"_ → _"REST API"_ die Einstellung _"Enable Cors"_ auf _"true"_ gesetzt werden.
 
 ### API Rate Limiter
-Unter den Berechtigungen muss für user, technical und systemuser jeweils _[api-bypass-rate-limit]_ angehakt werden. Sowie unter _"Rate Limiter"_ → _"API Rate Limiter"_ dieser für Development/lokal deaktiviert werden und am besten die erlaubten Calls auf 10k+ hochgesetzt werden.
+Der Rate Limiter kann unter _"Rate Limiter"_ → _"API Rate Limiter"_ eaktiviert werden, da ein Rate Limit bereits im nginx konfiguriert ist.
 
 ⚠️Für Produktiv sollte das Rate Limiting nicht deaktiviert werden, bzw. sollte mit den Einstellungen des nginx ausbalanciert sein! ⚠️
 
@@ -254,6 +254,7 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-technischen-benutzer-und-rolle-anlegen)) |
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
+| ROCKET_SYSTEMUSER_ID | Rocket.Chat system user id |
 | USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
 | USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
