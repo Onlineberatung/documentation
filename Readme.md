@@ -1,5 +1,5 @@
 # Caritas Online-Beratung Documentation
-This is the repository containing all logic for the Caritas Online-Beratung Documentation.
+This is the repository containing the Caritas Online-Beratung Documentation.
 
 ## Hints
 
