@@ -26,7 +26,8 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | Port | 389 | |
 | Reconnect | True | |
 | CA Cert | | |
-| Base DN | ou=users,ou=cob,dc=onlineberatung,dc=de | |
+| Reject Unauthorized | True | |
+| Base DN | ou=users,ou=ob,dc=onlineberatung,dc=de | |
 | Internal Log Level | INFO | |
 | **Authentication **| | |
 | Enable | True | |
@@ -46,7 +47,6 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 * Unter _"Permissions"_ über den Button _"+"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Der Rolle folgende Rechte hinzufügen (Haken setzen):
     * _[add-user-to-any-p-room]_
-    * _[api-bypass-rate-limit]_
     * _[clean-channel-history]_
     * _[delete-p]_
     * _[delete-user]_
@@ -64,7 +64,6 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 1. Rolle anlegen/Rechte festlegen
 * Unter _"Permissions"_ über den Button _"+"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen.Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Dieser Rolle nun die folgende Rechte zuweisen:
-    * _[api-bypass-rate-limit]_
     * _[create-p]_ 
     * _[view-room-administration]_
 2. Benutzer anlegen
@@ -252,6 +251,7 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-technischen-benutzer-und-rolle-anlegen)) |
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
+| ROCKET_SYSTEMUSER_ID | Rocket.Chat system user id |
 | USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
 | USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |

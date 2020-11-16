@@ -168,7 +168,7 @@ In diesem Abschnitt werden die bekannten Fehler und deren Behebung beschrieben
 
 ### OpenLDAP startet nicht
 
-Die Meldung `Error: the database directory (/var/lib/ldap) is empty but not the config directory (/etc/ldap/slapd.d)` bedeutet, dass im Ordner `./OpenLDAP` der Ordner `slapd.d` gelöscht werden muss.
+Die Meldung `Error: the database directory (/var/lib/ldap) is empty but not the config directory (/etc/ldap/slapd.d)` bedeutet, dass im Ordner `./OpenLDAP` der Ordner `slapd.d` gelöscht werden muss. In diesem Fall sollte unter Windows nach dem Löschen des Ordners auch Docker neu gestartet werden, da ansonsten noch ein Verweis auf den Ordner besteht.
 
 Die genaue Ursache für die Meldungen `could not stat config file "/etc/ldap/slapd.conf": No such file or directory (2)` und `daemon: bind(8) failed errno=99 (Cannot assign requested address)` konnten bisher nicht ermittelt werden. Diese Fehler sind bisher auch nur bei der Installation auf einem MAC aufgetreten und dadurch behoben werden, dass eine neuere Version des Docker-Images für openLDAP verwendet wurde.
 
