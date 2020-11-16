@@ -23,7 +23,7 @@
       "backend/nginx",
       "backend/ssl-certificate"
     ],
-    "Frontend": ["frontend/biotope", "frontend/tools"],
+    "Frontend": ["frontend/build", "frontend/tools-and-technologies"],
     "Releases": [
       "releases/overview",
       "releases/versionhistory",
