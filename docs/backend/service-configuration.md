@@ -91,6 +91,8 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 | Maximum File Upload Size (in bytes) | 5242880 | 5MB |
 | Accepted Media Types | image/jpeg,image/png,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet | jpg, png, pdf, docx, xlsx |
 | Protect Uploaded Files | True | |
+| Rotate images on upload | False | |
+| Enable Json Web Tokens protection to file uploads | False | |
 | Storage Type | FileSystem | |
 | File Uploads Enabled in Direct Messages | True | |
 | File System | | |
@@ -99,10 +101,20 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 ### Nur lokal: CORS für Frontend-Entwicklung aktivieren
 Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss in Rocket.Chat in der Administration unter dem Punkt _"General"_ → _"REST API"_ die Einstellung _"Enable Cors"_ auf _"true"_ gesetzt werden.
 
-### API Rate Limiter
-Unter den Berechtigungen muss für user, technical und systemuser jeweils _[api-bypass-rate-limit]_ angehakt werden. Sowie unter _"Rate Limiter"_ → _"API Rate Limiter"_ dieser für Development/lokal deaktiviert werden und am besten die erlaubten Calls auf 10k+ hochgesetzt werden.
+### Rate Limiter
+For local development both `Rate Limiter` can be deactivated.
 
-⚠️Für Produktiv sollte das Rate Limiting nicht deaktiviert werden, bzw. sollte mit den Einstellungen des nginx ausbalanciert sein! ⚠️
+⚠️Please be sure to enable rate limiting for production and balance the settings according to the ones within NGINX ⚠️
+
+### General
+Disable `UTF8 Names Slugify` under `UTF8`.
+
+### Accounts
+Under `Registration` disable the following entries:
+  - `Send email to user when user is activated`
+  - `Send email to user when user is deactivated`
+  - `Verify Email for External Accounts`
+  - `Use Default Blocked Domains List`
 
 ## Keycloak
 ### Realm

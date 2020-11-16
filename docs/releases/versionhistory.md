@@ -5,9 +5,9 @@ title: Version History
 
 ## General description
 
-In this log we will mark services / components, which need a update / configuration change for a given release.
+In this log we will mark services/components which need an update or configuration change for a specific release version.
 
-For more detail, please visit the provided link to the specific service / component.
+For more details please visit the provided link to the specific service/component.
 
 ### Unreleased
 #### Own services
