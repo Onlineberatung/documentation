@@ -23,7 +23,8 @@ Create the oplog user with the following command:
 
 To be able to use a replica set (mandatory!) within MongoDB the `docker-compose.yml` needs to be changed. Adapt the command option for the MongoDB container with the following configuration:
 
-`command: --smallfiles --oplogSize 128 --replSet rs0 --storageEngine mmapv1`
+`command: --smallfiles --oplogSize 128 --replSet rs0 --storageEngine mmapv1`\
+⚠️Adapt the storage engine value according to your system settings!⚠️
 
 Restart MongoDB:
 
@@ -55,3 +56,5 @@ After the Rocket.Chat update succeeded it is necessary to update MongoDB step by
 `docker exec -it mongodb bash`
 `mongo -u <ADMIN_USER> -p <ADMIN_PASSWORD> --authenticationDatabase admin`\
 `db.adminCommand( { setFeatureCompatibilityVersion: "4.0" } )`
+
+It may be necessary to adapt the owner, group and rights of the /user_uploads folder within the Rocket.Chat volume on Unix systems. In this case change it to the user and group that is running the docker container and set the rights to 744 (you may need to lookup the ID of the user within the docker container itself).

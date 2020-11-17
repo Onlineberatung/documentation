@@ -32,4 +32,4 @@ Because of new functionality and changes due to the update you need to manually 
   - `Verify Email for External Accounts`
   - `Use Default Blocked Domains List`
 - `File Upload`: disable `Rotate images on upload` and `Enable Json Web Tokens protection to file uploads`
-- For local development you can deactive both `Rate Limiter`
+- For local development you can deactive both `Rate Limiter` ⚠️Please be sure to enable rate limiting for production and balance the settings according to the ones within NGINX ⚠️
