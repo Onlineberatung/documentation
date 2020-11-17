@@ -78,11 +78,12 @@ Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
 ## Rocket.Chat-Konfiguration anpassen
 
-In der Environment-Datei für den Rocket.Chat (`./Rocket.Chat/Rocket.Chat.env`) muss der Hostname und die MongoDB Connection URL festgelegt werden:
+In der Environment-Datei für den Rocket.Chat (`./Rocket.Chat/Rocket.Chat.env`) muss der Hostname und die MongoDB Connection URLs festgelegt werden:
 
 `# MongoDB Verbindung mit den Daten aus ./mongoDB/init-rocketchat-user.js`\
 `MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<rocketchat_db_name>`\
-`ROOT_URL=<host>:3000`
+`ROOT_URL=<host>:3000`\
+`MONGO_OPLOG_URL=mongodb://<oplog_user>:<oplog_user_password>@<db_host>:<db_port>/local?authSource=admin&replicaSet=rs0`
 
 Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
@@ -131,7 +132,7 @@ Anschließend muss noch der Oplog-Benutzer über folgenden Befehl angelegt werde
 
 `docker exec mongodb bash -c "mongo -u <ADMIN_USER> -p <ADMIN_PASSWORD> --authenticationDatabase admin admin /setup/init-oplog-user.js"`
 
-Um in MongoDB ein Replica-Set (zwingend erfordlerich) verwenden zu können muss die docker-compose.yml angepasst werden. Dazu wird die command-Option für den MongoDB Container wie folgt geändert:
+Um in MongoDB ein Replica-Set (zwingend erforderlich) verwenden zu können muss die docker-compose.yml angepasst werden. Dazu wird die command-Option für den MongoDB Container wie folgt geändert:
 
 `command: --smallfiles --oplogSize 128 --replSet rs0 --storageEngine mmapv1`
 

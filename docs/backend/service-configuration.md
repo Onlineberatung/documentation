@@ -8,12 +8,13 @@ Diese sind hier aufgeführt.
 ## Rocket.Chat
 Bei der ersten Anmeldung muss der Administratoren Account eingerichtet werden.
 Dazu wird einfach den Schritten im Assistenten gefolgt (http://`<HOST>`:3000).
-Als Typ wird dabei eine lokale Installation gewählt.
+Bei Schritt 3 "Serverinformationen" sollte die Option `Auto opt in new users for Two Factor via Email` auf `No` gestellt werden.
+Als Typ (Step 4 "Register Server") wird dabei eine lokale Installation (Standalone) gewählt.
 
 __Weitere Konfigurationsschritte:__
 
 ### LDAP konfigurieren:
-Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im Administrationsbereich, Menüpunkt _LDAP_, übernehmen:
+Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im Administrationsbereich, Menüpunkt _LDAP_, übernehmen (alle nicht aufgelisteten Optionen sollten nicht geändert bzw. auf den Standartwerten belassen werden):
 
 | Feld | Wert | Bemerkung |
 |-|-|-|
@@ -24,9 +25,7 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | Host | openldap | |
 | Port | 389 | |
 | Reconnect | True | |
-| Encryption | No Encryption | |
 | CA Cert | | |
-| Reject Unauthorized | True | |
 | Base DN | ou=users,ou=ob,dc=onlineberatung,dc=de | |
 | Internal Log Level | INFO | |
 | **Authentication **| | |
@@ -36,28 +35,15 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | **Sync / Import** | | |
 | Username Field | uid | |
 | Unique Identifier Field | objectGUID,ibm-entryUUID,GUID,dominoUNID,nsuniqueId,uidNumber | |
-| Default Domain | | |
 | Merge Existing Users | True | |
-| Sync User Data | False | |
-| User Data Field Map | {"cn":"name", "mail":"email"} | |
 | Sync User Avatar | False | |
-| Background Sync | False | |
-| **Timeouts**| | |
-| Timeout (ms) | 60000 | |
-| Connection Timeout (ms) | 1000 | |
-| Idle Timeout (ms) | 1000 | |
 | **User Search** | | |
-| Filter | (objectclass=*) | |
-| Scope | sub | |
 | Search Field | uid,mail | |
-| Search Page Size | 250 | |
-| Search Limit Size | 1000 | |
-| **User Search (Group Validation)** | | |
-| Enable LDAP User Group Filter | False | |
+
 
 ### Technischen Benutzer und Rolle anlegen
 1. Rolle anlegen/Rechte festlegen
-* Unter _"Permissions"_ über den Button _"New Role"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen.
+* Unter _"Permissions"_ über den Button _"+"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Der Rolle folgende Rechte hinzufügen (Haken setzen):
     * _[add-user-to-any-p-room]_
     * _[clean-channel-history]_
@@ -75,7 +61,7 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 
 ### Benutzer und Rolle für System-Nachrichten anlegen
 1. Rolle anlegen/Rechte festlegen
-* Unter _"Permissions"_ über den Button _"New Role"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen.
+* Unter _"Permissions"_ über den Button _"+"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Dieser Rolle nun die folgende Rechte zuweisen:
     * _[create-p]_ 
     * _[view-room-administration]_
@@ -113,10 +99,20 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 ### Nur lokal: CORS für Frontend-Entwicklung aktivieren
 Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss in Rocket.Chat in der Administration unter dem Punkt _"General"_ → _"REST API"_ die Einstellung _"Enable Cors"_ auf _"true"_ gesetzt werden.
 
-### API Rate Limiter
-Der Rate Limiter kann unter _"Rate Limiter"_ → _"API Rate Limiter"_ eaktiviert werden, da ein Rate Limit bereits im nginx konfiguriert ist.
+### Rate Limiter
+For local development both `Rate Limiter` can be deactivated.
 
-⚠️Für Produktiv sollte das Rate Limiting nicht deaktiviert werden, bzw. sollte mit den Einstellungen des nginx ausbalanciert sein! ⚠️
+⚠️Please be sure to enable rate limiting for production and balance the settings according to the ones within NGINX ⚠️
+
+### General
+Disable `UTF8 Names Slugify` under `UTF8`.
+
+### Accounts
+Under `Registration` disable the following entries:
+  - `Send email to user when user is activated`
+  - `Send email to user when user is deactivated`
+  - `Verify Email for External Accounts`
+  - `Use Default Blocked Domains List`
 
 ## Keycloak
 ### Realm
