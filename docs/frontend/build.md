@@ -30,6 +30,6 @@ To generate a new entry point you have to follow these steps:
 
 > ⚠️ **Deprecated**: From Version 2.0.0 on, Biotope isn't used in the project anymore!
 
-In versions `> 2.0.0` the frontend project was based on the Biotope Boilerplate, which was replaced in the course of `version 2.0.0` with the Create React App toolchain.
+In versions `< 2.0.0` the frontend project was based on the Biotope Boilerplate, which was replaced in the course of `version 2.0.0` with the Create React App toolchain.
 
 If you are running an older version of the frontend project, you can find more information about Biotope in the [official documentation](https://boilerplate.biotope.sh/).
