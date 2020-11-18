@@ -15,10 +15,8 @@ If you want a changelog, please see the [project changelog](https://github.com/C
 
 1. You need to create an additional role in keycloak (`<app_domain>/auth` -> administration console
 ) named `agency-admin` and add a user having the
-     following roles:
+     following role:
      - `agency-admin`
-     - `offline_access`
-     - `uma_authorization`
     
     `Note: only this user will have access to the admin interface`
 
