@@ -36,6 +36,7 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | Username Field | uid | |
 | Unique Identifier Field | objectGUID,ibm-entryUUID,GUID,dominoUNID,nsuniqueId,uidNumber | |
 | Merge Existing Users | True | |
+| Sync User Data | False | Set this option to _true_ only if the user data of Keycloak and Rocket.Chat are 100% synchronized (especially e-mail address). Otherwise, this can lead to malfunction during password reset process and users won't be able to log in to Rocket.Chat. |
 | Sync User Avatar | False | |
 | **User Search** | | |
 | Search Field | uid,mail | |
