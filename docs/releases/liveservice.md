@@ -13,6 +13,12 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2020-11-25
+
+Update tag to `dockerimage.v.9.release-2020-11-24` in the `.env` file - no additional changes necessary.
+
 ### 2020-11-03
 
 Update tag to `dockerImage.v.5.release-2020-11-03` in the `.env` file - the following changes are necessary:

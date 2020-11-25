@@ -13,5 +13,9 @@ If you want a changelog please see the project page at https://www.keycloak.org.
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2020-11-25
+
 Update tag to `11.0.2` in the `docker-compose.yml` file  - the following changes are necessary:
 > ⚠️ MariaDB update needs to be performed before this update ⚠️

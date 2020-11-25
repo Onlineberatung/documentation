@@ -13,4 +13,8 @@ If you want a changelog please see the project page at https://www.openldap.org.
 
 ### Unreleased
 
-Update tag to `1.4.0` in the `docker-compose.yml` file - no other actions necessary
+No unreleased changes yet.
+
+### 2020-11-25
+
+Update tag to `1.4.0` in the `docker-compose.yml` file - no other actions necessary.

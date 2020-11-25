@@ -15,7 +15,7 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### 2020-11-03
 
-Update tag to `dockerImage.v.4.release-2020-11-03` in the `docker-compose.yml` file - no additional changes necessary 
+Update tag to `dockerImage.v.4.release-2020-11-03` in the `docker-compose.yml` file - no additional changes necessary.
 
 ### 2020-10-13
 
