@@ -5,7 +5,7 @@ title: OpenLDAP konfigurieren
 
 OpenLDAP speichert in der Grundkonfiguration Passwörter im Klartext. Dies muss über eine Konfigurationsänderung angepasst werden.
 
-_Hinweis:_ Alle Konfigurationsdateien der folgenden Abschnitte sind im Container im Verzeichnis `/cob-config` zu finden.
+_Hinweis:_ Alle Konfigurationsdateien der folgenden Abschnitte sind im Container im Verzeichnis `/ob-config` zu finden.
 
 _Hinweis:_ Für die lokale Entwicklung können die Konfigurationsschritte optional übersprungen werden, in diesem Fall nur die Schritte unter dem Punkt _Struktur anlegen_ ausführen.
 
@@ -38,7 +38,7 @@ add: olcModuleLoad
 olcModuleLoad: ppolicy
 ```
 
-`ldapmodify -x -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -f /cob-config/ppolicy-module.ldif`
+`ldapmodify -x -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -f /ob-config/ppolicy-module.ldif`
 
 Zur Überprüfung, ob die Änderungen erfolgreich war, kann folgende Abfrage verwendet werden:
 
@@ -57,7 +57,7 @@ olcPPolicyUseLockout: FALSE
 olcPPolicyHashCleartext: TRUE
 ```
 
-`ldapmodify -x -a -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -f /cob-config/ppolicy-conf.ldif`
+`ldapmodify -x -a -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -f /ob-config/ppolicy-conf.ldif`
 
 Zur Überprüfung, ob die Änderungen erfolgreich war, kann folgende Abfrage verwendet werden:
 
@@ -69,16 +69,16 @@ Die LDAP-Strukur muss angelegt werden.
 
 _Hinweis:_ Im Gegensatz zur Konfiguration muss die LDAP-Struktur mit dem Admin-User angelegt werden. Das Standard-Passwort des Admin-User ist _admin_.
 
-`ldapadd -x -D "cn=admin,dc=onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /cob-config/ou-conf.ldif`
+`ldapadd -x -D "cn=admin,dc=onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /ob-config/ou-conf.ldif`
 
 Die Struktur ist in der Datei _./openLDAP/ou-conf.ldif_ in LDAP-Ausdrücken beschrieben:
 
 ```
-dn: ou=cob,dc=onlineberatung,dc=de
+dn: ou=ob,dc=onlineberatung,dc=de
 objectClass: organizationalUnit
-ou: cob
+ou: ob
 
-dn: ou=users,ou=cob,dc=onlineberatung,dc=de
+dn: ou=users,ou=ob,dc=onlineberatung,dc=de
 objectClass: organizationalUnit
 ou: users
 ```
@@ -86,4 +86,4 @@ ou: users
 Diese Datei ist für die Ausführung des obigen Befehls bereits im Container gemounted.
 
 Die Struktur kann auch von außerhalb dieses Containers über diesen Befehl angelegt werden:
-`docker exec openldap bash -c "ldapadd -x -D "cn=admin,dc=onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /cob-config/ou-conf.ldif`
+`docker exec openldap bash -c "ldapadd -x -D "cn=admin,dc=onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /ob-config/ou-conf.ldif"`

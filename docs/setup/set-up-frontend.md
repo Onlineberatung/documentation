@@ -33,7 +33,8 @@ After your are finished with the steps before and everything runs fine, run thes
 1. Open your command line / terminal / bash
 2. Navigate to the project folder
 3. [Start the backend first](../backend/starting-and-stopping-the-services), then provide the master keys for message encryption to the services:
-   - **set masterkey** by running `npm run mk`
+   - **set masterkey** by running `npm run mk`\
+   If you experience timeouts while trying to set the masterkeys please check that the services are able to reach Keycloak (and vice versa) in your firewall settings.
 4. Afterwards you can start the frontend
    - **start** the development environment run `npm start`
 

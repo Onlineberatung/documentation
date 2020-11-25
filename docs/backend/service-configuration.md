@@ -8,12 +8,13 @@ Diese sind hier aufgeführt.
 ## Rocket.Chat
 Bei der ersten Anmeldung muss der Administratoren Account eingerichtet werden.
 Dazu wird einfach den Schritten im Assistenten gefolgt (http://`<HOST>`:3000).
-Als Typ wird dabei eine lokale Installation gewählt.
+Bei Schritt 3 "Serverinformationen" sollte die Option `Auto opt in new users for Two Factor via Email` auf `No` gestellt werden.
+Als Typ (Step 4 "Register Server") wird dabei eine lokale Installation (Standalone) gewählt.
 
 __Weitere Konfigurationsschritte:__
 
 ### LDAP konfigurieren:
-Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im Administrationsbereich, Menüpunkt _LDAP_, übernehmen:
+Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im Administrationsbereich, Menüpunkt _LDAP_, übernehmen (alle nicht aufgelisteten Optionen sollten nicht geändert bzw. auf den Standartwerten belassen werden):
 
 | Feld | Wert | Bemerkung |
 |-|-|-|
@@ -24,10 +25,8 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | Host | openldap | |
 | Port | 389 | |
 | Reconnect | True | |
-| Encryption | No Encryption | |
 | CA Cert | | |
-| Reject Unauthorized | True | |
-| Base DN | ou=users,ou=cob,dc=onlineberatung,dc=de | |
+| Base DN | ou=users,ou=ob,dc=onlineberatung,dc=de | |
 | Internal Log Level | INFO | |
 | **Authentication **| | |
 | Enable | True | |
@@ -36,31 +35,18 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | **Sync / Import** | | |
 | Username Field | uid | |
 | Unique Identifier Field | objectGUID,ibm-entryUUID,GUID,dominoUNID,nsuniqueId,uidNumber | |
-| Default Domain | | |
 | Merge Existing Users | True | |
-| Sync User Data | False | |
-| User Data Field Map | {"cn":"name", "mail":"email"} | |
+| Sync User Data | False | Set this option to _true_ only if the user data of Keycloak and Rocket.Chat are 100% synchronized (especially e-mail address). Otherwise, this can lead to malfunction during password reset process and users won't be able to log in to Rocket.Chat. |
 | Sync User Avatar | False | |
-| Background Sync | False | |
-| **Timeouts**| | |
-| Timeout (ms) | 60000 | |
-| Connection Timeout (ms) | 1000 | |
-| Idle Timeout (ms) | 1000 | |
 | **User Search** | | |
-| Filter | (objectclass=*) | |
-| Scope | sub | |
 | Search Field | uid,mail | |
-| Search Page Size | 250 | |
-| Search Limit Size | 1000 | |
-| **User Search (Group Validation)** | | |
-| Enable LDAP User Group Filter | False | |
+
 
 ### Technischen Benutzer und Rolle anlegen
 1. Rolle anlegen/Rechte festlegen
-* Unter _"Permissions"_ über den Button _"New Role"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen.
+* Unter _"Permissions"_ über den Button _"+"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Der Rolle folgende Rechte hinzufügen (Haken setzen):
     * _[add-user-to-any-p-room]_
-    * _[api-bypass-rate-limit]_
     * _[clean-channel-history]_
     * _[delete-p]_
     * _[delete-user]_
@@ -76,9 +62,8 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 
 ### Benutzer und Rolle für System-Nachrichten anlegen
 1. Rolle anlegen/Rechte festlegen
-* Unter _"Permissions"_ über den Button _"New Role"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen.
+* Unter _"Permissions"_ über den Button _"+"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Dieser Rolle nun die folgende Rechte zuweisen:
-    * _[api-bypass-rate-limit]_
     * _[create-p]_ 
     * _[view-room-administration]_
 2. Benutzer anlegen
@@ -105,6 +90,8 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 | Maximum File Upload Size (in bytes) | 5242880 | 5MB |
 | Accepted Media Types | image/jpeg,image/png,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet | jpg, png, pdf, docx, xlsx |
 | Protect Uploaded Files | True | |
+| Rotate images on upload | False | |
+| Enable Json Web Tokens protection to file uploads | False | |
 | Storage Type | FileSystem | |
 | File Uploads Enabled in Direct Messages | True | |
 | File System | | |
@@ -113,10 +100,20 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 ### Nur lokal: CORS für Frontend-Entwicklung aktivieren
 Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss in Rocket.Chat in der Administration unter dem Punkt _"General"_ → _"REST API"_ die Einstellung _"Enable Cors"_ auf _"true"_ gesetzt werden.
 
-### API Rate Limiter
-Unter den Berechtigungen muss für user, technical und systemuser jeweils _[api-bypass-rate-limit]_ angehakt werden. Sowie unter _"Rate Limiter"_ → _"API Rate Limiter"_ dieser für Development/lokal deaktiviert werden und am besten die erlaubten Calls auf 10k+ hochgesetzt werden.
+### Rate Limiter
+For local development both `Rate Limiter` can be deactivated.
 
-⚠️Für Produktiv sollte das Rate Limiting nicht deaktiviert werden, bzw. sollte mit den Einstellungen des nginx ausbalanciert sein! ⚠️
+⚠️Please be sure to enable rate limiting for production and balance the settings according to the ones within NGINX ⚠️
+
+### General
+Disable `UTF8 Names Slugify` under `UTF8`.
+
+### Accounts
+Under `Registration` disable the following entries:
+  - `Send email to user when user is activated`
+  - `Send email to user when user is deactivated`
+  - `Verify Email for External Accounts`
+  - `Use Default Blocked Domains List`
 
 ## Keycloak
 ### Realm
@@ -254,6 +251,7 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-technischen-benutzer-und-rolle-anlegen)) |
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
+| ROCKET_SYSTEMUSER_ID | Rocket.Chat system user id |
 | USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
 | USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
