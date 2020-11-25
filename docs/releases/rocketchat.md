@@ -13,6 +13,10 @@ If you want a changelog please see the project page at https://rocket.chat.
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2020-11-25
+
 _Before_ updating tag to `3.7.1` in the `docker-compose.yml` file the following changes are necessary:
 
 ⚠️If you are running these commands on a productive system please be sure to backup your data before⚠️

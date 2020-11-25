@@ -34,6 +34,10 @@ You need to run the following SQL-Statement:\
  `- service_network`\
  `- database_network`
 
+### 2020-11-25
+
+Update tag to `dockerimage.v.12.release-2020-11-24` - no additional changes necessary.
+
 ### 2020-11-03
 
 Update tag to `dockerImage.v.9.release-2020-11-03` in the `.env` file - the following changes are necessary:
@@ -41,4 +45,4 @@ Update tag to `dockerImage.v.9.release-2020-11-03` in the `.env` file - the foll
 
 ### 2020-10-13
 
-Update tag to `dockerimage.v.5-release-2020-10-13` - no additional changes necessary 
+Update tag to `dockerimage.v.5-release-2020-10-13` - no additional changes necessary.

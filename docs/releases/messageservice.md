@@ -12,7 +12,12 @@ Only changes that are necessary to use the requested version are listed in this 
 If you want a changelog please see the [project changelog](https://github.com/CaritasDeutschland/caritas-onlineBeratung-messageservice/blob/master/CHANGELOG.md).
 
 ### Unreleased
-Update tag to `dockerImage.v.8.release-2020-11-03` in the `.env` file - the following changes are necessary:
+
+No unreleased changes yet.
+
+### 2020-11-25
+
+Update tag to `dockerimage.v.13.release-2020-11-24` in the `.env` file - the following changes are necessary:
 
 You need to run the following SQL-Statement:\
 `CREATE USER IF NOT EXISTS 'messageservice'@'%' IDENTIFIED BY '<GENERATED_PASSWORD>';`\
@@ -37,4 +42,4 @@ Update tag to `dockerImage.v.8.release-2020-11-03` in the `.env` file - the foll
 
 ### 2020-10-13
 
-Update tag to `dockerimage.v.3-release-2020-10-13` in the `.env` file - no additional changes necessary 
+Update tag to `dockerimage.v.3-release-2020-10-13` in the `.env` file - no additional changes necessary.

@@ -13,4 +13,8 @@ If you want a changelog please see the project page at https://www.nosqlclient.c
 
 ### Unreleased
 
-Update tag to `4.0.1` in the `docker-compose.yml` file - no other actions necessary
+No unreleased changes yet.
+
+### 2020-11-25
+
+Update tag to `4.0.1` in the `docker-compose.yml` file - no other actions necessary.
