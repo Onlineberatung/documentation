@@ -13,7 +13,9 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+1. You have to grant the insert permission for the agencyservice database user by executing this sql statements:
+   
+   ``GRANT INSERT ON agencyservice.* TO 'agencyservice'@'%'; FLUSH PRIVILEGES;``
 
 ### 2020-11-25
 
