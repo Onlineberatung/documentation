@@ -13,11 +13,37 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+### 2020-12-15
+
+You need to run the following SQL-Statement:\
+`CREATE USER IF NOT EXISTS 'uploadservice'@'%' IDENTIFIED BY '<GENERATED_PASSWORD>';`\
+`CREATE DATABASE IF NOT EXISTS uploadservice CHARACTER SET utf8 COLLATE utf8_unicode_ci;`\
+`GRANT SELECT, INSERT, UPDATE, DELETE ON uploadservice.* TO 'uploadservice'@'%';`\
+`FLUSH PRIVILEGES;`\
+`GRANT ALTER, CREATE, CREATE VIEW, DELETE, DROP, INDEX, INSERT, REFERENCES, SELECT, SHOW VIEW, TRIGGER, UPDATE, ALTER ROUTINE, EXECUTE ON uploadservice.* TO 'liquibase'@'%';`\
+`FLUSH PRIVILEGES;`
+
+`UploadService.env` needs to be extended with the following fields:\
+`SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/uploadservice`\
+`SPRING_DATASOURCE_username=uploadservice`\
+`SPRING_DATASOURCE_password=<GENERATED_PASSWORD>`\
+`SPRING_LIQUIBASE_USER=liquibase`\
+`SPRING_LIQUIBASE_PASSWORD=liquibase`
+
+`docker-compose.yml` needs to be extended with database_network in uploadservice definition\
+`networks:`\
+ `- frontend_network`\
+ `- service_network`\
+ `- database_network`
+
+In `Rocket.Chat` add permission `View Other User Channels` to user `technical`.\
+This is necessary for the Reporting-Interface.
+
+Update tag to `dockerImage.v.17.release-2020-12-15` in the `.env` file.
 
 ### 2020-11-25
 
-Update tag to `dockerimage.v.12.release-2020-11-24` - no additional changes necessary.
+Update tag to `dockerimage.v.12.release-2020-11-24` in the `.env` file - no additional changes necessary.
 
 ### 2020-11-03
 
