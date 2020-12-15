@@ -15,6 +15,12 @@ If you want a changelog please see the project page at https://www.keycloak.org.
 
 No unreleased changes yet.
 
+### 2020-12-15
+
+You need to change the Token-Settings in your Realm as shown in the screenshot below:
+![keycloak-token-settings](assets/keycloak-token-settings.png)
+
+
 ### 2020-11-25
 
 Update tag to `11.0.2` in the `docker-compose.yml` file  - the following changes are necessary:
