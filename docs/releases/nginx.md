@@ -13,6 +13,12 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+### 2020-12-15
+`keycloak.conf` in `<base>/nginx/conf/locations` needs some changes - lines 39-41 need be changed to:\
+`location /auth/resources/ {`\
+`     limit_req zone=by_ip_10rs burst=10 nodelay;`\
+`     proxy_pass http://keycloak:8080/auth/resources/; `\
+
 ### 2020-11-03
 
 Update tag to `dockerImage.v.4.release-2020-11-03` in the `docker-compose.yml` file - no additional changes necessary.

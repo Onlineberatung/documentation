@@ -13,9 +13,13 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+### 2020-12-15
+
 1. You have to grant the insert permission for the agencyservice database user by executing this sql statements:
    
    ``GRANT INSERT ON agencyservice.* TO 'agencyservice'@'%'; FLUSH PRIVILEGES;``
+
+2. Update tag to `dockerImage.v.14.release-2020-12-15` in the `.env` file
 
 ### 2020-11-25
 

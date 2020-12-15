@@ -13,6 +13,17 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2020-12-15
+#### Own services
+ - [AgencyService](../releases/agencyservice.md)
+ - [Frontend](../releases/frontend.md)
+ - [NGINX](../releases/nginx.md)
+ - [UploadService](../releases/uploadservice.md)
+ - [UserService](../releases/userservice.md)
+ 
+#### 3rd party components
+ - none
+
 ### 2020-11-25
 #### Own services
  - [MessageService](../releases/messageservice.md)

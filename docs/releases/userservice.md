@@ -15,6 +15,23 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2020-12-15
+`userservice.conf` in `<base>/nginx/conf/locations` needs to be extended with the following lines:\
+`location /useradmin {`\
+`     limit_req zone=by_ip_5rs burst=5;`\
+`     proxy_pass http://userservice:8080/useradmin; `\
+`     resolver 127.0.0.11;`\
+`     proxy_set_header Host $host;`\
+`     proxy_set_header X-Real-IP $remote_addr;`\
+`     proxy_set_header X-Forwarded-Proto http;`\
+`     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;`\
+`}`
+
+You need to create an additional role in keycloak (`<app_domain>/auth` -> administration console) named `user-admin` and add/change a user to have the new role.\
+`Note: only this user will have access to the admin interface`
+
+Update tag to `dockerImage.v.36.release-2020-12-15` in the `.env` file.
+
 ### 2020-11-25
 
 Update tag to `dockerimage.v.22.release-2020-11-24` in the `.env` file - no additional changes necessary.
