@@ -22,7 +22,7 @@ No unreleased changes yet.
  - [UserService](../releases/userservice.md)
  
 #### 3rd party components
- - none
+ - [Keycloak](../releases/keycloak.md)
 
 ### 2020-11-25
 #### Own services
