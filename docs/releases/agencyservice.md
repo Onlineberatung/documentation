@@ -13,6 +13,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+1. You have to grant the update permission for the agencyservice database user by executing this sql statements:
+   
+   ``GRANT UPDATE ON agencyservice.* TO 'agencyservice'@'%'; FLUSH PRIVILEGES;``
+
 ### 2020-12-15
 
 1. You have to grant the insert permission for the agencyservice database user by executing this sql statements:
