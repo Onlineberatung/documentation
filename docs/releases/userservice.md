@@ -13,9 +13,15 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-01-13
+
 1. You have to grant the `Edit Other User Information` permission for the `technical` user in
  Rocket.Chat. Therefore access the administration console of Rocket.Chat and select the item
   `Permissions` in `Administration` settings and activate the checkbox for mentioned permission.
+
+2. Update tag to `dockerImage.v.37.release-2021-01-13` in the `.env` file.
 
 ### 2020-12-15
 `userservice.conf` in `<base>/nginx/conf/locations` needs to be extended with the following lines:\
