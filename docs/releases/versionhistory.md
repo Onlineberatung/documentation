@@ -13,6 +13,12 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2021-01-13
+#### Own services
+ - [AgencyService](../releases/agencyservice.md)
+ - [Frontend](../releases/frontend.md)
+ - [UserService](../releases/userservice.md)
+
 ### 2020-12-15
 #### Own services
  - [AgencyService](../releases/agencyservice.md)
