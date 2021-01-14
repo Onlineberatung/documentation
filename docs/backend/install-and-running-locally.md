@@ -112,6 +112,7 @@ MESSAGE_SERVICE_VERSION=dockerimage.v.3-release-2020-10-13
 MAIL_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
 UPLOAD_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
 LIVE_SERVICE_VERSION=dockerImage.v.1
+VIDEO_SERVICE_VERSION=dockerImage.v.1
 ```
 
 Sollte keine Docker Registry verfügbar sein müssen die Services zuerst [lokal gebaut](../backend/build-and-load-docker-image.md) werden und anschließend in der `docker-compose.yml` hinterlegt werden, z.B.
@@ -125,19 +126,25 @@ Andernfalls muss in der `docker-compose.yml` lediglich die `<image_server_url>` 
 
 ### UserService-Konfiguration anpassen
 
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable gesetzt werden:
+ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable (`./UserService/UserService.env`) gesetzt werden:
 
 `KEYCLOAK_CORS=true`
 
 ### MessageService-Konfiguration anpassen
 
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable In der Environment-Datei für den AgencyService (`./AgencyService/AgencyService.env`) gesetzt werden:
+ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable (`./MessageService/MessageService.env`) gesetzt werden:
 
 `KEYCLOAK_CORS=true`
 
 ### AgencyService-Konfiguration anpassen
 
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss folgende Environment-Variable gesetzt werden:
+ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable (`./AgencyService/AgencyService.env`) gesetzt werden:
+
+`KEYCLOAK_CORS=true`
+
+### VideoService-Konfiguration anpassen
+
+ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable (`./VideoService/VideoService.env`) gesetzt werden:
 
 `KEYCLOAK_CORS=true`
 

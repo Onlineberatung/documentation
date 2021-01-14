@@ -47,6 +47,7 @@ drwx------ 2 root root 4096 Mar  1 11:48 Nosqlclient
 drwx------ 3 root root 4096 Mar  1 14:20 MessageService
 drwx------ 3 root root 4096 Mar  1 14:20 UploadService
 drwx------ 3 root root 4096 Mar  1 14:20 LiveService
+drwx------ 3 root root 4096 Mar  1 14:20 VideoService
 
 _<ProjectRoot>_/Adminer:
 -rw------- 1 root root 32 Feb 14 15:01 Adminer.env
@@ -156,6 +157,7 @@ drwxrwx--- 3 root docker 4096 Feb 27 10:42 UserService
 drwxrwx--- 3 root docker 4096 Feb 27 10:44 MailService
 drwxrwx--- 3 root docker 4096 Feb 27 10:44 UploadService
 drwxrwx--- 3 root docker 4096 Feb 27 10:44 LiveService
+drwxrwx--- 3 root docker 4096 Feb 27 10:44 VideoService
 
 _<ProjectRoot>_/frontend:
 drwxrwx--- 2 root docker 4096 Jan 18 15:18 log
@@ -245,6 +247,10 @@ drwxrwx--- 2 root docker 4096 Mar  1 08:32 log
 
 _<ProjectRoot>_/LiveService:
 -rw-rw---- 1 root docker  289 Feb 18 14:10 LiveService.env
+drwxrwx--- 2 root docker 4096 Mar  1 08:32 log
+
+_<ProjectRoot>_/VideoService:
+-rw-rw---- 1 root docker  289 Feb 18 14:10 VideoService.env
 drwxrwx--- 2 root docker 4096 Mar  1 08:32 log
 
 ```
