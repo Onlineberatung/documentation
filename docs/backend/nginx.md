@@ -21,11 +21,12 @@ __These whitelists have to contain also the ip address ranges of the docker netw
 The following services or third party applications do have whitelist restrictions:
 - AgencyService (`./nginx/conf/locations/agencyservice.conf`)
 - Keycloak (`./nginx/conf/locations/keycloak.conf`)
+- LiveService (`./nginx/conf/locations/liveservice.conf`)
 - MessageService (`./nginx/conf/locations/messageservice.conf`)
 - Rocket.Chat (`./nginx/conf/locations/rocketchat.conf`)
 - UploadService (`./nginx/conf/locations/uploadservice.conf`)
 - UserService (`./nginx/conf/locations/userservice.conf`)
-- LiveService (`./nginx/conf/locations/liveservice.conf`)
+- VideoService (`./nginx/conf/locations/videoservice.conf`)
 
 These define that only paths needed by the client are allowed for external access. All other paths can only be accessed by IP addresses listed in `./nginx/conf/ip-restrictions.conf`.
 

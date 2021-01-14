@@ -88,7 +88,6 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 `docker load -i uploadservice.tar`
 
 ## LiveService
-**`!upcoming with release 2020-11-24`**
 ### Docker-Image lokal bauen
 Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
 
@@ -104,3 +103,22 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 
 **Import**
 `docker load -i liveservice.tar`
+
+## VideoService
+### Build docker image locally
+You can build the Docker image of the VideoService with the following batch file which is located in the root directory:
+
+`build-docker.cmd`
+
+The image is being tagged as `development` in the local Docker registry. You may need to change the path in the `Dockerfile` for a correct build to (for example):
+
+`COPY target/VideoService.jar app.jar`
+
+### Transfer Docker image
+To transfer the Docker image to another Docker registry (or another computer) you can use the following commands:
+
+**Export**
+`docker save -o videoservice.tar cob/videoservice:development`
+
+**Import**
+`docker load -i videoservice.tar`
