@@ -13,4 +13,4 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-Configure the backend initially like documented under [Installing and running the videoBackend](../backend/videoBackend-lokal.md).
+Configure the backend initially like documented under [Installing and running the videoBackend](../backend/videobackend.md).
