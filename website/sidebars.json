@@ -21,7 +21,8 @@
       "backend/mailservice-templates",
       "backend/jenkins",
       "backend/nginx",
-      "backend/ssl-certificate"
+      "backend/ssl-certificate",
+      "backend/video-backend"
     ],
     "Frontend": ["frontend/build", "frontend/tools-and-technologies"],
     "Releases": [
