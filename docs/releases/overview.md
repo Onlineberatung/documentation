@@ -40,3 +40,13 @@ If you want to check the individual service/component please klick on the corres
 |[Nosqlclient](../releases/nosqlclient.md)|`4.0.1`|
 |[OpenLDAP](../releases/openldap.md)|`1.4.0`|
 |[Rocket.Chat](../releases/rocketchat.md)|`3.7.1`|
+
+ 
+### Backends
+To tie the services and components together we use a Repository called ```backend```.\
+For the video beratung we have a dedicated backend ```videoBackend```.
+
+|Backend-Component|
+|--- |
+|[Backend](../releases/backend.md)|
+|[VideoBackend](../releases/videobackend.md)|

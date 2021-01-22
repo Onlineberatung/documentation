@@ -43,7 +43,9 @@
       "releases/mongodb",
       "releases/nosqlclient",
       "releases/openldap",
-      "releases/rocketchat"
+      "releases/rocketchat",
+      "releases/backend",
+      "releases/videobackend"
     ]
   }
 }
