@@ -1,6 +1,6 @@
 ---
 id: videobackend
-title: Backend - VideoBackend
+title: Backend stack - VideoBackend
 ---
 
 ## General description

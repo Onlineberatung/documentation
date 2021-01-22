@@ -42,9 +42,9 @@ If you want to check the individual service/component please klick on the corres
 |[Rocket.Chat](../releases/rocketchat.md)|`3.7.1`|
 
  
-### Backends
-To tie the services and components together we use a Repository called ```backend```.\
-For the video beratung we have a dedicated backend ```videoBackend```.
+### Backend stacks
+To tie the services and components together we use a repository called ```backend```.\
+For the VideoBeratung we have a dedicated backend: ```videoBackend```.
 
 |Backend-Component|
 |--- |
