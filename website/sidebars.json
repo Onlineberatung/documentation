@@ -36,6 +36,7 @@
       "releases/nginx",
       "releases/uploadservice",
       "releases/userservice",
+      "releases/videoservice",
       "releases/adminer",
       "releases/keycloak",
       "releases/mariadb",

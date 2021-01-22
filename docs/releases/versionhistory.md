@@ -10,8 +10,8 @@ In this log we will mark services/components which need an update or configurati
 For more details please visit the provided link to the specific service/component.
 
 ### Unreleased
-
-No unreleased changes yet.
+#### Own services
+ - [VideoService](../releases/videoservice.md)
 
 ### 2021-01-13
 #### Own services

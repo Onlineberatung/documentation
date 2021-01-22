@@ -28,6 +28,7 @@ If you want to check the individual service/component please klick on the corres
 |[NGINX](../releases/nginx.md)|`dockerImage.v.4.release-2020-11-03`|
 |[UploadService](../releases/uploadservice.md)|`dockerImage.v.17.release-2020-12-15`|
 |[UserService](../releases/userservice.md)|`dockerImage.v.36.release-2020-12-15`|
+|[VideoService](../releases/videoservice.md)|`dockerImage.v.36.release-2020-12-15`|
  
 ### 3rd party components
 |Component|Current image version|
