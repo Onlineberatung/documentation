@@ -63,6 +63,10 @@ You need to configure a URL where your videoBackend is reachable at ```PUBLIC_UR
 
 For local development you can re-use the URL from the backend ```onlineberatung.local``` with the default port's.
 
+ℹ You need to ensure that this URL points to the machine where you intent to start the videoBackend.
+ - for ```onlineberatung.local``` you might need to edit your ```hosts``` file and add ```onlineberatung.local``` pointing to ```127.0.0.1``` or the ```ip-address``` of your machine.
+ - for ```onlineberatung.de``` (or your Domain) you need to add a DNS record pointing to the ```ip-address``` of the machine running the videoBackend.
+
 ### Set local IP (for local usage)
 If you run your videoBackend on a local machine you need to put your local IP at ```DOCKER_HOST_ADDRESS``` in ```.env``` and uncomment that specific line by removing the leading ```#```.
 
@@ -75,7 +79,7 @@ After you configured your videoBackend you can start it by running the command `
 If you can't access the Jitsi-Page because of a Warning about an unvalid certificate in Chrome, you can try this Tipp:\
 Just click anywhere on the screen (to select the tab/page) and type ```thisisunsafe```
 
-This is especially true for Chrom on Mac since it treats things differently than the Windows Version.
+This is especially true for Chrome on Mac since it treats things differently than the Windows Version.
 
 See [Stackoverflow](https://stackoverflow.com/questions/58802767/no-proceed-anyway-option-on-neterr-cert-invalid-in-chrome-on-macos/58957322#58957322)
  
