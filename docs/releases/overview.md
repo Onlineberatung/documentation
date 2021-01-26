@@ -28,6 +28,7 @@ If you want to check the individual service/component please klick on the corres
 |[NGINX](../releases/nginx.md)|`dockerImage.v.4.release-2020-11-03`|
 |[UploadService](../releases/uploadservice.md)|`dockerImage.v.17.release-2020-12-15`|
 |[UserService](../releases/userservice.md)|`dockerImage.v.36.release-2020-12-15`|
+|[VideoService](../releases/videoservice.md)|`tbd`|
  
 ### 3rd party components
 |Component|Current image version|
@@ -39,3 +40,13 @@ If you want to check the individual service/component please klick on the corres
 |[Nosqlclient](../releases/nosqlclient.md)|`4.0.1`|
 |[OpenLDAP](../releases/openldap.md)|`1.4.0`|
 |[Rocket.Chat](../releases/rocketchat.md)|`3.7.1`|
+
+ 
+### Backend stacks
+To tie the services and components together we use a repository called ```backend```.\
+For the VideoBeratung we have a dedicated backend: ```videoBackend```.
+
+|Backend-Component|
+|--- |
+|[Backend](../releases/backend.md)|
+|[VideoBackend](../releases/videobackend.md)|
