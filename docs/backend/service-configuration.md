@@ -354,13 +354,17 @@ Following values are mandatory:
 
 | Name | Description |
 | ---- | ----------- |
+| APP_BASE_URL | Application host, e.g. _https://application.local_ |
 | KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
 | KEYCLOAK_RESOURCE | Keycloak resource name |
 | KEYCLOAK_CORS | false for production system! |
+| VIDEO_CALL_SERVER_URL | Root path to the (Jitsi) VideoBackend instance |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+
+The properties `USER_SERVICE_API_URL`, `LIVE_SERVICE_API_URL` and `MESSAGE_SERVICE_API_URL` should point to the corresponding service (docker internal) and should only be changed if necessary.
 
 ## Restart aller Services
 Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.

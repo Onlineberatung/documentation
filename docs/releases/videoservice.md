@@ -13,4 +13,4 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-Configure the service initially like documented under [service configuration](../backend/service-configuration.md).
+Configure the service initially like documented under [service configuration](../backend/service-configuration.md#videoservice).
