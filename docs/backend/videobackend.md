@@ -67,8 +67,10 @@ For local development you can re-use the URL from the backend ```onlineberatung.
  - for ```onlineberatung.local``` you might need to edit your ```hosts``` file and add ```onlineberatung.local``` pointing to ```127.0.0.1``` or the ```ip-address``` of your machine.
  - for ```onlineberatung.de``` (or your Domain) you need to add a DNS record pointing to the ```ip-address``` of the machine running the videoBackend.
 
-### Set local IP (for local usage)
-If you run your videoBackend on a local machine you need to put your local IP at ```DOCKER_HOST_ADDRESS``` in ```.env``` and uncomment that specific line by removing the leading ```#```.
+### Set DOCKER_HOST_ADDRESS
+If you run your videoBackend on a local machine or behind a NAT (i.e. with forwarded ports) you need to put your IP at ```DOCKER_HOST_ADDRESS``` in ```.env``` and uncomment that specific line by removing the leading ```#```.
+ - for your local Machine this needs to be your IP address (not 127.0.0.1)
+ - for a server behind a NAT, this needs to be the external IP address
 
 ## videoBackend startup
 After you configured your videoBackend you can start it by running the command ```docker-compose up -d``` in the directory containing the ```.env``` and ```docker-compose.yml``` files.
