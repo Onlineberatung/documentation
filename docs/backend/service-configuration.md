@@ -363,6 +363,11 @@ Following values are mandatory:
 | VIDEO_CALL_SERVER_URL | Root path to the (Jitsi) VideoBackend instance |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+| VIDEO_CALL_SECURITY_JWT_AUDIENCE | Audience property (must match one of the JWT_ACCEPTED_AUDIENCES configured in (Jitsi) VideoBackend instance!) |
+| VIDEO_CALL_SECURITY_JWT_ISSUER | Issuer property (must match one of the JWT_ACCEPTED_ISSUERS configured in (Jitsi) VideoBackend instance!) |
+| VIDEO_CALL_SECURITY_JWT_SUBJECT | Subject property to be used in JWT token |
+| VIDEO_CALL_SECURITY_JWT_SECRET | Secret property (must match the JWT_APP_SECRET configured in (Jitsi) VideoBackend instance!) |
+| VIDEO_CALL_SECURITY_JWT_VALIDITY_HOURS | Validity time of the token in hours |
 
 The properties `USER_SERVICE_API_URL`, `LIVE_SERVICE_API_URL` and `MESSAGE_SERVICE_API_URL` should point to the corresponding service (docker internal) and should only be changed if necessary.
 
