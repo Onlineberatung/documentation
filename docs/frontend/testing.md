@@ -17,4 +17,4 @@ To select DOM-elements for cypress tests we are using `data-cy` attributes to pr
 
 `npm run dev` to start the frontend process and open the Cypress GUI to manually start specific cypress tests.
 
-in addition, a github action automatically executes the command `npm run test` on every push. This ensures that changes can only be merged when all tests have been run successfully.
+In addition, a github action automatically executes the command `npm run test` on every push. This ensures that changes can only be merged when all tests have been run successfully.
