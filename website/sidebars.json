@@ -24,7 +24,7 @@
       "backend/ssl-certificate",
       "backend/video-backend"
     ],
-    "Frontend": ["frontend/build", "frontend/tools-and-technologies"],
+    "Frontend": ["frontend/build", "frontend/tools-and-technologies", "frontend/testing"],
     "Releases": [
       "releases/overview",
       "releases/versionhistory",
