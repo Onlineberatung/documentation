@@ -13,4 +13,8 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2020-02-09
+
 Configure the backend initially like documented under [Installing and running the videoBackend](../backend/videobackend.md).

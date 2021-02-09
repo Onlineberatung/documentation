@@ -21,14 +21,14 @@ If you want to check the individual service/component please klick on the corres
 |Service|Current image version|
 |--- |--- |
 |[AgencyService](../releases/agencyservice.md)|`dockerImage.v.14.release-2020-12-15`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.81-master`|
-|[LiveService](../releases/liveservice.md)|`dockerImage.v.5.release-2020-11-03`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.98-master`|
+|[LiveService](../releases/liveservice.md)|`dockerImage.v.14.release-2021-02-09`|
 |[MailService](../releases/mailservice.md)|`dockerImage.v.8.release-2020-11-03`|
-|[MessageService](../releases/messageservice.md)|`dockerImage.v.8.release-2020-11-03`|
+|[MessageService](../releases/messageservice.md)|`dockerImage.v.17.release-2021-02-09`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.4.release-2020-11-03`|
 |[UploadService](../releases/uploadservice.md)|`dockerImage.v.17.release-2020-12-15`|
-|[UserService](../releases/userservice.md)|`dockerImage.v.36.release-2020-12-15`|
-|[VideoService](../releases/videoservice.md)|`tbd`|
+|[UserService](../releases/userservice.md)|`dockerImage.v.51.release-2021-02-09`|
+|[VideoService](../releases/videoservice.md)|`dockerImage.v.9.release-2021-02-08`|
  
 ### 3rd party components
 |Component|Current image version|

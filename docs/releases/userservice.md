@@ -15,6 +15,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2020-02-09
+
+Update tag to `dockerImage.v.51.release-2021-02-09` in the `.env` file - no additional changes necessary.
+
 ### 2021-01-13
 
 1. You have to grant the `Edit Other User Information` permission for the `technical` user in

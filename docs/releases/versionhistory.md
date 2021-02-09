@@ -10,7 +10,14 @@ In this log we will mark services/components which need an update or configurati
 For more details please visit the provided link to the specific service/component.
 
 ### Unreleased
+
+No unreleased changes yet.
+
+### 2020-02-09
 #### Own services
+ - [LiveService](../releases/liveservice.md)
+ - [MessageService](../releases/messageservice.md)
+ - [UserService](../releases/userservice.md)
  - [VideoService](../releases/videoservice.md)
  
 #### Backend
