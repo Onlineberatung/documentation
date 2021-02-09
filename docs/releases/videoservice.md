@@ -18,3 +18,4 @@ No unreleased changes yet.
 ### 2020-02-09
 
 Configure the service initially like documented under [service configuration](../backend/service-configuration.md#videoservice).
+Please be aware that the video call functionality is currently hidden in the frontend.
