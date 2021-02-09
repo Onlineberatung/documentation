@@ -38,6 +38,7 @@ MESSAGE_SERVICE_VERSION=dockerimage.v.3-release-2020-10-13
 MAIL_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
 UPLOAD_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
 LIVE_SERVICE_VERSION=dockerImage.v.1
+VIDEO_SERVICE_VERSION=dockerImage.v.1
 ```
 
 ### Dateiberechtigungen

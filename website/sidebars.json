@@ -21,9 +21,10 @@
       "backend/mailservice-templates",
       "backend/jenkins",
       "backend/nginx",
-      "backend/ssl-certificate"
+      "backend/ssl-certificate",
+      "backend/video-backend"
     ],
-    "Frontend": ["frontend/build", "frontend/tools-and-technologies"],
+    "Frontend": ["frontend/build", "frontend/tools-and-technologies", "frontend/testing"],
     "Releases": [
       "releases/overview",
       "releases/versionhistory",
@@ -35,13 +36,16 @@
       "releases/nginx",
       "releases/uploadservice",
       "releases/userservice",
+      "releases/videoservice",
       "releases/adminer",
       "releases/keycloak",
       "releases/mariadb",
       "releases/mongodb",
       "releases/nosqlclient",
       "releases/openldap",
-      "releases/rocketchat"
+      "releases/rocketchat",
+      "releases/backend",
+      "releases/videobackend"
     ]
   }
 }

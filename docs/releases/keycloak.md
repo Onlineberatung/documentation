@@ -20,6 +20,11 @@ No unreleased changes yet.
 You need to change the Token-Settings in your Realm as shown in the screenshot below:
 ![keycloak-token-settings](assets/keycloak-token-settings.png)
 
+`keycloak.conf` in `<base>/nginx/conf/locations` needs some changes - lines 39-41 need be changed to:\
+`location /auth/resources/ {`\
+`     limit_req zone=by_ip_10rs burst=10 nodelay;`\
+`     proxy_pass http://keycloak:8080/auth/resources/; `\
+
 
 ### 2020-11-25
 

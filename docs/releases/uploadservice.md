@@ -13,6 +13,8 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
 ### 2020-12-15
 
 You need to run the following SQL-Statement:\

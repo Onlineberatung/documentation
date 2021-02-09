@@ -14,7 +14,7 @@ More information to Create React App you can find in the [official documentation
 
 ## HtmlWebpackPlugin
 
-Due to the need of several entry points, we had to make changes to the webpack configuration. Therefore the Create React App had to be ejected.
+Due to the need of several entry points, we had to make changes to the webpack configuration. **Therefore the Create React App had to be ejected**.
 For the individual entry points (registration pages, login page, main application and error pages) static HTML files are created in the build process with the help of `HtmlWebpackPlugin`.
 
 To generate a new entry point you have to follow these steps:

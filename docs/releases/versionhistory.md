@@ -13,6 +13,16 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2020-02-09
+#### Own services
+ - [LiveService](../releases/liveservice.md)
+ - [MessageService](../releases/messageservice.md)
+ - [UserService](../releases/userservice.md)
+ - [VideoService](../releases/videoservice.md)
+ 
+#### Backend
+ - [VideoBackend](../releases/videobackend.md)
+
 ### 2021-01-13
 #### Own services
  - [AgencyService](../releases/agencyservice.md)
