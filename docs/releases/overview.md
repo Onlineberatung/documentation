@@ -20,14 +20,14 @@ If you want to check the individual service/component please klick on the corres
 ### Own services
 |Service|Current image version|
 |--- |--- |
-|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.14.release-2020-12-15`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.98-master`|
+|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.121.release-2021-03-02`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.112-master`|
 |[LiveService](../releases/liveservice.md)|`dockerImage.v.14.release-2021-02-09`|
-|[MailService](../releases/mailservice.md)|`dockerImage.v.8.release-2020-11-03`|
+|[MailService](../releases/mailservice.md)|`dockerImage.v.11.release-2021-03-02`|
 |[MessageService](../releases/messageservice.md)|`dockerImage.v.17.release-2021-02-09`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.4.release-2020-11-03`|
-|[UploadService](../releases/uploadservice.md)|`dockerImage.v.17.release-2020-12-15`|
-|[UserService](../releases/userservice.md)|`dockerImage.v.51.release-2021-02-09`|
+|[UploadService](../releases/uploadservice.md)|`dockerImage.v.19.release-2021-03-02`|
+|[UserService](../releases/userservice.md)|`dockerImage.v.62.release-2021-03-02`|
 |[VideoService](../releases/videoservice.md)|`dockerImage.v.9.release-2021-02-08`|
  
 ### 3rd party components
