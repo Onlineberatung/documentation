@@ -13,7 +13,11 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
-### 2020-02-09
+### 2021-03-02
+#### Own services
+- [AgencyService](../releases/agencyservice.md)
+
+### 2021-02-09
 #### Own services
  - [LiveService](../releases/liveservice.md)
  - [MessageService](../releases/messageservice.md)
