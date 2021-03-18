@@ -97,9 +97,6 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 | File System | | |
 | System Path | /app/user_uploads | Dieses Verzeichnis wird auf das Host-System gemounted, damit die hochgeladenen Dateien nicht im Container liegen. Da Rocket.Chat die als eigenen RocketChat-Benutzer mit der UID 99999 ablegt, wird der Besitzer des Verzeichnisses auf dem Host-System auf die UID 99999 gesetzt. Diesen Benutzer gibts es auf dem Linux nicht, aber dadurch können die Rechte für das Verzeichnis eingeschränkt werden. Besitzer: 99999 Gruppe: docker Permissions: 744
 
-### Nur lokal: CORS für Frontend-Entwicklung aktivieren
-Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss in Rocket.Chat in der Administration unter dem Punkt _"General"_ → _"REST API"_ die Einstellung _"Enable Cors"_ auf _"true"_ gesetzt werden.
-
 ### Rate Limiter
 For local development both `Rate Limiter` can be deactivated.
 
@@ -194,9 +191,10 @@ Folgende Werte müssen zwingend gesetzt werden:
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
 | KEYCLOAK_RESOURCE | agency-service |
-| KEYCLOAK_CORS | false for production system! |
+| KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
+| USER_ADMIN_SERVICE_API_URL | http://userservice:8080 |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 | [CONSULTING_TYPE_NAME]_WHITE_SPOT_AGENCY_ID | Define the white spot agency IDs where needed for every consulting type |
@@ -244,7 +242,7 @@ Folgende Werte müssen zwingend gesetzt werden:
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
 | KEYCLOAK_RESOURCE | agency-service |
-| KEYCLOAK_CORS | false for production system! |
+| KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
 | ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
@@ -252,8 +250,8 @@ Folgende Werte müssen zwingend gesetzt werden:
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | ROCKET_SYSTEMUSER_ID | Rocket.Chat system user id |
-| USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
-| USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
+| USER_SERVICE_API_URL | http://userservice:8080/users |
+| USER_SERVICE_API_LIVEPROXY_URL | http://userservice:8080 |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -288,7 +286,7 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
 | KEYCLOAK_RESOURCE | agency-service |
-| KEYCLOAK_CORS | false for production system! |
+| KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
 | KEYCLOAKSERVICE_TECHUSER_ID | Keycloak technical user ID (see [here](#-technischer-benutzer-für-e-mail-prüfung)) |
@@ -300,10 +298,10 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | ROCKET_SYSTEMUSER_ID | Rocket.Chat system user ID |
-| AGENCY_SERVICE_API_URL | URL to the AgencyService REST API, e.g. _http://\<host\>/service/agencies_ |
-| MESSAGE_SERVICE_API_URL | URL to the MessageService REST API, e.g. _http://\<host\>/service/messages_ |
-| MAIL_SERVICE_API_MAILS_SEND | URL to the MailService send mails endpoint, e.g. _http://\<host\>/service/mails/send_ |
-| LIVE_SERVICE_API_URL | URL to the LiveService REST API, e.g. _http://\<host\>_ |
+| AGENCY_SERVICE_API_URL | http://agencyservice:8080/agencies |
+| MESSAGE_SERVICE_API_URL | http://messageservice:8080 |
+| MAIL_SERVICE_API_URL | http://mailservice:8080 |
+| LIVE_SERVICE_API_URL | http://liveservice:8080 |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -320,14 +318,14 @@ Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 | KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
-| KEYCLOAK_CORS | false for production system! |
+| KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
 | ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
 | ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
-| USER_SERVICE_API_URL | URL to the UserService REST API, e.g. _http://\<host\>/service/users_ |
-| USER_SERVICE_API_LIVEPROXY_URL | URL to the UserService live proxy REST API, e.g. _http://\<host\>_ |
+| USER_SERVICE_API_URL | http://userservice:8080/users |
+| USER_SERVICE_API_LIVEPROXY_URL | http://userservice:8080 |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -359,7 +357,7 @@ Following values are mandatory:
 | KEYCLOAK_REALM | Keycloak realm name |
 | KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
 | KEYCLOAK_RESOURCE | Keycloak resource name |
-| KEYCLOAK_CORS | false for production system! |
+| KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 | VIDEO_CALL_SERVER_URL | Root path to the (Jitsi) VideoBackend instance |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
