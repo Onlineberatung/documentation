@@ -56,6 +56,7 @@ VIDEO_SERVICE_VERSION=dockerImage.v.1
 ### Configuration
 
 - [Service configuration](../backend/service-configuration.md)
+- [CORS configuration](../backend/cors-configuration.md)
 
 ### Login data/access links
 

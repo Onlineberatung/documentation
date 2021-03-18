@@ -124,33 +124,9 @@ Sollte keine Docker Registry verfügbar sein müssen die Services zuerst [lokal 
 
 Andernfalls muss in der `docker-compose.yml` lediglich die `<image_server_url>` mit der URL zur Registry ersetzt werden, der Imagename wird dann durch die jeweiligen Variablen aus Datei `.env` ersetzt.
 
-### UserService-Konfiguration anpassen
-
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable (`./UserService/UserService.env`) gesetzt werden:
-
-`KEYCLOAK_CORS=true`
-
-### MessageService-Konfiguration anpassen
-
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable (`./MessageService/MessageService.env`) gesetzt werden:
-
-`KEYCLOAK_CORS=true`
-
-### AgencyService-Konfiguration anpassen
-
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable (`./AgencyService/AgencyService.env`) gesetzt werden:
-
-`KEYCLOAK_CORS=true`
-
-### VideoService-Konfiguration anpassen
-
-ℹ️ Damit die lokale Entwicklungsumgebung auch für die Frontend-Entwicklung, wo ein Node-Server lokal läuft, funktionert, muss zusätzlich noch folgende Environment-Variable (`./VideoService/VideoService.env`) gesetzt werden:
-
-`KEYCLOAK_CORS=true`
-
 ### _optional_: Frontend-Konfiguration anpassen
 
-Diese Konfiguration ist nur notwendig, sofern man beim Frontend nicht den Docker-Container, sondern lokale Dateien, verwenden möchte.
+Diese Konfiguration ist nur notwendig, sofern man beim Frontend nicht den Docker-Container, sondern lokale Dateien verwenden möchte.
 
 Hierzu muss in der `docker-compose.yml` des Backends ein zusätzliches Volume für den Frontend-Container definiert werden (zusätzlich unter "volumes:"):
 
@@ -169,6 +145,7 @@ Die Fronted-Dateien müssen dann in den lokalen Ordner gelegt werden und werden 
 ### Configuration
 
 - [Service configuration](../backend/service-configuration.md)
+- [CORS configuration](../backend/cors-configuration.md)
 
 ### Login data/access links
 

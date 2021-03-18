@@ -22,6 +22,7 @@
       "backend/jenkins",
       "backend/nginx",
       "backend/ssl-certificate",
+      "backend/cors-configuration",
       "backend/video-backend"
     ],
     "Frontend": ["frontend/build", "frontend/tools-and-technologies", "frontend/testing"],
