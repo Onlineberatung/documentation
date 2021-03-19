@@ -14,12 +14,12 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 ### Unreleased
 
 Push notifications for mobile devices can be configured now (deactivated by default). Therefore you 
-have to to several steps:
-1. `docker-compose.yml` needs to be extended with da new volume mapping for your firebase 
+have to do several steps:
+1. `docker-compose.yml` needs to be extended with the new volume mapping for your firebase 
    configuration path e.g:\
    `./UserService/firebase:/firebase`
 2. Create the folder `firebase`under your `UserService` location and add the firebase credential 
-   json file `(can be created in your firebase project`
+   json file `(can be created in your firebase project)`
 3. Extend your `UserService.env` file with the following properties:
    - `FIREBASE_CONFIGURATION_PUSH-NOTIFICATIONS_ENABLED=true`
    - `FIREBASE_CONFIGURATION_CREDENTIALS_FILE_PATH=/firebase/<your-credentials-file.json>`
