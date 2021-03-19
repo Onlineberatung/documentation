@@ -46,12 +46,13 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 1. Rolle anlegen/Rechte festlegen
 * Unter _"Permissions"_ über den Button _"+"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Der Rolle folgende Rechte hinzufügen (Haken setzen):
-    * _[add-user-to-any-p-room]_
-    * _[clean-channel-history]_
-    * _[delete-p]_
-    * _[delete-user]_
-    * _[remove-user]_
-    * _[view-room-administration]_
+    * `Add User to Any Private Channel`
+    * `Clean Channel History`
+    * `Delete Private Channels`
+    * `Delete User`
+    * `Edit Other User Information`
+    * `Remove User`
+    * `View Room Administration`
 2. Benutzer anlegen
 * Unter _"Users"_ einen neuen Benutzer _"technical"_ anlegen und die eben erstellte Rolle _"technical"_ zuweisen.
 * **Weitere Einstellungen des technischen Benutzer:**
@@ -64,8 +65,8 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 1. Rolle anlegen/Rechte festlegen
 * Unter _"Permissions"_ über den Button _"+"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Dieser Rolle nun die folgende Rechte zuweisen:
-    * _[create-p]_ 
-    * _[view-room-administration]_
+    * `Create Private Channels`
+    * `View Room Administration`
 2. Benutzer anlegen
 * Unter _"Users"_ einen neuen Benutzer _"system"_ anlegen und die Rollen _"user"_ und _"system"_ zuweisen.
 * **Weitere Einstellungen des System-Benutzer:**
@@ -143,9 +144,6 @@ Im Anschluss muss noch die Verbindung zu LDAP aktualisiert werden, da in dem Rea
 Dazu geht man auf _"User Federation"_ und wählt dort _"ldap"_ aus. In den sich daraufhin öffnenden Konfigurationsfeldern aktualisiert man das Feld _"Bind Credential"_ mit dem für den LDAP-Admin gesetzten Passwort (Initial-Passwort: admin).
 Die Funktionstüchtigkeit kann mit _"Test authentication"_ geprüft werden.
 Zum Schluss das ganze noch mit dem _"save"_ Button ganz unten speichern.
-
-### Technischer Benutzer für E-Mail-Prüfung
-Für die Überprüfung auf bereits vergebene E-Mail-Adressen in Keycloak muss ein technischer Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt nur einen Namen aber kein Passwort oder sonstige Daten und Einstellungen.
 
 ### Technischer Benutzer für Registrierung und Masterkey
 Für die Registrierung neuer Ratsuchender in Keycloak muss ein technischer Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt einen Namen, ein Passwort und folgende Rollen-Einstellungen:
@@ -289,7 +287,6 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
-| KEYCLOAKSERVICE_TECHUSER_ID | Keycloak technical user ID (see [here](#-technischer-benutzer-für-e-mail-prüfung)) |
 | KEYCLOAKSERVICE_ADMIN_USERNAME | Keycloak technical user username (see [here](#-technischer-benutzer-für-registrierung)) |
 | KEYCLOAKSERVICE_ADMIN_PASSWORD | Keycloak technical user password |
 | ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |

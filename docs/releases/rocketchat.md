@@ -13,7 +13,8 @@ If you want a changelog please see the project page at https://rocket.chat.
 
 ### Unreleased
 
-No unreleased changes yet.
+Check if the following permission is set for the technical user and if not activate it:  
+`Edit Other User Information`
 
 ### 2020-11-25
 
