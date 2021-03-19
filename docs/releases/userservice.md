@@ -26,7 +26,14 @@ have to do several steps:
    - `FIREBASE_CONFIGURATION_NOTIFICATION_MESSAGE=<message being send to mobile devices>`\
      
 You can now set the client registration device identifiers for users via the new rest endpoint 
-`/users/mobiletoken`. From there, these users will receive push notifications on their mobile devices
+`/users/mobiletoken`. From there, these users will receive push notifications on their mobile devices.
+
+Also you need to change two values in `UserService.env`:
+- change `MESSAGE_SERVICE_API_URL` to `http://messageservice:8080`
+- change `MAIL_SERVICE_API_URL` to `http://mailservice:8080`
+
+On top of that the following property can be deleted from `UserService.env`:
+`KEYCLOAKSERVICE_TECHUSER_ID`
  
 ### 2021-03-02
 
