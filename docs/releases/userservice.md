@@ -13,6 +13,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-03-23
+
 Push notifications for mobile devices can be configured now (deactivated by default). Therefore you 
 have to do several steps:
 1. `docker-compose.yml` needs to be extended with the new volume mapping for your firebase 
@@ -34,6 +38,8 @@ Also you need to change two values in `UserService.env`:
 
 On top of that the following property can be deleted from `UserService.env`:
 `KEYCLOAKSERVICE_TECHUSER_ID`
+
+Update tag to `dockerImage.v.78.release-2021-03-23` in the `.env` file - no additional changes necessary.
  
 ### 2021-03-02
 

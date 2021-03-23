@@ -13,6 +13,19 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2021-03-23
+#### Own services
+ - [Frontend](../releases/frontend.md)
+ - [Keycloak](../releases/keycloak.md)
+ - [MailService](../releases/mailservice.md)
+ - [MessageService](../releases/messageservice.md)
+ - [UserService](../releases/userservice.md)
+
+ #### 3rd party components
+ - [Keycloak](../releases/keycloak.md)
+ - [NGINX](../releases/nginx.md)
+ - [Rocket.Chat](../releases/rocketchat.md)
+
 ### 2021-03-02
 #### Own services
 - [AgencyService](../releases/agencyservice.md)

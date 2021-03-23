@@ -13,6 +13,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-03-23
+
 Add the following line to `conf/security-headers.conf`:  
 `add_header Access-Control-Expose-Headers "X-Reason";`
 
