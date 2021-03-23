@@ -160,7 +160,8 @@ Die oben gemachten Änderungen an der Zeitzonenkonfiguration zurücksetzen.
 
 ## Configuration
 
-Anschließend sollten die [Services konfiguriert](../backend/service-configuration.md) werden.
+Anschließend sollten die [Services konfiguriert](../backend/service-configuration.md) werden.  
+Also don't forget to set the correct [CORS](../backend/cors-configuration.md) settings.
 
 ## Bekannte Fehler und deren Behebung
 

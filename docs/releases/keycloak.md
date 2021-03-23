@@ -15,6 +15,10 @@ If you want a changelog please see the project page at https://www.keycloak.org.
 
 No unreleased changes yet.
 
+### 2021-03-23
+
+The Keycloak technical user for the e-mail check during registration is not needed anymore and can be deleted. Its user ID is located in the `UserService.env`, value `KEYCLOAKSERVICE_TECHUSER_ID`.
+
 ### 2020-12-15
 
 You need to change the Token-Settings in your Realm as shown in the screenshot below:

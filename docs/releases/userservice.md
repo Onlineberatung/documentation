@@ -15,6 +15,32 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-03-23
+
+Push notifications for mobile devices can be configured now (deactivated by default). Therefore you 
+have to do several steps:
+1. `docker-compose.yml` needs to be extended with the new volume mapping for your firebase 
+   configuration path e.g:\
+   `./UserService/firebase:/firebase`
+2. Create the folder `firebase`under your `UserService` location and add the firebase credential 
+   json file `(can be created in your firebase project)`
+3. Extend your `UserService.env` file with the following properties:
+   - `FIREBASE_CONFIGURATION_PUSH-NOTIFICATIONS_ENABLED=true`
+   - `FIREBASE_CONFIGURATION_CREDENTIALS_FILE_PATH=/firebase/<your-credentials-file.json>`
+   - `FIREBASE_CONFIGURATION_NOTIFICATION_MESSAGE=<message being send to mobile devices>`\
+     
+You can now set the client registration device identifiers for users via the new rest endpoint 
+`/users/mobiletoken`. From there, these users will receive push notifications on their mobile devices.
+
+Also you need to change two values in `UserService.env`:
+- change `MESSAGE_SERVICE_API_URL` to `http://messageservice:8080`
+- change `MAIL_SERVICE_API_URL` to `http://mailservice:8080`
+
+On top of that the following property can be deleted from `UserService.env`:
+`KEYCLOAKSERVICE_TECHUSER_ID`
+
+Update tag to `dockerImage.v.78.release-2021-03-23` in the `.env` file - no additional changes necessary.
+ 
 ### 2021-03-02
 
 Update tag to `dockerImage.v.62.release-2021-03-02` in the `.env` file - no additional changes necessary.

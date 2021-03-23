@@ -15,6 +15,11 @@ If you want a changelog please see the project page at https://rocket.chat.
 
 No unreleased changes yet.
 
+### 2021-03-23
+
+Check if the following permission is set for the technical user and if not activate it:  
+`Edit Other User Information`
+
 ### 2020-11-25
 
 _Before_ updating tag to `3.7.1` in the `docker-compose.yml` file the following changes are necessary:

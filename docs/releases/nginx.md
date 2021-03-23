@@ -15,6 +15,11 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-03-23
+
+Add the following line to `conf/security-headers.conf`:  
+`add_header Access-Control-Expose-Headers "X-Reason";`
+
 ### 2020-11-03
 
 Update tag to `dockerImage.v.4.release-2020-11-03` in the `docker-compose.yml` file - no additional changes necessary.
