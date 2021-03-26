@@ -13,4 +13,4 @@ For a full changelog of this project please see the [project changelog](https://
 
 ### Unreleased
 
-No unreleased changes yet.
+Update nginx configuration file `nginx/conf/nginx.conf`. 
