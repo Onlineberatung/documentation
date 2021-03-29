@@ -66,7 +66,6 @@ Nun muss das Rate-Limiting von Keycloak deaktiviert werden. Dazu alle Zeilen mit
 
 Auch in `rocketchat.conf` muss die Zeile `include ip-restrictions.conf;` entfernt werden.
 
-
 ## MongoDB-Konfiguration anpassen
 
 In der Environment-Datei für die MongoDB (`./mongoDB/mongoDB.env`) müssen die initialen Zugangsdaten festgelegt werden:
