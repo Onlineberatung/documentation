@@ -55,6 +55,18 @@ In der Environment-Datei (`./nginx/nginx.env`) muss die Application URL festgele
 
 Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
 
+Zusätzlich muss SSL lokal deaktiviert werden. Dafür folgende Anpassungen vornehmen:
+
+1. Beim `proxy` in `docker-compose.yml` das Volume `server-ssl.conf` entfernen.
+2. In `adminer.conf` den `ssl` Parameter bei `listen` entfernen, sowie alle Zeilen unterhalb bzgl. SSL.
+3. In `nginx.conf` den Include von `server-ssl.conf` entfernen.
+4. In `security-headers.conf` bei der CSP zusätzlich das `ws:` Protokoll erlauben
+
+Nun muss das Rate-Limiting von Keycloak deaktiviert werden. Dazu alle Zeilen mit `limit_req` in `keycloak.conf` entfernen. Zusätzlich die Zeile `include ip-restrictions.conf;` entfernen.
+
+Auch in `rocketchat.conf` muss die Zeile `include ip-restrictions.conf;` entfernt werden.
+
+
 ## MongoDB-Konfiguration anpassen
 
 In der Environment-Datei für die MongoDB (`./mongoDB/mongoDB.env`) müssen die initialen Zugangsdaten festgelegt werden:
@@ -111,7 +123,7 @@ Dadurch können Probleme behoben und die Services anschließend kontrolliert ges
 Gestartet werden alle Services mit folgendem Befehl im (Haupt-)Verzeichnis, wo die Datei _docker-compose.yml_ liegt: _docker-compose up -d_ (ohne -d um die Log-Ausgabe im Terminal anzuzeigen).
 Das System benötigt nun ein kurze Zeit um die Keycloak-Initialisierung durchzuführen. Bitte ein paar Minuten warten.
 
-Beim ersten Start ist es normal, dass verschiedene Dienste Fehler im Log anzeigen. Dieser werden mit den nächsten Konfigurationsschritten behoben.
+Beim ersten Start ist es normal, dass verschiedene Dienste Fehler im Log anzeigen bzw. nicht starten können. Dieser werden mit den nächsten Konfigurationsschritten behoben.
 
 ## Keycloak Administrator Account anlegen
 

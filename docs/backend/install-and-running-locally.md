@@ -50,13 +50,20 @@ Der lokale Hostname (z.B. _**onlineberatung.local**_) muss auf die eigene IP-Adr
 ### _optional_: Docker Registry
 
 Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. GitHub Packages) bereitgestellt werden. Sollte kein solcher Dienst zur Verfügung stehen, können die Docker Images auch [lokal gebaut](../backend/build-and-load-docker-image.md) werden.
+
 Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung an GitHub Packages erfolgt:
 
-`docker login docker.pkg.github.com`
+```sh
+echo $GITHUB_TOKEN | docker login https://docker.pkg.github.com -u USERNAME --password-stdin
+```
+
+Siehe auch die [Dokumentation von Github bzgl. Docker Login](https://docs.github.com/en/packages/guides/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token).
 
 Unter Windows in der Git-Bash:
 
-`winpty docker login docker.pkg.github.com`
+```sh
+winpty docker login docker.pkg.github.com
+```
 
 Anschließend werden die Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
 
@@ -105,15 +112,18 @@ Beispielhaft wird die Konfiguration in Eclipse im Folgenden beschrieben:
 In der Datei `.env` müssen die Versionen bzw. Tags für die eigenen Microservices angegeben werden, z.B.
 
 ```
-USER_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+AGENCY_SERVICE_VERSION=dockerImage.v.21.release-2021-03-02
 FRONTEND_VERSION=dockerimage.v.7-release-2020-10-13
-AGENCY_SERVICE_VERSION=dockerimage.v.3
-MESSAGE_SERVICE_VERSION=dockerimage.v.3-release-2020-10-13
-MAIL_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
-UPLOAD_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
-LIVE_SERVICE_VERSION=dockerImage.v.1
-VIDEO_SERVICE_VERSION=dockerImage.v.1
+LIVE_SERVICE_VERSION=dockerimage.v.14.release-2021-02-09
+MAIL_SERVICE_VERSION=dockerimage.v.13.release-2021-03-23
+MESSAGE_SERVICE_VERSION=dockerimage.v.25.release-2021-03-23
+UPLOAD_SERVICE_VERSION=dockerimage.v.19.release-2021-03-02
+USER_SERVICE_VERSION=dockerImage.v.78.release-2021-03-23
+VIDEO_SERVICE_VERSION=dockerImage.v.9.release-2021-02-08
+NGINX_SERVICE_VERSION=dockerImage.v.4.release-2020-11-03
 ```
+
+Aktuelle Service-Versionen können auf der [Releases-Seite](../releases/overview.md) gefunden werden.
 
 Sollte keine Docker Registry verfügbar sein müssen die Services zuerst [lokal gebaut](../backend/build-and-load-docker-image.md) werden und anschließend in der `docker-compose.yml` hinterlegt werden, z.B.
 

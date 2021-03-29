@@ -16,28 +16,29 @@ title: Setting up the frontend
 4. Open your command line / terminal / bash
 5. Navigate to the project folder
 6. Run `npm install`
-7. Setup masterkey script for message encryption:
-   - **initial setup:** override username and password in masterkey.js by your [local "technical" user in keycloak](../backend/service-configuration#technischen-benutzer-und-rolle-anlegen)
 
-> IMPORTANT NOTE ON PERMISSIONS: If you experience permission problems while installing Node.js (especially on Mac or Linux machines) never use `sudo` to install packages with `npm`
+> IMPORTANT NOTE ON PERMISSIONS: If you experience permission problems while installing Node.js (especially on Mac or Linux machines), never use `sudo` to install packages with `npm`.
 > Please ask your IT Admins to give you proper permissions or let them do the installation. See <https://docs.npmjs.com/getting-started/fixing-npm-permissions> for instructions.
 
 ### Setup Backend
 
-To run the application locally you'll need to setup the backend first. Please follow this [guide](../setup/setup-backend).
+To run the application locally you'll need to setup the backend first.
+
+Please follow these steps:
+ 
+1. [Setup the backend locally](../backend/install-and-running-locally)
+2. [Create core data and import users](../backend/create-core-data-import-users)
+3. Provide the master key for message encryption to the services by running `node masterkey.js`. If you experience timeouts while trying to set the masterkeys please check that the services are able to reach Keycloak (and vice versa) in your firewall settings.
 
 ## Starting
 
-After your are finished with the steps before and everything runs fine, run these steps to get your project on the road.
+After you're are finished with the setup steps and all services work, run these steps to get your project on the road:
 
 1. Open your command line / terminal / bash
 2. Navigate to the project folder
-3. [Start the backend first](../backend/starting-and-stopping-the-services), then provide the master keys for message encryption to the services:
-   - **set masterkey** by running `npm run mk`\
-   If you experience timeouts while trying to set the masterkeys please check that the services are able to reach Keycloak (and vice versa) in your firewall settings.
-4. Afterwards you can start the frontend
-   - **start** the development environment run `npm start`
+3. [Start the backend first](../backend/starting-and-stopping-the-services)
+4. Afterwards you can start the frontend with `npm start`
 
 ## Build
 
-run the boilerplate with `npm run build`. If everything is correct, you will find a build version of your code in the dist directory. This contains among others a min and concat version of your js and css files.
+Run the boilerplate with `npm run build`. If everything is correct, you will find a build version of your code in the dist directory. This contains among others a minified and concatenated version of your js and css files.
