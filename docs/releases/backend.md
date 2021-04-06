@@ -13,4 +13,4 @@ For a full changelog of this project please see the [project changelog](https://
 
 ### Unreleased
 
-No unreleased changes yet.
+Update `/nginx/conf/nginx.conf` from the repository. There are changes in the configuration of the nginx log format for the access log file.
