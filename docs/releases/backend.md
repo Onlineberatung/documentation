@@ -13,7 +13,7 @@ For a full changelog of this project please see the [project changelog](https://
 
 ### Unreleased
 
-Update `/nginx/conf/nginx.conf`. There are changes in the configuration of the nginx log format for the access log file.
+Update `/nginx/conf/nginx.conf`. There are changes in the configuration of the nginx log format for the access log file. 
 
 Update `/nginx/conf/adminer.conf`. Obsolete tls versions has been removed from ssl configuration.
 
