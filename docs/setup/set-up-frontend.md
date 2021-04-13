@@ -28,7 +28,7 @@ Please follow these steps:
  
 1. [Setup the backend locally](../backend/install-and-running-locally)
 2. [Create core data and import users](../backend/create-core-data-import-users)
-3. Provide the master key for message encryption to the services by running `node masterkey.js`. If you experience timeouts while trying to set the masterkeys please check that the services are able to reach Keycloak (and vice versa) in your firewall settings.
+3. Open `masterkey.js` and make sure the `postData` and `options` are correct. The master key itself needs to be set as the `MASTERKEY` environment parameter in `.env`. Afterwards you can provide the key for message encryption to the services by running `node masterkey.js`. If you experience timeouts while trying to set the master keys please check that the services are able to reach Keycloak (and vice versa) in your firewall settings.
 
 ## Starting
 

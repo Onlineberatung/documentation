@@ -109,18 +109,18 @@ Beispielhaft wird die Konfiguration in Eclipse im Folgenden beschrieben:
 
 ### Festlegen der Microservices-Service-Versionen
 
-In der Datei `.env` müssen die Versionen bzw. Tags für die eigenen Microservices angegeben werden, z.B.
+In der Datei `.env` müssen die Versionen bzw. Tags für die eigenen Microservices angegeben werden.
 
 ```
-AGENCY_SERVICE_VERSION=dockerImage.v.21.release-2021-03-02
-FRONTEND_VERSION=dockerimage.v.7-release-2020-10-13
-LIVE_SERVICE_VERSION=dockerimage.v.14.release-2021-02-09
-MAIL_SERVICE_VERSION=dockerimage.v.13.release-2021-03-23
-MESSAGE_SERVICE_VERSION=dockerimage.v.25.release-2021-03-23
-UPLOAD_SERVICE_VERSION=dockerimage.v.19.release-2021-03-02
-USER_SERVICE_VERSION=dockerImage.v.78.release-2021-03-23
-VIDEO_SERVICE_VERSION=dockerImage.v.9.release-2021-02-08
-NGINX_SERVICE_VERSION=dockerImage.v.4.release-2020-11-03
+AGENCY_SERVICE_VERSION=
+FRONTEND_VERSION=
+LIVE_SERVICE_VERSION=
+MAIL_SERVICE_VERSION=
+MESSAGE_SERVICE_VERSION=
+UPLOAD_SERVICE_VERSION=
+USER_SERVICE_VERSION=
+VIDEO_SERVICE_VERSION=
+NGINX_SERVICE_VERSION=
 ```
 
 Aktuelle Service-Versionen können auf der [Releases-Seite](../releases/overview.md) gefunden werden.
