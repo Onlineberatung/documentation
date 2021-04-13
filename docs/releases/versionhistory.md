@@ -13,6 +13,16 @@ For more details please visit the provided link to the specific service/componen
 
 - [Backend](../releases/backend.md)
 
+### 2021-04-13
+#### Own services
+- [Frontend](../releases/frontend.md)
+- [MailService](../releases/mailservice.md)
+- [MessageService](../releases/messageservice.md)
+- [UserService](../releases/userservice.md)
+- [LiveService](../releases/liveservice.md)
+- [AgencyService](../releases/agencyservice.md)
+- [VideoService](../releases/videoservice.md)
+
 ### 2021-03-23
 #### Own services
  - [Frontend](../releases/frontend.md)
