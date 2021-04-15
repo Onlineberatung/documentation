@@ -13,7 +13,16 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+You need to change one value in  the AgencySerice api url in `UserService.env`:
+- change `AGENCY_SERVICE_API_URL` to `http://agencyservice:8080`
+
+The Keycloak role `kreuzbund-consultant` has been removed and must be migrated to the 
+new role `group-chat-consultant`. Therefore go to (`<app_domain>/auth` -> administration console) 
+select `Roles` and create the new role `group-chat-consultant`. Navigate to the old 
+`kreuzbund-consultant` role and select `Ùsers in Role` to list all users having that role assigned. 
+For each user press `edit` -> `Role Mappings`, add the new role `group-chat-consultant` and remove 
+the assigned role `kreuzbund-consultant`. Last but not least delete the obsolete role 
+`kreuzbund-consultant`
 
 ### 2021-04-13
 
