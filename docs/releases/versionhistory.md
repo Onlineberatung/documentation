@@ -11,7 +11,12 @@ For more details please visit the provided link to the specific service/componen
 
 ### Unreleased
 
+- [AgencyService](../releases/agencyservice.md)
 - [Backend](../releases/backend.md)
+- [Frontend](../releases/frontend.md)
+- [UserService](../releases/userservice.md)
+- [VideoBackend](../releases/videobackend.md)
+- [VideoService](../releases/videoservice.md)
 
 ### 2021-04-13
 #### Own services

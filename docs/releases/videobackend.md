@@ -13,7 +13,7 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+Update the files on the server to the latest of the master branch. This updates Jitsi from version `5142-4` to `5390-3` and adds the moderator role support.
 
 ### 2020-02-09
 
