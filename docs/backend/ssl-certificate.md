@@ -9,14 +9,11 @@ Nachfolgend wird beschrieben wie ein SSL-Zertifikat eingebunden werden kann.
 
 # Konfiguration
 
-Die Zertifikatsdaten müssen auf dem Server abgelegt werden, es werden eine .pem-Datei sowie die zugehörige Schlüssel-Datei (.key) benötigt. Darüber hinaus sollte man eine indiduelle Diffie-Hellman-Parameter-Datei erstellen. Dies kann über openssl mit folgenden Befehl erfolgen:
+Die Zertifikatsdaten müssen auf dem Server abgelegt werden, es werden eine .pem-Datei sowie die zugehörige Schlüssel-Datei (.key) benötigt. Darüber hinaus sollte man eine individuelle Diffie-Hellman-Parameter-Datei erstellen. Dies kann über `openssl` mit folgenden Befehl erfolgen:
 
 ```openssl dhparam -out <filename> 4096```
 
-Die Pfade zu den entsprechenden Dateien müssen dann in folgenden Dateien hinterlegt werden:
-
-`./nginx/conf/server-ssl.conf` \
-`./nginx/conf/adminer.conf`
+Die Pfade (`<path_to_pem_file>`, `<path_to_key_file>`, `path_to_dhparam_file`) zu den entsprechenden Dateien müssen dann in der Datei `./nginx/conf/ssl-default.conf` hinterlegt werden.
 
 ## Let's encrypt
 
