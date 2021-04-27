@@ -36,8 +36,11 @@ After you're are finished with the setup steps and all services work, run these 
 
 1. Open your command line / terminal / bash
 2. Navigate to the project folder
-3. [Start the backend first](../backend/starting-and-stopping-the-services)
+3. Adjust the [CORS configuration](../backend/cors-configuration)
 4. Afterwards you can start the frontend with `npm start`
+5. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port.
+6. [Start the backend](../backend/starting-and-stopping-the-services)
+7. The frontend opens at your configured host. To avoid CORS issues during the login, remove the port and login by just using the host.
 
 ## Build
 
