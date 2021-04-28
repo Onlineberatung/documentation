@@ -59,7 +59,18 @@ By running `npm run build`, you can build the app for production. The built asse
 
 ### Theming and configuration
 
-When this project is used as a dependency, the consumer needs to fork these files from this repository into the consuming repository:
+To use this project as a dependency, you have to:
+
+1. Add an `.npmrc` file with this entry:
+```bash
+@caritasdeutschland:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+2. [Configure a `GITHUB_TOKEN` environment parameter](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) in the shell (ideally loaded on startup)
+
+Then you can install the library with `npm install @caritasdeutschland/caritas-online-beratung-frontend`.
+
+Afterwards you should fork these files from [the frontend repository](https://github.com/CaritasDeutschland/caritas-onlineBeratung-frontend) into the consuming repository:
 
 ```
 src
@@ -94,4 +105,3 @@ Additionally, these scripts are available:
 # Build the app for production
 @caritasdeutschland/caritas-online-beratung-frontend build
 ```
-
