@@ -94,6 +94,8 @@ They can be used to provide the necessary configuration and theming to the consu
 
 In `settings.scss` you should replace the file content with `@import '~@caritasdeutschland/caritas-online-beratung-frontend/defaults';` to use the current defaults and only override what's necessary. By defining a `setup-fonts` mixin, you can import custom fonts from the stylesheet.
 
+Furthermore in `defaultLocale.ts` you should `import {defaultLocale as defaults} from '@caritasdeutschland/caritas-online-beratung-frontend';` and only override the labels that need to be changed. The same applies analogously to `informalLocale`.
+
 ### CLI scripts
 
 Additionally, these scripts are available:
