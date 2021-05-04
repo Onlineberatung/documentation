@@ -20,7 +20,6 @@ There is also a distinction between "fully supported browsers" and "functionally
 
 |Browser version|Operating system|Type of support|Input methods|
 |--- |--- |--- |--- |
-|Internet Explorer 11 (latest)|Win 7 / Win 10 (latest)|only functional support|Mouse|
 |Microsoft Edge (latest)|Win 10 (latest)|fully supported|Mouse/Touch|
 |Mozilla Firefox (all versions of the past 1.5 years)|Win 10 (latest) / OS X (latest)|fully supported|Mouse|
 |Google Chrome (all versions of the past 1.5 years)|Win 10 (latest) / OS X (latest)|fully supported|Mouse|
@@ -32,7 +31,6 @@ There is also a distinction between "fully supported browsers" and "functionally
 
 |Browser version|Operating system|Type of support|Input methods|
 |--- |--- |--- |--- |
-|Internet Explorer 11 (latest)|Win 7 (latest) / Win 10 (latest)|only functional support|Mouse|
 |Microsoft Edge (latest)|Win 10 (latest)|fully supported|Mouse|
 |Mozilla Firefox (latest)|Win 10 (latest) / OS X (latest)|fully supported|Mouse|
 |Google Chrome (latest)|Win 10 (latest) / OS X (latest)|fully supported|Mouse|
