@@ -11,6 +11,21 @@ Only changes that are necessary to use the requested version are listed in this 
 
 If you want a changelog please see the [project changelog](https://github.com/CaritasDeutschland/caritas-onlineBeratung-userService/blob/master/CHANGELOG.md).
 
+### Upcoming
+
+You need to add a new location in nginx/conf/locations/userservice.conf to make the new 
+conversations api available to the client.
+```
+location /service/conversations {
+    limit_req zone=by_ip_10rs burst=5;
+    proxy_pass http://userservice:8080/conversations;
+    resolver 127.0.0.11;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto http;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+```
 ### Unreleased
 
 You need to change one value in  the AgencySerice api url in `UserService.env`:
