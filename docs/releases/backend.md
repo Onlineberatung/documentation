@@ -13,6 +13,10 @@ For a full changelog of this project please see the [project changelog](https://
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-05-04
+
 Endpoints which where reachable without SSL or via IP have been deactivated/ respectively forwarded to the correct HTTPS endpoint.
 Furthermore the complete structure of the NGINX configuration has been reorganised, it is suggested to remove all old `.conf` files (please make sure you backup them for comparison!) and replace them with the new versions in the master repository (folder `./nginx/conf`). \
 Afterwards please follow the instructions under [NGINX configuration](../backend/nginx.md). \

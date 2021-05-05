@@ -11,7 +11,7 @@ Only changes that are necessary to use the requested version are listed in this 
 
 If you want a changelog please see the [project changelog](https://github.com/CaritasDeutschland/caritas-onlineBeratung-userService/blob/master/CHANGELOG.md).
 
-### Upcoming
+### Unreleased
 
 You need to add a new location in nginx/conf/locations/userservice.conf to make the new 
 conversations api available to the client.
@@ -26,7 +26,10 @@ location /service/conversations {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 }
 ```
-### Unreleased
+
+Update tag to `dockerImage.v.xxx` in the `.env` file.
+
+### 2021-05-04
 
 You need to change one value in  the AgencySerice api url in `UserService.env`:
 - change `AGENCY_SERVICE_API_URL` to `http://agencyservice:8080`.
@@ -38,6 +41,8 @@ select `Roles` and create the new role `group-chat-consultant`. Navigate to the 
 For each user press `edit` -> `Role Mappings`, add the new role `group-chat-consultant` and remove 
 the assigned role `kreuzbund-consultant`. Last but not least delete the obsolete role 
 `kreuzbund-consultant`
+
+Update tag to `dockerImage.v.106.release-2021-05-04` in the `.env` file.
 
 ### 2021-04-13
 
