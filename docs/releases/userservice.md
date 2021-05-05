@@ -13,7 +13,36 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+You need to add a new location in nginx/conf/locations/userservice.conf to make the new 
+conversations api available to the client.
+```
+location /service/conversations {
+    limit_req zone=by_ip_10rs burst=5;
+    proxy_pass http://userservice:8080/conversations;
+    resolver 127.0.0.11;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto http;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+```
+
+Update tag to `dockerImage.v.xxx` in the `.env` file.
+
+### 2021-05-04
+
+You need to change one value in  the AgencySerice api url in `UserService.env`:
+- change `AGENCY_SERVICE_API_URL` to `http://agencyservice:8080`.
+
+The Keycloak role `kreuzbund-consultant` has been removed and must be migrated to the 
+new role `group-chat-consultant`. Therefore go to (`<app_domain>/auth` -> administration console) 
+select `Roles` and create the new role `group-chat-consultant`. Navigate to the old 
+`kreuzbund-consultant` role and select `Users in Role` to list all users having that role assigned. 
+For each user press `edit` -> `Role Mappings`, add the new role `group-chat-consultant` and remove 
+the assigned role `kreuzbund-consultant`. Last but not least delete the obsolete role 
+`kreuzbund-consultant`
+
+Update tag to `dockerImage.v.106.release-2021-05-04` in the `.env` file.
 
 ### 2021-04-13
 
