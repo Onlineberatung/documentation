@@ -20,7 +20,7 @@ If you want to check the individual service/component please klick on the corres
 ### Own services
 |Service|Current image version|
 |--- |--- |
-|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.121.release-2021-03-02`|
+|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.21.release-2021-03-02`|
 |[Frontend](../releases/frontend.md)|`dockerImage.v.126-release-2021-03-23`|
 |[LiveService](../releases/liveservice.md)|`dockerImage.v.14.release-2021-02-09`|
 |[MailService](../releases/mailservice.md)|`dockerImage.v.13.release-2021-03-23`|
