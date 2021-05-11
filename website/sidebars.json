@@ -23,7 +23,8 @@
       "backend/nginx",
       "backend/ssl-certificate",
       "backend/cors-configuration",
-      "backend/video-backend"
+      "backend/video-backend",
+      "backend/admin-api"
     ],
     "Frontend": ["frontend/build", "frontend/tools-and-technologies", "frontend/testing"],
     "Releases": [

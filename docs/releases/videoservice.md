@@ -15,6 +15,14 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-05-04
+
+Update tag to `dockerImage.v.17.release-2021-05-04` in the `.env` file - no additional changes necessary.
+
+### 2021-04-13
+
+Update tag to `dockerImage.v.12.release-2021-04-13` in the `.env` file - no additional changes necessary.
+
 ### 2020-02-09
 
 Configure the service initially like documented under [service configuration](../backend/service-configuration.md#videoservice).

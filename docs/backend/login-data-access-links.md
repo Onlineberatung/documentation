@@ -24,3 +24,6 @@ The REST API documentation of the single services can be found under the followi
 * UserService: https://`<HOST>`/service/users/docs/
 * UploadService: https://`<HOST>`/service/uploads/docs/
 * VideoService: https://`<HOST>`/service/videos/docs/
+
+## Admin API documentation
+Detailed information about the Admin API: [Admin API](../backend/admin-api.md).
