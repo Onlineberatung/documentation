@@ -13,27 +13,27 @@ The master branch stores the official release history, and the develop branch se
 
 ### Feature Branches
 
-**naming convention:** feature-title-of-feature _or_ bugfix-title-of-bug
+**Naming convention:** feature-title-of-feature _or_ bugfix-title-of-bug
 
 Each new feature or bugfix should reside in its own feature branch, which use the latest version of the develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should never interact directly with master.
 
 ### Release Branches
 
-**naming convention:** release-x.x.x
+**Naming convention:** release-x.x.x
 
-the automated versioning process is based on the name of the release branch. Therefore, it is important that the naming convention is followed and the branch begins with the keyword "release". More information about the versioning process can be found [here](#version-management).
+The automated versioning process is based on the name of the release branch. Therefore, it is important that the Naming convention is followed and the branch begins with the keyword "release". More information about the versioning process can be found [here](#version-management).
 
 Once develop has acquired enough features for a release (or a predetermined release date is approaching), a release branch needs to be created based on the latest develop version. Creating this branch starts the next release cycle, so no new features can be added after this point—only bug fixes, documentation generation, and other release-oriented tasks should go in this branch. Once it's ready to ship, the release branch gets merged into master and tagged with a version number. In addition, it should be merged back into develop, which may have progressed since the release was initiated.
 
 ### Hotfix Branches
 
-**naming convention:** hotfix-title-of-hotfix
+**Naming convention:** hotfix-title-of-hotfix
 
 Maintenance or “hotfix” branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on master instead of develop. This is the only branch that should fork directly off of master. As soon as the fix is complete, it should be merged into both master and develop (or the current release branch)
 
 ## Commits
 
-We use the specification [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for all our commits. It's a lightweight convention on top of commit messages and provides an easy set of rules for creating an explicit commit history. This helps us to automate our [versioning process](#version-management).
+We use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for all our commits. It's a lightweight convention on top of commit messages and provides an easy set of rules for creating an explicit commit history. This helps us to automate our [versioning process](#version-management).
 
 We recommend using the command line tool [Commitizen](http://commitizen.github.io/cz-cli/) in order to comply with this convention without much effort.
 
