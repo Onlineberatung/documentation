@@ -82,7 +82,7 @@ In der Environment-Datei für die MongoDB (`./mongoDB/mongoDB.env`) müssen die 
 In der Environment-Datei für den Nosqlclient (`./Nosqlclient/Nosqlclient.env`) muss der Hostname und die MongoDB Connection URL festgelegt werden:
 
 `# MongoDB Verbindung mit den Daten aus ./mongoDB/init-nosqlclient-user.js`\
-`MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<rocketchat_db_name>`\
+`MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<nosqlclient_db_name>`\
 `ROOT_URL=<host>:3001`
 
 Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
