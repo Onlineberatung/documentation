@@ -27,6 +27,8 @@ location /service/conversations {
 }
 ```
 
+Add the permission `Edit Room` to the system user in admin interface of Rocket.Chat
+
 Update tag to `dockerImage.v.xxx` in the `.env` file.
 
 ### 2021-05-04
