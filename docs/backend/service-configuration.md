@@ -193,6 +193,7 @@ Folgende Werte müssen zwingend gesetzt werden:
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
 | USER_ADMIN_SERVICE_API_URL | http://userservice:8080 |
+| CONSULTING_TYPE_SERVICE_API_URL | http://consultingtypeservice:8080 |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 | [CONSULTING_TYPE_NAME]_WHITE_SPOT_AGENCY_ID | Define the white spot agency IDs where needed for every consulting type |
@@ -219,6 +220,8 @@ Folgende Werte müssen zwingend gesetzt werden:
 | MAIL_EXCHANGE_PASSWORD | MS Exchange Server password |
 | MAIL_EXCHANGE_URL | MS Exchange Server URL |
 | MAIL_EXCHANGE_VERSION | MS Exchange Server version (from enum microsoft.exchange.webservices.data.core.enumeration.misc.ExchangeVersion) |
+| TEMPLATE_USE_CUSTOM_RESOURCES_PATH | True or False. Decides whether the path specified in TEMPLATE_CUSTOM_RESOURCES_PATH should be taken for the mail templates. |
+| TEMPLATE_CUSTOM_RESOURCES_PATH | Path to the custom templates |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
@@ -299,6 +302,7 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | MESSAGE_SERVICE_API_URL | http://messageservice:8080 |
 | MAIL_SERVICE_API_URL | http://mailservice:8080 |
 | LIVE_SERVICE_API_URL | http://liveservice:8080 |
+| CONSULTING_TYPE_SERVICE_API_URL | http://consultingtypeservice:8080 |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
