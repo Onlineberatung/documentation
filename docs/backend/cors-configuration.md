@@ -7,7 +7,7 @@ To be able to develop locally (Node server running locally) you have to enable C
 
 1. Rocket.Chat: Go to the administration. Go to `General` → `REST API` and set `Enable CORS` to `true`. Allowed `CORS Origin` can be set to `*`.
 2. Keycloak: Select your realm, go to `Clients` and select your apps Client ID. Under `Settings` -> `Web Origins` insert a new wildcard entry `*`.
-3. UserService, MessageService, AgencyService, VideoService, UploadService: In the corresponding service settings, e.g. `./UserService/UserService.env` add or set the following environment variable: `KEYCLOAK_CORS=true`.
+3. UserService, MessageService, AgencyService, VideoService, UploadService, ConsultingTypeService: In the corresponding service settings, e.g. `./UserService/UserService.env` add or set the following environment variable: `KEYCLOAK_CORS=true`.
 
 It could also be necessary to install a CORS plugin in your browser to make CORS work correctly.
 

@@ -109,18 +109,29 @@ Beispielhaft wird die Konfiguration in Eclipse im Folgenden beschrieben:
 
 ### Festlegen der Microservices-Service-Versionen
 
-In der Datei `.env` müssen die Versionen bzw. Tags für die eigenen Microservices angegeben werden.
+In der Datei `.env` müssen die Pfade zu den Images und die Versionen bzw. Tags für die Microservices angegeben werden, z.B.
 
 ```
-AGENCY_SERVICE_VERSION=
-FRONTEND_VERSION=
-LIVE_SERVICE_VERSION=
-MAIL_SERVICE_VERSION=
-MESSAGE_SERVICE_VERSION=
-UPLOAD_SERVICE_VERSION=
-USER_SERVICE_VERSION=
-VIDEO_SERVICE_VERSION=
-NGINX_SERVICE_VERSION=
+USER_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-userservice/userservice-image
+USER_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+FRONTEND_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-frontend/frontend-image
+FRONTEND_VERSION=dockerimage.v.5-release-2020-10-13
+AGENCY_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-agencyservice/agencyservice-image
+AGENCY_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+MESSAGE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-messageservice/messageservice-image
+MESSAGE_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+MAIL_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-mailservice/mailservice-image
+MAIL_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+UPLOAD_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-uploadservice/uploadservice-image
+UPLOAD_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+NGINX_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-nginx/nginx-image
+NGINX_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+LIVE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-liveservice/liveservice-image
+LIVE_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+VIDEO_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-videoservice/videoservice-image
+VIDEO_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+CONSULTING_TYPE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-consultingtypeervice/consultingservice-image
+CONSULTING_TYPE_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
 ```
 
 Aktuelle Service-Versionen können auf der [Releases-Seite](../releases/overview.md) gefunden werden.
