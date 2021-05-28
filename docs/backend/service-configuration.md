@@ -370,5 +370,32 @@ Following values are mandatory:
 
 The properties `USER_SERVICE_API_URL`, `LIVE_SERVICE_API_URL` and `MESSAGE_SERVICE_API_URL` should point to the corresponding service (docker internal) and should only be changed if necessary.
 
+## ConsultingTypeService
+The configuration on the server is located in the `ConsultingTypeService.env` file. To configure the service for local development you can configure the corresponding `application-X.properties` file.
+
+Following values are mandatory:
+
+| Name | Description |
+| ---- | ----------- |
+| CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
+| CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+
+Following values are optional:
+
+| Name | Description |
+| ---- | ----------- |
+| consulting.types.json.path | The relative path to the directory on the host system to the consulting type settings files (default: consulting-type-settings) |
+
+### Definition of the consulting type settings
+You need to define the settings of all your consulting types in single json files and put them into the directory specified in the property `consulting.types.json.path`:
+
+* [Consulting type schema](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/consultingtypeservice/schemas/consulting-type.md)
+* [Consulting type schema json file](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/consultingtypeservice/schemas/consulting-type.json)
+* [Example consulting type settings json files](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/tree/master/consulting-type-settings)
+
+__Please be aware that the properties id and slug have to be unique.__
+
+__If the ConsultingTypeService does not start, please check the log file for indications of configuration errors.__
+
 ## Restart aller Services
 Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.
