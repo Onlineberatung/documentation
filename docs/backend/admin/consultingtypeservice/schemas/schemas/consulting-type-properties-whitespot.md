@@ -19,7 +19,7 @@ Behavior regarding the white spots agencies
 | Property                                            | Type      | Required | Nullable       | Defined by                                                                                                                                                                                     |
 | :-------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [whiteSpotAgencyAssigned](#whitespotagencyassigned) | `boolean` | Required | cannot be null | [Consulting type](consulting-type-properties-whitespot-properties-whitespotagencyassigned.md "https://onlineberatung/consultingtype#/properties/whiteSpot/properties/whiteSpotAgencyAssigned") |
-| [whiteSpotAgencyId](#whitespotagencyid)             | `integer` | Optional | cannot be null | [Consulting type](consulting-type-properties-whitespot-properties-whitespotagencyid.md "https://onlineberatung/consultingtype#/properties/whiteSpot/properties/whiteSpotAgencyId")             |
+| [whiteSpotAgencyId](#whitespotagencyid)             | `integer` | Optional | can be null    | [Consulting type](consulting-type-properties-whitespot-properties-whitespotagencyid.md "https://onlineberatung/consultingtype#/properties/whiteSpot/properties/whiteSpotAgencyId")             |
 
 ## whiteSpotAgencyAssigned
 
@@ -49,7 +49,7 @@ The id the of the white spot agency
 
 *   Type: `integer`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-whitespot-properties-whitespotagencyid.md "https://onlineberatung/consultingtype#/properties/whiteSpot/properties/whiteSpotAgencyId")
 

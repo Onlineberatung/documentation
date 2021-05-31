@@ -19,7 +19,7 @@ Settings for the initializing of the monitoring
 | Property                                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                     |
 | :------------------------------------------------ | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [initializeMonitoring](#initializemonitoring)     | `boolean` | Required | cannot be null | [Consulting type](consulting-type-properties-monitoring-properties-initializemonitoring.md "https://onlineberatung/consultingtype#/properties/monitoring/properties/initializeMonitoring")     |
-| [monitoringTemplateFile](#monitoringtemplatefile) | `string`  | Optional | cannot be null | [Consulting type](consulting-type-properties-monitoring-properties-monitoringtemplatefile.md "https://onlineberatung/consultingtype#/properties/monitoring/properties/monitoringTemplateFile") |
+| [monitoringTemplateFile](#monitoringtemplatefile) | `string`  | Optional | can be null    | [Consulting type](consulting-type-properties-monitoring-properties-monitoringtemplatefile.md "https://onlineberatung/consultingtype#/properties/monitoring/properties/monitoringTemplateFile") |
 
 ## initializeMonitoring
 
@@ -49,7 +49,7 @@ The path to the template file for the initialization of the monitoring for this 
 
 *   Type: `string`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-monitoring-properties-monitoringtemplatefile.md "https://onlineberatung/consultingtype#/properties/monitoring/properties/monitoringTemplateFile")
 
