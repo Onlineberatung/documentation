@@ -193,6 +193,7 @@ Folgende Werte müssen zwingend gesetzt werden:
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
 | USER_ADMIN_SERVICE_API_URL | http://userservice:8080 |
+| CONSULTING_TYPE_SERVICE_API_URL | http://consultingtypeservice:8080 |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 | [CONSULTING_TYPE_NAME]_WHITE_SPOT_AGENCY_ID | Define the white spot agency IDs where needed for every consulting type |
@@ -219,6 +220,8 @@ Folgende Werte müssen zwingend gesetzt werden:
 | MAIL_EXCHANGE_PASSWORD | MS Exchange Server password |
 | MAIL_EXCHANGE_URL | MS Exchange Server URL |
 | MAIL_EXCHANGE_VERSION | MS Exchange Server version (from enum microsoft.exchange.webservices.data.core.enumeration.misc.ExchangeVersion) |
+| TEMPLATE_USE_CUSTOM_RESOURCES_PATH | True or False. Decides whether the path specified in TEMPLATE_CUSTOM_RESOURCES_PATH should be taken for the mail templates. |
+| TEMPLATE_CUSTOM_RESOURCES_PATH | Path to the custom templates |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
@@ -299,6 +302,7 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | MESSAGE_SERVICE_API_URL | http://messageservice:8080 |
 | MAIL_SERVICE_API_URL | http://mailservice:8080 |
 | LIVE_SERVICE_API_URL | http://liveservice:8080 |
+| CONSULTING_TYPE_SERVICE_API_URL | http://consultingtypeservice:8080 |
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
@@ -365,6 +369,33 @@ Following values are mandatory:
 | VIDEO_CALL_SECURITY_JWT_VALIDITY_HOURS | Validity time of the token in hours |
 
 The properties `USER_SERVICE_API_URL`, `LIVE_SERVICE_API_URL` and `MESSAGE_SERVICE_API_URL` should point to the corresponding service (docker internal) and should only be changed if necessary.
+
+## ConsultingTypeService
+The configuration on the server is located in the `ConsultingTypeService.env` file. To configure the service for local development you can configure the corresponding `application-X.properties` file.
+
+Following values are mandatory:
+
+| Name | Description |
+| ---- | ----------- |
+| CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
+| CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+
+Following values are optional:
+
+| Name | Description |
+| ---- | ----------- |
+| consulting.types.json.path | The relative path to the directory on the host system to the consulting type settings files (default: consulting-type-settings) |
+
+### Definition of the consulting type settings
+You need to define the settings of all your consulting types in single json files and put them into the directory specified in the property `consulting.types.json.path`:
+
+* [Consulting type schema](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/consultingtypeservice/schemas/consulting-type.md)
+* [Consulting type schema json file](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/consultingtypeservice/schemas/consulting-type.json)
+* [Example consulting type settings json files](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/tree/master/consulting-type-settings)
+
+__Please be aware that the properties id and slug have to be unique.__
+
+__If the ConsultingTypeService does not start, please check the log file for indications of configuration errors.__
 
 ## Restart aller Services
 Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.

@@ -122,3 +122,22 @@ To transfer the Docker image to another Docker registry (or another computer) yo
 
 **Import**
 `docker load -i videoservice.tar`
+
+## ConsultingTypeService
+### Build docker image locally
+You can build the Docker image of the ConsultingTypeService with the following batch file which is located in the root directory:
+
+`build-docker.cmd`
+
+The image is being tagged as `development` in the local Docker registry. You may need to change the path in the `Dockerfile` for a correct build to (for example):
+
+`COPY target/ConsultingTypeService.jar app.jar`
+
+### Transfer Docker image
+To transfer the Docker image to another Docker registry (or another computer) you can use the following commands:
+
+**Export**
+`docker save -o consultingtypeservice.tar cob/consultingtypeservice:development`
+
+**Import**
+`docker load -i consultingtypeservice.tar`

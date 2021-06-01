@@ -14,13 +14,12 @@ Following recommendation can be derived from the following parameters:
 * Threshold test effort for additional browsers.
 * Standard conformability of the respective browser in order to be able to classify additional efforts required to support this browser.
 
-There is also a distinction between "fully supported browsers" and "functionally supported browsers". Full supported browsers are browsers in which both, functionality and visuality must completely be in line according to the specification. Functional supported means that within these browsers, the basic functionality of the page must be accessible for the user, ie all information is available/accessible. But there may be reductions in design and user experience. This may vary depending on browser, browser version and features used.
+There is also a distinction between "fully supported browsers" and "functionally supported browsers". Full supported browsers are browsers in which both, functionality and visuality must completely be in line according to the specification. Functionally supported means that within these browsers, the basic functionality of the page must be accessible for the user, i.e. all information is available/accessible, but there may be reductions in design and user experience. This may vary depending on browser, browser version and features used.
 
 ## Matrix of Supported Browsers
 
 |Browser version|Operating system|Type of support|Input methods|
 |--- |--- |--- |--- |
-|Internet Explorer 11 (latest)|Win 7 / Win 10 (latest)|only functional support|Mouse|
 |Microsoft Edge (latest)|Win 10 (latest)|fully supported|Mouse/Touch|
 |Mozilla Firefox (all versions of the past 1.5 years)|Win 10 (latest) / OS X (latest)|fully supported|Mouse|
 |Google Chrome (all versions of the past 1.5 years)|Win 10 (latest) / OS X (latest)|fully supported|Mouse|
@@ -32,7 +31,6 @@ There is also a distinction between "fully supported browsers" and "functionally
 
 |Browser version|Operating system|Type of support|Input methods|
 |--- |--- |--- |--- |
-|Internet Explorer 11 (latest)|Win 7 (latest) / Win 10 (latest)|only functional support|Mouse|
 |Microsoft Edge (latest)|Win 10 (latest)|fully supported|Mouse|
 |Mozilla Firefox (latest)|Win 10 (latest) / OS X (latest)|fully supported|Mouse|
 |Google Chrome (latest)|Win 10 (latest) / OS X (latest)|fully supported|Mouse|
