@@ -385,6 +385,7 @@ Following values are optional:
 | Name | Description |
 | ---- | ----------- |
 | consulting.types.json.path | The relative path to the directory on the host system to the consulting type settings files (default: consulting-type-settings) |
+| KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 
 ### Definition of the consulting type settings
 You need to define the settings of all your consulting types in single json files and put them into the directory specified in the property `consulting.types.json.path`:
