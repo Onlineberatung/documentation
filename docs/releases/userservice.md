@@ -27,7 +27,9 @@ location /service/conversations {
 }
 ```
 
-Add the permission `Edit Room` to the system user in admin interface of Rocket.Chat
+Add the permission `Edit Room` to the system user in admin interface of Rocket.Chat.
+
+Add the following service API url to the `UserService.env`: `CONSULTING_TYPE_SERVICE_API_URL=http://consultingtypeservice:8080`.
 
 Update tag to `dockerImage.v.xxx` in the `.env` file.
 
