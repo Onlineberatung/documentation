@@ -13,7 +13,77 @@ For a full changelog of this project please see the [project changelog](https://
 
 ### Unreleased
 
-No unreleased changes yet.
+Add the new ConsultingTypeService to the `docker-compose.yml`:
+
+```consultingtypeservice:
+  container_name: consultingtypeservice
+  image: $CONSULTING_TYPE_SERVICE_IMAGE:$CONSULTING_TYPE_SERVICE_VERSION
+  restart: "no"
+  networks:
+	- frontend_network
+	- service_network
+  volumes:
+	- ./ConsultingTypeService/log:/log
+	- ./ConsultingTypeService/consulting-type-settings:/consulting-type-settings
+	- consultingtypeservice_tmp:/tmp
+	- /etc/localtime:/etc/localtime:ro
+  env_file:
+	- ./ConsultingTypeService/ConsultingTypeService.env
+  extra_hosts:
+	- "<app_domain>:<internal_server_ip_address>"
+```
+
+You need to change the image tags for the following services:
+
+```userservice:
+  image: $USER_SERVICE_IMAGE:$USER_SERVICE_VERSION
+```
+```agencyservice:
+  image: $AGENCY_SERVICE_IMAGE:$AGENCY_SERVICE_VERSION
+```
+```messageservice:
+  image: $MESSAGE_SERVICE_IMAGE:$MESSAGE_SERVICE_VERSION
+```
+```mailservice:
+  image: $MAIL_SERVICE_IMAGE:$MAIL_SERVICE_VERSION
+```
+```uploadservice:
+  image: $UPLOAD_SERVICE_IMAGE:$UPLOAD_SERVICE_VERSION
+```
+```liveservice:
+  image: $LIVE_SERVICE_IMAGE:$LIVE_SERVICE_VERSION
+```
+```consultingtypeservice:
+  image: $CONSULTING_TYPE_SERVICE_IMAGE:$CONSULTING_TYPE_SERVICE_VERSION
+```
+```videoservice:
+  image: $VIDEO_SERVICE_IMAGE:$VIDEO_SERVICE_VERSION
+```
+```frontend:
+  image: $FRONTEND_IMAGE:$FRONTEND_VERSION
+```
+```proxy:
+  image: $NGINX_SERVICE_IMAGE:$NGINX_SERVICE_VERSION
+```
+
+Finally the new volume needs to be added at the end of the file:
+```volumes:
+  consultingtypeservice_tmp:
+```
+
+You need to make changes to the `.env` file and add the image variable for every service:
+
+```USER_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-userservice/userservice-image
+FRONTEND_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-frontend/frontend-image
+AGENCY_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-agencyservice/agencyservice-image
+MESSAGE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-messageservice/messageservice-image
+MAIL_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-mailservice/mailservice-image
+UPLOAD_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-uploadservice/uploadservice-image
+NGINX_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-nginx/nginx-image
+LIVE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-liveservice/liveservice-image
+VIDEO_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-videoservice/videoservice-image
+CONSULTING_TYPE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-consultingtypeervice/consultingservice-image
+```
 
 ### 2021-05-04
 
