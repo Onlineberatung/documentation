@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**getConsultant**](AdminUserControllerApi.md#getConsultant) | **GET** /useradmin/consultants/{consultantId} | Get a consultant by given id [Authorization: Role: consultant-admin]
 [**getConsultantAgency**](AdminUserControllerApi.md#getConsultantAgency) | **GET** /useradmin/consultants/{consultantId}/agencies | Returns the list of consultant-agency connections for a given consultant Id. [Authorization: Role: user-admin]
 [**getConsultants**](AdminUserControllerApi.md#getConsultants) | **GET** /useradmin/consultants | Returns the list of consultants by filter query parameter. [Authorization: Role: consultant-admin]
-[**getConsultingTypes**](AdminUserControllerApi.md#getConsultingTypes) | **GET** /useradmin/consultingtypes | Returns the full list of consulting types [Authorization: Role: agency-admin]
 [**getSessions**](AdminUserControllerApi.md#getSessions) | **GET** /useradmin/sessions | Returns the list of sessions by filter query parameter. [Authorization: Role: user-admin]
 [**markAskerForDeletion**](AdminUserControllerApi.md#markAskerForDeletion) | **DELETE** /useradmin/askers/{askerId} | Delete a asker by given id [Authorization: Role: consultant-admin]
 [**markConsultantForDeletion**](AdminUserControllerApi.md#markConsultantForDeletion) | **DELETE** /useradmin/consultants/{consultantId} | Mark a consultant for deletion [Authorization: Role: consultant-admin]
@@ -221,32 +220,6 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/hal+json
 
-<a name="getConsultingTypes"></a>
-# **getConsultingTypes**
-> ConsultingTypeAdminResultDTO getConsultingTypes(page, perPage)
-
-Returns the full list of consulting types [Authorization: Role: agency-admin]
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Number of page where to start in the query (1 &#x3D; first page) | [default to null]
- **perPage** | **Integer**| Number of items which are being returned per page | [default to null]
-
-### Return type
-
-[**ConsultingTypeAdminResultDTO**](../model/ConsultingTypeAdminResultDTO.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/hal+json
-
 <a name="getSessions"></a>
 # **getSessions**
 > SessionAdminResultDTO getSessions(page, perPage, filter)
@@ -326,7 +299,7 @@ null (empty response body)
 
 <a name="updateConsultant"></a>
 # **updateConsultant**
-> ConsultantAdminResponseDTO updateConsultant(consultantId, updateConsultantDTO)
+> ConsultantAdminResponseDTO updateConsultant(consultantId, updateAdminConsultantDTO)
 
 Updates a consultant [Authorization: Role: consultant-admin]
 
@@ -335,7 +308,7 @@ Updates a consultant [Authorization: Role: consultant-admin]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consultantId** | **String**| consultant id | [default to null]
- **updateConsultantDTO** | [**UpdateConsultantDTO**](../model/UpdateConsultantDTO.md)|  |
+ **updateAdminConsultantDTO** | [**UpdateAdminConsultantDTO**](../model/UpdateAdminConsultantDTO.md)|  |
 
 ### Return type
 
