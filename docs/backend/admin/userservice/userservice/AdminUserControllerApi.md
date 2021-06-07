@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**getConsultant**](AdminUserControllerApi.md#getConsultant) | **GET** /useradmin/consultants/{consultantId} | Get a consultant by given id [Authorization: Role: consultant-admin]
 [**getConsultantAgency**](AdminUserControllerApi.md#getConsultantAgency) | **GET** /useradmin/consultants/{consultantId}/agencies | Returns the list of consultant-agency connections for a given consultant Id. [Authorization: Role: user-admin]
 [**getConsultants**](AdminUserControllerApi.md#getConsultants) | **GET** /useradmin/consultants | Returns the list of consultants by filter query parameter. [Authorization: Role: consultant-admin]
-[**getConsultingTypes**](AdminUserControllerApi.md#getConsultingTypes) | **GET** /useradmin/consultingtypes | Returns the full list of consulting types [Authorization: Role: agency-admin]
 [**getSessions**](AdminUserControllerApi.md#getSessions) | **GET** /useradmin/sessions | Returns the list of sessions by filter query parameter. [Authorization: Role: user-admin]
 [**markAskerForDeletion**](AdminUserControllerApi.md#markAskerForDeletion) | **DELETE** /useradmin/askers/{askerId} | Delete a asker by given id [Authorization: Role: consultant-admin]
 [**markConsultantForDeletion**](AdminUserControllerApi.md#markConsultantForDeletion) | **DELETE** /useradmin/consultants/{consultantId} | Mark a consultant for deletion [Authorization: Role: consultant-admin]
@@ -21,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="changeAgencyType"></a>
 # **changeAgencyType**
-> changeAgencyType(agencyId, agencyTypeDTO)
+> changeAgencyType(agencyId, AgencyTypeDTO)
 
 Change an agency from team-agency to default and vice-versa and switch the associated consultant accounts to team consultant or default consultant. Ongoing team counselings change to 1:1 when converting agency to default status. 1:1 counselings remain single counselings when swapping the agency to team-agency. This endpoint must be used only internally from AgencyService to ensure the regarding agency has been flagged correctly too. [Authorization: Role: user-admin]
 
@@ -30,7 +29,7 @@ Change an agency from team-agency to default and vice-versa and switch the assoc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agencyId** | **Long**| Agency Id | [default to null]
- **agencyTypeDTO** | [**AgencyTypeDTO**](../model/AgencyTypeDTO.md)|  | [optional]
+ **AgencyTypeDTO** | [**AgencyTypeDTO**](../model/AgencyTypeDTO.md)|  | [optional]
 
 ### Return type
 
@@ -47,7 +46,7 @@ null (empty response body)
 
 <a name="createConsultant"></a>
 # **createConsultant**
-> ConsultantAdminResponseDTO createConsultant(createConsultantDTO)
+> ConsultantAdminResponseDTO createConsultant(CreateConsultantDTO)
 
 Creates a new consultant [Authorization: Role: consultant-admin]
 
@@ -55,7 +54,7 @@ Creates a new consultant [Authorization: Role: consultant-admin]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createConsultantDTO** | [**CreateConsultantDTO**](../model/CreateConsultantDTO.md)|  |
+ **CreateConsultantDTO** | [**CreateConsultantDTO**](../model/CreateConsultantDTO.md)|  |
 
 ### Return type
 
@@ -72,7 +71,7 @@ Name | Type | Description  | Notes
 
 <a name="createConsultantAgency"></a>
 # **createConsultantAgency**
-> createConsultantAgency(consultantId, createConsultantAgencyDTO)
+> createConsultantAgency(consultantId, CreateConsultantAgencyDTO)
 
 Create a consultant-agency relation [Authorization: Role: user-admin]
 
@@ -81,7 +80,7 @@ Create a consultant-agency relation [Authorization: Role: user-admin]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consultantId** | **String**| Consultant Id | [default to null]
- **createConsultantAgencyDTO** | [**CreateConsultantAgencyDTO**](../model/CreateConsultantAgencyDTO.md)|  |
+ **CreateConsultantAgencyDTO** | [**CreateConsultantAgencyDTO**](../model/CreateConsultantAgencyDTO.md)|  |
 
 ### Return type
 
@@ -221,32 +220,6 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/hal+json
 
-<a name="getConsultingTypes"></a>
-# **getConsultingTypes**
-> ConsultingTypeAdminResultDTO getConsultingTypes(page, perPage)
-
-Returns the full list of consulting types [Authorization: Role: agency-admin]
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Number of page where to start in the query (1 &#x3D; first page) | [default to null]
- **perPage** | **Integer**| Number of items which are being returned per page | [default to null]
-
-### Return type
-
-[**ConsultingTypeAdminResultDTO**](../model/ConsultingTypeAdminResultDTO.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/hal+json
-
 <a name="getSessions"></a>
 # **getSessions**
 > SessionAdminResultDTO getSessions(page, perPage, filter)
@@ -326,7 +299,7 @@ null (empty response body)
 
 <a name="updateConsultant"></a>
 # **updateConsultant**
-> ConsultantAdminResponseDTO updateConsultant(consultantId, updateConsultantDTO)
+> ConsultantAdminResponseDTO updateConsultant(consultantId, UpdateAdminConsultantDTO)
 
 Updates a consultant [Authorization: Role: consultant-admin]
 
@@ -335,7 +308,7 @@ Updates a consultant [Authorization: Role: consultant-admin]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consultantId** | **String**| consultant id | [default to null]
- **updateConsultantDTO** | [**UpdateConsultantDTO**](../model/UpdateConsultantDTO.md)|  |
+ **UpdateAdminConsultantDTO** | [**UpdateAdminConsultantDTO**](../model/UpdateAdminConsultantDTO.md)|  |
 
 ### Return type
 

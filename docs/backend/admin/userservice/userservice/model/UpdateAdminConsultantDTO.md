@@ -1,4 +1,4 @@
-# UpdateConsultantDTO
+# UpdateAdminConsultantDTO
 ## Properties
 
 Name | Type | Description | Notes
