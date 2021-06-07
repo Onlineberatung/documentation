@@ -31,6 +31,8 @@
       "releases/overview",
       "releases/versionhistory",
       "releases/agencyservice",
+      "releases/backend",
+      "releases/consultingtypeservice",
       "releases/frontend",
       "releases/liveservice",
       "releases/mailservice",
@@ -38,6 +40,7 @@
       "releases/nginx",
       "releases/uploadservice",
       "releases/userservice",
+      "releases/videobackend",
       "releases/videoservice",
       "releases/adminer",
       "releases/keycloak",
@@ -45,9 +48,7 @@
       "releases/mongodb",
       "releases/nosqlclient",
       "releases/openldap",
-      "releases/rocketchat",
-      "releases/backend",
-      "releases/videobackend"
+      "releases/rocketchat"
     ]
   }
 }
