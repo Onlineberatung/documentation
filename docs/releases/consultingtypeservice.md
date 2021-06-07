@@ -1,6 +1,6 @@
 ---
 id: consultingtypeservice
-title: consultingtypeservice
+title: ConsultingTypeService
 ---
 
 ## General description
