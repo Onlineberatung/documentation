@@ -145,14 +145,20 @@ Dazu geht man auf _"User Federation"_ und wählt dort _"ldap"_ aus. In den sich 
 Die Funktionstüchtigkeit kann mit _"Test authentication"_ geprüft werden.
 Zum Schluss das ganze noch mit dem _"save"_ Button ganz unten speichern.
 
-### Technischer Benutzer für Registrierung und Masterkey
-Für die Registrierung neuer Ratsuchender in Keycloak muss ein technischer Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt einen Namen, ein Passwort und folgende Rollen-Einstellungen:
+### Admin Benutzer für Registrierungen
+Für die Registrierung neuer Ratsuchender in Keycloak muss ein admin Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt einen Namen, ein Passwort und folgende Rollen-Einstellungen:
 
 1. Unter _"Client Roles"_ → _"realm-management"_ auswählen und unter _"Assigned Roles"_ sollten folgende Rollen stehen:
-    * manage-users
-    * view-realm
+  * manage-users
+  * view-realm
 2. Unter _"Client Roles"_ → _"account"_ auswählen und alle unter _"Assigned Roles"_ entfernen
-3. Zuätzlich muss dem Benutzer noch die Rolle "technical" hinzugefügt werden
+
+### Technischer Benutzer zum Setzen der Masterkeys
+Zum setzen der Masterkeys in den Services muss in Keycloak ein technischer Benutzer über die 
+Benutzerverwaltung eingerichtet werden. Dieser Benutzer benötigt einen Namen, ein Passwort und folgende Rollen-Einstellungen:
+
+1. Unter _"Client Roles"_ → _"account"_ auswählen und alle unter _"Assigned Roles"_ entfernen
+2. Die Rolle "technical" dem Benutzer hinzugefügen
 
 ### Password policies
 Die gleichen Password Policies sind auch im UserService implementiert (UserHelper.java).
@@ -290,8 +296,10 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
-| KEYCLOAKSERVICE_ADMIN_USERNAME | Keycloak technical user username (see [here](#-technischer-benutzer-für-registrierung)) |
-| KEYCLOAKSERVICE_ADMIN_PASSWORD | Keycloak technical user password |
+| KEYCLOAKSERVICE_ADMIN_USERNAME | Keycloak admin user username (see [here](#-admin-benutzer-für-registrierungen)) |
+| KEYCLOAKSERVICE_ADMIN_PASSWORD | Keycloak admin user password |
+| KEYCLOAKSERVICE_TECHNICAL_USERNAME | Keycloak technical user username (see [here](#-technischer-benutzer-zum-setzen-der-masterkeys)) |
+| KEYCLOAKSERVICE_TECHNICAL_PASSWORD | Keycloak technical user password |
 | ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
 | ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-technischen-benutzer-und-rolle-anlegen)) |
 | ROCKET_TECHNICAL_PASSWORD | Rocket.Chat technical user password |
