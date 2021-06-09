@@ -31,6 +31,12 @@ Add the permission `Edit Room` to the system user in admin interface of Rocket.C
 
 Add the following service API url to the `UserService.env`: `CONSULTING_TYPE_SERVICE_API_URL=http://consultingtypeservice:8080`.
 
+Add the following keycloak properties to the `UserService.env`:
+```
+KEYCLOAKSERVICE_TECHNICAL_USERNAME=<username of your technical user>
+KEYCLOAKSERVICE_TECHNICAL_PASSWORD=<password of your technical user>
+```
+
 Update tag to `dockerImage.v.xxx` in the `.env` file.
 
 ### 2021-05-04
