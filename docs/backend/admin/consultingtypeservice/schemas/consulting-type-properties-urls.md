@@ -16,10 +16,10 @@ Forwarding urls
 
 # urls Properties
 
-| Property                                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
-| :------------------------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [requiredAidMissingRedirectUrl](#requiredaidmissingredirecturl)     | `string` | Optional | cannot be null | [Consulting type](consulting-type-properties-urls-properties-requiredaidmissingredirecturl.md "https://onlineberatung/consultingtype#/properties/urls/properties/requiredAidMissingRedirectUrl")     |
-| [registrationPostcodeFallbackUrl](#registrationpostcodefallbackurl) | `string` | Optional | cannot be null | [Consulting type](consulting-type-properties-urls-properties-registrationpostcodefallbackurl.md "https://onlineberatung/consultingtype#/properties/urls/properties/registrationPostcodeFallbackUrl") |
+| Property                                                            | Type     | Required | Nullable    | Defined by                                                                                                                                                                                           |
+| :------------------------------------------------------------------ | :------- | :------- | :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [requiredAidMissingRedirectUrl](#requiredaidmissingredirecturl)     | `string` | Optional | can be null | [Consulting type](consulting-type-properties-urls-properties-requiredaidmissingredirecturl.md "https://onlineberatung/consultingtype#/properties/urls/properties/requiredAidMissingRedirectUrl")     |
+| [registrationPostcodeFallbackUrl](#registrationpostcodefallbackurl) | `string` | Optional | can be null | [Consulting type](consulting-type-properties-urls-properties-registrationpostcodefallbackurl.md "https://onlineberatung/consultingtype#/properties/urls/properties/registrationPostcodeFallbackUrl") |
 
 ## requiredAidMissingRedirectUrl
 
@@ -31,7 +31,7 @@ If no `aid` query parameter (agency ID) is passed to the respective registration
 
 *   Type: `string`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-urls-properties-requiredaidmissingredirecturl.md "https://onlineberatung/consultingtype#/properties/urls/properties/requiredAidMissingRedirectUrl")
 
@@ -49,7 +49,7 @@ If no white spot agency provided for this consulting type a note is display with
 
 *   Type: `string`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-urls-properties-registrationpostcodefallbackurl.md "https://onlineberatung/consultingtype#/properties/urls/properties/registrationPostcodeFallbackUrl")
 

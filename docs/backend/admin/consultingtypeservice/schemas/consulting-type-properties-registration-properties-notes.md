@@ -16,10 +16,10 @@ Additional info to display in agency selection and password accordion (optional)
 
 # notes Properties
 
-| Property                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                             |
-| :---------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [agencySelection](#agencyselection) | `string` | Optional | cannot be null | [Consulting type](consulting-type-properties-registration-properties-notes-properties-agencyselection.md "https://onlineberatung/consultingtype#/properties/registration/properties/notes/properties/agencySelection") |
-| [password](#password)               | `string` | Optional | cannot be null | [Consulting type](consulting-type-properties-registration-properties-notes-properties-password.md "https://onlineberatung/consultingtype#/properties/registration/properties/notes/properties/password")               |
+| Property                            | Type     | Required | Nullable    | Defined by                                                                                                                                                                                                             |
+| :---------------------------------- | :------- | :------- | :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [agencySelection](#agencyselection) | `string` | Optional | can be null | [Consulting type](consulting-type-properties-registration-properties-notes-properties-agencyselection.md "https://onlineberatung/consultingtype#/properties/registration/properties/notes/properties/agencySelection") |
+| [password](#password)               | `string` | Optional | can be null | [Consulting type](consulting-type-properties-registration-properties-notes-properties-password.md "https://onlineberatung/consultingtype#/properties/registration/properties/notes/properties/password")               |
 
 ## agencySelection
 
@@ -31,7 +31,7 @@ Additional info to display in agency selection
 
 *   Type: `string`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-registration-properties-notes-properties-agencyselection.md "https://onlineberatung/consultingtype#/properties/registration/properties/notes/properties/agencySelection")
 
@@ -49,7 +49,7 @@ Additional info to display in password accordion
 
 *   Type: `string`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-registration-properties-notes-properties-password.md "https://onlineberatung/consultingtype#/properties/registration/properties/notes/properties/password")
 

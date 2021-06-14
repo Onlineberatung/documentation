@@ -22,7 +22,7 @@ Titles for this consulting type, which are displayed to the user
 | [short](#short)                               | `string` | Required | cannot be null | [Consulting type](consulting-type-properties-titles-properties-short.md "https://onlineberatung/consultingtype#/properties/titles/properties/short")                               |
 | [long](#long)                                 | `string` | Required | cannot be null | [Consulting type](consulting-type-properties-titles-properties-long.md "https://onlineberatung/consultingtype#/properties/titles/properties/long")                                 |
 | [welcome](#welcome)                           | `string` | Required | cannot be null | [Consulting type](consulting-type-properties-titles-properties-welcome.md "https://onlineberatung/consultingtype#/properties/titles/properties/welcome")                           |
-| [registrationDropdown](#registrationdropdown) | `string` | Optional | cannot be null | [Consulting type](consulting-type-properties-titles-properties-registrationdropdown.md "https://onlineberatung/consultingtype#/properties/titles/properties/registrationDropdown") |
+| [registrationDropdown](#registrationdropdown) | `string` | Optional | can be null    | [Consulting type](consulting-type-properties-titles-properties-registrationdropdown.md "https://onlineberatung/consultingtype#/properties/titles/properties/registrationDropdown") |
 
 ## default
 
@@ -106,7 +106,7 @@ Alternative title for the display of the topic for the registration dropdown in 
 
 *   Type: `string`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-titles-properties-registrationdropdown.md "https://onlineberatung/consultingtype#/properties/titles/properties/registrationDropdown")
 

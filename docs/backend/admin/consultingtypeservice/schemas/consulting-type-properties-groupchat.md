@@ -19,7 +19,7 @@ Group chat settings
 | Property                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                   |
 | :-------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [isGroupChat](#isgroupchat)       | `boolean` | Required | cannot be null | [Consulting type](consulting-type-properties-groupchat-properties-isgroupchat.md "https://onlineberatung/consultingtype#/properties/groupChat/properties/isGroupChat")       |
-| [groupChatRules](#groupchatrules) | `array`   | Optional | cannot be null | [Consulting type](consulting-type-properties-groupchat-properties-groupchatrules.md "https://onlineberatung/consultingtype#/properties/groupChat/properties/groupChatRules") |
+| [groupChatRules](#groupchatrules) | `array`   | Optional | can be null    | [Consulting type](consulting-type-properties-groupchat-properties-groupchatrules.md "https://onlineberatung/consultingtype#/properties/groupChat/properties/groupChatRules") |
 
 ## isGroupChat
 
@@ -49,7 +49,7 @@ Rules for the group chat which are displayed to the user
 
 *   Type: `string[]`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-groupchat-properties-groupchatrules.md "https://onlineberatung/consultingtype#/properties/groupChat/properties/groupChatRules")
 

@@ -41,8 +41,8 @@ Settings for a consulting type
 | [showAskerProfile](#showaskerprofile)                                                   | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-showaskerprofile.md "https://onlineberatung/consultingtype#/properties/showAskerProfile")                                                   |
 | [isSubsequentRegistrationAllowed](#issubsequentregistrationallowed)                     | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-issubsequentregistrationallowed.md "https://onlineberatung/consultingtype#/properties/isSubsequentRegistrationAllowed")                     |
 | [isAnonymousConversationAllowed](#isanonymousconversationallowed)                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-isanonymousconversationallowed.md "https://onlineberatung/consultingtype#/properties/isAnonymousConversationAllowed")                       |
-| [voluntaryComponents](#voluntarycomponents)                                             | `array`   | Optional | cannot be null | [Consulting type](consulting-type-properties-voluntarycomponents.md "https://onlineberatung/consultingtype#/properties/voluntaryComponents")                                             |
-| [requiredComponents](#requiredcomponents)                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-requiredcomponents.md "https://onlineberatung/consultingtype#/properties/requiredComponents")                                               |
+| [voluntaryComponents](#voluntarycomponents)                                             | `array`   | Optional | can be null    | [Consulting type](consulting-type-properties-voluntarycomponents.md "https://onlineberatung/consultingtype#/properties/voluntaryComponents")                                             |
+| [requiredComponents](#requiredcomponents)                                               | `object`  | Optional | can be null    | [Consulting type](consulting-type-properties-requiredcomponents.md "https://onlineberatung/consultingtype#/properties/requiredComponents")                                               |
 
 ## id
 
@@ -520,7 +520,7 @@ Can be provided to display additional fields in the asker profile.
 
 *   Type: an array of merged types ([Details](consulting-type-properties-voluntarycomponents-items.md))
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-voluntarycomponents.md "https://onlineberatung/consultingtype#/properties/voluntaryComponents")
 
@@ -538,7 +538,7 @@ an array of merged types ([Details](consulting-type-properties-voluntarycomponen
 
 *   Type: `object` ([Details](consulting-type-properties-requiredcomponents.md))
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Consulting type](consulting-type-properties-requiredcomponents.md "https://onlineberatung/consultingtype#/properties/requiredComponents")
 

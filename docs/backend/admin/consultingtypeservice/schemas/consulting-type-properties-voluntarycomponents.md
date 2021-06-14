@@ -1,15 +1,15 @@
-# Untitled string in Consulting type Schema
+# Untitled undefined type in Consulting type Schema
 
 ```txt
-https://onlineberatung/consultingtype#/properties/titles/properties/registrationDropdown
+https://onlineberatung/consultingtype#/properties/voluntaryComponents
 ```
 
-Alternative title for the display of the topic for the registration dropdown in the advice seeker profile
+Can be provided to display additional fields in the asker profile.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                           |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [consulting-type.json*](consulting-type.json "open original schema") |
 
-## registrationDropdown Type
+## voluntaryComponents Type
 
-`string`
+an array of merged types ([Details](consulting-type-properties-voluntarycomponents-items.md))

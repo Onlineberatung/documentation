@@ -60,8 +60,6 @@
 
 *   [Untitled object in Consulting type](./consulting-type-properties-voluntarycomponents-items-anyof-2.md "A group of values where multiple can be selected") – `https://onlineberatung/consultingtype#/properties/voluntaryComponents/items/anyOf/2`
 
-*   [Untitled object in Consulting type](./consulting-type-properties-requiredcomponents.md) – `https://onlineberatung/consultingtype#/properties/requiredComponents`
-
 *   [Untitled object in Consulting type](./consulting-type-properties-requiredcomponents-properties-age.md "Age of the asker") – `https://onlineberatung/consultingtype#/properties/requiredComponents/properties/age`
 
 *   [Untitled object in Consulting type](./consulting-type-properties-requiredcomponents-properties-age-properties-options-items.md) – `https://onlineberatung/consultingtype#/properties/requiredComponents/properties/age/properties/options/items`
@@ -76,11 +74,7 @@
 
 *   [Untitled array in Consulting type](./consulting-type-definitions-selectdropdown-properties-item-properties-selectedoptions.md "Individual values that can be selected") – `https://onlineberatung/consultingtype#/definitions/SelectDropdown/properties/item/properties/selectedOptions`
 
-*   [Untitled array in Consulting type](./consulting-type-properties-groupchat-properties-groupchatrules.md "Rules for the group chat which are displayed to the user") – `https://onlineberatung/consultingtype#/properties/groupChat/properties/groupChatRules`
-
 *   [Untitled array in Consulting type](./consulting-type-properties-roles-properties-consultant-additionalproperties.md) – `https://onlineberatung/consultingtype#/properties/roles/properties/consultant/additionalProperties`
-
-*   [Untitled array in Consulting type](./consulting-type-properties-voluntarycomponents.md "Can be provided to display additional fields in the asker profile") – `https://onlineberatung/consultingtype#/properties/voluntaryComponents`
 
 *   [Untitled array in Consulting type](./consulting-type-definitions-radiobutton-properties-radiobuttons.md "Individual values that can be selected") – `https://onlineberatung/consultingtype#/definitions/RadioButton/properties/radioButtons`
 

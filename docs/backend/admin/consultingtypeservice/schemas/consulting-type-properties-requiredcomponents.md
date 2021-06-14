@@ -1,4 +1,4 @@
-# Untitled object in Consulting type Schema
+# Untitled undefined type in Consulting type Schema
 
 ```txt
 https://onlineberatung/consultingtype#/properties/requiredComponents
