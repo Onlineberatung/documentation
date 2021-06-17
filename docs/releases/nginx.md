@@ -13,6 +13,8 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+Update tag to `dockerImage.v.xxx` in the `.env` file - no additional changes necessary.
+
 Add a new location named `nginx/conf/locations/consultingtypeservice.conf`:
 ```# ConsultingTypeService
 location /service/consultingtypes {

@@ -13,7 +13,16 @@ If you want a changelog please see the project page at https://www.keycloak.org.
 
 ### Unreleased
 
-No unreleased changes yet.
+Update tag to `13.0.1` in the `docker-compose.yml` file  - the following changes are necessary:\
+> ⚠️remove the following lines from your "Keycloak/logging/standalone-ha.xml" file:
+```
+<extension module="org.wildfly.extension.microprofile.config-smallrye"/>
+<extension module="org.wildfly.extension.microprofile.health-smallrye"/>
+<extension module="org.wildfly.extension.microprofile.metrics-smallrye"/>
+<subsystem xmlns="urn:wildfly:microprofile-config-smallrye:1.0"/>
+<subsystem xmlns="urn:wildfly:microprofile-health-smallrye:2.0" security-enabled="false" empty-liveness-checks-status="${env.MP_HEALTH_EMPTY_LIVENESS_CHECKS_STATUS:UP}" empty-readiness-checks-status="${env.MP_HEALTH_EMPTY_READINESS_CHECKS_STATUS:UP}"/>
+<subsystem xmlns="urn:wildfly:microprofile-metrics-smallrye:2.0" security-enabled="false" exposed-subsystems="*" prefix="${wildfly.metrics.prefix:wildfly}"/>
+```
 
 ### 2021-03-23
 

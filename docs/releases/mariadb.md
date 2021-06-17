@@ -13,7 +13,7 @@ If you want a changelog please see the project page at https://mariadb.org.
 
 ### Unreleased
 
-No unreleased changes yet.
+Update tag to `10.5.10` in the `docker-compose.yml` file - no other actions necessary.
 
 ### 2020-11-25
 
