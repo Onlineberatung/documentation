@@ -11,14 +11,28 @@ For more details please visit the provided link to the specific service/componen
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-06-23
+#### Own services
 - [AgencyService](../releases/agencyservice.md)
 - [Backend](../releases/backend.md)
 - [ConsultingTypeService](../releases/consultingtypeservice.md)
 - [Frontend](../releases/frontend.md)
+- [Keycloak](../releases/keycloak.md)
 - [LiveService](../releases/liveservice.md)
-- [NGINX](../releases/nginx.md)
+- [MailService](../releases/mailservice.md)
+- [MessageService](../releases/messageservice.md)
+- [UploadService](../releases/uploadservice.md)
 - [UserService](../releases/userservice.md)
-- [VideoBackend](../releases/videobackend.md)
+- [VideoService](../releases/videoservice.md)
+
+#### 3rd party components
+- [Adminer](../releases/adminer.md)
+- [Keycloak](../releases/keycloak.md)
+- [MariaDB](../releases/mariadb.md)
+- [NGINX](../releases/nginx.md)
+- [Rocket.Chat](../releases/rocketchat.md)
 
 ### 2021-05-04
 #### Own services
