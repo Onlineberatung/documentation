@@ -315,6 +315,8 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
+⚠️ Before the first start of the UserService it is mandatory to set `SPRING_ACTIVE_PROFILE` to `dev`. This guarants that the database structure is created correctly. After the first start the value can be changed back to `prod`. ⚠️
+
 ## UploadService
 Die Konfiguration des Services auf dem Server erfolgt in der UploadService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden. 
 

@@ -13,7 +13,7 @@ Für den AgencyService müssen Stammdaten (Beratungsstellen, etc.) angelegt werd
 ### Create agencies
 ``use agencyservice;``\
 ``INSERT INTO `agency` (`id`, `diocese_id`, `name`, `description`, `postcode`, `city`, `is_team_agency`, `consulting_type`, `is_offline`, `create_date`, `update_date`) VALUES``\
-``(NEXTVAL(sequence_agencies),	1,	'<agencyName>',	'<agencyDescription>',	'<postcode>',	'<city>',	<isTeamAgency>,	<consultingType>,	<isOffline>, now(), now());``\
+``(NEXTVAL(sequence_agency),	1,	'<agencyName>',	'<agencyDescription>',	'<postcode>',	'<city>',	<isTeamAgency>,	<consultingType>,	<isOffline>, now(), now());``\
 
 ## UserService: Berater-Import
 
