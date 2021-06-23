@@ -13,7 +13,7 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-Update the files on the server to the latest of the master branch or checkout `release-xxx` via git.
+No unreleased changes yet.
 
 ### 2021-05-04
 
