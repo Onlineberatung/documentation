@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="changeAgencyType"></a>
 # **changeAgencyType**
-> changeAgencyType(agencyId, agencyTypeRequestDTO)
+> changeAgencyType(agencyId, AgencyTypeRequestDTO)
 
 Change an agency from team-agency to default and vice-versa and switch the associated consultant accounts to team consultant or default consultant. Ongoing team counselings change to 1:1 when converting agency to default status. 1:1 counselings remain single counselings when swapping the agency to team-agency. [Authorization: Role: user-admin]
 
@@ -29,7 +29,7 @@ Change an agency from team-agency to default and vice-versa and switch the assoc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agencyId** | **Long**| Agency Id | [default to null]
- **agencyTypeRequestDTO** | [**AgencyTypeRequestDTO**](../model/AgencyTypeRequestDTO.md)|  | [optional]
+ **AgencyTypeRequestDTO** | [**AgencyTypeRequestDTO**](../model/AgencyTypeRequestDTO.md)|  | [optional]
 
 ### Return type
 
@@ -46,7 +46,7 @@ null (empty response body)
 
 <a name="createAgency"></a>
 # **createAgency**
-> AgencyAdminFullResponseDTO createAgency(agencyDTO)
+> AgencyAdminFullResponseDTO createAgency(AgencyDTO)
 
 Creates a new agency [Authorization: Role: agency-admin]
 
@@ -54,7 +54,7 @@ Creates a new agency [Authorization: Role: agency-admin]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **agencyDTO** | [**AgencyDTO**](../model/AgencyDTO.md)|  |
+ **AgencyDTO** | [**AgencyDTO**](../model/AgencyDTO.md)|  |
 
 ### Return type
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 <a name="createAgencyPostcodeRange"></a>
 # **createAgencyPostcodeRange**
-> AgencyPostcodeRangeResponseDTO createAgencyPostcodeRange(agencyId, postCodeRangeDTO)
+> AgencyPostcodeRangeResponseDTO createAgencyPostcodeRange(agencyId, PostCodeRangeDTO)
 
 Creates a new postcode range for an agency [Authorization: Role: agency-admin]
 
@@ -80,7 +80,7 @@ Creates a new postcode range for an agency [Authorization: Role: agency-admin]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agencyId** | **Long**| Agency Id | [default to null]
- **postCodeRangeDTO** | [**PostCodeRangeDTO**](../model/PostCodeRangeDTO.md)|  |
+ **PostCodeRangeDTO** | [**PostCodeRangeDTO**](../model/PostCodeRangeDTO.md)|  |
 
 ### Return type
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAgency"></a>
 # **updateAgency**
-> AgencyAdminFullResponseDTO updateAgency(agencyId, updateAgencyDTO)
+> AgencyAdminFullResponseDTO updateAgency(agencyId, UpdateAgencyDTO)
 
 Updates an agency [Authorization: Role: agency-admin]
 
@@ -286,7 +286,7 @@ Updates an agency [Authorization: Role: agency-admin]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agencyId** | **Long**| Agency Id | [default to null]
- **updateAgencyDTO** | [**UpdateAgencyDTO**](../model/UpdateAgencyDTO.md)|  |
+ **UpdateAgencyDTO** | [**UpdateAgencyDTO**](../model/UpdateAgencyDTO.md)|  |
 
 ### Return type
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAgencyPostcodeRange"></a>
 # **updateAgencyPostcodeRange**
-> AgencyPostcodeRangeResponseDTO updateAgencyPostcodeRange(postcodeRangeId, postCodeRangeDTO)
+> AgencyPostcodeRangeResponseDTO updateAgencyPostcodeRange(postcodeRangeId, PostCodeRangeDTO)
 
 Updates an existing postcode range for an agency [Authorization: Role: agency-admin]
 
@@ -312,7 +312,7 @@ Updates an existing postcode range for an agency [Authorization: Role: agency-ad
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postcodeRangeId** | **Long**| Postcode range id | [default to null]
- **postCodeRangeDTO** | [**PostCodeRangeDTO**](../model/PostCodeRangeDTO.md)|  |
+ **PostCodeRangeDTO** | [**PostCodeRangeDTO**](../model/PostCodeRangeDTO.md)|  |
 
 ### Return type
 

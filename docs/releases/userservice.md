@@ -13,6 +13,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-06-23
+
 You need to add a new location in nginx/conf/locations/userservice.conf to make the new 
 conversations api available to the client.
 ```
@@ -27,7 +31,17 @@ location /service/conversations {
 }
 ```
 
-Update tag to `dockerImage.v.xxx` in the `.env` file.
+Add the permission `Edit Room` to the system user in admin interface of Rocket.Chat.
+
+Add the following service API url to the `UserService.env`: `CONSULTING_TYPE_SERVICE_API_URL=http://consultingtypeservice:8080`.
+
+Add the following keycloak properties to the `UserService.env`:
+```
+KEYCLOAKSERVICE_TECHNICAL_USERNAME=<username of your technical user>
+KEYCLOAKSERVICE_TECHNICAL_PASSWORD=<password of your technical user>
+```
+
+Update tag to `dockerImage.v.149.release-2021-06-22` in the `.env` file.
 
 ### 2021-05-04
 

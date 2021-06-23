@@ -15,6 +15,35 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-06-23
+
+Update tag to `dockerImage.v.6.release-2021-06-22` in the `.env` file.
+
+Add a new location named `nginx/conf/locations/consultingtypeservice.conf`:
+```# ConsultingTypeService
+location /service/consultingtypes {
+    limit_req zone=by_ip_5rs burst=5;
+    proxy_pass http://consultingtypeservice:8080/consultingtypes;
+    resolver 127.0.0.11;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto http;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+location /consultingtypeadmin {
+    limit_req zone=by_ip_5rs burst=5;
+    proxy_pass http://consultingtypeservice:8080/consultingtypeadmin;
+    resolver 127.0.0.11;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto http;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+location /service/consultingtypes/docs {
+    deny all;
+}
+```
+
 ### 2021-05-04
 
 Endpoints which where reachable without SSL or via IP have been deactivated/ respectively forwarded to the correct HTTPS endpoint.

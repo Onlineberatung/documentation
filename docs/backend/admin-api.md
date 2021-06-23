@@ -16,3 +16,5 @@ or access the generated overview here:
 * [AgencyService Admin API endpoints](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/agencyservice/AdminAgencyControllerApi.md)
 * [UserService Admin API root entry-point](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/userservice/RootControllerApi.md)
 * [UserService Admin API endpoints](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/userservice/AdminUserControllerApi.md)
+* [ConsultingTypeService Admin API root entry-point](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/consultingtypeservice/RootControllerApi.md)
+* [ConsultingTypeService Admin API endpoints](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/conultingtypeservice/AdminUserControllerApi.md)

@@ -28,17 +28,29 @@ Anschließend werden die Zugangsdaten abgefragt und für zukünftige Anfragen ge
 
 ### Festlegen der Microservices-Service-Versionen
 
-In der Datei `.env` müssen die Versionen bzw. Tags für die eigenen Microservices angegeben werden, z.B.
+In der Datei `.env` müssen die Pfade zu den Images und die Versionen bzw. Tags für die Microservices angegeben werden, z.B.
 
 ```
+USER_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-userservice/userservice-image
 USER_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
-FRONTEND_VERSION=dockerimage.v.7-release-2020-10-13
-AGENCY_SERVICE_VERSION=dockerimage.v.3
-MESSAGE_SERVICE_VERSION=dockerimage.v.3-release-2020-10-13
+FRONTEND_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-frontend/frontend-image
+FRONTEND_VERSION=dockerimage.v.5-release-2020-10-13
+AGENCY_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-agencyservice/agencyservice-image
+AGENCY_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+MESSAGE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-messageservice/messageservice-image
+MESSAGE_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+MAIL_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-mailservice/mailservice-image
 MAIL_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+UPLOAD_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-uploadservice/uploadservice-image
 UPLOAD_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
-LIVE_SERVICE_VERSION=dockerImage.v.1
-VIDEO_SERVICE_VERSION=dockerImage.v.1
+NGINX_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-nginx/nginx-image
+NGINX_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+LIVE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-liveservice/liveservice-image
+LIVE_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+VIDEO_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-videoservice/videoservice-image
+VIDEO_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
+CONSULTING_TYPE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-consultingtypeervice/consultingservice-image
+CONSULTING_TYPE_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
 ```
 
 ### Dateiberechtigungen

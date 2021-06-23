@@ -15,6 +15,14 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-06-23
+
+Add the following service API url to the `AgencyService.env`: `CONSULTING_TYPE_SERVICE_API_URL=http://consultingtypeservice:8080`.
+
+After adding the new ConsultingTypeService you can remove all of the white spot agency IDs from `AgencyService.env`.
+
+Update tag to `dockerImage.v.40.release-2021-06-22` in the `.env` file - no additional changes necessary.
+
 ### 2021-05-04
 
 Update tag to `dockerImage.v.36.release-2021-05-04` in the `.env` file - no additional changes necessary.
