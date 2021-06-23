@@ -13,6 +13,10 @@ If you want a changelog please see the project page at https://www.keycloak.org.
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-06-23
+
 Update tag to `13.0.1` in the `docker-compose.yml` file  - the following changes are necessary:\
 > ⚠️remove the following lines from your "Keycloak/logging/standalone-ha.xml" file:
 ```

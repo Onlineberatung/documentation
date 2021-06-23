@@ -13,7 +13,11 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-Update tag to `dockerImage.v.xxx` in the `.env` file - no additional changes necessary.
+No unreleased changes yet.
+
+### 2021-06-23
+
+Update tag to `dockerImage.v.6.release-2021-06-22` in the `.env` file.
 
 Add a new location named `nginx/conf/locations/consultingtypeservice.conf`:
 ```# ConsultingTypeService

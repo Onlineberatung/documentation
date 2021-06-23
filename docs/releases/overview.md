@@ -20,27 +20,27 @@ If you want to check the individual service/component please klick on the corres
 ### Own services
 |Service|Current image version|
 |--- |--- |
-|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.36.release-2021-05-04`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.156-release-2021-05-04`|
-|[LiveService](../releases/liveservice.md)|`dockerImage.v.16.release-2021-04-13`|
-|[MailService](../releases/mailservice.md)|`dockerImage.v.16.release-2021-04-13`|
-|[MessageService](../releases/messageservice.md)|`dockerImage.v.30.release-2021-04-13`|
-|[NGINX](../releases/nginx.md)|`dockerImage.v.4.release-2020-11-03`|
-|[UploadService](../releases/uploadservice.md)|`dockerImage.v.21.release-2021-04-13`|
-|[UserService](../releases/userservice.md)|`dockerImage.v.106.release-2021-05-04`|
-|[VideoService](../releases/videoservice.md)|`dockerImage.v.17.release-2021-05-04`|
-|[ConsultingTypeService](../releases/consultingtypeservice.md)|`n/a`|
+|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.40.release-2021-06-22`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.180-release-anonymous-2021-06-22`|
+|[LiveService](../releases/liveservice.md)|`dockerimage.v.28.native-socket-header`|
+|[MailService](../releases/mailservice.md)|`dockerimage.v.18.release-2021-06-16`|
+|[MessageService](../releases/messageservice.md)|`dockerImage.v.36.release-2021-06-22`|
+|[NGINX](../releases/nginx.md)|`dockerImage.v.6.release-2021-06-22`|
+|[UploadService](../releases/uploadservice.md)|`dockerImage.v.24.release-2021-06-22`|
+|[UserService](../releases/userservice.md)|`dockerImage.v.149.release-2021-06-22`|
+|[VideoService](../releases/videoservice.md)|`dockerImage.v.20.release-2021-06-22`|
+|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerimage.v.6.release-2021-06-22`|
  
 ### 3rd party components
 |Component|Current image version|
 |--- |--- |
-|[Adminer](../releases/adminer.md)|`4.7.7`|
-|[Keycloak](../releases/keycloak.md)|`11.0.2`|
-|[MariaDB](../releases/mariadb.md)|`10.5.6`|
+|[Adminer](../releases/adminer.md)|`4.8.1`|
+|[Keycloak](../releases/keycloak.md)|`13.0.1`|
+|[MariaDB](../releases/mariadb.md)|`10.5.10`|
 |[MongoDB](../releases/mongodb.md)|`4.0.5`|
 |[Nosqlclient](../releases/nosqlclient.md)|`4.0.1`|
 |[OpenLDAP](../releases/openldap.md)|`1.4.0`|
-|[Rocket.Chat](../releases/rocketchat.md)|`3.7.1`|
+|[Rocket.Chat](../releases/rocketchat.md)|`3.14.4`|
 
  
 ### Backend stacks

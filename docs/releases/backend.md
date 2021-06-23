@@ -13,6 +13,10 @@ For a full changelog of this project please see the [project changelog](https://
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-06-23
+
 Add the new ConsultingTypeService to the `docker-compose.yml`:
 
 ```consultingtypeservice:

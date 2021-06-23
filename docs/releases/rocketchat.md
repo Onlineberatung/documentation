@@ -13,6 +13,10 @@ If you want a changelog please see the project page at https://rocket.chat.
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-06-23
+
 Update tag to `3.14.4` in the `docker-compose.yml` file - no other actions necessary.
 
 ### 2021-03-23
