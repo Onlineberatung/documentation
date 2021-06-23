@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="changeAgencyType"></a>
 # **changeAgencyType**
-> changeAgencyType(agencyId, agencyTypeDTO)
+> changeAgencyType(agencyId, AgencyTypeDTO)
 
 Change an agency from team-agency to default and vice-versa and switch the associated consultant accounts to team consultant or default consultant. Ongoing team counselings change to 1:1 when converting agency to default status. 1:1 counselings remain single counselings when swapping the agency to team-agency. This endpoint must be used only internally from AgencyService to ensure the regarding agency has been flagged correctly too. [Authorization: Role: user-admin]
 
@@ -29,7 +29,7 @@ Change an agency from team-agency to default and vice-versa and switch the assoc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agencyId** | **Long**| Agency Id | [default to null]
- **agencyTypeDTO** | [**AgencyTypeDTO**](../model/AgencyTypeDTO.md)|  | [optional]
+ **AgencyTypeDTO** | [**AgencyTypeDTO**](../model/AgencyTypeDTO.md)|  | [optional]
 
 ### Return type
 
@@ -46,7 +46,7 @@ null (empty response body)
 
 <a name="createConsultant"></a>
 # **createConsultant**
-> ConsultantAdminResponseDTO createConsultant(createConsultantDTO)
+> ConsultantAdminResponseDTO createConsultant(CreateConsultantDTO)
 
 Creates a new consultant [Authorization: Role: consultant-admin]
 
@@ -54,7 +54,7 @@ Creates a new consultant [Authorization: Role: consultant-admin]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createConsultantDTO** | [**CreateConsultantDTO**](../model/CreateConsultantDTO.md)|  |
+ **CreateConsultantDTO** | [**CreateConsultantDTO**](../model/CreateConsultantDTO.md)|  |
 
 ### Return type
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 <a name="createConsultantAgency"></a>
 # **createConsultantAgency**
-> createConsultantAgency(consultantId, createConsultantAgencyDTO)
+> createConsultantAgency(consultantId, CreateConsultantAgencyDTO)
 
 Create a consultant-agency relation [Authorization: Role: user-admin]
 
@@ -80,7 +80,7 @@ Create a consultant-agency relation [Authorization: Role: user-admin]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consultantId** | **String**| Consultant Id | [default to null]
- **createConsultantAgencyDTO** | [**CreateConsultantAgencyDTO**](../model/CreateConsultantAgencyDTO.md)|  |
+ **CreateConsultantAgencyDTO** | [**CreateConsultantAgencyDTO**](../model/CreateConsultantAgencyDTO.md)|  |
 
 ### Return type
 
@@ -299,7 +299,7 @@ null (empty response body)
 
 <a name="updateConsultant"></a>
 # **updateConsultant**
-> ConsultantAdminResponseDTO updateConsultant(consultantId, updateAdminConsultantDTO)
+> ConsultantAdminResponseDTO updateConsultant(consultantId, UpdateAdminConsultantDTO)
 
 Updates a consultant [Authorization: Role: consultant-admin]
 
@@ -308,7 +308,7 @@ Updates a consultant [Authorization: Role: consultant-admin]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consultantId** | **String**| consultant id | [default to null]
- **updateAdminConsultantDTO** | [**UpdateAdminConsultantDTO**](../model/UpdateAdminConsultantDTO.md)|  |
+ **UpdateAdminConsultantDTO** | [**UpdateAdminConsultantDTO**](../model/UpdateAdminConsultantDTO.md)|  |
 
 ### Return type
 
