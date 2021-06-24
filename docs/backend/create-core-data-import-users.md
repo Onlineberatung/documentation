@@ -54,6 +54,8 @@ __Hinweis__: Bei einem Update werden derzeit nur die genannten Beratungsstellen 
 
 Der Name und Speicherort der CSV-Datei wird in den _application.properties_ über die ``consultant.import.filename`` festgelegt.
 
+## Import starten
+
 Der Import der Berater kann durch einen Aufruf des Endpoints __/users/consultants/import__ beim UserService (z.B. mit Postman) erfolgen. Hierbei ist zu beachten, dass ein gültiger Keycloak-Token eines technischen Benutzers mit der Rolle _"technical"_ zu übergeben ist. Der Aufruf ist 1x pro Minute möglich.
 
 ### Import-Protokoll
@@ -94,6 +96,8 @@ id_old,username,email,consultant_id,postcode,agency_id,pw
 Der Name und Speicherort der CSV-Datei wird in den _application.properties_ über die ``asker.import.filename`` festgelegt.
 
 Das Willkommens-Standard-Systemnachrichten-File wird ebenfalls in der _application.properties_ angegeben. Dabei wird der Consulting Type PLatzhalter mit der jeweiligen ID des Resorts ersetzt. Die Dateien müssen im selben Verzeichnis wie das Import-File liegen. Hier gilt es zu beachten, dass diese Textdatei die selbe Kodierung, wie im Import angegeben, besitzt (momentan: UTF-8).
+
+## Import starten
 
 Der Import der Ratsuchenden mit Beratung kann durch einen Aufruf des Endpoints __/users/askers/import__ beim UserService (z.B. mit Postman) erfolgen. Hierbei ist zu beachten, dass ein gültiger Keycloak-Token eines technischen Benutzers mit der Rolle "technical" zu übergeben ist.
 
