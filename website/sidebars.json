@@ -5,31 +5,45 @@
       "general/git-workflow",
       "general/browser-matrix"
     ],
-    "Project Setup": ["setup/setup-backend", "setup/setup-frontend"],
-    "Backend": [
+    "Project setup": [
+      "setup/setup-backend",
+      "setup/setup-frontend"
+    ],
+    "Backend setup and configuration": [
       "backend/install-and-running-on-server",
       "backend/install-and-running-locally",
       "backend/first-start",
       "backend/service-configuration",
-      "backend/starting-and-stopping-the-services",
-      "backend/login-data-access-links",
       "backend/file-permissions",
-      "backend/build-and-load-docker-image",
       "backend/openldap-configuration",
       "backend/create-core-data-import-users",
-      "backend/liquibase",
       "backend/mailservice-templates",
       "backend/jenkins",
       "backend/nginx",
       "backend/ssl-certificate",
       "backend/cors-configuration",
-      "backend/video-backend",
+      "backend/video-backend"
+    ],
+    "Backend in general": [
+      "backend/service-overview",
+      "backend/starting-and-stopping-the-services",
+      "backend/login-data-access-links",
       "backend/admin-api"
     ],
-    "Frontend": ["frontend/build", "frontend/tools-and-technologies", "frontend/testing"],
+    "Backend development": [
+      "backend/build-and-load-docker-image",
+      "backend/liquibase"
+    ],
+    "Frontend": [
+      "frontend/build",
+      "frontend/tools-and-technologies",
+      "frontend/testing"
+    ],
     "Releases": [
       "releases/overview",
-      "releases/versionhistory",
+      "releases/versionhistory"
+    ],
+    "Releases of own services": [
       "releases/agencyservice",
       "releases/backend",
       "releases/consultingtypeservice",
@@ -37,18 +51,20 @@
       "releases/liveservice",
       "releases/mailservice",
       "releases/messageservice",
-      "releases/nginx",
       "releases/uploadservice",
       "releases/userservice",
-      "releases/videobackend",
-      "releases/videoservice",
+      "releases/videoservice"
+    ],
+    "Releases of 3rd party components": [
       "releases/adminer",
       "releases/keycloak",
       "releases/mariadb",
       "releases/mongodb",
+      "releases/nginx",
       "releases/nosqlclient",
       "releases/openldap",
-      "releases/rocketchat"
+      "releases/rocketchat",
+      "releases/videobackend"
     ]
   }
 }

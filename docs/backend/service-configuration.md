@@ -42,16 +42,21 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 | Search Field | uid,mail | |
 
 
-### Technischen Benutzer und Rolle anlegen
+### Create technical user
+
+The Rocket.Chat technical user is used for every Rocket.Chat action that involves administrative tasks on groups or users. This ensures that a normal user account's permissions can be limited at the greatest possible level.
+
 1. Rolle anlegen/Rechte festlegen
 * Unter _"Permissions"_ über den Button _"+"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Der Rolle folgende Rechte hinzufügen (Haken setzen):
     * `Add User to Any Private Channel`
+    * `Bypass rate limit for REST API`
     * `Clean Channel History`
     * `Delete Private Channels`
     * `Delete User`
     * `Edit Other User Information`
     * `Remove User`
+    * `View Other User Channels`
     * `View Room Administration`
 2. Benutzer anlegen
 * Unter _"Users"_ einen neuen Benutzer _"technical"_ anlegen und die eben erstellte Rolle _"technical"_ zuweisen.
@@ -61,11 +66,16 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
     * Join default channels = Nicht selektiert
     * Send welcome email = Nicht selektiert
 
-### Benutzer und Rolle für System-Nachrichten anlegen
+### Create system messages user
+
+The Rocket.Chat system messages user is used to write system messages to Rocket.Chat groups. These different message types are defined in the MessageService.
+
 1. Rolle anlegen/Rechte festlegen
 * Unter _"Permissions"_ über den Button _"+"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
 * Dieser Rolle nun die folgende Rechte zuweisen:
+    * `Bypass rate limit for REST API`
     * `Create Private Channels`
+    * `Edit Room`
     * `View Room Administration`
 2. Benutzer anlegen
 * Unter _"Users"_ einen neuen Benutzer _"system"_ anlegen und die Rollen _"user"_ und _"system"_ zuweisen.
@@ -253,8 +263,8 @@ Folgende Werte müssen zwingend gesetzt werden:
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
 | ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
-| ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-technischen-benutzer-und-rolle-anlegen)) |
-| ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
+| ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-create-technical-user)) |
+| ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-create-system-messages-user))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | ROCKET_SYSTEMUSER_ID | Rocket.Chat system user id |
 | USER_SERVICE_API_URL | http://userservice:8080/users |
@@ -301,9 +311,9 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | KEYCLOAKSERVICE_TECHNICAL_USERNAME | Keycloak technical user username (see [here](#-technischer-benutzer-zum-setzen-der-masterkeys)) |
 | KEYCLOAKSERVICE_TECHNICAL_PASSWORD | Keycloak technical user password |
 | ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
-| ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-technischen-benutzer-und-rolle-anlegen)) |
+| ROCKET_TECHNICAL_USERNAME | Rocket.Chat technical user username (see [here](#-create-technical-user)) |
 | ROCKET_TECHNICAL_PASSWORD | Rocket.Chat technical user password |
-| ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
+| ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-create-system-messages-user))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | ROCKET_SYSTEMUSER_ID | Rocket.Chat system user ID |
 | AGENCY_SERVICE_API_URL | http://agencyservice:8080/agencies |
@@ -314,6 +324,8 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+
+⚠️ Before the first start of the UserService it is mandatory to set `SPRING_ACTIVE_PROFILE` to `dev`. This guarants that the database structure is created correctly. After the first start the value can be changed back to `prod`. ⚠️
 
 ## UploadService
 Die Konfiguration des Services auf dem Server erfolgt in der UploadService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden. 
@@ -331,7 +343,7 @@ Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 | KEYCLOAKSERVICE_ADMIN_CLIENTID | Keycloak admin client ID |
 | KEYCLOAKSERVICE_APP_CLIENTID | Keycloak app client ID |
 | ROCKET_CHAT_API_URL | Rocket.Chat REST API URL, e.q. _http://\<host\>/api/v1_ |
-| ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-benutzer-und-rolle-für-system-nachrichten-anlegen))|
+| ROCKET_SYSTEMUSER_USERNAME | Rocket.Chat system user username (see [here](#-create-system-messages-user))|
 | ROCKET_SYSTEMUSER_PASSWORD | Rocket.Chat system user password |
 | USER_SERVICE_API_URL | http://userservice:8080/users |
 | USER_SERVICE_API_LIVEPROXY_URL | http://userservice:8080 |
@@ -405,6 +417,8 @@ You need to define the settings of all your consulting types in single json file
 __Please be aware that the properties id and slug have to be unique.__
 
 __If the ConsultingTypeService does not start, please check the log file for indications of configuration errors.__
+
+⚠️ Please keep in mind that after making changes to the consulting type settings you need to restart Agency- and UserService (settings are being cached)! ⚠️
 
 ## Restart aller Services
 Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.
