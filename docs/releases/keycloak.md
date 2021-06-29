@@ -15,6 +15,21 @@ If you want a changelog please see the project page at https://www.keycloak.org.
 
 No unreleased changes yet.
 
+### 2021-06-29
+
+Update all ressources for the caritas theme. You can find the files in the following folder:
+https://github.com/CaritasDeutschland/caritas-onlineBeratung-backend/tree/master/Keycloak/caritas-theme/login
+
+Update the NGINX location configuration for Keycloak. You can view the changes here:
+https://github.com/CaritasDeutschland/caritas-onlineBeratung-backend/pull/78/files#diff-9291636bc8605709ec8aeb30a6cbff80e54e7265fca8d92c0dc26719980a070d
+
+If you want the styling changes to take effect immediately you need to disable caching in the file `Keycloak/logging/standalone-ha.xml`. Therefore change the following values accordingly:\
+`<staticMaxAge>-1</staticMaxAge>`\
+`<cacheThemes>false</cacheThemes>`\
+`<cacheTemplates>false</cacheTemplates>`
+
+Finally restart Keycloak.
+
 ### 2021-06-23
 
 Update tag to `13.0.1` in the `docker-compose.yml` file  - the following changes are necessary:\

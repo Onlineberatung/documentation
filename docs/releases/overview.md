@@ -21,15 +21,15 @@ If you want to check the individual service/component please klick on the corres
 |Service|Current image version|
 |--- |--- |
 |[AgencyService](../releases/agencyservice.md)|`dockerImage.v.40.release-2021-06-22`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.180-release-anonymous-2021-06-22`|
-|[LiveService](../releases/liveservice.md)|`dockerimage.v.28.native-socket-header`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.185-release-2021-06-28`|
+|[LiveService](../releases/liveservice.md)|`dockerimage.v.29.release-2021-06-29`|
 |[MailService](../releases/mailservice.md)|`dockerimage.v.18.release-2021-06-16`|
 |[MessageService](../releases/messageservice.md)|`dockerImage.v.36.release-2021-06-22`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.6.release-2021-06-22`|
 |[UploadService](../releases/uploadservice.md)|`dockerImage.v.24.release-2021-06-22`|
 |[UserService](../releases/userservice.md)|`dockerImage.v.149.release-2021-06-22`|
 |[VideoService](../releases/videoservice.md)|`dockerImage.v.20.release-2021-06-22`|
-|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerimage.v.6.release-2021-06-22`|
+|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.8.release-2021-06-29`|
  
 ### 3rd party components
 |Component|Current image version|

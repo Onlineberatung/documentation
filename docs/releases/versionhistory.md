@@ -13,6 +13,13 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2021-06-29
+#### Own services
+- [ConsultingTypeService](../releases/consultingtypeservice.md)
+- [Frontend](../releases/frontend.md)
+- [Keycloak](../releases/keycloak.md)
+- [LiveService](../releases/liveservice.md)
+
 ### 2021-06-23
 #### Own services
 - [AgencyService](../releases/agencyservice.md)
