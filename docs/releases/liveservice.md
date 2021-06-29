@@ -15,6 +15,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-06-29
+
+Update tag to `dockerimage.v.29.release-2021-06-29` in the `.env` file - no additional changes necessary.
+
 ### 2021-06-23
 
 Update tag to `dockerImage.v.28.native-socket-header` in the `.env` file - no additional changes necessary.
