@@ -22,6 +22,7 @@ https://github.com/CaritasDeutschland/caritas-onlineBeratung-backend/tree/master
 
 Update the NGINX location configuration for Keycloak. You can view the changes here:
 https://github.com/CaritasDeutschland/caritas-onlineBeratung-backend/pull/78/files#diff-9291636bc8605709ec8aeb30a6cbff80e54e7265fca8d92c0dc26719980a070d
+https://github.com/CaritasDeutschland/caritas-onlineBeratung-backend/pull/81/files#diff-9291636bc8605709ec8aeb30a6cbff80e54e7265fca8d92c0dc26719980a070d
 
 If you want the styling changes to take effect immediately you need to disable caching in the file `Keycloak/logging/standalone-ha.xml`. Therefore change the following values accordingly:\
 `<staticMaxAge>-1</staticMaxAge>`\
