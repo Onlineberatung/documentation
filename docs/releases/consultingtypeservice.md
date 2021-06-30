@@ -13,4 +13,12 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-06-29
+
+Update tag to `dockerImage.v.8.release-2021-06-29` in the `.env` file - no additional changes necessary.
+
+### 2021-06-23
+
 Configure the service initially like documented under [service configuration](../backend/service-configuration.md#consultingtypeservice).

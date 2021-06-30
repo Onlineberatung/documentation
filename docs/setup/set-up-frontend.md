@@ -30,10 +30,10 @@ The frontend app for the Caritas Online Beratung has two responsibilities:
 To run the application locally you'll need to setup the backend first.
 
 Please follow these steps:
- 
+
 1. [Setup the backend locally](../backend/install-and-running-locally)
 2. [Create core data and import users](../backend/create-core-data-import-users)
-3. Open `masterkey.js` and make sure the `postData` and `options` are correct. The master key itself needs to be set as the `MASTERKEY` environment parameter in `.env`. Afterwards you can provide the key for message encryption to the services by running `node masterkey.js`. If you experience timeouts while trying to set the master keys please check that the services are able to reach Keycloak (and vice versa) in your firewall settings.
+3. [Start the services](../backend/starting-and-stopping-the-services)
 
 ### Starting
 
@@ -43,7 +43,7 @@ After you're are finished with the setup steps and all services work, run these 
 2. Navigate to the project folder
 3. Adjust the [CORS configuration](../backend/cors-configuration)
 4. Afterwards you can start the frontend with `npm start`
-5. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port.
+5. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port (e.g. `proxy_pass http://caritas.local:9000/;`).
 6. [Start the backend](../backend/starting-and-stopping-the-services)
 7. The frontend opens at your configured host. To avoid CORS issues during the login, remove the port and login by just using the host.
 
@@ -62,10 +62,12 @@ By running `npm run build`, you can build the app for production. The built asse
 To use this project as a dependency, you have to:
 
 1. Add an `.npmrc` file with this entry:
+
 ```bash
 @caritasdeutschland:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
+
 2. [Configure a `GITHUB_TOKEN` environment parameter](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) in the shell (ideally loaded on startup)
 
 Then you can install the library with `npm install @caritasdeutschland/caritas-online-beratung-frontend`.
