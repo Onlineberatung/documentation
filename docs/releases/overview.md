@@ -40,6 +40,7 @@ If you want to check the individual service/component please klick on the corres
 |[MongoDB](../releases/mongodb.md)|`4.0.5`|
 |[Nosqlclient](../releases/nosqlclient.md)|`4.0.1`|
 |[OpenLDAP](../releases/openldap.md)|`1.4.0`|
+|[RabbitMQ](../releases/rabbitmq.md)|`3.8.18`|
 |[Rocket.Chat](../releases/rocketchat.md)|`3.14.4`|
 
  

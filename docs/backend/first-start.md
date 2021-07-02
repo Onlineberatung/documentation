@@ -117,6 +117,28 @@ Um bei Problemen nicht ein andauernd neustartendes System zu erhalten kann die r
 
 Dadurch können Probleme behoben und die Services anschließend kontrolliert gestartet werden.
 
+## RabbitMQ configuration
+
+Open the file `RabbitMQ/conf/rabbitmq.conf` and change the following values:
+
+`vm_memory_high_watermark.relative` - memory usage, read [official documentation](https://www.rabbitmq.com/production-checklist.html#resource-limits-ram) for correct setting depending on your production system. Can be changed to e.g. `vm_memory_high_watermark.absolute = 1GB` for development.\
+`disk_free_limit.relative` - does not implicitly need to be changed. Refer to [official documentation](https://www.rabbitmq.com/production-checklist.html#resource-limits-disk-space) for further information.\
+`default_user` - default username (will be created on first start)\
+`default_pass` - password for default user
+
+⚠️ Please be sure not to put environment variables within your `docker-compose.yml` inside the RabittMQ container section because this will overwrite all values within the `rabbitmq.conf` file. ⚠️
+
+### RabbitMQ management UI
+
+__Activating the management UI on production is not recommended!__\
+If you want to use the RabbitMQ management UI you need to use another Docker image. Therefore open the `docker-compose.yml` and change the RabbitMQ image from `image: rabbitmq:x.x.x-alpine` to `image: rabbitmq:x.x.x-management-alpine` (where x.x.x represent the latest version numbers). Furthermore you need to add the line `- '15672:15672'` to the proxy (NGINX) ports section. 
+
+You will also need to add `loopback_users.<username> = true` (where username represents the RabbitMQ default user) to the file `RabbitMQ/conf/rabbitmq.conf`. In this folder you also need to add a file `enabled_plugins` with the content `[rabbitmq_management].`.
+
+Finally you need to add `include server/server-rabbitmq.conf;` to the `http` section of the file `nginx/conf/nginx.conf`.
+
+If you want to use the management UI in production mode please follow the [official documentation](https://www.rabbitmq.com/management.html#configuration) to secure this endpoint.
+
 ## Alle Services starten
 
 Gestartet werden alle Services mit folgendem Befehl im (Haupt-)Verzeichnis, wo die Datei _docker-compose.yml_ liegt: _docker-compose up -d_ (ohne -d um die Log-Ausgabe im Terminal anzuzeigen).
