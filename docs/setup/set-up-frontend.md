@@ -25,7 +25,12 @@ The frontend app for the Caritas Online Beratung has two responsibilities:
 
 ## App setup
 
-### Setup backend
+For starting the frontend locally you have two options:
+
+- set up the project locally with your local databases etc. and starting it via docker, go on with [Setup local backend](setup-frontend#setup-local-backend)
+- set up the project on a (dev) server and start the frontend locally and work against said server, go on with [Starting without local backend](setup-frontend#starting-without-local-backend)
+
+### Setup local backend
 
 To run the application locally you'll need to setup the backend first.
 
@@ -35,17 +40,27 @@ Please follow these steps:
 2. [Create core data and import users](../backend/create-core-data-import-users)
 3. [Start the services](../backend/starting-and-stopping-the-services)
 
-### Starting
+### Starting with local backend
 
 After you're are finished with the setup steps and all services work, run these steps to get your project on the road:
 
 1. Open your command line / terminal / bash
 2. Navigate to the project folder
 3. Adjust the [CORS configuration](../backend/cors-configuration)
-4. Afterwards you can start the frontend with `npm start`
-5. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port (e.g. `proxy_pass http://caritas.local:9000/;`).
-6. [Start the backend](../backend/starting-and-stopping-the-services)
-7. The frontend opens at your configured host. To avoid CORS issues during the login, remove the port and login by just using the host.
+4. Setup your `.env` file according to the `.env.sample`. Remove the `API_URL_FOR_LOCAL_DEVELOPMENT` as you won't need it.
+5. Afterwards you can start the frontend with `npm start`
+6. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port (e.g. `proxy_pass http://caritas.local:9000/;`).
+7. [Start the backend](../backend/starting-and-stopping-the-services)
+8. The frontend opens at your configured host. To avoid CORS issues during the login, remove the port and login by just using the host.
+
+### Starting without local backend
+
+After you're are finished with the setup steps and all services work, run these steps to get your project on the road:
+
+1. Open your command line / terminal / bash
+2. Navigate to the project folder
+3. Setup your `.env` file according to the `.env.sample`. It is important that you set `API_URL_FOR_LOCAL_DEVELOPMENT` to the domain you're developing against.
+4. Afterwards you can start the frontend with `npm start`.
 
 ### Test
 
