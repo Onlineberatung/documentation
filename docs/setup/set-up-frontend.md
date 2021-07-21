@@ -47,7 +47,10 @@ After you're are finished with the setup steps and all services work, run these 
 1. Open your command line / terminal / bash
 2. Navigate to the project folder
 3. Adjust the [CORS configuration](../backend/cors-configuration)
-4. Setup your `.env` file according to the `.env.sample`. Remove the `API_URL_FOR_LOCAL_DEVELOPMENT` as you won't need it.
+4. Setup your `.env` file according to the `.env.sample`.
+
+- Remove the `API_URL_FOR_LOCAL_DEVELOPMENT` and `CSRF_WHITELIST_HEADER_FOR_LOCAL_DEVELOPMENT` as you won't need it.
+
 5. Afterwards you can start the frontend with `npm start`
 6. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port (e.g. `proxy_pass http://caritas.local:9000/;`).
 7. [Start the backend](../backend/starting-and-stopping-the-services)
@@ -59,7 +62,11 @@ After you're are finished with the setup steps and all services work, run these 
 
 1. Open your command line / terminal / bash
 2. Navigate to the project folder
-3. Setup your `.env` file according to the `.env.sample`. It is important that you set `API_URL_FOR_LOCAL_DEVELOPMENT` to the domain you're developing against.
+3. Setup your `.env` file according to the `.env.sample`:
+
+- set `API_URL_FOR_LOCAL_DEVELOPMENT` to the domain you're developing against.
+- set `CSRF_WHITELIST_HEADER_FOR_LOCAL_DEVELOPMENT` to the `X-WHITELIST-HEADER` you define in the CORS setup: [CORS configuration for local frontend development](../backend/cors-configuration#cors-settings-for-local-frontend-development)
+
 4. Afterwards you can start the frontend with `npm start`.
 
 ### Test
