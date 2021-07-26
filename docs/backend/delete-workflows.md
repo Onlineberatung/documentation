@@ -24,7 +24,7 @@ _Parameters to set in the UserService environment configuration file `./UserServ
 
 This workflow checks if there are users who have only registered but do not have an active session and deletes them. All sessions are taken into account for which no initial request was ever written.
 
-⚠️ Users whose inactive sessions were deleted by the delete workflow `Deletion of inactive session and users` (see above) may be deleted by this workflow afterwards.
+⚠️ Users whose inactive sessions were deleted by the delete workflow `Deletion of inactive session and users` (see above) should be deleted by this workflow afterwards.
 
 _Parameters to set in the UserService environment configuration file `./UserService/UserService.env`:_
 
