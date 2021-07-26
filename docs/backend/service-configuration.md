@@ -58,6 +58,7 @@ The Rocket.Chat technical user is used for every Rocket.Chat action that involve
     * `Remove User`
     * `View Other User Channels`
     * `View Room Administration`
+    * `View Direct Messages`
 2. Benutzer anlegen
 * Unter _"Users"_ einen neuen Benutzer _"technical"_ anlegen und die eben erstellte Rolle _"technical"_ zuweisen.
 * **Weitere Einstellungen des technischen Benutzer:**
@@ -326,6 +327,10 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
 ⚠️ Before the first start of the UserService it is mandatory to set `SPRING_ACTIVE_PROFILE` to `dev`. This guarants that the database structure is created correctly. After the first start the value can be changed back to `prod`. ⚠️
+
+### Delete workflows
+
+Within the application the user has the possibility to delete the own account. You can configure additional and automatic delete workflows for data privacy reasons. You find the configuration details [here](delete-workflows.md).
 
 ## UploadService
 Die Konfiguration des Services auf dem Server erfolgt in der UploadService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden. 

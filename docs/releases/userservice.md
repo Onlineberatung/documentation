@@ -13,7 +13,7 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+New delete workflows for inactive users and session were added. Please check the documentation ([delete workflows](../backend/delete-workflows.md)) and decide if you want to active this workflows.
 
 ### 2021-06-23
 
