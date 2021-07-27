@@ -66,6 +66,10 @@
 
 *   [Untitled object in Consulting type](./consulting-type-properties-requiredcomponents-properties-state.md "Selection for the federal state of the asker") – `https://onlineberatung/consultingtype#/properties/requiredComponents/properties/state`
 
+*   [Untitled object in Consulting type](./consulting-type-properties-welcomescreen.md "Properties for registration welcome screen items") – `https://onlineberatung/consultingtype#/properties/welcomeScreen`
+
+*   [Untitled object in Consulting type](./consulting-type-properties-welcomescreen-properties-anonymous.md "Item 'anonymous' on registration welcome screen") – `https://onlineberatung/consultingtype#/properties/welcomeScreen/properties/anonymous`
+
 ### Arrays
 
 *   [Untitled array in Consulting type](./consulting-type-definitions-radiobutton-properties-radiobuttons.md "Individual values that can be selected") – `https://onlineberatung/consultingtype#/definitions/RadioButton/properties/radioButtons`

@@ -43,6 +43,7 @@ Settings for a consulting type
 | [isAnonymousConversationAllowed](#isanonymousconversationallowed)                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-isanonymousconversationallowed.md "https://onlineberatung/consultingtype#/properties/isAnonymousConversationAllowed")                       |
 | [voluntaryComponents](#voluntarycomponents)                                             | `array`   | Optional | can be null    | [Consulting type](consulting-type-properties-voluntarycomponents.md "https://onlineberatung/consultingtype#/properties/voluntaryComponents")                                             |
 | [requiredComponents](#requiredcomponents)                                               | `object`  | Optional | can be null    | [Consulting type](consulting-type-properties-requiredcomponents.md "https://onlineberatung/consultingtype#/properties/requiredComponents")                                               |
+| [welcomeScreen](#welcomescreen)                                                         | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-welcomescreen.md "https://onlineberatung/consultingtype#/properties/welcomeScreen")                                                         |
 
 ## id
 
@@ -545,6 +546,24 @@ an array of merged types ([Details](consulting-type-properties-voluntarycomponen
 ### requiredComponents Type
 
 `object` ([Details](consulting-type-properties-requiredcomponents.md))
+
+## welcomeScreen
+
+Properties for registration welcome screen items
+
+`welcomeScreen`
+
+*   is optional
+
+*   Type: `object` ([Details](consulting-type-properties-welcomescreen.md))
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-welcomescreen.md "https://onlineberatung/consultingtype#/properties/welcomeScreen")
+
+### welcomeScreen Type
+
+`object` ([Details](consulting-type-properties-welcomescreen.md))
 
 # Consulting type Definitions
 
