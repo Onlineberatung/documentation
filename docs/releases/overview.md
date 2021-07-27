@@ -20,16 +20,16 @@ If you want to check the individual service/component please klick on the corres
 ### Own services
 |Service|Current image version|
 |--- |--- |
-|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.40.release-2021-06-22`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.185-release-2021-06-28`|
+|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.44.release-2021-07-27`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.193-release-2021-07-27`|
 |[LiveService](../releases/liveservice.md)|`dockerimage.v.29.release-2021-06-29`|
 |[MailService](../releases/mailservice.md)|`dockerimage.v.18.release-2021-06-16`|
 |[MessageService](../releases/messageservice.md)|`dockerImage.v.36.release-2021-06-22`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.6.release-2021-06-22`|
-|[UploadService](../releases/uploadservice.md)|`dockerImage.v.24.release-2021-06-22`|
+|[UploadService](../releases/uploadservice.md)|`dockerImage.v.27.release-2021-07-27`|
 |[UserService](../releases/userservice.md)|`dockerImage.v.149.release-2021-06-22`|
 |[VideoService](../releases/videoservice.md)|`dockerImage.v.20.release-2021-06-22`|
-|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.8.release-2021-06-29`|
+|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.12.release-2021-07-27`|
  
 ### 3rd party components
 |Component|Current image version|
