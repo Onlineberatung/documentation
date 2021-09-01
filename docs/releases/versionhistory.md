@@ -13,6 +13,11 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2021-09-01
+#### Own services
+- [Frontend](../releases/frontend.md)
+- [VideoBackend](../releases/videobackend.md)
+
 ### 2021-07-27
 #### Own services
 - [AgencyService](../releases/agencyservice.md)

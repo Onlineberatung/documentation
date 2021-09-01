@@ -21,7 +21,7 @@ If you want to check the individual service/component please klick on the corres
 |Service|Current image version|
 |--- |--- |
 |[AgencyService](../releases/agencyservice.md)|`dockerImage.v.44.release-2021-07-27`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.193-release-2021-07-27`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.196-release-2021-09-01`|
 |[LiveService](../releases/liveservice.md)|`dockerimage.v.29.release-2021-06-29`|
 |[MailService](../releases/mailservice.md)|`dockerimage.v.18.release-2021-06-16`|
 |[MessageService](../releases/messageservice.md)|`dockerImage.v.36.release-2021-06-22`|
