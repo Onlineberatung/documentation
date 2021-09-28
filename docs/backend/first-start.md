@@ -131,7 +131,7 @@ Open the file `RabbitMQ/conf/rabbitmq.conf` and change the following values:
 ### RabbitMQ management UI
 
 __Activating the management UI on production is not recommended!__\
-If you want to use the RabbitMQ management UI you need to use another Docker image. Therefore open the `docker-compose.yml` and change the RabbitMQ image from `image: rabbitmq:x.x.x-alpine` to `image: rabbitmq:x.x.x-management-alpine` (where x.x.x represent the latest version numbers). Furthermore you need to add the line `- '15672:15672'` to the proxy (NGINX) ports section and assing the RabbitMQ container the network `frontend_network` additional to the `service_network`.
+If you want to use the RabbitMQ management UI you need to use another Docker image. Therefore open the `docker-compose.yml` and change the RabbitMQ image from `image: rabbitmq:x.x.x-alpine` to `image: rabbitmq:x.x.x-management-alpine` (where x.x.x represent the latest version numbers). Furthermore you need to add the line `- '15672:15672'` to the proxy (NGINX) ports section and assign the RabbitMQ container the network `frontend_network` additional to the `service_network`.
 
 You will also need to add `loopback_users.<username> = true` (where username represents the RabbitMQ default user) to the file `RabbitMQ/conf/rabbitmq.conf`. In this folder you also need to add a file `enabled_plugins` with the content `[rabbitmq_management].`.
 
