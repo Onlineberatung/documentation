@@ -412,6 +412,36 @@ Following values are optional:
 | consulting.types.json.path | The relative path to the directory on the host system to the consulting type settings files (default: consulting-type-settings) |
 | KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 
+## StatisticsService
+The configuration on the server is located in the `StatisticsService.env` file. To configure the service for local development you can configure the corresponding `application-X.properties` file.
+
+Before you start create a new user for the RabbitMQ connections from the services in the management console or via shell set read and write permissions.
+
+Following values are mandatory:
+| Name | Description |
+| ---- | ----------- |
+| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
+| KEYCLOAK_REALM | Keycloak realm name |
+| KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
+| KEYCLOAK_RESOURCE | Keycloak resource name |
+| KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
+| CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
+| CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+| SPRING_RABBITMQ_USERNAME | The RabbitMQ username for the connection |
+| SPRING_RABBITMQ_PASSWORD | The RabbitMQ password for the connection |
+| SPRING_DATA_MONGODB_URI | The connection uri for the MongoDD, e.g. mongodb://\<USERNAME\>:\<PASSWORD\>@mongodb:27017/statistics?retryWrites=false |
+
+You can also customize the following RabbitMQ settings if desired:
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| SPRING_RABBITMQ_LISTENER_SIMPLE_RETRY_ENABLED | Enable/Disabling automatic retries for message process failures  | true |
+| SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MAX-ATTEMPTS | The processing should be retried maximum of n times after that it will be sent to dead letter Queue. | 3 |
+| SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_INITIAL-INTERVAL |  The processing should be retried after an interval of n ms. | 2000 |
+| SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MAX-INTERVAL | The maximum time interval between two retries. It should never exceed 10s. | 10000 |
+| SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MULTIPLIER | The interval between second retry gets multiplied by this multiplier. But this interval can never exceed the max-interval. | 2 |
+
+During the first start of the service the required exhanges and queues will be applied in RabbitMQ.
+
 ### Definition of the consulting type settings
 You need to define the settings of all your consulting types in single json files and put them into the directory specified in the property `consulting.types.json.path`:
 
