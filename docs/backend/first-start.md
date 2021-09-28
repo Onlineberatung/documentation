@@ -126,7 +126,7 @@ Open the file `RabbitMQ/conf/rabbitmq.conf` and change the following values:
 `default_user` - default username (will be created on first start)\
 `default_pass` - password for default user
 
-⚠️ Please be sure not to put environment variables within your `docker-compose.yml` inside the RabittMQ container section because this will overwrite all values within the `rabbitmq.conf` file. ⚠️
+⚠️ Please be sure not to put environment variables within your `docker-compose.yml` inside the RabbitMQ container section because this will overwrite all values within the `rabbitmq.conf` file. ⚠️
 
 ### RabbitMQ management UI
 
