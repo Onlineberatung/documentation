@@ -13,8 +13,8 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
-
+If you do NOT want to use the RabbitMQ management console (recommended for production) you do NOT need the file `nginx\conf\server\server-rabbitmq.conf`.
+  
 ### 2021-06-23
 
 Update tag to `dockerImage.v.6.release-2021-06-22` in the `.env` file.
