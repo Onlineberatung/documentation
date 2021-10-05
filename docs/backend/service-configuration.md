@@ -415,7 +415,19 @@ Following values are optional:
 ## StatisticsService
 The configuration on the server is located in the `StatisticsService.env` file. To configure the service for local development you can configure the corresponding `application-X.properties` file.
 
-Before you start create a new user for the RabbitMQ connections from the services in the management console or via shell set read and write permissions.
+Before you start create a new user for the RabbitMQ connections from the services in the management console or via shell set read and write permissions:
+
+__Virtual host permissions__
+| Virtual host | Configure regexp | Write regexp | Read regexp |
+| ------------ | ---------------- | ------------ | ----------- |
+| / | .* | .* | .* | .* |
+
+__Topic permissions__
+| Virtual host | Exchange | write regexp | Read regexp |
+| ------------ | -------- | ------------ | ----------- |
+| / | statistics.exchange | .* | .* |
+
+⚠️ Important: The user must have the tag `administrator`. This is necessary, because the RabbitMQ API is only accessible with this tag (need for VideoBackend). ⚠️
 
 Following values are mandatory:
 | Name | Description |
