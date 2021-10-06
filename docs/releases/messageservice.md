@@ -13,7 +13,7 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+Adjust env property ROCKET_TECHNICAL_USERNAME=rocket-chat-technical-user.
 
 ### 2021-06-23
 

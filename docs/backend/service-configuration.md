@@ -59,7 +59,10 @@ The Rocket.Chat technical user is used for every Rocket.Chat action that involve
     * `View Other User Channels`
     * `View Room Administration`
 2. Benutzer anlegen
-* Unter _"Users"_ einen neuen Benutzer _"technical"_ anlegen und die eben erstellte Rolle _"technical"_ zuweisen.
+* Unter _"Users"_ einen neuen Benutzer _"rocket-chat-technical-user"_ anlegen und die eben 
+  erstellte Rolle _"technical"_ zuweisen. ⚠ Dieser Benutzer muss exakt den Namen 
+  _"rocket-chat-technical-user"_ erhalten, da dieser zur Filterung der Websocket Events verwendet 
+  wird.
 * **Weitere Einstellungen des technischen Benutzer:**
     * Verified = ja
     * Require password change = nein
