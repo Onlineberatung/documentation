@@ -146,7 +146,7 @@ This endpoint does not need any parameter.
 
 <a name="getAgencyConsultants"></a>
 # **getAgencyConsultants**
-> List getAgencyConsultants(agencyId)
+> AgencyConsultantResponseDTO getAgencyConsultants(agencyId)
 
 Returns the list of consultants for a given agency Id. [Authorization: Role: user-admin]
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List**](../model/ConsultantAdminResponseDTO.md)
+[**AgencyConsultantResponseDTO**](../model/AgencyConsultantResponseDTO.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 <a name="getConsultantAgencies"></a>
 # **getConsultantAgencies**
-> List getConsultantAgencies(consultantId)
+> ConsultantAgencyResponseDTO getConsultantAgencies(consultantId)
 
 Returns the list of agencies for a given consultant Id. [Authorization: Role: user-admin]
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List**](../model/AgencyAdminFullResponseDTO.md)
+[**ConsultantAgencyResponseDTO**](../model/ConsultantAgencyResponseDTO.md)
 
 ### Authorization
 
