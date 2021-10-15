@@ -35,15 +35,18 @@ Add the new StatisticsService and RabbitMQ to the `docker-compose.yml`:
 
 ```rabbitmq:
   container_name: rabbitmq
+  hostname: <app_domain>
   image: rabbitmq:3.8.18-alpine
   restart: on-failure
   ports:
     - '5672:5672'
+    - '15672:15672'
   networks:
     - service_network
   volumes:
     - ./RabbitMQ/config/:/etc/rabbitmq/
     - ./RabbitMQ/logs/:/var/log/rabbitmq/
+    - ./RabbitMQ/mnesia/:/var/lib/rabbitmq/mnesia
 ```
 
 You need to change the image tags for the following services:
