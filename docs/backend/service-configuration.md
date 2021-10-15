@@ -427,6 +427,7 @@ __Topic permissions__
 | ------------ | -------- | ------------ | ----------- |
 | / | statistics.exchange | .* | .* |
 
+⚠️ Important: The topic permission can only be set after the StatisticsService has been started for the first time. ⚠️
 ⚠️ Important: The user must have the tag `administrator`. This is necessary, because the RabbitMQ API is only accessible with this tag (need for VideoBackend). ⚠️
 
 Following values are mandatory:
