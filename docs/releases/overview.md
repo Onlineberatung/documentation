@@ -30,6 +30,7 @@ If you want to check the individual service/component please klick on the corres
 |[UserService](../releases/userservice.md)|`dockerImage.v.149.release-2021-06-22`|
 |[VideoService](../releases/videoservice.md)|`dockerImage.v.20.release-2021-06-22`|
 |[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.8.release-2021-06-29`|
+|[StatisticsService](../releases/statisticsservice.md)|
  
 ### 3rd party components
 |Component|Current image version|

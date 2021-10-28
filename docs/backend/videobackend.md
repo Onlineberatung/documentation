@@ -88,9 +88,24 @@ If you run your videoBackend on a local machine or behind a NAT (i.e. with forwa
 | JWT_ACCEPTED_AUDIENCES | my_server1 | Accepted audiences (comma separated list possible). Has to contain the same value that is set in the VideoService (`video.call.security.jwt.audience`). |
 | XMPP_MUC_MODULES | token_moderation,close_room | Be careful to not put spaces between the comma separated module names. |
 
+## Statistics
+You need to configure the statistics functionality. There are four properties you need to set in the configuration file `videoBackendConfig\prosody\config\conf.d\statistics.cfg.lua`:
+
+| Name | Value | Description |
+| ---- | ----- | ----------- |
+| enable_statistics | true/false | true, to enable the statistics feature; default: false |
+| rabbit_url |http://<RABBIT_MQ_HOST>:15672/api/exchanges/%2F/statistics.topic/publish | Your url to the Rabbit MQ API |
+| rabbit_username | <RABBIT_MQ_USERNAME> | The username of the Rabbit MQ user |
+| rabbit_password | <RABBIT_MQ_PASSWORD> | The password of the Rabbit MQ user |
+
+`rabbit_url`, `rabbit_username` and `rabbit_password` are only required if the statistics feature is enabled.
+
+⚠️ For security reasons, you should check that port 15672 on RabbitMQ is only required for the video backend. If so, you should set up a restriction for this port in your firewall so that only the video backend can communicate with Rabbit MQ over this port. ⚠️
+
 ## VideoBackend startup
-After you configured your videoBackend you can start it by running the command ```docker-compose up -d``` in the directory containing the ```.env``` and ```docker-compose.yml``` files.
- 
+After you configured your videoBackend you can start it by running the command ```docker-compose up -d``` in the directory containing the ```.env``` and 
+```docker-compose.yml``` files.
+
 ## Known difficulties
  
 ### Self-Signed Certificate with Chrome

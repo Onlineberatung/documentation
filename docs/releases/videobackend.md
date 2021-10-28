@@ -13,7 +13,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+Update the following file from the master branch or checkout the release branch via git: `videoBackendConfig\prosody\prosody-plugins-custom\mod_close_room.lua`
+
+Add the following file from the master branch or checkout the release branch via git and replace the placeholders in the file: `videoBackendConfig\prosody\config\conf.d\statistics.cfg.lua` \
+More information about the configuration is available under [Installing and running the videoBackend](videobackend.md)
 
 ### 2021-05-04
 
