@@ -13,7 +13,9 @@ If you want a changelog please see the project page at https://rocket.chat.
 
 ### Unreleased
 
-No unreleased changes yet.
+If the username of the technical user does not equal to _"rocket-chat-technical-user"_ go to 
+Rocket.Chat admin interface (<your_domain>:3000), search for your technical user and adjust the 
+username to _"rocket-chat-technical-user"_.
 
 ### 2021-06-23
 
