@@ -11,6 +11,6 @@
   "devDependencies": {
     "docusaurus": "^1.14.7",
     "highlight.js": "^10.7.2",
-    "immer": "^8.0.4"
+    "immer": "^9.0.6"
   }
 }
