@@ -15,6 +15,11 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-11-03
+
+Update tag to `dockerImage.v.164.release-2021-11-03` in the `.env` file.
+Adjust env property ROCKET_TECHNICAL_USERNAME=rocket-chat-technical-user.
+
 ### 2021-06-23
 
 You need to add a new location in nginx/conf/locations/userservice.conf to make the new 

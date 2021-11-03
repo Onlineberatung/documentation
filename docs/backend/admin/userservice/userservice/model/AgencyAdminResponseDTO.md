@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **teamAgency** | [**Boolean**](boolean.md) |  | [optional] [default to null]
 **offline** | [**Boolean**](boolean.md) |  | [optional] [default to null]
 **consultingType** | [**Integer**](integer.md) |  | [optional] [default to null]
+**url** | [**String**](string.md) |  | [optional] [default to null]
+**external** | [**Boolean**](boolean.md) |  | [optional] [default to null]
 **createDate** | [**String**](string.md) |  | [optional] [default to null]
 **updateDate** | [**String**](string.md) |  | [optional] [default to null]
 **deleteDate** | [**String**](string.md) |  | [optional] [default to null]

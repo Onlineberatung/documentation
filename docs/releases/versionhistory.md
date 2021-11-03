@@ -13,6 +13,11 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2021-11-03
+#### Own services
+- [Frontend](../releases/frontend.md)
+- [UserService](../releases/userservice.md)
+
 ### 2021-09-01
 #### Own services
 - [Frontend](../releases/frontend.md)
