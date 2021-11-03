@@ -9,8 +9,9 @@ Method | HTTP request | Description
 [**createConsultantAgency**](AdminUserControllerApi.md#createConsultantAgency) | **POST** /useradmin/consultants/{consultantId}/agencies | Create a consultant-agency relation [Authorization: Role: user-admin]
 [**deleteConsultantAgency**](AdminUserControllerApi.md#deleteConsultantAgency) | **DELETE** /useradmin/consultants/{consultantId}/agencies/{agencyId} | Delete a consultant-agency relation [Authorization: Role: user-admin]
 [**generateViolationReport**](AdminUserControllerApi.md#generateViolationReport) | **GET** /useradmin/report | Returns an generated report containing data integration violations. [Authorization: Role: user-admin]
+[**getAgencyConsultants**](AdminUserControllerApi.md#getAgencyConsultants) | **GET** /useradmin/agencies/{agencyId}/consultants | Returns the list of consultants for a given agency Id. [Authorization: Role: user-admin]
 [**getConsultant**](AdminUserControllerApi.md#getConsultant) | **GET** /useradmin/consultants/{consultantId} | Get a consultant by given id [Authorization: Role: consultant-admin]
-[**getConsultantAgency**](AdminUserControllerApi.md#getConsultantAgency) | **GET** /useradmin/consultants/{consultantId}/agencies | Returns the list of consultant-agency connections for a given consultant Id. [Authorization: Role: user-admin]
+[**getConsultantAgencies**](AdminUserControllerApi.md#getConsultantAgencies) | **GET** /useradmin/consultants/{consultantId}/agencies | Returns the list of agencies for a given consultant Id. [Authorization: Role: user-admin]
 [**getConsultants**](AdminUserControllerApi.md#getConsultants) | **GET** /useradmin/consultants | Returns the list of consultants by filter query parameter. [Authorization: Role: consultant-admin]
 [**getSessions**](AdminUserControllerApi.md#getSessions) | **GET** /useradmin/sessions | Returns the list of sessions by filter query parameter. [Authorization: Role: user-admin]
 [**markAskerForDeletion**](AdminUserControllerApi.md#markAskerForDeletion) | **DELETE** /useradmin/askers/{askerId} | Delete a asker by given id [Authorization: Role: consultant-admin]
@@ -143,6 +144,31 @@ This endpoint does not need any parameter.
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+<a name="getAgencyConsultants"></a>
+# **getAgencyConsultants**
+> AgencyConsultantResponseDTO getAgencyConsultants(agencyId)
+
+Returns the list of consultants for a given agency Id. [Authorization: Role: user-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **agencyId** | **String**| Agency Id | [default to null]
+
+### Return type
+
+[**AgencyConsultantResponseDTO**](../model/AgencyConsultantResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
 <a name="getConsultant"></a>
 # **getConsultant**
 > ConsultantAdminResponseDTO getConsultant(consultantId)
@@ -168,11 +194,11 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-<a name="getConsultantAgency"></a>
-# **getConsultantAgency**
-> ConsultantAgencyAdminResultDTO getConsultantAgency(consultantId)
+<a name="getConsultantAgencies"></a>
+# **getConsultantAgencies**
+> ConsultantAgencyResponseDTO getConsultantAgencies(consultantId)
 
-Returns the list of consultant-agency connections for a given consultant Id. [Authorization: Role: user-admin]
+Returns the list of agencies for a given consultant Id. [Authorization: Role: user-admin]
 
 ### Parameters
 
@@ -182,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConsultantAgencyAdminResultDTO**](../model/ConsultantAgencyAdminResultDTO.md)
+[**ConsultantAgencyResponseDTO**](../model/ConsultantAgencyResponseDTO.md)
 
 ### Authorization
 
