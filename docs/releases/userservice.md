@@ -13,7 +13,11 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+Create a new keycloak user for role migration via the keycloak admin console 
+`<YOUR_DOMAIN>/auth`. Add the `Client Roles` -> `Realm Management``manage-realm` and`query-realms`\
+Configure the parameters in python script under 
+`UserService/src/main/resources/migration/KeycloakRoleNameMigration.py` and execute the script\
+Delete the previous created keycloak user 
 
 ### 2021-11-03
 

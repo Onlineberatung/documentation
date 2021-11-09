@@ -13,7 +13,8 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+Update all consulting type settings under `ConsultingTypeService/consulting-type-settings` and 
+add the boolean property `isPeerChat` equivalent to the value of `initializeFeedbackChat`
 
 ### 2021-07-27
 
