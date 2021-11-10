@@ -19,6 +19,8 @@ Settings for a consulting type
 | Property                                                                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                               |
 | :-------------------------------------------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [id](#id)                                                                               | `integer` | Required | cannot be null | [Consulting type](consulting-type-properties-id.md "https://onlineberatung/consultingtype#/properties/id")                                                                               |
+| [description](#description)                                                             | `string`  | Optional | cannot be null | [Consulting type](consulting-type-properties-description.md "https://onlineberatung/consultingtype#/properties/description")                                                             |
+| [furtherInformation](#furtherinformation)                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-furtherinformation.md "https://onlineberatung/consultingtype#/properties/furtherInformation")                                               |
 | [slug](#slug)                                                                           | `string`  | Required | cannot be null | [Consulting type](consulting-type-properties-slug.md "https://onlineberatung/consultingtype#/properties/slug")                                                                           |
 | [excludeNonMainConsultantsFromTeamSessions](#excludenonmainconsultantsfromteamsessions) | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-excludenonmainconsultantsfromteamsessions.md "https://onlineberatung/consultingtype#/properties/excludeNonMainConsultantsFromTeamSessions") |
 | [lockedAgencies](#lockedagencies)                                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-lockedagencies.md "https://onlineberatung/consultingtype#/properties/lockedAgencies")                                                       |
@@ -44,6 +46,7 @@ Settings for a consulting type
 | [isAnonymousConversationAllowed](#isanonymousconversationallowed)                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-isanonymousconversationallowed.md "https://onlineberatung/consultingtype#/properties/isAnonymousConversationAllowed")                       |
 | [voluntaryComponents](#voluntarycomponents)                                             | `array`   | Optional | can be null    | [Consulting type](consulting-type-properties-voluntarycomponents.md "https://onlineberatung/consultingtype#/properties/voluntaryComponents")                                             |
 | [requiredComponents](#requiredcomponents)                                               | `object`  | Optional | can be null    | [Consulting type](consulting-type-properties-requiredcomponents.md "https://onlineberatung/consultingtype#/properties/requiredComponents")                                               |
+| [welcomeScreen](#welcomescreen)                                                         | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-welcomescreen.md "https://onlineberatung/consultingtype#/properties/welcomeScreen")                                                         |
 
 ## id
 
@@ -66,6 +69,42 @@ The unique identifier for the consulting type
 ### id Constraints
 
 **minimum**: the value of this number must greater than or equal to: `0`
+
+## description
+
+Description for the consulting type
+
+`description`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-description.md "https://onlineberatung/consultingtype#/properties/description")
+
+### description Type
+
+`string`
+
+## furtherInformation
+
+Label and link for further information of the consulting type
+
+`furtherInformation`
+
+*   is optional
+
+*   Type: `object` ([Details](consulting-type-properties-furtherinformation.md))
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-furtherinformation.md "https://onlineberatung/consultingtype#/properties/furtherInformation")
+
+### furtherInformation Type
+
+`object` ([Details](consulting-type-properties-furtherinformation.md))
 
 ## slug
 
@@ -564,6 +603,24 @@ an array of merged types ([Details](consulting-type-properties-voluntarycomponen
 ### requiredComponents Type
 
 `object` ([Details](consulting-type-properties-requiredcomponents.md))
+
+## welcomeScreen
+
+Properties for registration welcome screen items
+
+`welcomeScreen`
+
+*   is optional
+
+*   Type: `object` ([Details](consulting-type-properties-welcomescreen.md))
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-welcomescreen.md "https://onlineberatung/consultingtype#/properties/welcomeScreen")
+
+### welcomeScreen Type
+
+`object` ([Details](consulting-type-properties-welcomescreen.md))
 
 # Consulting type Definitions
 

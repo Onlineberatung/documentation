@@ -20,6 +20,8 @@
 
 *   [Untitled object in Consulting type](./consulting-type-definitions-selectdropdown-properties-item.md "An individual item that can be selected") – `https://onlineberatung/consultingtype#/definitions/SelectDropdown/properties/item`
 
+*   [Untitled object in Consulting type](./consulting-type-properties-furtherinformation.md "Label and link for further information of the consulting type") – `https://onlineberatung/consultingtype#/properties/furtherInformation`
+
 *   [Untitled object in Consulting type](./consulting-type-properties-whitespot.md "Behavior regarding the white spots agencies") – `https://onlineberatung/consultingtype#/properties/whiteSpot`
 
 *   [Untitled object in Consulting type](./consulting-type-properties-groupchat.md "Group chat settings") – `https://onlineberatung/consultingtype#/properties/groupChat`
@@ -65,6 +67,10 @@
 *   [Untitled object in Consulting type](./consulting-type-properties-requiredcomponents-properties-age-properties-options-items.md) – `https://onlineberatung/consultingtype#/properties/requiredComponents/properties/age/properties/options/items`
 
 *   [Untitled object in Consulting type](./consulting-type-properties-requiredcomponents-properties-state.md "Selection for the federal state of the asker") – `https://onlineberatung/consultingtype#/properties/requiredComponents/properties/state`
+
+*   [Untitled object in Consulting type](./consulting-type-properties-welcomescreen.md "Properties for registration welcome screen items") – `https://onlineberatung/consultingtype#/properties/welcomeScreen`
+
+*   [Untitled object in Consulting type](./consulting-type-properties-welcomescreen-properties-anonymous.md "Item 'anonymous' on registration welcome screen") – `https://onlineberatung/consultingtype#/properties/welcomeScreen/properties/anonymous`
 
 ### Arrays
 
