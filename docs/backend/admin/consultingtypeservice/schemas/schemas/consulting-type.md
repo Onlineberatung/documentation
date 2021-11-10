@@ -19,9 +19,6 @@ Settings for a consulting type
 | Property                                                                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                               |
 | :-------------------------------------------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [id](#id)                                                                               | `integer` | Required | cannot be null | [Consulting type](consulting-type-properties-id.md "https://onlineberatung/consultingtype#/properties/id")                                                                               |
-| [description](#description)                                                             | `string`  | Optional | cannot be null | [Consulting type](consulting-type-properties-description.md "https://onlineberatung/consultingtype#/properties/description")                                                             |
-| [groups](#groups)                                                                       | `array`   | Optional | cannot be null | [Consulting type](consulting-type-properties-groups.md "https://onlineberatung/consultingtype#/properties/groups")                                                                       |
-| [furtherInformation](#furtherinformation)                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-furtherinformation.md "https://onlineberatung/consultingtype#/properties/furtherInformation")                                               |
 | [slug](#slug)                                                                           | `string`  | Required | cannot be null | [Consulting type](consulting-type-properties-slug.md "https://onlineberatung/consultingtype#/properties/slug")                                                                           |
 | [excludeNonMainConsultantsFromTeamSessions](#excludenonmainconsultantsfromteamsessions) | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-excludenonmainconsultantsfromteamsessions.md "https://onlineberatung/consultingtype#/properties/excludeNonMainConsultantsFromTeamSessions") |
 | [lockedAgencies](#lockedagencies)                                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-lockedagencies.md "https://onlineberatung/consultingtype#/properties/lockedAgencies")                                                       |
@@ -35,7 +32,6 @@ Settings for a consulting type
 | [sessionDataInitializing](#sessiondatainitializing)                                     | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-sessiondatainitializing.md "https://onlineberatung/consultingtype#/properties/sessionDataInitializing")                                     |
 | [monitoring](#monitoring)                                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-monitoring.md "https://onlineberatung/consultingtype#/properties/monitoring")                                                               |
 | [initializeFeedbackChat](#initializefeedbackchat)                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-initializefeedbackchat.md "https://onlineberatung/consultingtype#/properties/initializeFeedbackChat")                                       |
-| [isPeerChat](#ispeerchat)                                                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-ispeerchat.md "https://onlineberatung/consultingtype#/properties/isPeerChat")                                                               |
 | [languageFormal](#languageformal)                                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-languageformal.md "https://onlineberatung/consultingtype#/properties/languageFormal")                                                       |
 | [roles](#roles)                                                                         | `object`  | Required | cannot be null | [Consulting type](consulting-type-properties-roles.md "https://onlineberatung/consultingtype#/properties/roles")                                                                         |
 | [notifications](#notifications)                                                         | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-notifications.md "https://onlineberatung/consultingtype#/properties/notifications")                                                         |
@@ -43,11 +39,11 @@ Settings for a consulting type
 | [titles](#titles)                                                                       | `object`  | Required | cannot be null | [Consulting type](consulting-type-properties-titles.md "https://onlineberatung/consultingtype#/properties/titles")                                                                       |
 | [urls](#urls)                                                                           | `object`  | Required | cannot be null | [Consulting type](consulting-type-properties-urls.md "https://onlineberatung/consultingtype#/properties/urls")                                                                           |
 | [showAskerProfile](#showaskerprofile)                                                   | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-showaskerprofile.md "https://onlineberatung/consultingtype#/properties/showAskerProfile")                                                   |
+| [isVideoCallAllowed](#isvideocallallowed)                                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-isvideocallallowed.md "https://onlineberatung/consultingtype#/properties/isVideoCallAllowed")                                               |
 | [isSubsequentRegistrationAllowed](#issubsequentregistrationallowed)                     | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-issubsequentregistrationallowed.md "https://onlineberatung/consultingtype#/properties/isSubsequentRegistrationAllowed")                     |
 | [isAnonymousConversationAllowed](#isanonymousconversationallowed)                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-isanonymousconversationallowed.md "https://onlineberatung/consultingtype#/properties/isAnonymousConversationAllowed")                       |
 | [voluntaryComponents](#voluntarycomponents)                                             | `array`   | Optional | can be null    | [Consulting type](consulting-type-properties-voluntarycomponents.md "https://onlineberatung/consultingtype#/properties/voluntaryComponents")                                             |
 | [requiredComponents](#requiredcomponents)                                               | `object`  | Optional | can be null    | [Consulting type](consulting-type-properties-requiredcomponents.md "https://onlineberatung/consultingtype#/properties/requiredComponents")                                               |
-| [welcomeScreen](#welcomescreen)                                                         | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-welcomescreen.md "https://onlineberatung/consultingtype#/properties/welcomeScreen")                                                         |
 
 ## id
 
@@ -70,60 +66,6 @@ The unique identifier for the consulting type
 ### id Constraints
 
 **minimum**: the value of this number must greater than or equal to: `0`
-
-## description
-
-Description for the consulting type
-
-`description`
-
-*   is optional
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Consulting type](consulting-type-properties-description.md "https://onlineberatung/consultingtype#/properties/description")
-
-### description Type
-
-`string`
-
-## groups
-
-Group names - the same group names are combined in the consulting type structure
-
-`groups`
-
-*   is optional
-
-*   Type: `string[]`
-
-*   cannot be null
-
-*   defined in: [Consulting type](consulting-type-properties-groups.md "https://onlineberatung/consultingtype#/properties/groups")
-
-### groups Type
-
-`string[]`
-
-## furtherInformation
-
-Label and link for further information of the consulting type
-
-`furtherInformation`
-
-*   is optional
-
-*   Type: `object` ([Details](consulting-type-properties-furtherinformation.md))
-
-*   cannot be null
-
-*   defined in: [Consulting type](consulting-type-properties-furtherinformation.md "https://onlineberatung/consultingtype#/properties/furtherInformation")
-
-### furtherInformation Type
-
-`object` ([Details](consulting-type-properties-furtherinformation.md))
 
 ## slug
 
@@ -383,24 +325,6 @@ Indicates whether the feedback chat should be initialized for every session of t
 
 `boolean`
 
-## isPeerChat
-
-Indicates whether the chat should be initialized as peer chat for every session of this consulting type
-
-`isPeerChat`
-
-*   is optional
-
-*   Type: `boolean`
-
-*   cannot be null
-
-*   defined in: [Consulting type](consulting-type-properties-ispeerchat.md "https://onlineberatung/consultingtype#/properties/isPeerChat")
-
-### isPeerChat Type
-
-`boolean`
-
 ## languageFormal
 
 Indicates whether the feedback chat should be initialized for every session of this consulting type
@@ -543,6 +467,24 @@ The default value is:
 true
 ```
 
+## isVideoCallAllowed
+
+True to enable video call buttons for consultants. False, when video call should be deactivated for consulting type.
+
+`isVideoCallAllowed`
+
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-isvideocallallowed.md "https://onlineberatung/consultingtype#/properties/isVideoCallAllowed")
+
+### isVideoCallAllowed Type
+
+`boolean`
+
 ## isSubsequentRegistrationAllowed
 
 If true, askers additionally can register for this consulting type on their profile page at a later date.
@@ -622,24 +564,6 @@ an array of merged types ([Details](consulting-type-properties-voluntarycomponen
 ### requiredComponents Type
 
 `object` ([Details](consulting-type-properties-requiredcomponents.md))
-
-## welcomeScreen
-
-Properties for registration welcome screen items
-
-`welcomeScreen`
-
-*   is optional
-
-*   Type: `object` ([Details](consulting-type-properties-welcomescreen.md))
-
-*   cannot be null
-
-*   defined in: [Consulting type](consulting-type-properties-welcomescreen.md "https://onlineberatung/consultingtype#/properties/welcomeScreen")
-
-### welcomeScreen Type
-
-`object` ([Details](consulting-type-properties-welcomescreen.md))
 
 # Consulting type Definitions
 
