@@ -20,6 +20,7 @@ Settings for a consulting type
 | :-------------------------------------------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [id](#id)                                                                               | `integer` | Required | cannot be null | [Consulting type](consulting-type-properties-id.md "https://onlineberatung/consultingtype#/properties/id")                                                                               |
 | [description](#description)                                                             | `string`  | Optional | cannot be null | [Consulting type](consulting-type-properties-description.md "https://onlineberatung/consultingtype#/properties/description")                                                             |
+| [groups](#groups)                                                                       | `array`   | Optional | cannot be null | [Consulting type](consulting-type-properties-groups.md "https://onlineberatung/consultingtype#/properties/groups")                                                                       |
 | [furtherInformation](#furtherinformation)                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-furtherinformation.md "https://onlineberatung/consultingtype#/properties/furtherInformation")                                               |
 | [slug](#slug)                                                                           | `string`  | Required | cannot be null | [Consulting type](consulting-type-properties-slug.md "https://onlineberatung/consultingtype#/properties/slug")                                                                           |
 | [excludeNonMainConsultantsFromTeamSessions](#excludenonmainconsultantsfromteamsessions) | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-excludenonmainconsultantsfromteamsessions.md "https://onlineberatung/consultingtype#/properties/excludeNonMainConsultantsFromTeamSessions") |
@@ -34,6 +35,7 @@ Settings for a consulting type
 | [sessionDataInitializing](#sessiondatainitializing)                                     | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-sessiondatainitializing.md "https://onlineberatung/consultingtype#/properties/sessionDataInitializing")                                     |
 | [monitoring](#monitoring)                                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-monitoring.md "https://onlineberatung/consultingtype#/properties/monitoring")                                                               |
 | [initializeFeedbackChat](#initializefeedbackchat)                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-initializefeedbackchat.md "https://onlineberatung/consultingtype#/properties/initializeFeedbackChat")                                       |
+| [isPeerChat](#ispeerchat)                                                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-ispeerchat.md "https://onlineberatung/consultingtype#/properties/isPeerChat")                                                               |
 | [languageFormal](#languageformal)                                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-languageformal.md "https://onlineberatung/consultingtype#/properties/languageFormal")                                                       |
 | [roles](#roles)                                                                         | `object`  | Required | cannot be null | [Consulting type](consulting-type-properties-roles.md "https://onlineberatung/consultingtype#/properties/roles")                                                                         |
 | [notifications](#notifications)                                                         | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-notifications.md "https://onlineberatung/consultingtype#/properties/notifications")                                                         |
@@ -87,6 +89,24 @@ Description for the consulting type
 ### description Type
 
 `string`
+
+## groups
+
+Group names - the same group names are combined in the consulting type structure
+
+`groups`
+
+*   is optional
+
+*   Type: `string[]`
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-groups.md "https://onlineberatung/consultingtype#/properties/groups")
+
+### groups Type
+
+`string[]`
 
 ## furtherInformation
 
@@ -361,6 +381,24 @@ Indicates whether the feedback chat should be initialized for every session of t
 *   defined in: [Consulting type](consulting-type-properties-initializefeedbackchat.md "https://onlineberatung/consultingtype#/properties/initializeFeedbackChat")
 
 ### initializeFeedbackChat Type
+
+`boolean`
+
+## isPeerChat
+
+Indicates whether the chat should be initialized as peer chat for every session of this consulting type
+
+`isPeerChat`
+
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-ispeerchat.md "https://onlineberatung/consultingtype#/properties/isPeerChat")
+
+### isPeerChat Type
 
 `boolean`
 

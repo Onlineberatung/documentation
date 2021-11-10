@@ -80,6 +80,8 @@
 
 *   [Untitled array in Consulting type](./consulting-type-definitions-selectdropdown-properties-item-properties-selectedoptions.md "Individual values that can be selected") – `https://onlineberatung/consultingtype#/definitions/SelectDropdown/properties/item/properties/selectedOptions`
 
+*   [Untitled array in Consulting type](./consulting-type-properties-groups.md "Group names - the same group names are combined in the consulting type structure") – `https://onlineberatung/consultingtype#/properties/groups`
+
 *   [Untitled array in Consulting type](./consulting-type-properties-roles-properties-consultant-additionalproperties.md) – `https://onlineberatung/consultingtype#/properties/roles/properties/consultant/additionalProperties`
 
 *   [Untitled array in Consulting type](./consulting-type-definitions-radiobutton-properties-radiobuttons.md "Individual values that can be selected") – `https://onlineberatung/consultingtype#/definitions/RadioButton/properties/radioButtons`
