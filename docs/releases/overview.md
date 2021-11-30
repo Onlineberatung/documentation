@@ -29,6 +29,7 @@ If you want to check the individual service/component please klick on the corres
 |[UploadService](../releases/uploadservice.md)|`dockerImage.v.29.release-2021-11-30`|
 |[UserService](../releases/userservice.md)|`dockerImage.v.180.release-2021-11-30`|
 |[VideoService](../releases/videoservice.md)|`dockerImage.v.20.release-2021-06-22`|
+|[StatisticsService](../releases/statisticsservice.md)|
 |[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.17.release-2021-11-30`|
  
 ### 3rd party components
@@ -40,6 +41,7 @@ If you want to check the individual service/component please klick on the corres
 |[MongoDB](../releases/mongodb.md)|`4.0.5`|
 |[Nosqlclient](../releases/nosqlclient.md)|`4.0.1`|
 |[OpenLDAP](../releases/openldap.md)|`1.4.0`|
+|[RabbitMQ](../releases/rabbitmq.md)|`3.8.18`|
 |[Rocket.Chat](../releases/rocketchat.md)|`3.14.4`|
 
  

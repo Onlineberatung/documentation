@@ -13,7 +13,18 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+#### Statistics
+
+Add the following RabbitMQ properties to the `UserService.env`:
+```
+SPRING_RABBITMQ_USERNAME=<username of your rabbitmq user>
+SPRING_RABBITMQ_PASSWORD=<password of your rabbitmq user>
+STATISTICS_ENABLED=true
+```
+
+If you do not want to enable the statistics feature set `STATISTICS_ENABLED` to `false`.
+
+Update tag to `dockerImage.v.???` in the `.env` file.
 
 ### 2021-11-30
 

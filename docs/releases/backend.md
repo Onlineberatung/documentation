@@ -13,7 +13,72 @@ For a full changelog of this project please see the [project changelog](https://
 
 ### Unreleased
 
-No unreleased changes yet.
+Add the new StatisticsService and RabbitMQ to the `docker-compose.yml`:
+
+```statisticsservice:
+  container_name: statisticsservice
+  image: $STATISTICS_SERVICE_IMAGE:$STATISTICS_SERVICE_VERSION
+  restart: "no"
+  networks:
+    - frontend_network
+    - service_network
+    - rocket_database_network
+  volumes:
+    - ./StatisticsService/log:/log
+    - statisticsservice_tmp:/tmp
+    - /etc/localtime:/etc/localtime:ro
+  env_file:
+    - ./StatisticsService/StatisticsService.env
+  extra_hosts:
+    - "<app_domain>:<internal_server_ip_address>"
+```
+
+```rabbitmq:
+  container_name: rabbitmq
+  hostname: <app_domain>
+  image: rabbitmq:3.8.18-alpine
+  restart: on-failure
+  ports:
+    - '5672:5672'
+    - '15672:15672'
+  networks:
+    - service_network
+  volumes:
+    - ./RabbitMQ/config/:/etc/rabbitmq/
+    - ./RabbitMQ/logs/:/var/log/rabbitmq/
+    - ./RabbitMQ/mnesia/:/var/lib/rabbitmq/mnesia
+```
+
+You need to change the image tags for the following services:
+
+```userservice:
+  image: $USER_SERVICE_IMAGE:$USER_SERVICE_VERSION
+```
+```messageservice:
+  image: $MESSAGE_SERVICE_IMAGE:$MESSAGE_SERVICE_VERSION
+```
+```uploadservice:
+  image: $UPLOAD_SERVICE_IMAGE:$UPLOAD_SERVICE_VERSION
+```
+```videoservice:
+  image: $VIDEO_SERVICE_IMAGE:$VIDEO_SERVICE_VERSION
+```
+
+You need to add new image and version properties for the StatisticsService in the `.env`-file:
+
+```$STATISTICS_SERVICE_IMAGE=
+$STATISTICS_SERVICE_VERSION=
+```
+
+Finally the new volume needs to be added at the end of the file:
+```volumes:
+  statisticsservice_tmp:
+```
+
+Only if you want to use the RabbitMQ management console (not recommended in production) you have to
+
+- Add the network `frontend_network` to RabbitMQ in the `docker-compose.yml`-file
+- Add - 3003:3003 in the ports section of the proxy (NGINX) in the `docker-compose.yml`-file
 
 ### 2021-06-23
 
