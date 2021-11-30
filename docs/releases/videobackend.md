@@ -18,6 +18,10 @@ Update the following file from the master branch or checkout the release branch 
 Add the following file from the master branch or checkout the release branch via git and replace the placeholders in the file: `videoBackendConfig\prosody\config\conf.d\statistics.cfg.lua` \
 More information about the configuration is available under [Installing and running the videoBackend](videobackend.md)
 
+### 2021-09-01
+
+Update the files on the server to the latest of the master branch or checkout `release-2021-09-01` via git.
+
 ### 2021-05-04
 
 Update the files on the server to the latest of the master branch or checkout `release-2021-05-04` via git. This updates Jitsi from version `5142-4` to `5390-3` and adds the moderator role support.

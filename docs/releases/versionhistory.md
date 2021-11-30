@@ -13,6 +13,31 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2021-11-30
+#### Own services
+- [Frontend](../releases/frontend.md)
+- [UserService](../releases/userservice.md)
+- [UploadService](../releases/uploadservice.md)
+- [MessageService](../releases/messageservice.md)
+- [ConsultingTypeService](../releases/consultingtypeservice.md)
+
+### 2021-11-03
+#### Own services
+- [Frontend](../releases/frontend.md)
+- [UserService](../releases/userservice.md)
+
+### 2021-09-01
+#### Own services
+- [Frontend](../releases/frontend.md)
+- [VideoBackend](../releases/videobackend.md)
+
+### 2021-07-27
+#### Own services
+- [AgencyService](../releases/agencyservice.md)
+- [ConsultingTypeService](../releases/consultingtypeservice.md)
+- [Frontend](../releases/frontend.md)
+- [UploadService](../releases/uploadservice.md)
+
 ### 2021-06-29
 #### Own services
 - [ConsultingTypeService](../releases/consultingtypeservice.md)

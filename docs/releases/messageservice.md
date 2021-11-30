@@ -26,6 +26,14 @@ If you do not want to enable the statistics feature set `STATISTICS_ENABLED` to 
 
 Update tag to `dockerImage.v.???` in the `.env` file.
 
+### 2021-11-30
+
+Update tag to `dockerImage.v.38.release-2021-11-30` in the `.env` file - no additional changes necessary.
+
+### 2021-11-03
+
+Adjust env property ROCKET_TECHNICAL_USERNAME=rocket-chat-technical-user.
+
 ### 2021-06-23
 
 Update tag to `dockerImage.v.36.release-2021-06-22` in the `.env` file - no additional changes necessary.

@@ -29,6 +29,21 @@ If you do not want to enable the statistics feature set `STATISTICS_ENABLED` to 
 
 Update tag to `dockerImage.v.???` in the `.env` file.
 
+### 2021-11-30
+
+Update tag to `dockerImage.v.180.release-2021-11-30` in the `.env` file.
+
+Create a new keycloak user for role migration via the keycloak admin console 
+`<YOUR_DOMAIN>/auth`. Add the `Client Roles` -> `Realm Management``manage-realm` and`query-realms`\
+Configure the parameters in python script under 
+`UserService/src/main/resources/migration/KeycloakRoleNameMigration.py` and execute the script\
+Delete the previous created keycloak user 
+
+### 2021-11-03
+
+Update tag to `dockerImage.v.164.release-2021-11-03` in the `.env` file.
+Adjust env property ROCKET_TECHNICAL_USERNAME=rocket-chat-technical-user.
+
 ### 2021-06-23
 
 You need to add a new location in nginx/conf/locations/userservice.conf to make the new 

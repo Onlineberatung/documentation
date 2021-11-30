@@ -15,6 +15,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-07-27
+
+Update tag to `dockerImage.v.44.release-2021-07-27` in the `.env` file - no additional changes necessary.
+
 ### 2021-06-23
 
 Add the following service API url to the `AgencyService.env`: `CONSULTING_TYPE_SERVICE_API_URL=http://consultingtypeservice:8080`.
