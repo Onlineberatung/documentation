@@ -13,6 +13,12 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-11-30
+
+Update tag to `dockerImage.v.17.release-2021-11-30` in the `.env` file
+
 Update all consulting type settings under `ConsultingTypeService/consulting-type-settings` and 
 add the boolean property `isPeerChat` equivalent to the value of `initializeFeedbackChat`
 

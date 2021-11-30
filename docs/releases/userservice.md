@@ -13,6 +13,12 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-11-30
+
+Update tag to `dockerImage.v.180.release-2021-11-30` in the `.env` file.
+
 Create a new keycloak user for role migration via the keycloak admin console 
 `<YOUR_DOMAIN>/auth`. Add the `Client Roles` -> `Realm Management``manage-realm` and`query-realms`\
 Configure the parameters in python script under 
