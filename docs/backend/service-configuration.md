@@ -476,5 +476,33 @@ __If the ConsultingTypeService does not start, please check the log file for ind
 
 ⚠️ Please keep in mind that after making changes to the consulting type settings you need to restart Agency- and UserService (settings are being cached)! ⚠️
 
+## ELK Services
+The services Elasticsearch, Logstash, and Kibana are also called [ELK Stack](https://www.elastic.co/what-is/elk-stack). 
+They form the centralized logging inside the microservice architecture that can aggregate logs from each service 
+instance. Developers can search and analyze the logs.
+
+The stack is pre-configured with the privileged bootstrap user *elastic* (password: *changeme*.) Please increase 
+security by using the unprivileged 
+[built-in users](https://www.elastic.co/guide/en/elasticsearch/reference/current/built-in-users.html) instead:
+
+1. Initialize passwords for built-in users
+
+   ```console
+   $ docker-compose exec -T elasticsearch bin/elasticsearch-setup-passwords auto --batch
+   ```
+   
+   Passwords for all 6 built-in users will be randomly generated. Take note of them.
+
+1. Replace usernames and passwords in configuration files 
+ 
+   Use the `kibana_system` user inside the Kibana configuration file (`kibana/config/kibana.yml`) and the 
+   `logstash_system` user inside the Logstash configuration file (`logstash/config/logstash.yml`) in place of the 
+   existing `elastic` user. Replace the password for the `elastic` user inside the Logstash pipeline file 
+   (`logstash/pipeline/logstash.conf`). Do NOT use the `logstash_system` user inside the Logstash pipeline file, it does
+   not have sufficient permissions to create indices.
+
+After restart in the following section, you should be able to visit http://*host*:3004 and log in with the *elastic* 
+user and the new password. 
+
 ## Restart aller Services
 Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.
