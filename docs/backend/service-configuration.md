@@ -502,7 +502,20 @@ security by using the unprivileged
    not have sufficient permissions to create indices.
 
 After restart in the following section, you should be able to visit http://*host*:3004 and log in with the *elastic* 
-user and the new password. 
+user and the new password.
+
+## (Optional) Configure 2 factor authentication via OTP
+1. Build a jar file with maven install of the repository https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp
+2. Add the generated .jar file to the folder ./Keycloak of your environment
+3. Add a volume mapping for the keycloak service in your `docker-compose.yaml` e.g. 
+   `- ./Keycloak/keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar`
+4. Restart the keycloak compose service with `docker-compose up -d --no-deps keycloak`
+5. Go to the administration console of keycloak to `Authentication` -> `Flows` and copy the existing Flow named `Direct Grant`
+6. Under `Direct Grant - Direct-grant-validate-otp - Conditional` click the actions dropdown and add a execution
+7. Select the `OTP Parameter Validator` and click on save to finally add the execution to your flow
+8. Change the order of the added execution so hat it´s directly located above `OTP`
+9. Under the tab `Bindings` set your new flow for `Direct Grant Flow`
+10. Ensure your admin user configured in `UserService.env` for keycloak has the role `technical` assigned
 
 ## Restart aller Services
 Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.
