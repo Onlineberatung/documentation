@@ -16,7 +16,7 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 #### Delete workflows
 New delete workflows for inactive users and session were added. Please check the documentation ([delete workflows](../backend/delete-workflows.md)) and decide if you want to active this workflows.
 
-#### Statistics
+#### 2021-12-14
 
 Add the following RabbitMQ properties to the `UserService.env`:
 ```
@@ -27,7 +27,7 @@ STATISTICS_ENABLED=true
 
 If you do not want to enable the statistics feature set `STATISTICS_ENABLED` to `false`.
 
-Update tag to `dockerImage.v.???` in the `.env` file.
+Update tag to `dockerImage.v.191.release-2021-12-14` in the `.env` file.
 
 ### 2021-11-30
 

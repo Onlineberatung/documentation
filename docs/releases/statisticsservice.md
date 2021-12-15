@@ -13,6 +13,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2021-12-14
+
 Configure the service initially like documented under [service configuration](../backend/service-configuration.md#statisticsservice).
 Please be aware that the video call functionality is currently hidden in the frontend.
 
@@ -21,7 +25,7 @@ Log in as admin user via the NoSqlClient and create a new MongoDb user for the s
 Execute the following commands in the shell:
 
 ```
-user statistics
+use statistics
 
 db.createUser(
    {

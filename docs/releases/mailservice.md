@@ -15,6 +15,12 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-12-14
+
+Update tag to `dockerImage.v.25.release-2021-12-14` in the `.env` file.
+Update name to `docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-mailservice/caritas-onlineberatung-mailservice` in the `.env` file.
+Add the property `TEMPLATE_USE_CUSTOM_RESOURCES_PATH=false` to your `MailService.env`
+
 ### 2021-06-16
 
 Update tag to `dockerImage.v.18.release-2021-06-16` in the `.env` file - no additional changes necessary.

@@ -13,7 +13,9 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-#### Statistics
+No unreleased changes yet.
+
+#### 2021-12-14
 
 Add the following RabbitMQ properties to the `UserService.env`:
 ```
@@ -24,7 +26,7 @@ STATISTICS_ENABLED=true
 
 If you do not want to enable the statistics feature set `STATISTICS_ENABLED` to `false`.
 
-Update tag to `dockerImage.v.???` in the `.env` file.
+Update tag to `dockerImage.v.22.release-2021-12-14` in the `.env` file.
 
 ### 2021-06-23
 
