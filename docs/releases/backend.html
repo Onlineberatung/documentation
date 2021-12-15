@@ -59,7 +59,57 @@
 <p>Since most of the configuration is done inside our services, we will only list additional changes in this document.</p>
 <p>For a full changelog of this project please see the <a href="https://github.com/CaritasDeutschland/caritas-onlineBeratung-backend/blob/master/CHANGELOG.md">project changelog</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="unreleased"></a><a href="#unreleased" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unreleased</h3>
-<p>No unreleased changes yet.</p>
+<p>Add the new StatisticsService and RabbitMQ to the <code>docker-compose.yml</code>:</p>
+<pre><code class="hljs css language-statisticsservice:"><span class="hljs-symbol">  container_name:</span> statisticsservice
+<span class="hljs-symbol">  image:</span> $STATISTICS_SERVICE_IMAGE:$STATISTICS_SERVICE_VERSION
+<span class="hljs-symbol">  restart:</span> <span class="hljs-string">"no"</span>
+<span class="hljs-symbol">  networks:</span>
+    - frontend_network
+    - service_network
+    - rocket_database_network
+<span class="hljs-symbol">  volumes:</span>
+    - ./StatisticsService/log:/log
+    - statisticsservice_tmp:/tmp
+    - <span class="hljs-meta-keyword">/etc/</span>localtime:<span class="hljs-meta-keyword">/etc/</span>localtime:ro
+<span class="hljs-symbol">  env_file:</span>
+    - ./StatisticsService/StatisticsService.env
+<span class="hljs-symbol">  extra_hosts:</span>
+    - <span class="hljs-string">"&lt;app_domain&gt;:&lt;internal_server_ip_address&gt;"</span>
+</code></pre>
+<pre><code class="hljs css language-rabbitmq:">  container_name: rabbitmq
+  hostname: &lt;app_domain&gt;
+  image: rabbitmq:3.8.18-alpine
+  restart: on-failure
+  ports:
+    -<span class="ruby"> <span class="hljs-string">'5672:5672'</span>
+</span>    -<span class="ruby"> <span class="hljs-string">'15672:15672'</span>
+</span>  networks:
+    -<span class="ruby"> service_network
+</span>  volumes:
+    -<span class="ruby"> ./RabbitMQ/config/<span class="hljs-symbol">:/etc/rabbitmq/</span>
+</span>    -<span class="ruby"> ./RabbitMQ/logs/<span class="hljs-symbol">:/var/log/rabbitmq/</span>
+</span>    -<span class="ruby"> ./RabbitMQ/mnesia/<span class="hljs-symbol">:/var/lib/rabbitmq/mnesia</span>
+</span></code></pre>
+<p>You need to change the image tags for the following services:</p>
+<pre><code class="hljs css language-userservice:">  <span class="hljs-keyword">image</span>: $USER_SERVICE_IMAGE:$USER_SERVICE_VERSION
+</code></pre>
+<pre><code class="hljs css language-messageservice:">  <span class="hljs-keyword">image</span>: $MESSAGE_SERVICE_IMAGE:$MESSAGE_SERVICE_VERSION
+</code></pre>
+<pre><code class="hljs css language-uploadservice:">  <span class="hljs-keyword">image</span>: $UPLOAD_SERVICE_IMAGE:$UPLOAD_SERVICE_VERSION
+</code></pre>
+<pre><code class="hljs css language-videoservice:">  <span class="hljs-keyword">image</span>: $VIDEO_SERVICE_IMAGE:$VIDEO_SERVICE_VERSION
+</code></pre>
+<p>You need to add new image and version properties for the StatisticsService in the <code>.env</code>-file:</p>
+<pre><code class="hljs css language-$STATISTICS_SERVICE_IMAGE="><span class="hljs-meta"><span class="hljs-meta-keyword">$STATISTICS</span>_SERVICE_VERSION=</span>
+</code></pre>
+<p>Finally the new volume needs to be added at the end of the file:</p>
+<pre><code class="hljs css language-volumes:"><span class="hljs-symbol">  statisticsservice_tmp:</span>
+</code></pre>
+<p>Only if you want to use the RabbitMQ management console (not recommended in production) you have to</p>
+<ul>
+<li>Add the network <code>frontend_network</code> to RabbitMQ in the <code>docker-compose.yml</code>-file</li>
+<li>Add - 3003:3003 in the ports section of the proxy (NGINX) in the <code>docker-compose.yml</code>-file</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="2021-06-23"></a><a href="#2021-06-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2021-06-23</h3>
 <p>Add the new ConsultingTypeService to the <code>docker-compose.yml</code>:</p>
 <pre><code class="hljs css language-consultingtypeservice:">  container_name: consultingtypeservice

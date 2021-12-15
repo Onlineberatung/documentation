@@ -111,6 +111,7 @@ Als Typ (Step 4 &quot;Register Server&quot;) wird dabei eine lokale Installation
 <li><code>Remove User</code></li>
 <li><code>View Other User Channels</code></li>
 <li><code>View Room Administration</code></li>
+<li><code>View Direct Messages</code></li>
 </ul></li>
 </ul>
 <ol start="2">
@@ -401,9 +402,17 @@ Die Rocket.Chat User-ID für den Rocket.Chat Systemuser muss direkt in der Mongo
 <tr><td>SERVICE_ENCRYPTION_APPKEY</td><td>Key for message encryption (must match the one defined in the UserService!)</td></tr>
 <tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
 <tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
+<tr><td>TWOFACTORAUTH_USER_ENABLED</td><td>Determines whether the two-factor authentication can be activated for the users (true or false)</td></tr>
+<tr><td>TWOFACTORAUTH_CONSULTANT_ENABLED</td><td>Determines whether the two-factor authentication can be activated for the consultants (true or false)</td></tr>
+<tr><td>KEYCLOAKAPI_URL_OTP</td><td>Path to the two factor authentication keycloak extension</td></tr>
+<tr><td>KEYCLOAKAPI_OTP_SETUP_INFO</td><td>Endpoint to get the setup data for the two factor authentication</td></tr>
+<tr><td>KEYCLOAKAPI_OTP_SETUP</td><td>Endpoint to activate the two factor authentication</td></tr>
+<tr><td>KEYCLOAKAPI_OTP_DELETE</td><td>Endpoint to deactivate two factor authentication</td></tr>
 </tbody>
 </table>
 <p>⚠️ Before the first start of the UserService it is mandatory to set <code>SPRING_ACTIVE_PROFILE</code> to <code>dev</code>. This guarants that the database structure is created correctly. After the first start the value can be changed back to <code>prod</code>. ⚠️</p>
+<h3><a class="anchor" aria-hidden="true" id="delete-workflows"></a><a href="#delete-workflows" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delete workflows</h3>
+<p>Within the application the user has the possibility to delete the own account. You can configure additional and automatic delete workflows for data privacy reasons. You find the configuration details <a href="/documentation/docs/backend/delete-workflows">here</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="uploadservice"></a><a href="#uploadservice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UploadService</h2>
 <p>Die Konfiguration des Services auf dem Server erfolgt in der UploadService.env. Für die lokale Entwicklung muss dafür die entsprechende <em>application-X.properties</em>-Datei angepasst werden.</p>
 <p>Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:</p>
@@ -493,6 +502,61 @@ Entwicklung muss die application.properties-Datei angepasst werden.</p>
 <tr><td>KEYCLOAK_CORS</td><td>false for production system! Further information about <a href="/documentation/docs/backend/cors-configuration">CORS</a></td></tr>
 </tbody>
 </table>
+<h2><a class="anchor" aria-hidden="true" id="statisticsservice"></a><a href="#statisticsservice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>StatisticsService</h2>
+<p>The configuration on the server is located in the <code>StatisticsService.env</code> file. To configure the service for local development you can configure the corresponding <code>application-X.properties</code> file.</p>
+<p>Before you start create a new user for the RabbitMQ connections from the services in the management console or via shell set read and write permissions:</p>
+<p><strong>Virtual host permissions</strong></p>
+<table>
+<thead>
+<tr><th>Virtual host</th><th>Configure regexp</th><th>Write regexp</th><th>Read regexp</th></tr>
+</thead>
+<tbody>
+<tr><td>/</td><td>.*</td><td>.*</td><td>.*</td><td>.*</td></tr>
+</tbody>
+</table>
+<p><strong>Topic permissions</strong></p>
+<table>
+<thead>
+<tr><th>Virtual host</th><th>Exchange</th><th>write regexp</th><th>Read regexp</th></tr>
+</thead>
+<tbody>
+<tr><td>/</td><td>statistics.exchange</td><td>.*</td><td>.*</td></tr>
+</tbody>
+</table>
+<p>⚠️ Important: The topic permission can only be set after the StatisticsService has been started for the first time. ⚠️
+⚠️ Important: The user must have the tag <code>administrator</code>. This is necessary, because the RabbitMQ API is only accessible with this tag (need for VideoBackend). ⚠️</p>
+<p>Following values are mandatory:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>KEYCLOAK_AUTH_SERVER_URL</td><td>Keycloak authentication server URL: http://&lt;host&gt;/auth</td></tr>
+<tr><td>KEYCLOAK_REALM</td><td>Keycloak realm name</td></tr>
+<tr><td>KEYCLOAK_PRINCIPAL-ATTRIBUTE</td><td>Keycloak principal attribute: preferred_username</td></tr>
+<tr><td>KEYCLOAK_RESOURCE</td><td>Keycloak resource name</td></tr>
+<tr><td>KEYCLOAK_CORS</td><td>false for production system! Further information about <a href="/documentation/docs/backend/cors-configuration">CORS</a></td></tr>
+<tr><td>CSRF_HEADER_PROPERTY</td><td>CSRF header property name (must match the frontend header name!)</td></tr>
+<tr><td>CSRF_COOKIE_PROPERTY</td><td>CSRF cookie property name (must match the frontend cookie name!)</td></tr>
+<tr><td>SPRING_RABBITMQ_USERNAME</td><td>The RabbitMQ username for the connection</td></tr>
+<tr><td>SPRING_RABBITMQ_PASSWORD</td><td>The RabbitMQ password for the connection</td></tr>
+<tr><td>SPRING_DATA_MONGODB_URI</td><td>The connection uri for the MongoDD, e.g. mongodb://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@mongodb:27017/statistics?retryWrites=false</td></tr>
+</tbody>
+</table>
+<p>You can also customize the following RabbitMQ settings if desired:</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th><th>Default</th></tr>
+</thead>
+<tbody>
+<tr><td>SPRING_RABBITMQ_LISTENER_SIMPLE_RETRY_ENABLED</td><td>Enable/Disabling automatic retries for message process failures</td><td>true</td></tr>
+<tr><td>SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MAX-ATTEMPTS</td><td>The processing should be retried maximum of n times after that it will be sent to dead letter Queue.</td><td>3</td></tr>
+<tr><td>SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_INITIAL-INTERVAL</td><td>The processing should be retried after an interval of n ms.</td><td>2000</td></tr>
+<tr><td>SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MAX-INTERVAL</td><td>The maximum time interval between two retries. It should never exceed 10s.</td><td>10000</td></tr>
+<tr><td>SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MULTIPLIER</td><td>The interval between second retry gets multiplied by this multiplier. But this interval can never exceed the max-interval.</td><td>2</td></tr>
+</tbody>
+</table>
+<p>During the first start of the service the required exhanges and queues will be applied in RabbitMQ.</p>
 <h3><a class="anchor" aria-hidden="true" id="definition-of-the-consulting-type-settings"></a><a href="#definition-of-the-consulting-type-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Definition of the consulting type settings</h3>
 <p>You need to define the settings of all your consulting types in single json files and put them into the directory specified in the property <code>consulting.types.json.path</code>:</p>
 <ul>
@@ -503,6 +567,41 @@ Entwicklung muss die application.properties-Datei angepasst werden.</p>
 <p><strong>Please be aware that the properties id and slug have to be unique.</strong></p>
 <p><strong>If the ConsultingTypeService does not start, please check the log file for indications of configuration errors.</strong></p>
 <p>⚠️ Please keep in mind that after making changes to the consulting type settings you need to restart Agency- and UserService (settings are being cached)! ⚠️</p>
+<h2><a class="anchor" aria-hidden="true" id="elk-services"></a><a href="#elk-services" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ELK Services</h2>
+<p>The services Elasticsearch, Logstash, and Kibana are also called <a href="https://www.elastic.co/what-is/elk-stack">ELK Stack</a>.
+They form the centralized logging inside the microservice architecture that can aggregate logs from each service
+instance. Developers can search and analyze the logs.</p>
+<p>The stack is pre-configured with the privileged bootstrap user <em>elastic</em> (password: <em>changeme</em>.) Please increase
+security by using the unprivileged
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/built-in-users.html">built-in users</a> instead:</p>
+<ol>
+<li><p>Initialize passwords for built-in users</p>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> docker-compose <span class="hljs-built_in">exec</span> -T elasticsearch bin/elasticsearch-setup-passwords auto --batch</span>
+</code></pre>
+<p>Passwords for all 6 built-in users will be randomly generated. Take note of them.</p></li>
+<li><p>Replace usernames and passwords in configuration files</p>
+<p>Use the <code>kibana_system</code> user inside the Kibana configuration file (<code>kibana/config/kibana.yml</code>) and the
+<code>logstash_system</code> user inside the Logstash configuration file (<code>logstash/config/logstash.yml</code>) in place of the
+existing <code>elastic</code> user. Replace the password for the <code>elastic</code> user inside the Logstash pipeline file
+(<code>logstash/pipeline/logstash.conf</code>). Do NOT use the <code>logstash_system</code> user inside the Logstash pipeline file, it does
+not have sufficient permissions to create indices.</p></li>
+</ol>
+<p>After restart in the following section, you should be able to visit http://<em>host</em>:3004 and log in with the <em>elastic</em>
+user and the new password.</p>
+<h2><a class="anchor" aria-hidden="true" id="optional-configure-2-factor-authentication-via-otp"></a><a href="#optional-configure-2-factor-authentication-via-otp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(Optional) Configure 2 factor authentication via OTP</h2>
+<ol>
+<li>Build a jar file with maven install of the repository <a href="https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp">https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp</a></li>
+<li>Add the generated .jar file to the folder ./Keycloak of your environment</li>
+<li>Add a volume mapping for the keycloak service in your <code>docker-compose.yaml</code> e.g.
+<code>- ./Keycloak/keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar</code></li>
+<li>Restart the keycloak compose service with <code>docker-compose up -d --no-deps keycloak</code></li>
+<li>Go to the administration console of keycloak to <code>Authentication</code> -&gt; <code>Flows</code> and copy the existing Flow named <code>Direct Grant</code></li>
+<li>Under <code>Direct Grant - Direct-grant-validate-otp - Conditional</code> click the actions dropdown and add a execution</li>
+<li>Select the <code>OTP Parameter Validator</code> and click on save to finally add the execution to your flow</li>
+<li>Change the order of the added execution so hat it´s directly located above <code>OTP</code></li>
+<li>Under the tab <code>Bindings</code> set your new flow for <code>Direct Grant Flow</code></li>
+<li>Ensure your admin user configured in <code>UserService.env</code> for keycloak has the role <code>technical</code> assigned</li>
+</ol>
 <h2><a class="anchor" aria-hidden="true" id="restart-aller-services"></a><a href="#restart-aller-services" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Restart aller Services</h2>
 <p>Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch <em>docker-compose restart</em> neugestartet werden.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/backend/first-start"><span class="arrow-prev">← </span><span>First start</span></a><a class="docs-next button" href="/documentation/docs/backend/file-permissions"><span>File permissions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#rocketchat">Rocket.Chat</a><ul class="toc-headings"><li><a href="#ldap-konfigurieren">LDAP konfigurieren:</a></li><li><a href="#create-technical-user">Create technical user</a></li><li><a href="#create-system-messages-user">Create system messages user</a></li><li><a href="#bot-user-löschen">Bot-User löschen</a></li><li><a href="#gelesen-status-konfigurieren">Gelesen-Status konfigurieren</a></li><li><a href="#file-upload-konfigurieren">File-Upload konfigurieren</a></li><li><a href="#rate-limiter">Rate Limiter</a></li><li><a href="#general">General</a></li><li><a href="#accounts">Accounts</a></li></ul></li><li><a href="#keycloak">Keycloak</a><ul class="toc-headings"><li><a href="#realm">Realm</a></li><li><a href="#ldap">LDAP</a></li><li><a href="#admin-benutzer-für-registrierungen">Admin Benutzer für Registrierungen</a></li><li><a href="#technischer-benutzer-zum-setzen-der-masterkeys">Technischer Benutzer zum Setzen der Masterkeys</a></li><li><a href="#password-policies">Password policies</a></li></ul></li><li><a href="#verbindungen-im-nosqlclient-einrichten">Verbindungen im Nosqlclient einrichten</a></li><li><a href="#microservices">Microservices</a></li><li><a href="#agencyservice">AgencyService</a></li><li><a href="#mailservice">MailService</a></li><li><a href="#messageservice">MessageService</a></li><li><a href="#userservice">UserService</a></li><li><a href="#uploadservice">UploadService</a></li><li><a href="#liveservice">LiveService</a></li><li><a href="#videoservice">VideoService</a></li><li><a href="#consultingtypeservice">ConsultingTypeService</a><ul class="toc-headings"><li><a href="#definition-of-the-consulting-type-settings">Definition of the consulting type settings</a></li></ul></li><li><a href="#restart-aller-services">Restart aller Services</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a><a href="/documentation/docs/setup/setup-backend.html">Setting up Backend</a><a href="/documentation/docs/setup/setup-frontend.html">Setting up Frontend</a></div><div><h5>More</h5><a href="https://github.com/CaritasDeutschland">GitHub</a></div></section><section class="copyright">Copyright © 2021 Caritas Deutschland</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/backend/first-start"><span class="arrow-prev">← </span><span>First start</span></a><a class="docs-next button" href="/documentation/docs/backend/file-permissions"><span>File permissions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#rocketchat">Rocket.Chat</a><ul class="toc-headings"><li><a href="#ldap-konfigurieren">LDAP konfigurieren:</a></li><li><a href="#create-technical-user">Create technical user</a></li><li><a href="#create-system-messages-user">Create system messages user</a></li><li><a href="#bot-user-löschen">Bot-User löschen</a></li><li><a href="#gelesen-status-konfigurieren">Gelesen-Status konfigurieren</a></li><li><a href="#file-upload-konfigurieren">File-Upload konfigurieren</a></li><li><a href="#rate-limiter">Rate Limiter</a></li><li><a href="#general">General</a></li><li><a href="#accounts">Accounts</a></li></ul></li><li><a href="#keycloak">Keycloak</a><ul class="toc-headings"><li><a href="#realm">Realm</a></li><li><a href="#ldap">LDAP</a></li><li><a href="#admin-benutzer-für-registrierungen">Admin Benutzer für Registrierungen</a></li><li><a href="#technischer-benutzer-zum-setzen-der-masterkeys">Technischer Benutzer zum Setzen der Masterkeys</a></li><li><a href="#password-policies">Password policies</a></li></ul></li><li><a href="#verbindungen-im-nosqlclient-einrichten">Verbindungen im Nosqlclient einrichten</a></li><li><a href="#microservices">Microservices</a></li><li><a href="#agencyservice">AgencyService</a></li><li><a href="#mailservice">MailService</a></li><li><a href="#messageservice">MessageService</a></li><li><a href="#userservice">UserService</a><ul class="toc-headings"><li><a href="#delete-workflows">Delete workflows</a></li></ul></li><li><a href="#uploadservice">UploadService</a></li><li><a href="#liveservice">LiveService</a></li><li><a href="#videoservice">VideoService</a></li><li><a href="#consultingtypeservice">ConsultingTypeService</a></li><li><a href="#statisticsservice">StatisticsService</a><ul class="toc-headings"><li><a href="#definition-of-the-consulting-type-settings">Definition of the consulting type settings</a></li></ul></li><li><a href="#elk-services">ELK Services</a></li><li><a href="#optional-configure-2-factor-authentication-via-otp">(Optional) Configure 2 factor authentication via OTP</a></li><li><a href="#restart-aller-services">Restart aller Services</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a><a href="/documentation/docs/setup/setup-backend.html">Setting up Backend</a><a href="/documentation/docs/setup/setup-frontend.html">Setting up Frontend</a></div><div><h5>More</h5><a href="https://github.com/CaritasDeutschland">GitHub</a></div></section><section class="copyright">Copyright © 2021 Caritas Deutschland</section></footer></div></body></html>
