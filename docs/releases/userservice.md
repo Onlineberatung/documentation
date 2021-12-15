@@ -13,7 +13,31 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-No unreleased changes yet.
+#### Delete workflows
+New delete workflows for inactive users and session were added. Please check the documentation ([delete workflows](../backend/delete-workflows.md)) and decide if you want to active this workflows.
+
+#### 2021-12-14
+
+Add the following RabbitMQ properties to the `UserService.env`:
+```
+SPRING_RABBITMQ_USERNAME=<username of your rabbitmq user>
+SPRING_RABBITMQ_PASSWORD=<password of your rabbitmq user>
+STATISTICS_ENABLED=true
+```
+
+If you do not want to enable the statistics feature set `STATISTICS_ENABLED` to `false`.
+
+Update tag to `dockerImage.v.191.release-2021-12-14` in the `.env` file.
+
+### 2021-11-30
+
+Update tag to `dockerImage.v.180.release-2021-11-30` in the `.env` file.
+
+Create a new keycloak user for role migration via the keycloak admin console 
+`<YOUR_DOMAIN>/auth`. Add the `Client Roles` -> `Realm Management``manage-realm` and`query-realms`\
+Configure the parameters in python script under 
+`UserService/src/main/resources/migration/KeycloakRoleNameMigration.py` and execute the script\
+Delete the previous created keycloak user 
 
 ### 2021-11-03
 

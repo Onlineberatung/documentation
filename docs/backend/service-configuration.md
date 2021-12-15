@@ -58,6 +58,7 @@ The Rocket.Chat technical user is used for every Rocket.Chat action that involve
     * `Remove User`
     * `View Other User Channels`
     * `View Room Administration`
+    * `View Direct Messages`
 2. Benutzer anlegen
 * Under _"Users"_ create a new user _"rocket-chat-technical-user"_ and assign the previous created 
   role _"technical"_. ⚠ This user needs to have the exact username 
@@ -326,8 +327,18 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 | SERVICE_ENCRYPTION_APPKEY | Key for message encryption (must match the one defined in the UserService!) |
 | CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+| TWOFACTORAUTH_USER_ENABLED | Determines whether the two-factor authentication can be activated for the users (true or false) |
+| TWOFACTORAUTH_CONSULTANT_ENABLED | Determines whether the two-factor authentication can be activated for the consultants (true or false) |
+| KEYCLOAKAPI_URL_OTP | Path to the two factor authentication keycloak extension
+| KEYCLOAKAPI_OTP_SETUP_INFO | Endpoint to get the setup data for the two factor authentication |
+| KEYCLOAKAPI_OTP_SETUP | Endpoint to activate the two factor authentication |
+| KEYCLOAKAPI_OTP_DELETE | Endpoint to deactivate two factor authentication |
 
 ⚠️ Before the first start of the UserService it is mandatory to set `SPRING_ACTIVE_PROFILE` to `dev`. This guarants that the database structure is created correctly. After the first start the value can be changed back to `prod`. ⚠️
+
+### Delete workflows
+
+Within the application the user has the possibility to delete the own account. You can configure additional and automatic delete workflows for data privacy reasons. You find the configuration details [here](delete-workflows.md).
 
 ## UploadService
 Die Konfiguration des Services auf dem Server erfolgt in der UploadService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden. 
@@ -409,6 +420,49 @@ Following values are optional:
 | consulting.types.json.path | The relative path to the directory on the host system to the consulting type settings files (default: consulting-type-settings) |
 | KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
 
+## StatisticsService
+The configuration on the server is located in the `StatisticsService.env` file. To configure the service for local development you can configure the corresponding `application-X.properties` file.
+
+Before you start create a new user for the RabbitMQ connections from the services in the management console or via shell set read and write permissions:
+
+__Virtual host permissions__
+| Virtual host | Configure regexp | Write regexp | Read regexp |
+| ------------ | ---------------- | ------------ | ----------- |
+| / | .* | .* | .* | .* |
+
+__Topic permissions__
+| Virtual host | Exchange | write regexp | Read regexp |
+| ------------ | -------- | ------------ | ----------- |
+| / | statistics.exchange | .* | .* |
+
+⚠️ Important: The topic permission can only be set after the StatisticsService has been started for the first time. ⚠️
+⚠️ Important: The user must have the tag `administrator`. This is necessary, because the RabbitMQ API is only accessible with this tag (need for VideoBackend). ⚠️
+
+Following values are mandatory:
+| Name | Description |
+| ---- | ----------- |
+| KEYCLOAK_AUTH_SERVER_URL | Keycloak authentication server URL: http://\<host\>/auth |
+| KEYCLOAK_REALM | Keycloak realm name |
+| KEYCLOAK_PRINCIPAL-ATTRIBUTE | Keycloak principal attribute: preferred_username |
+| KEYCLOAK_RESOURCE | Keycloak resource name |
+| KEYCLOAK_CORS | false for production system! Further information about [CORS](../backend/cors-configuration.md) |
+| CSRF_HEADER_PROPERTY | CSRF header property name (must match the frontend header name!) |
+| CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
+| SPRING_RABBITMQ_USERNAME | The RabbitMQ username for the connection |
+| SPRING_RABBITMQ_PASSWORD | The RabbitMQ password for the connection |
+| SPRING_DATA_MONGODB_URI | The connection uri for the MongoDD, e.g. mongodb://\<USERNAME\>:\<PASSWORD\>@mongodb:27017/statistics?retryWrites=false |
+
+You can also customize the following RabbitMQ settings if desired:
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| SPRING_RABBITMQ_LISTENER_SIMPLE_RETRY_ENABLED | Enable/Disabling automatic retries for message process failures  | true |
+| SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MAX-ATTEMPTS | The processing should be retried maximum of n times after that it will be sent to dead letter Queue. | 3 |
+| SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_INITIAL-INTERVAL |  The processing should be retried after an interval of n ms. | 2000 |
+| SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MAX-INTERVAL | The maximum time interval between two retries. It should never exceed 10s. | 10000 |
+| SPRING.RABBITMQ_LISTENER_SIMPLE_RETRY_MULTIPLIER | The interval between second retry gets multiplied by this multiplier. But this interval can never exceed the max-interval. | 2 |
+
+During the first start of the service the required exhanges and queues will be applied in RabbitMQ.
+
 ### Definition of the consulting type settings
 You need to define the settings of all your consulting types in single json files and put them into the directory specified in the property `consulting.types.json.path`:
 
@@ -421,6 +475,47 @@ __Please be aware that the properties id and slug have to be unique.__
 __If the ConsultingTypeService does not start, please check the log file for indications of configuration errors.__
 
 ⚠️ Please keep in mind that after making changes to the consulting type settings you need to restart Agency- and UserService (settings are being cached)! ⚠️
+
+## ELK Services
+The services Elasticsearch, Logstash, and Kibana are also called [ELK Stack](https://www.elastic.co/what-is/elk-stack). 
+They form the centralized logging inside the microservice architecture that can aggregate logs from each service 
+instance. Developers can search and analyze the logs.
+
+The stack is pre-configured with the privileged bootstrap user *elastic* (password: *changeme*.) Please increase 
+security by using the unprivileged 
+[built-in users](https://www.elastic.co/guide/en/elasticsearch/reference/current/built-in-users.html) instead:
+
+1. Initialize passwords for built-in users
+
+   ```console
+   $ docker-compose exec -T elasticsearch bin/elasticsearch-setup-passwords auto --batch
+   ```
+   
+   Passwords for all 6 built-in users will be randomly generated. Take note of them.
+
+1. Replace usernames and passwords in configuration files 
+ 
+   Use the `kibana_system` user inside the Kibana configuration file (`kibana/config/kibana.yml`) and the 
+   `logstash_system` user inside the Logstash configuration file (`logstash/config/logstash.yml`) in place of the 
+   existing `elastic` user. Replace the password for the `elastic` user inside the Logstash pipeline file 
+   (`logstash/pipeline/logstash.conf`). Do NOT use the `logstash_system` user inside the Logstash pipeline file, it does
+   not have sufficient permissions to create indices.
+
+After restart in the following section, you should be able to visit http://*host*:3004 and log in with the *elastic* 
+user and the new password.
+
+## (Optional) Configure 2 factor authentication via OTP
+1. Build a jar file with maven install of the repository https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp
+2. Add the generated .jar file to the folder ./Keycloak of your environment
+3. Add a volume mapping for the keycloak service in your `docker-compose.yaml` e.g. 
+   `- ./Keycloak/keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar`
+4. Restart the keycloak compose service with `docker-compose up -d --no-deps keycloak`
+5. Go to the administration console of keycloak to `Authentication` -> `Flows` and copy the existing Flow named `Direct Grant`
+6. Under `Direct Grant - Direct-grant-validate-otp - Conditional` click the actions dropdown and add a execution
+7. Select the `OTP Parameter Validator` and click on save to finally add the execution to your flow
+8. Change the order of the added execution so hat it´s directly located above `OTP`
+9. Under the tab `Bindings` set your new flow for `Direct Grant Flow`
+10. Ensure your admin user configured in `UserService.env` for keycloak has the role `technical` assigned
 
 ## Restart aller Services
 Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.

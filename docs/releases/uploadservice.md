@@ -15,6 +15,23 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+#### 2021-12-14
+
+Add the following RabbitMQ properties to the `UserService.env`:
+```
+SPRING_RABBITMQ_USERNAME=<username of your rabbitmq user>
+SPRING_RABBITMQ_PASSWORD=<password of your rabbitmq user>
+STATISTICS_ENABLED=true
+```
+
+If you do not want to enable the statistics feature set `STATISTICS_ENABLED` to `false`.
+
+Update tag to `dockerImage.v.31.release-2021-12-14` in the `.env` file.
+
+### 2021-11-30
+
+Update tag to `dockerImage.v.29.release-2021-11-30` in the `.env` file - no additional changes necessary.
+
 ### 2021-11-03
 
 Adjust env property ROCKET_TECHNICAL_USERNAME=rocket-chat-technical-user.

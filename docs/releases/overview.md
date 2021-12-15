@@ -20,16 +20,17 @@ If you want to check the individual service/component please klick on the corres
 ### Own services
 |Service|Current image version|
 |--- |--- |
-|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.44.release-2021-07-27`|
-|[Frontend](../releases/frontend.md)|`dockerimage.v.213-release-2021-11-03`|
-|[LiveService](../releases/liveservice.md)|`dockerimage.v.29.release-2021-06-29`|
-|[MailService](../releases/mailservice.md)|`dockerimage.v.18.release-2021-06-16`|
-|[MessageService](../releases/messageservice.md)|`dockerImage.v.36.release-2021-06-22`|
+|[AgencyService](../releases/agencyservice.md)|`dockerimage.v.49.release-2021-12-14`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.241.release-2021-12-15`|
+|[LiveService](../releases/liveservice.md)|`dockerImage.v.35.release-2021-12-14`|
+|[MailService](../releases/mailservice.md)|`dockerImage.v.25.release-2021-12-14`|
+|[MessageService](../releases/messageservice.md)|`dockerImage.v.40.release-2021-12-14`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.6.release-2021-06-22`|
-|[UploadService](../releases/uploadservice.md)|`dockerImage.v.27.release-2021-07-27`|
-|[UserService](../releases/userservice.md)|`dockerImage.v.164.release-2021-11-03`|
-|[VideoService](../releases/videoservice.md)|`dockerImage.v.20.release-2021-06-22`|
-|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.12.release-2021-07-27`|
+|[UploadService](../releases/uploadservice.md)|`dockerImage.v.31.release-2021-12-14`|
+|[UserService](../releases/userservice.md)|`dockerImage.v.191.release-2021-12-14`|
+|[VideoService](../releases/videoservice.md)|`dockerImage.v.22.release-2021-12-14`|
+|[StatisticsService](../releases/statisticsservice.md)|`dockerImage.v.3.release-2021-12-14`|
+|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.18.release-2021-12-14`|
  
 ### 3rd party components
 |Component|Current image version|
@@ -40,6 +41,7 @@ If you want to check the individual service/component please klick on the corres
 |[MongoDB](../releases/mongodb.md)|`4.0.5`|
 |[Nosqlclient](../releases/nosqlclient.md)|`4.0.1`|
 |[OpenLDAP](../releases/openldap.md)|`1.4.0`|
+|[RabbitMQ](../releases/rabbitmq.md)|`3.8.18`|
 |[Rocket.Chat](../releases/rocketchat.md)|`3.14.4`|
 
  

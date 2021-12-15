@@ -15,6 +15,11 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2021-12-14
+
+Update tag to `dockerImage.v.35.release-2021-12-14` in the `.env` file - no additional changes necessary.
+Update image name to `docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-liveservice/caritas-onlineberatung-liveservice` in the `.env` file - no additional changes necessary.
+
 ### 2021-06-29
 
 Update tag to `dockerimage.v.29.release-2021-06-29` in the `.env` file - no additional changes necessary.
