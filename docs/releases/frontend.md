@@ -15,6 +15,12 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2022-02-08
+
+Update tag to `dockerImage.v.249.release-2022-02-08` in the `.env` file.
+Add volume mapping in dockerCompose.yaml and add a mp3 file to the server (for incoming video calls)
+- ./frontend/incomingCall.mp3:/usr/share/nginx/html/public/assets/audio/incomingCall.mp3
+
 ### 2021-12-15
 
 Update tag to `dockerImage.v.241.release-2021-12-15` in the `.env` file - no additional changes necessary.
