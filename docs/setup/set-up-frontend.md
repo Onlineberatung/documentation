@@ -111,7 +111,6 @@ src
       settings.scss
   initApp.tsx
   initError.tsx
-  initLogin.tsx
 ```
 
 They can be used to provide the necessary configuration and theming to the consuming app.

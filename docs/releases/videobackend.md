@@ -15,6 +15,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2022-02-08
+
+Pull the latest changes from master branch.
+
 ### 2021-12-14
 
 Update the following file from the master branch or checkout the release branch `release-2021-12-14` via git: `videoBackendConfig\prosody\prosody-plugins-custom\mod_close_room.lua`
