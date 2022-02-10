@@ -13,6 +13,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+#### 2022-02-10
+
+Update tag to `dockerImage.v.209.hotfix-2022-02-09` in the `.env` file - no additional changes necessary.
+
 #### 2022-02-08
 
 Update tag to `dockerImage.v.206.release-2022-02-03` in the `.env` file - no additional changes necessary.
