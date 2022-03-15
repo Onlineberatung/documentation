@@ -15,6 +15,14 @@ If you want a changelog please see the project page at https://www.keycloak.org.
 
 No unreleased changes yet.
 
+### 2022-03-15
+
+Build maven package `keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar` of https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp
+Copy `keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar` to deployment folder (usually /opt/jboss/keycloak/standalone/deployments)
+Restart keycloak
+Configure authentication flow for 2FA mail → see documentation at https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp/tree/master)
+Use new flow in direct grant binding
+
 ### 2021-06-29
 
 Update all ressources for the caritas theme. You can find the files in the following folder:

@@ -13,18 +13,23 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
-#### 2022-02-10
+### 2022-03-15
+
+Update tag to `dockerImage.v.221.release-2022-03-15` in the `.env` file.
+Add new overriding properties to UserService.env before restart: `IDENTITY_OTP-ALLOWED-FOR-USERS=true` and `IDENTITY_OTP-ALLOWED-FOR-CONSULTANTS=true`
+
+### 2022-02-10
 
 Update tag to `dockerImage.v.209.hotfix-2022-02-09` in the `.env` file - no additional changes necessary.
 
-#### 2022-02-08
+### 2022-02-08
 
 Update tag to `dockerImage.v.206.release-2022-02-03` in the `.env` file - no additional changes necessary.
 
-#### Delete workflows
+### Delete workflows
 New delete workflows for inactive users and session were added. Please check the documentation ([delete workflows](../backend/delete-workflows.md)) and decide if you want to active this workflows.
 
-#### 2021-12-14
+### 2021-12-14
 
 Add the following RabbitMQ properties to the `UserService.env`:
 ```
