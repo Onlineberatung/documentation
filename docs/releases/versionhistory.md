@@ -13,6 +13,13 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2022-03-15
+#### Own services
+- [Frontend](../releases/frontend.md)
+- [UserService](../releases/userservice.md)
+- [UploadService](../releases/uploadservice.md)
+- [Keycloak](../releases/keycloak.md)
+
 ### 2022-02-10
 #### Own services
 - [Frontend](../releases/frontend.md)
