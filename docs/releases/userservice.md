@@ -13,6 +13,24 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 ### Unreleased
 
+No unreleased changes yet.
+
+### 2022-03-29
+
+Change the following properties in `UserService.env` as follows:
+```
+# add
+VIDEOCHAT_E2E-ENCRYPTION-ENABLED=true
+
+# replace keys
+KEYCLOAK_CONFIG_ADMIN-USERNAME  # before KEYCLOAKSERVICE_ADMIN_USERNAME
+KEYCLOAK_CONFIG_ADMIN-PASSWORD  # before KEYCLOAKSERVICE_ADMIN_PASSWORD
+KEYCLOAK_CONFIG_ADMIN-CLIENT-ID # before KEYCLOAKSERVICE_ADMIN_CLIENTID
+KEYCLOAK_CONFIG_APP-CLIENT-ID   # before KEYCLOAKSERVICE_APP_CLIENTID
+```
+
+Update tag in the `.env` file to `dockerImage.v.236.release-2022-03-29`.
+
 ### 2022-03-23
 
 Update tag to `dockerImage.v.234.hotfix-2022-03-23` in the `.env` file - no additional changes necessary.

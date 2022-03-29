@@ -20,16 +20,16 @@ If you want to check the individual service/component please klick on the corres
 ### Own services
 |Service|Current image version|
 |--- |--- |
-|[AgencyService](../releases/agencyservice.md)|`dockerimage.v.49.release-2021-12-14`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.285.release-2022-03-15`|
-|[LiveService](../releases/liveservice.md)|`dockerImage.v.35.release-2021-12-14`|
+|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.51.release-2022-03-29`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.296-release-2022-03-29`|
+|[LiveService](../releases/liveservice.md)|`dockerImage.v.38.release-2022-03-29`|
 |[MailService](../releases/mailservice.md)|`dockerImage.v.27.release-2022-02-03`|
-|[MessageService](../releases/messageservice.md)|`dockerImage.v.40.release-2021-12-14`|
+|[MessageService](../releases/messageservice.md)|`dockerImage.v.46.release-2022-03-29`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.6.release-2021-06-22`|
-|[UploadService](../releases/uploadservice.md)|`dockerImage.v.33.release-2022-03-15`|
-|[UserService](../releases/userservice.md)|`dockerImage.v.221.release-2022-03-15`|
-|[VideoService](../releases/videoservice.md)|`dockerImage.v.22.release-2021-12-14`|
-|[StatisticsService](../releases/statisticsservice.md)|`dockerImage.v.3.release-2021-12-14`|
+|[UploadService](../releases/uploadservice.md)|`dockerImage.v.36.release-2022-03-29`|
+|[UserService](../releases/userservice.md)|`dockerImage.v.236.release-2022-03-29`|
+|[VideoService](../releases/videoservice.md)|`dockerImage.v.23.release-2022-03-29`|
+|[StatisticsService](../releases/statisticsservice.md)|`dockerImage.v.5.release-2022-03-29`|
 |[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.18.release-2021-12-14`|
  
 ### 3rd party components
