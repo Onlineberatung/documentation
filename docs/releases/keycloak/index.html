@@ -60,6 +60,71 @@
 <p>If you want a changelog please see the project page at <a href="https://www.keycloak.org">https://www.keycloak.org</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="unreleased"></a><a href="#unreleased" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unreleased</h3>
 <p>No unreleased changes yet.</p>
+<h3><a class="anchor" aria-hidden="true" id="2022-03-29"></a><a href="#2022-03-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2022-03-29</h3>
+<h4><a class="anchor" aria-hidden="true" id="keycloak-migration-guide----v-1700"></a><a href="#keycloak-migration-guide----v-1700" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keycloak Migration Guide --&gt; V. 17.0.0</h4>
+<ul>
+<li>Backup .env file</li>
+<li>Backup docker-compose.yml</li>
+<li>Backup keycloak extension</li>
+<li>Backup Keycloak/Keycloak.env</li>
+<li>Backup MariaDB keycloak database (see below)</li>
+<li>Build and copy keycloak extensions with 17.0.0 depedencies to the server</li>
+<li>Adapt Keycloak/Keycloak.env (see below)</li>
+<li>Adapt docker-compose.yml (see below)</li>
+<li>Restart Keycloak service (runs DB migration upon start, check logs)</li>
+<li>Redeploy services with 17.0.0 dependencies updated</li>
+<li>Configure Custom Event Logging (see below)</li>
+</ul>
+<p>####Backup MariaDB
+Execute while in backend folder (the one with the docker-compose.yml), assuming that the MariaDB
+folder exists, containing an MariaDB.env file with <code>MYSQL_ROOT_PASSWORD</code> variable:</p>
+<p><code>source MariaDB/MariaDB.env &amp;&amp; docker-compose exec mariadb mysqldump -uroot -p${MYSQL_ROOT_PASSWORD} keycloak &gt; keycloak-dump-$(date +%F_%H-%M-%S).sql</code></p>
+<p>####Restore MariaDB (in case of rollback)
+Execute while in backend folder (the one with the docker-compose.yml), assuming that the MariaDB
+folder exists, containing an MariaDB.env file with MYSQL_ROOT_PASSWORD variable:</p>
+<p><code>source MariaDB/MariaDB.env &amp;&amp; docker-compose exec -T mariadb mysql -uroot -p${MYSQL_ROOT_PASSWORD} keycloak &lt; keycloak-dump.sql</code></p>
+<p>####Adapt Keycloak.env
+Most of the former env. variables have changed, and configuration got easier. Here is an example
+set of env variables which can be used to replace the former setup of version 13.0.1:</p>
+<ul>
+<li><code>KC_DB=mariadb</code></li>
+<li><code>KC_DB_URL_HOST=mariadb</code></li>
+<li><code>KC_DB_URL_DATABASE=keycloak</code></li>
+<li><code>KC_DB_USERNAME=keycloak</code></li>
+<li><code>KC_DB_PASSWORD=&lt;the password&gt;</code></li>
+<li><code>KC_HTTP_RELATIVE_PATH=/auth</code></li>
+<li><code>KC_PROXY=edge</code></li>
+<li><code>KC_HOSTNAME=&lt;hostname.com&gt;</code></li>
+<li><code>KC_LOG_LEVEL=INFO</code></li>
+</ul>
+<p>####Adapt docker-compose.yml
+Paths for mounting extension and themes have changed. We need an additional flag in the container
+entrypoint, since quarkus containers are supposed to be immutable. The flag tells Keycloak to start
+up and apply the configuration for the specific environment. This enables us to use the standard
+image without having to build and host our own.</p>
+<p>####docker-compose.yml</p>
+<pre><code class="hljs"><span class="hljs-symbol">keycloak:</span>
+<span class="hljs-symbol">    container_name:</span> keycloak
+<span class="hljs-symbol">    image:</span> quay.io<span class="hljs-meta-keyword">/keycloak/</span>keycloak:<span class="hljs-number">17.0</span><span class="hljs-number">.0</span>
+<span class="hljs-symbol">    restart:</span> on-failure
+<span class="hljs-symbol">    depends_on:</span>
+        - mariadb
+<span class="hljs-symbol">    env_file:</span>
+        - Keycloak/Keycloak.env
+<span class="hljs-symbol">    networks:</span>
+        - database_network
+        - frontend_network
+        - ldap_network
+<span class="hljs-symbol">    volumes:</span>
+        - ./Keycloak/caritas-theme:<span class="hljs-meta-keyword">/opt/</span>keycloak<span class="hljs-meta-keyword">/themes/</span>caritas-theme
+        - ./Keycloak/keycloak-otp-config-spi<span class="hljs-number">-1.0</span>-SNAPSHOT-keycloak.jar:<span class="hljs-meta-keyword">/opt/</span>keycloak<span class="hljs-meta-keyword">/providers/</span>keycloak-otp-config-spi<span class="hljs-number">-1.0</span>-SNAPSHOT-keycloak.jar
+        - <span class="hljs-meta-keyword">/etc/</span>localtime:<span class="hljs-meta-keyword">/etc/</span>localtime:ro
+<span class="hljs-symbol">    entrypoint:</span> <span class="hljs-string">"/opt/keycloak/bin/kc.sh start --auto-build"</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="configure-custom-event-logging"></a><a href="#configure-custom-event-logging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure Custom Event Logging</h4>
+<p>Extensive logging configuration is currently not supported. To omit IP addresses of each event,
+we implemented a custom EventListenerProvider, which is included in the keycloak otp extension.
+After deployment, it just has to be selected as the default in the event configuration:</p>
 <h3><a class="anchor" aria-hidden="true" id="2022-03-15"></a><a href="#2022-03-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2022-03-15</h3>
 <p>Build maven package <code>keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar</code> of <a href="https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp">https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp</a>
 Copy <code>keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar</code> to deployment folder (usually /opt/jboss/keycloak/standalone/deployments)
@@ -103,4 +168,4 @@ Use new flow in direct grant binding</p>
 <blockquote>
 <p>⚠️ MariaDB update needs to be performed before this update ⚠️</p>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/releases/adminer"><span class="arrow-prev">← </span><span>3rd party - Adminer</span></a><a class="docs-next button" href="/documentation/docs/releases/mariadb"><span class="function-name-prevnext">3rd party - MariaDB</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#general-description">General description</a><ul class="toc-headings"><li><a href="#unreleased">Unreleased</a></li><li><a href="#2022-03-15">2022-03-15</a></li><li><a href="#2021-06-29">2021-06-29</a></li><li><a href="#2021-06-23">2021-06-23</a></li><li><a href="#2021-03-23">2021-03-23</a></li><li><a href="#2020-12-15">2020-12-15</a></li><li><a href="#2020-11-25">2020-11-25</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a><a href="/documentation/docs/setup/setup-backend.html">Setting up Backend</a><a href="/documentation/docs/setup/setup-frontend.html">Setting up Frontend</a></div><div><h5>More</h5><a href="https://github.com/CaritasDeutschland">GitHub</a></div></section><section class="copyright">Copyright © 2022 Caritas Deutschland</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/releases/adminer"><span class="arrow-prev">← </span><span>3rd party - Adminer</span></a><a class="docs-next button" href="/documentation/docs/releases/mariadb"><span class="function-name-prevnext">3rd party - MariaDB</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#general-description">General description</a><ul class="toc-headings"><li><a href="#unreleased">Unreleased</a></li><li><a href="#2022-03-29">2022-03-29</a></li><li><a href="#2022-03-15">2022-03-15</a></li><li><a href="#2021-06-29">2021-06-29</a></li><li><a href="#2021-06-23">2021-06-23</a></li><li><a href="#2021-03-23">2021-03-23</a></li><li><a href="#2020-12-15">2020-12-15</a></li><li><a href="#2020-11-25">2020-11-25</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"><img src="/documentation/img/caritas_logo.svg" alt="Caritas Online-Beratung" width="66" height="58"/></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a><a href="/documentation/docs/setup/setup-backend.html">Setting up Backend</a><a href="/documentation/docs/setup/setup-frontend.html">Setting up Frontend</a></div><div><h5>More</h5><a href="https://github.com/CaritasDeutschland">GitHub</a></div></section><section class="copyright">Copyright © 2022 Caritas Deutschland</section></footer></div></body></html>
