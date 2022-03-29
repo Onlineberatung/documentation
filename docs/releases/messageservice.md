@@ -15,7 +15,11 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
-#### 2021-12-14
+### 2022-03-29
+
+Update tag in the `.env` file to `dockerImage.v.46.release-2022-03-29`.
+
+### 2021-12-14
 
 Add the following RabbitMQ properties to the `UserService.env`:
 ```
