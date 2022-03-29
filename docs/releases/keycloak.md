@@ -15,6 +15,80 @@ If you want a changelog please see the project page at https://www.keycloak.org.
 
 No unreleased changes yet.
 
+### 2022-03-29
+#### Keycloak Migration Guide --> V. 17.0.0
+- Backup .env file
+- Backup docker-compose.yml
+- Backup keycloak extension
+- Backup Keycloak/Keycloak.env
+- Backup MariaDB keycloak database (see below)
+- Build and copy keycloak extensions with 17.0.0 depedencies to the server
+- Adapt Keycloak/Keycloak.env (see below)
+- Adapt docker-compose.yml (see below)
+- Restart Keycloak service (runs DB migration upon start, check logs)
+- Redeploy services with 17.0.0 dependencies updated
+- Configure Custom Event Logging (see below)
+
+####Backup MariaDB
+Execute while in backend folder (the one with the docker-compose.yml), assuming that the MariaDB 
+folder exists, containing an MariaDB.env file with `MYSQL_ROOT_PASSWORD` variable:
+
+`source MariaDB/MariaDB.env && docker-compose exec mariadb mysqldump -uroot 
+-p${MYSQL_ROOT_PASSWORD} keycloak > keycloak-dump-$(date +%F_%H-%M-%S).sql`
+
+####Restore MariaDB (in case of rollback)
+Execute while in backend folder (the one with the docker-compose.yml), assuming that the MariaDB 
+folder exists, containing an MariaDB.env file with MYSQL_ROOT_PASSWORD variable:
+
+`source MariaDB/MariaDB.env && docker-compose exec -T mariadb mysql -uroot -p${MYSQL_ROOT_PASSWORD} 
+keycloak < keycloak-dump.sql`
+
+####Adapt Keycloak.env
+Most of the former env. variables have changed, and configuration got easier. Here is an example 
+set of env variables which can be used to replace the former setup of version 13.0.1:
+
+- `KC_DB=mariadb`
+- `KC_DB_URL_HOST=mariadb`
+- `KC_DB_URL_DATABASE=keycloak`
+- `KC_DB_USERNAME=keycloak`
+- `KC_DB_PASSWORD=<the password>`
+- `KC_HTTP_RELATIVE_PATH=/auth`
+- `KC_PROXY=edge`
+- `KC_HOSTNAME=<hostname.com>`
+- `KC_LOG_LEVEL=INFO`
+
+####Adapt docker-compose.yml
+Paths for mounting extension and themes have changed. We need an additional flag in the container 
+entrypoint, since quarkus containers are supposed to be immutable. The flag tells Keycloak to start 
+up and apply the configuration for the specific environment. This enables us to use the standard 
+image without having to build and host our own.
+
+####docker-compose.yml
+```
+keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:17.0.0
+    restart: on-failure
+    depends_on:
+        - mariadb
+    env_file:
+        - Keycloak/Keycloak.env
+    networks:
+        - database_network
+        - frontend_network
+        - ldap_network
+    volumes:
+        - ./Keycloak/caritas-theme:/opt/keycloak/themes/caritas-theme
+        - ./Keycloak/keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar:/opt/keycloak/providers/keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar
+        - /etc/localtime:/etc/localtime:ro
+    entrypoint: "/opt/keycloak/bin/kc.sh start --auto-build"
+```
+
+#### Configure Custom Event Logging
+Extensive logging configuration is currently not supported. To omit IP addresses of each event, 
+we implemented a custom EventListenerProvider, which is included in the keycloak otp extension. 
+After deployment, it just has to be selected as the default in the event configuration:
+
 ### 2022-03-15
 
 Build maven package `keycloak-otp-config-spi-1.0-SNAPSHOT-keycloak.jar` of https://github.com/CaritasDeutschland/caritas-onlineberatung-keycloak-otp
