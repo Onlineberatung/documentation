@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 <a name="getConsultants"></a>
 # **getConsultants**
-> ConsultantSearchResultDTO getConsultants(page, perPage, filter)
+> ConsultantSearchResultDTO getConsultants(page, perPage, filter, sort)
 
 Returns the list of consultants by filter query parameter. [Authorization: Role: consultant-admin]
 
@@ -232,6 +232,7 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Number of page where to start in the query (1 &#x3D; first page) | [default to null]
  **perPage** | **Integer**| Number of items which are being returned per page | [default to null]
  **filter** | [**ConsultantFilter**](../model/.md)| The filter parameters to search for. If no filter is set all consultant are being returned. | [optional] [default to null]
+ **sort** | [**Sort**](../model/.md)| The sort parameter containing field and order the response should be sorted | [optional] [default to null]
 
 ### Return type
 
