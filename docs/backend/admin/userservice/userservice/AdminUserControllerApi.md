@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getSessions**](AdminUserControllerApi.md#getSessions) | **GET** /useradmin/sessions | Returns the list of sessions by filter query parameter. [Authorization: Role: user-admin]
 [**markAskerForDeletion**](AdminUserControllerApi.md#markAskerForDeletion) | **DELETE** /useradmin/askers/{askerId} | Delete a asker by given id [Authorization: Role: consultant-admin]
 [**markConsultantForDeletion**](AdminUserControllerApi.md#markConsultantForDeletion) | **DELETE** /useradmin/consultants/{consultantId} | Mark a consultant for deletion [Authorization: Role: consultant-admin]
+[**setConsultantAgencies**](AdminUserControllerApi.md#setConsultantAgencies) | **PUT** /useradmin/consultants/{consultantId}/agencies | Set consultant-agency relations [Authorization: Role: user-admin]
 [**updateConsultant**](AdminUserControllerApi.md#updateConsultant) | **PUT** /useradmin/consultants/{consultantId} | Updates a consultant [Authorization: Role: consultant-admin]
 
 
@@ -322,6 +323,34 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: Not defined
+
+<a name="setConsultantAgencies"></a>
+# **setConsultantAgencies**
+> setConsultantAgencies(consultantId, CreateConsultantAgencyDTO)
+
+Set consultant-agency relations [Authorization: Role: user-admin]
+
+    Existing relations are deleted, passed relations added.
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consultantId** | **String**|  | [default to null]
+ **CreateConsultantAgencyDTO** | [**List**](../model/CreateConsultantAgencyDTO.md)|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 <a name="updateConsultant"></a>
