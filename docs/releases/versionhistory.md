@@ -13,6 +13,14 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2022-05-05
+#### Own services
+- [ConsultingTypeService](../releases/consultingtypeservice.md)
+- [MailService](../releases/mailservice.md)
+- [UserService](../releases/userservice.md)
+- [VideoService](../releases/videoservice.md)
+- [VideoBackend](../releases/videobackend.md)
+
 ### 2022-03-29
 #### Own services
 - [AgencyService](../releases/agencyservice.md)

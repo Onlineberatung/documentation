@@ -23,20 +23,20 @@ If you want to check the individual service/component please klick on the corres
 |[AgencyService](../releases/agencyservice.md)|`dockerImage.v.51.release-2022-03-29`|
 |[Frontend](../releases/frontend.md)|`dockerImage.v.296-release-2022-03-29`|
 |[LiveService](../releases/liveservice.md)|`dockerImage.v.38.release-2022-03-29`|
-|[MailService](../releases/mailservice.md)|`dockerImage.v.27.release-2022-02-03`|
+|[MailService](../releases/mailservice.md)|`dockerImage.v.28.release-2022-05-05`|
 |[MessageService](../releases/messageservice.md)|`dockerImage.v.46.release-2022-03-29`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.6.release-2021-06-22`|
 |[UploadService](../releases/uploadservice.md)|`dockerImage.v.36.release-2022-03-29`|
-|[UserService](../releases/userservice.md)|`dockerImage.v.236.release-2022-03-29`|
-|[VideoService](../releases/videoservice.md)|`dockerImage.v.23.release-2022-03-29`|
+|[UserService](../releases/userservice.md)|`dockerImage.v.274.release-2022-05-05`|
+|[VideoService](../releases/videoservice.md)|`dockerImage.v.26.release-2022-05-05`|
 |[StatisticsService](../releases/statisticsservice.md)|`dockerImage.v.5.release-2022-03-29`|
-|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.18.release-2021-12-14`|
+|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.22.release-2022-05-05`|
  
 ### 3rd party components
 |Component|Current image version|
 |--- |--- |
 |[Adminer](../releases/adminer.md)|`4.8.1`|
-|[Keycloak](../releases/keycloak.md)|`13.0.1`|
+|[Keycloak](../releases/keycloak.md)|`17.0.0`|
 |[MariaDB](../releases/mariadb.md)|`10.5.10`|
 |[MongoDB](../releases/mongodb.md)|`4.0.5`|
 |[Nosqlclient](../releases/nosqlclient.md)|`4.0.1`|

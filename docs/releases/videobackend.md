@@ -15,6 +15,13 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2022-05-05
+
+Update the files on the server to the latest of the master branch or checkout `release-2022-05-05` via git.
+
+Modify the `XMPP_MUC_MODULE`property in your .env from `Von:XMPP_MUC_MODULES=token_moderation,close_room` 
+to `XMPP_MUC_MODULES=token_moderation,close_room,create_room`  
+
 ### 2022-02-10
 
 Pull the latest changes from master branch.
