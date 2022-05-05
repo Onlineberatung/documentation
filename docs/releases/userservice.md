@@ -15,6 +15,24 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2022-05-05
+
+Update tag to `dockerImage.v.274.release-2022-05-05` in the `.env` file.
+
+You need to add a new location in nginx/conf/locations/userservice.conf to make the new
+appointments api available to the client.
+```
+location /service/appointments {
+    limit_req zone=by_ip_10rs burst=5;
+    proxy_pass http://userservice:8080/appointments;
+    resolver 127.0.0.11;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto http;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+```
+
 ### 2022-03-29
 
 Change the following properties in `UserService.env` as follows:
