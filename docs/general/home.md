@@ -31,3 +31,10 @@ Please have a look at our [Code of Conduct](https://github.com/CaritasDeutschlan
 ## Contributing
 
 Please read our [contribution guidelines](https://github.com/CaritasDeutschland/.github/blob/master/CONTRIBUTING.md) before contributing to this project.
+
+### Discussions
+
+We invite you to join our [discussions](https://github.com/CaritasDeutschland/caritas-onlineBeratung-frontend/discussions) for questions or sharing ideas.
+
+In the [ideas category](https://github.com/CaritasDeutschland/caritas-onlineBeratung-frontend/discussions/categories/ideas) we will also share new features that might be implemented in the future. Please make sure to join and be part of further product development! 🥳
+

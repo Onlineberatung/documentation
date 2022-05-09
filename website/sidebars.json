@@ -2,8 +2,7 @@
   "docs": {
     "General": [
       "general/home",
-      "general/git-workflow",
-      "general/browser-matrix"
+      "general/git-workflow"
     ],
     "Project setup": [
       "setup/setup-backend",
@@ -38,6 +37,11 @@
       "frontend/build",
       "frontend/tools-and-technologies",
       "frontend/testing"
+    ],
+    "Quality Assurance": [
+      "quality-assurance/browser-matrix",
+      "quality-assurance/test-cases",
+      "quality-assurance/smoke-testsuite"
     ],
     "Releases": [
       "releases/overview",
