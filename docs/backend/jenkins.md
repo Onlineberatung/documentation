@@ -1,33 +1,33 @@
 ---
 id: jenkins
-title: Einrichten des Build-Prozesses über Jenkins
+title: Setting up the build process via Jenkins
 ---
-In jedem Repository befindet sich ein Jenkinsfile, das für den Buildprozess über Jenkins verwendet werden kann:
+In each repository there is a Jenkinsfile that can be used for the build process via Jenkins:
 
 `\Jenkinsfile`
 
-Für die Einrichtung der Build-Pipeline wird im Jenkins ein neuer Auftrag vom Typ __Pipeline__ angelegt.
+To set up the build pipeline, a new job of type __Pipeline__ is created in Jenkins.
 
-## Parametrisierung
-Der Auftrag sollte als parametrisiert markiert werden ("Dieser Build ist parametrisiert") und ein _Text-Parameter_ angelegt werden:
+## Parameterization
+The job should be marked as parameterized ("This build is parameterized") and a _text parameter_ should be created:
 
 ```
-Text-Parameter
+Text-parameter
 Name: BRANCH_NAME
-Vorgabewert: <Name des gewünschten Standard-Branches, z.B. develop>
+Default value: <name of the desired default branch, e.g. develop>.
 ```
 
-Dadurch kann beim Starten des Build-Prozess der Branch angegeben werden, für den der Build durchgeführt werden soll.
+This allows to specify the branch for which the build should be performed when starting the build process.
 
 ## Pipeline
-Bei der Pipeline-Definition wird der Typ __Pipline script from SCM__ gewählt und der Zugriff auf das Repository entsprechend konfiguriert. Hierbei sind ggf. die Benutzerdaten mit anzugeben. 
+In the pipeline definition, the type __Pipline script from SCM__ is selected and access to the repository is configured accordingly. If necessary, the user data must also be specified here.  
 
-Als __Branches to build__ sollte die Variable aus der Parametrisierung wie folgt angegeben werden:
+As __Branches to build__ the variable from the parameterization should be specified as follows:
 
 `*/${BRANCH_NAME}`
 
-## Globale System-Variablen
-Für die Ausführung des Build-Prozesses müssen im Jenkins noch folgende globalen Variablen definiert werden (_Jenkins verwalten_ -> _System konfigurieren_ -> _Globale Eigenschaften_ -> _Umgebungsvariablen_)
+## Global system variables
+For the execution of the build process, the following global variables must still be defined in Jenkins (_Manage Jenkins_ -> _Configure System_ -> _Global Properties_ -> _Environment Variables_).
 
 ```
 ARTIFACT_GROUP=<Artefakt-Gruppe für alle Services, z.B. online-beratung>

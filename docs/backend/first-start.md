@@ -3,119 +3,119 @@ id: first-start
 title: First start
 ---
 
-> ⚠️Sicherheitshinweis ⚠️
+> ⚠️ Safety instruction ⚠️
 > 
-> Die hier beschriebene Konfiguration dient der Einrichtung eines Entwicklersystems.
+> The configuration described here is used to set up a developer system.
 >
-> Bei einer Einrichtung als Produktivsystem müssen individuelle Benutzer und Kennwörter anstelle der hier beschriebenen vergeben werden!
+> When setting up as a productive system, individual users and passwords must be assigned instead of those described here!
 
-Nachfolgende Schritte sind in Reihenfolge auszuführen.
+The following steps must be carried out in sequence.
 
-## Keycloak Hostname festlegen
+## Set Keycloak Hostname
 
-In der Environment-Datei für Keycloak (`./Keycloak/Keycloak.env`) müssen der Hostname und die Datenbank-Zugangsinformationen festgelegt werden:
+In the environment file for Keycloak (`./Keycloak/Keycloak.env`) the hostname and database access information must be specified:
 
-`# Host/Adresse zur MariaDB innerhalb Docker`\
+`# Host/address to MariaDB inside Docker`\
 `DB_ADDR=mariadb`\
-`# Datenbankname (aus der ./MariaDB/init.sql)`\
+`# Database name (from the ./MariaDB/init.sql)`\
 `DB_DATABASE=keycloak`\
-`# Passwort für die Datenbank (aus der ./MariaDB/init.sql)`\
+`# Password for the database (from the ./MariaDB/init.sql)`\
 `DB_USER=keycloak`\
-`# Passwort für die Datenbank (aus der ./MariaDB/init.sql)`\
+`# Password for the database (from the ./MariaDB/init.sql)`\
 `DB_PASSWORD=keycloak`\
-`# Host/Adresse zur MariaDB innerhalb Docker`\
+`# Host/address to MariaDB inside Docker`\
 `KEYCLOAK_HOSTNAME=<host>`
 
-Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
+Hostname for local development e.g. ``onlineberatung.local``
 
-## MariaDB Config anpassen
+## Customize MariaDB Config
 
-Im Ordner ``./MariaDB/config/`` befindet sich die Datei ``config-file.cnf``
-Diese Datei enthält eine Zeitzonenkonfiguration, welche beim ersten Start von MariaDB für Probleme sorgt.
-Daher muss diese Konfiguration beim ersten Start mit `#` auskommentiert werden.
+In the folder ``./MariaDB/config/`` there is the file ``config-file.cnf``.
+This file contains a time zone configuration which causes problems when MariaDB is started for the first time.
+Therefore this configuration must be commented out with `#` at the first start.
 
-In der Environment-Datei (`./MariaDB/MariaDB.env`) muss das Root Passwort festgelegt werden:
+In the environment file (`./MariaDB/MariaDB.env`) the root password must be set:
 
-`# Passwort für den Benutzer root`\
+`# Password for the user root`\
 `MYSQL_ROOT_PASSWORD=root`
 
-## nginx-Konfiguration anpassen
+## Customize nginx configuration
 
-In der nginx-Konfiguration muss der server_name in den folgenden Dateien auf den Hostname angepasst werden:
+In the nginx configuration, the server_name must be changed to the hostname in the following files:
 
 - `./nginx/server.conf`
 - `./nginx/adminer.conf`
-- `./nginx/server-sll.conf` (nicht für lokale Entwicklung)
+- `./nginx/server-sll.conf` (not for local development)
 
 `server_name <host>;`
 
-In der Environment-Datei (`./nginx/nginx.env`) muss die Application URL festgelegt werden:
+In the environment file (`./nginx/nginx.env`) the application URL must be specified:
 
-`APPLICATION_URL=<applikations-url-inkl-protokoll>` (z.B. https://onlineberatung.de)
+`APPLICATION_URL=<applikations-url-inkl-protokoll>` (e.g. https://onlineberatung.de)
 
-Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
+Hostname for local development e.g. ``onlineberatung.local``
 
-Zusätzlich muss SSL lokal deaktiviert werden. Dafür folgende Anpassungen vornehmen:
+In addition, SSL must be disabled locally. To do this, make the following adjustments:
 
-1. Beim `proxy` in `docker-compose.yml` das Volume `server-ssl.conf` entfernen.
-2. In `adminer.conf` den `ssl` Parameter bei `listen` entfernen, sowie alle Zeilen unterhalb bzgl. SSL.
-3. In `nginx.conf` den Include von `server-ssl.conf` entfernen.
-4. In `security-headers.conf` bei der CSP zusätzlich das `ws:` Protokoll erlauben
+1. remove the `server-ssl.conf` volume from `proxy` in `docker-compose.yml`.
+2. in `adminer.conf` remove the `ssl` parameter at `listen` and all lines below regarding SSL.
+3. in `nginx.conf` remove the include of `server-ssl.conf`.
+4. in `security-headers.conf`, additionally allow the `ws:` protocol in the CSP.
 
-Nun muss das Rate-Limiting von Keycloak deaktiviert werden. Dazu alle Zeilen mit `limit_req` in `keycloak.conf` entfernen. Zusätzlich die Zeile `include ip-restrictions.conf;` entfernen.
+Now the rate limiting of Keycloak must be deactivated. To do this, remove all lines with `limit_req` in `keycloak.conf`. Additionally remove the line `include ip-restrictions.conf;`.
 
-Auch in `rocketchat.conf` muss die Zeile `include ip-restrictions.conf;` entfernt werden.
+Also in `rocketchat.conf` the line `include ip-restrictions.conf;` must be removed.
 
-## MongoDB-Konfiguration anpassen
+## Customize MongoDB configuration
 
-In der Environment-Datei für die MongoDB (`./mongoDB/mongoDB.env`) müssen die initialen Zugangsdaten festgelegt werden:
+In the environment file for MongoDB (`./mongoDB/mongoDB.env`) the initial access data must be defined:
 
-`# Adminbenutzer-Name für die MongoDB Verbindung`\
+`# Admin user name for the MongoDB connection`\
 `MONGO_INITDB_ROOT_USERNAME=admin`\
-`# Adminbenutzer-Passwort für die MongoDB Verbindung`\
+`# Admin user password for MongoDB connection`\
 `MONGO_INITDB_ROOT_PASSWORD=admin`\
-`# Initiale Datenbank der MongoDB`\
+`# Initial database of MongoDB`\
 `MONGO_INITDB_DATABASE=nosqlclient`
 
-## Nosqlclient-Konfiguration anpassen
+## Customize Nosqlclient configuration
 
-In der Environment-Datei für den Nosqlclient (`./Nosqlclient/Nosqlclient.env`) muss der Hostname und die MongoDB Connection URL festgelegt werden:
+In the environment file for the Nosqlclient (`./Nosqlclient/Nosqlclient.env`) the hostname and the MongoDB connection URL must be specified:
 
-`# MongoDB Verbindung mit den Daten aus ./mongoDB/init-nosqlclient-user.js`\
+`# MongoDB connection with the data from ./mongoDB/init-nosqlclient-user.js`\
 `MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<nosqlclient_db_name>`\
 `ROOT_URL=<host>:3001`
 
-Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
+Hostname for local development e.g. ``onlineberatung.local``
 
-## Rocket.Chat-Konfiguration anpassen
+## Customize Rocket.Chat configuration
 
-In der Environment-Datei für den Rocket.Chat (`./Rocket.Chat/Rocket.Chat.env`) muss der Hostname und die MongoDB Connection URLs festgelegt werden:
+In the environment file for Rocket.Chat (`./Rocket.Chat/Rocket.Chat.env`) the hostname and MongoDB connection URLs must be specified:
 
-`# MongoDB Verbindung mit den Daten aus ./mongoDB/init-rocketchat-user.js`\
+`# MongoDB connection with the data from ./mongoDB/init-rocketchat-user.js`\
 `MONGO_URL=mongodb://<db_user>:<db_password>@<db_host>:<db_port>/<rocketchat_db_name>`\
 `ROOT_URL=<host>:3000`\
 `MONGO_OPLOG_URL=mongodb://<oplog_user>:<oplog_user_password>@<db_host>:<db_port>/local?authSource=admin&replicaSet=rs0`
 
-Hostname für lokale Entwicklung z.B. ``onlineberatung.local``
+Hostname for local development e.g. ``onlineberatung.local``
 
-## OpenLDAP-Konfiguration anpassen
+## Customize OpenLDAP configuration
 
-In der Environment-Datei für OpenLDAP (`./OpenLDAP/OpenLDAP.env`) muss die LDAP Konfiguration angegeben werden:
+In the environment file for OpenLDAP (`./OpenLDAP/OpenLDAP.env`) the LDAP configuration must be specified:
 
-`# Organisation, in welcher die Benutzer angelegt werden`\
+`# Organization in which the users are created`\
 `LDAP_ORGANISATION=Onlineberatung`\
-`# Domain, mit der die Benutzer angelegt werden`\
+`# Domain with which the users are created`\
 `LDAP_DOMAIN=onlineberatung.de`\
-`# Das Administrator Kennwort für die LDAP Verbindung`\
+`# The administrator password for the LDAP connection`\
 `LDAP_ADMIN_PASSWORD=admin`\
-`# Das Kennwort für die Konfiguration von OpenLDAP`\
+`# The password for configuring OpenLDAP`\
 `LDAP_CONFIG_PASSWORD=config`
 
-## Optional: Die restart-policy aller Services auf "no" setzen
+## Optional: Set the restart-policy of all services to "no
 
-Um bei Problemen nicht ein andauernd neustartendes System zu erhalten kann die restart-policy aller Services auf `"no"` gesetzt werden.
+In order not to get a constantly restarting system in case of problems, the restart policy of all services can be set to `"no"`.
 
-Dadurch können Probleme behoben und die Services anschließend kontrolliert gestartet werden.
+This allows problems to be fixed and the services to be started in a controlled manner.
 
 ## RabbitMQ configuration
 
@@ -139,87 +139,87 @@ Finally you need to add `include server/server-rabbitmq.conf;` to the `http` sec
 
 If you want to use the management UI in production mode please follow the [official documentation](https://www.rabbitmq.com/management.html#configuration) to secure this endpoint.
 
-## Alle Services starten
+## Start all services
 
-Gestartet werden alle Services mit folgendem Befehl im (Haupt-)Verzeichnis, wo die Datei _docker-compose.yml_ liegt: _docker-compose up -d_ (ohne -d um die Log-Ausgabe im Terminal anzuzeigen).
-Das System benötigt nun ein kurze Zeit um die Keycloak-Initialisierung durchzuführen. Bitte ein paar Minuten warten.
+All services are started with the following command in the (main) directory where the _docker-compose.yml_ file is located: _docker-compose up -d_ (without -d to display the log output in the terminal).
+The system now needs a short time to perform the keycloak initialization. Please wait a few minutes.
 
-Beim ersten Start ist es normal, dass verschiedene Dienste Fehler im Log anzeigen bzw. nicht starten können. Dieser werden mit den nächsten Konfigurationsschritten behoben.
+At the first start it is normal that several services show errors in the log or cannot start. These will be fixed with the next configuration steps.
 
-## Keycloak Administrator Account anlegen
+## Create Keycloak Administrator account
 
-Anlegen des Administrator-Accounts für Keycloak:\
+Creating the administrator account for Keycloak:\
 `docker exec keycloak /opt/jboss/keycloak/bin/add-user-keycloak.sh -u <USERNAME> -p <PASSWORD>`
 
 ## Anlegen der Rocket.Chat-Datenbank in der mongoDB
 
-Die Rocket.Chat-Datenbank und der zugehörige Benutzer müssen mit folgendem Befehl manuell angelegt werden:
+The Rocket.Chat database and the associated user must be created manually with the following command:
 
 `docker exec mongodb bash -c "mongo -u <ADMIN_USER> -p <ADMIN_PASSWORD> --authenticationDatabase admin rocketchat /setup/init-rocketchat-user.js"`
 
-(Unter Windows muss noch _winpty_ vor _docker_ ergänzt werden)
+(On Windows you still have to add _winpty_ in front of _docker_).
 
-Initiale Admin-Benutzerdaten stehen in der `mongoDB/mongoDB.env`: `MONGO_INITDB_ROOT_USERNAME` und `MONGO_INITDB_ROOT_PASSWORD`.
+Initial admin user data are in the `mongoDB/mongoDB.env`: `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD`.
 
-Anschließend muss noch der Oplog-Benutzer über folgenden Befehl angelegt werden:
+Then the oplog user must be created using the following command:
 
 `docker exec mongodb bash -c "mongo -u <ADMIN_USER> -p <ADMIN_PASSWORD> --authenticationDatabase admin admin /setup/init-oplog-user.js"`
 
-Um in MongoDB ein Replica-Set (zwingend erforderlich) verwenden zu können muss die docker-compose.yml angepasst werden. Dazu wird die command-Option für den MongoDB Container wie folgt geändert:
+To be able to use a replica set (mandatory) in MongoDB, the docker-compose.yml must be adapted. To do this, the command option for the MongoDB container is changed as follows:
 
-`command: --smallfiles --oplogSize 128 --replSet rs0 --storageEngine mmapv1`
+`command: --smallfiles --oplogSize 128 --replSet rs0 --storageEngine mmapv1`.
 
-Nun muss MongoDB neugestartet werden damit das Replica-Set initialisiert werden kann:
+Now MongoDB has to be restarted to initialize the replica set:
 
-`docker-compose up -d --no-deps mongodb`
+`docker-compose up -d --no-deps mongodb`.
 
-Sobald MongoDB gestartet wurde wird das Replica-Set mit folgendem Befehl initialisiert:
+Once MongoDB is started the replica set is initialized with the following command:
 
 `docker exec mongodb bash -c "mongo -u <ADMIN_USER> -p <ADMIN_PASSWORD> --authenticationDatabase admin local /setup/init-replica-set.js"`
 
-## LDAP Konfigurieren
+## Configure LDAP
 
-**Hinweis:** Beim ersten Start auf einem Linux-System gab es ein Problem mit dem Verzeichnis `./OpenLDAP/slap.d`. Dieses hatte die falschen Benutzerrechte. Die Rechte müssen entsprechend geändert werden oder der Ordner neu angelegt werden. Danach kann der Container gestartet werden:
+**Note:** At the first start on a Linux system there was a problem with the directory `./OpenLDAP/slap.d`. This had the wrong user rights. The rights have to be changed accordingly or the folder has to be created again. After that the container can be started:
 
 `docker start openldap`
 
-### OpenLDAP konfigurieren
+### Configure OpenLDAP
 
-- [OpenLDAP konfigurieren](../backend/openldap-configuration.md)
+- [OpenLDAP configuration](../backend/openldap-configuration.md)
 
-## MariaDB Config zurücksetzen
+## Reset MariaDB Config
 
-Die oben gemachten Änderungen an der Zeitzonenkonfiguration zurücksetzen.
+Reset the changes made above to the time zone configuration.
 
 ## Configuration
 
-Anschließend sollten die [Services konfiguriert](../backend/service-configuration.md) werden.  
-Also don't forget to set the correct [CORS](../backend/cors-configuration.md) settings.
+Afterwards the [Services configured](../backend/service-configuration.md) should be set.  
+Also do not forget to set the correct [CORS](../backend/cors-configuration.md) settings.
 
-## Bekannte Fehler und deren Behebung
+## Known bugs and their fixes
 
-In diesem Abschnitt werden die bekannten Fehler und deren Behebung beschrieben
+This section describes the known errors and how to fix them
 
-### OpenLDAP startet nicht
+### OpenLDAP does not start
 
-Die Meldung `Error: the database directory (/var/lib/ldap) is empty but not the config directory (/etc/ldap/slapd.d)` bedeutet, dass im Ordner `./OpenLDAP` der Ordner `slapd.d` gelöscht werden muss. In diesem Fall sollte unter Windows nach dem Löschen des Ordners auch Docker neu gestartet werden, da ansonsten noch ein Verweis auf den Ordner besteht.
+The message `Error: the database directory (/var/lib/ldap) is empty but not the config directory (/etc/ldap/slapd.d)` means that in the folder `./OpenLDAP` the folder `slapd.d` must be deleted. In this case, Docker should also be restarted on Windows after deleting the folder, otherwise there is still a reference to the folder.
 
-Die genaue Ursache für die Meldungen `could not stat config file "/etc/ldap/slapd.conf": No such file or directory (2)` und `daemon: bind(8) failed errno=99 (Cannot assign requested address)` konnten bisher nicht ermittelt werden. Diese Fehler sind bisher auch nur bei der Installation auf einem MAC aufgetreten und dadurch behoben werden, dass eine neuere Version des Docker-Images für openLDAP verwendet wurde.
+The exact cause for the messages `could not stat config file "/etc/ldap/slapd.conf": No such file or directory (2)` and `daemon: bind(8) failed errno=99 (Cannot assign requested address)` could not be determined yet. These errors have also only occurred so far when installing on a MAC and are fixed by using a newer version of the Docker image for openLDAP.
 
-### Keycloak-Anmeldung nicht möglich
+### Keycloak login not possible
 
-#### Keine Anmeldung als Admin möglich - Anmeldeformular nicht aufrufbar
+#### No login as admin possible - login form not accessible
 
-Sollte eine Anmeldung als Admin nicht möglich sein (Keycloak blockiert das Anmelde-Formular mit dem Hinweis, dass ein lokaler Admin benötigt wird), muss der Admin noch einmal neu angelegt werden (siehe oben: "Keycloak Administrator Account anlegen") und der Container neu gestartet werden:
+If it is not possible to log in as admin (Keycloak blocks the login form with the note that a local admin is required), the admin must be created again (see above: "Create Keycloak Administrator Account") and the container restarted:
 
 `docker restart keycloak`
 
-#### Keine Anmeldung ohne HTTPS möglich
+#### No login possible without HTTPS
 
-Beim ersten Start verbietet Keycloak den Zugriff auf den Master-Realm ohne SSL. Diese Einstellung kann über die Datenbank aufgehoben werden.
+At the first start Keycloak prohibits access to the master realm without SSL. This setting can be overridden via the database.
 
-Hierzu ruft man den Adminer auf und wechselt in die Datenbank "keycloak". Dort bearbeitet man in der Tabelle "realm" den Master-Datensatz und setzt die Spalte "ssl_required" auf "NONE".
+To do this, call the admin and change to the database "keycloak". There you edit the master record in the table "realm" and set the column "ssl_required" to "NONE".
 
-Damit die Einstellung wirksam wird muss der Keycloak-Container neu gestartet werden:
+The keycloak container must be restarted for the setting to take effect:
 
 `docker restart keycloak`

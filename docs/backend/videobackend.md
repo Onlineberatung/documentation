@@ -114,6 +114,4 @@ Just click anywhere on the screen (to select the tab/page) and type ```thisisuns
 
 This is especially true for Chrome on Mac since it treats things different as the Windows version.
 
-See [Stackoverflow](https://stackoverflow.com/questions/58802767/no-proceed-anyway-option-on-neterr-cert-invalid-in-chrome-on-macos/58957322#58957322)
- 
- 
+See [Stackoverflow](https://stackoverflow.com/questions/58802767/no-proceed-anyway-option-on-neterr-cert-invalid-in-chrome-on-macos/58957322#58957322) 

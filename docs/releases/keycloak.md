@@ -29,7 +29,7 @@ No unreleased changes yet.
 - Redeploy services with 17.0.0 dependencies updated
 - Configure Custom Event Logging (see below)
 
-####Backup MariaDB
+#### Backup MariaDB
 Execute while in backend folder (the one with the docker-compose.yml), assuming that the MariaDB 
 folder exists, containing an MariaDB.env file with `MYSQL_ROOT_PASSWORD` variable:
 
@@ -43,7 +43,7 @@ folder exists, containing an MariaDB.env file with MYSQL_ROOT_PASSWORD variable:
 `source MariaDB/MariaDB.env && docker-compose exec -T mariadb mysql -uroot -p${MYSQL_ROOT_PASSWORD} 
 keycloak < keycloak-dump.sql`
 
-####Adapt Keycloak.env
+#### Adapt Keycloak.env
 Most of the former env. variables have changed, and configuration got easier. Here is an example 
 set of env variables which can be used to replace the former setup of version 13.0.1:
 
@@ -57,13 +57,13 @@ set of env variables which can be used to replace the former setup of version 13
 - `KC_HOSTNAME=<hostname.com>`
 - `KC_LOG_LEVEL=INFO`
 
-####Adapt docker-compose.yml
+#### Adapt docker-compose.yml
 Paths for mounting extension and themes have changed. We need an additional flag in the container 
 entrypoint, since quarkus containers are supposed to be immutable. The flag tells Keycloak to start 
 up and apply the configuration for the specific environment. This enables us to use the standard 
 image without having to build and host our own.
 
-####docker-compose.yml
+#### docker-compose.yml
 ```
 keycloak:
     container_name: keycloak
