@@ -1,17 +1,17 @@
 ---
 id: build-and-load-docker-image
-title: Docker Image lokal bauen und in Docker laden
+title: Build Docker image locally and load it into Docker
 ---
 ## AgencyService
-### Docker-Image lokal bauen
-Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
+### Build Docker image locally
+A Docker image can be built locally by the service with the following command or by calling the following batch file, which can be found in the root directory of the service:
 
 `build-docker.cmd`
 
-Das Image wird mit dem Tag `development` in der lokale Docker-Registry abgelegt und kann lokal für die Entwicklung verwendet werden.
+The image is placed in the local Docker registry with the tag `development` and can be used locally for development.
 
-### Docker-Image übertragen
-Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertragen können folgende Befehle verwendet werden:
+### Transfer Docker image
+To transfer the Docker image to another Docker registry (e.g. other PC) the following commands can be used:
 
 **Export**
 `docker save -o agencyservice.tar cob/agencyservice:development`
@@ -20,15 +20,15 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 `docker load -i agencyservice.tar`
 
 ## MailService
-### Docker-Image lokal bauen
-Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
+### Build Docker image locally
+A Docker image can be built locally by the service with the following command or by calling the following batch file, which can be found in the root directory of the service:
 
 `build-docker.cmd`
 
-Das Image wird mit dem Tag `development` in der lokale Docker-Registry abgelegt und kann lokal für die Entwicklung verwendet werden.
+The image is placed in the local Docker registry with the tag `development` and can be used locally for development.
 
-### Docker-Image übertragen
-Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertragen können folgende Befehle verwendet werden:
+### Transfer Docker image
+To transfer the Docker image to another Docker registry (e.g. other PC) the following commands can be used:
 
 **Export**
 `docker save -o mailservice.tar cob/mailservice:development`
@@ -37,15 +37,15 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 `docker load -i mailservice.tar`
 
 ## MessageService
-### Docker-Image lokal bauen
-Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
+### Build Docker image locally
+A Docker image can be built locally by the service with the following command or by calling the following batch file, which can be found in the root directory of the service:
 
 `build-docker.cmd`
 
-Das Image wird mit dem Tag `development` in der lokale Docker-Registry abgelegt und kann lokal für die Entwicklung verwendet werden.
+The image is placed in the local Docker registry with the tag `development` and can be used locally for development.
 
-### Docker-Image übertragen
-Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertragen können folgende Befehle verwendet werden:
+### Transfer Docker image
+To transfer the Docker image to another Docker registry (e.g. other PC) the following commands can be used:
 
 **Export**
 `docker save -o messageservice.tar cob/messageservice:development`
@@ -54,15 +54,15 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 `docker load -i messageservice.tar`
 
 ## UserService
-### Docker-Image lokal bauen
-Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
+### Build Docker image locally
+A Docker image can be built locally by the service with the following command or by calling the following batch file, which can be found in the root directory of the service:
 
 `build-docker.cmd`
 
-Das Image wird mit dem Tag `development` in der lokale Docker-Registry abgelegt und kann lokal für die Entwicklung verwendet werden.
+The image is placed in the local Docker registry with the tag `development` and can be used locally for development.
 
-### Docker-Image übertragen
-Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertragen können folgende Befehle verwendet werden:
+### Transfer Docker image
+To transfer the Docker image to another Docker registry (e.g. other PC) the following commands can be used:
 
 **Export**
 `docker save -o userservice.tar cob/userservice:development`
@@ -71,15 +71,15 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 `docker load -i userservice.tar`
 
 ## UploadService
-### Docker-Image lokal bauen
-Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
+### Build Docker image locally
+A Docker image can be built locally by the service using the following command or calling the following batch file, which can be found in the root directory of the service:
 
 `build-docker.cmd`
 
-Das Image wird mit dem Tag `development` in der lokale Docker-Registry abgelegt und kann lokal für die Entwicklung verwendet werden.
+The image is placed in the local Docker registry with the tag `development` and can be used locally for development.
 
-### Docker-Image übertragen
-Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertragen können folgende Befehle verwendet werden:
+### Transfer Docker image
+To transfer the Docker image to another Docker registry (e.g. other PC) the following commands can be used:
 
 **Export**
 `docker save -o uploadservice.tar cob/uploadservice:development`
@@ -88,15 +88,15 @@ Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertr
 `docker load -i uploadservice.tar`
 
 ## LiveService
-### Docker-Image lokal bauen
-Ein Docker-Image kann vom Service lokal mit folgendem Befehl bzw. dem Aufruf folgender Batchdatei, welche im Root-Verzeichnis des Service zu finden ist, gebaut werden:
+### Build Docker image locally
+A Docker image can be built locally by the service with the following command or by calling the following batch file, which can be found in the root directory of the service:
 
 `build-docker.cmd`
 
-Das Image wird mit dem Tag `development` in der lokale Docker-Registry abgelegt und kann lokal für die Entwicklung verwendet werden.
+The image is placed in the local Docker registry with the tag `development` and can be used locally for development.
 
-### Docker-Image übertragen
-Um das Docker-Image in einer andere Docker-Registry (z.B. anderer PC) zu übertragen können folgende Befehle verwendet werden:
+### Transfer Docker image
+To transfer the Docker image to another Docker registry (e.g. other PC) the following commands can be used:
 
 **Export**
 `docker save -o liveservice.tar cob/liveservice:development`

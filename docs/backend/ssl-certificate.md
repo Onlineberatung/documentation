@@ -3,56 +3,56 @@ id: ssl-certificate
 title: SSL certificate
 ---
 
-## Eigene Zertifikate einbinden
+## Integrate own certificates
 
-Nachfolgend wird beschrieben wie ein SSL-Zertifikat eingebunden werden kann.
+The following describes how to integrate an SSL certificate.
 
-# Konfiguration
+# Configuration
 
-Die Zertifikatsdaten müssen auf dem Server abgelegt werden, es werden eine .pem-Datei sowie die zugehörige Schlüssel-Datei (.key) benötigt. Darüber hinaus sollte man eine individuelle Diffie-Hellman-Parameter-Datei erstellen. Dies kann über `openssl` mit folgenden Befehl erfolgen:
+The certificate data must be stored on the server, a .pem file and the corresponding key file (.key) are required. Furthermore you should create an individual Diffie-Hellman parameter file. This can be done via `openssl` with the following command:
 
 ```openssl dhparam -out <filename> 4096```
 
-Die Pfade (`<path_to_pem_file>`, `<path_to_key_file>`, `path_to_dhparam_file`) zu den entsprechenden Dateien müssen dann in der Datei `./nginx/conf/ssl-default.conf` hinterlegt werden.
+The paths (`<path_to_pem_file>`, `<path_to_key_file>`, `path_to_dhparam_file`) to the corresponding files must then be stored in the file `./nginx/conf/ssl-default.conf`.
 
 ## Let's encrypt
 
-Nachfolgend wird beschrieben wie ein SSL-Zertifikat von Let's Encrypt eingerichtet werden kann.
+The following describes how to set up an SSL certificate from Let's Encrypt.
 
 ### acme.sh
 
-Das Anfordern und Erneuern des Zertifikats erfolgt über **acme.sh**:
+Requesting and renewing the certificate is done via **acme.sh**:
 
 https://github.com/Neilpang/acme.sh \
 https://github.com/Neilpang/Run-acme.sh-in-docker \
 https://hub.docker.com/r/neilpang/acme.sh
 
-Der acme.sh-Container ist für das Anfordern und Erneuern des Zertifikats zuständig.
+The acme.sh container is responsible for requesting and renewing the certificate.
 
-#### SSL-Zertifikat anfordern
+#### Request SSL certificate
 
-Das Zertifikat wird über folgenden Befehl bei Let's Encrypt erzeugt und abgeholt:
+The certificate is generated and retrieved from Let's Encrypt using the following command:
 
 `docker-compose exec acme-sh --issue --standalone -d <Host> --keylength ec-256 --force`
 
-Dieser Befehl ist i.d.R. nur einmal durchzuführen.
+This command usually needs to be performed only once.
 
-#### SSL-Zertifikat installieren
+#### Install SSL certificate
 
-Das Installieren des Zertifikats erfolgt über folgenden Befehl:
+The certificate is installed using the following command:
 
 `docker-compose exec acme-sh --install-cert -d <Host> --ecc --reloadcmd "cp /acme.sh/<Host>_ecc/<Host>.key /var/ssl/proxy && cp /acme.sh/<Host>_ecc/<Host>.cer /var/ssl/proxy"`
 
-Hierbei werden die Zertifikatsdatei sowie die zugehörige Schlüssel-Datei in den Backend-Order /ssl kopiert. Auf diesen Ordner hat auch der nginx Zugriff, so dass darüber das Zertifikat eingebunden ist.
+The certificate file and the associated key file are copied to the /ssl backend folder. The nginx also has access to this folder, so that the certificate is included via it.
 
-#### SSL-Zertifikat erneuern
+#### Renew SSL certificate
 
-**acme.sh** kümmert sich normalerweise selbstständig um das Erneuern des SSL-Zertifikats bevor dieses abläuft. Allerdings muss der nginx neu gestartet werden damit das erneuterte Zertifikat geladen wird.
+**acme.sh** normally takes care of renewing the SSL certificate on its own before it expires. However, the nginx must be restarted for the renewed certificate to be loaded.
 
-Der Befehl für das erneute Laden der Konfiguration beim nginx kann dem Befehl für das Installieren des Zertifikats hinzugefügt werden, z.B.
+The command for reloading the configuration at the nginx can be added to the command for installing the certificate, e.g.
 
 `docker-compose exec acme-sh --install-cert -d <Host> --ecc --reloadcmd "cp /acme.sh/<Host>_ecc/<Host>.key /var/ssl/proxy && cp /acme.sh/<Host>_ecc/<Host>.cer /var/ssl/proxy && <HIER EINFÜGEN>"`
 
-Die nginx-Konfiguration wird derzeit allerdings über einen cron-Befehl wöchentlich erneuert, indem der Container neu gestartet wird:
+However, the nginx configuration is currently renewed weekly via a cron command by restarting the container:
 
 `0 0 7 * * docker restart nginx >/dev/null 2>&1`

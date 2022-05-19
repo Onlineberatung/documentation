@@ -3,22 +3,22 @@ id: install-and-running-locally
 title: Installing and running the backend for local development
 ---
 
-Im Folgenden werden die speziellen Voraussetzungen und Tools genannt welche für die lokale Entwicklung benötigt werden.
+The following are the specific requirements and tools needed for local development.
 
-## Voraussetzungen
+## Preconditions
 
 ### docker-compose
 
-Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann, wird Docker und Docker Compose vorausgesetzt.
+In order to properly launch the whole environment with its dependencies, Docker and docker-compose are required.
 
 ### docker Ressourcen
 
-Um das Backend lokal stabil laufen lassen zu können, müssen Docker genügend Ressourcen zur verfügung stehen.\
-Unter Windows sollte darauf geachtet werden, dass in den Docker Settings / Ressourcen mindestens `7GB RAM` und `3GB SWAP` sowie `2 CPUs` bereitgestellt werden. 
+In order to run the backend locally in a stable manner, Docker must have sufficient resources available.
+On Windows, make sure that at least `7GB RAM` and `3GB SWAP` and `2 CPUs` are provided in docker-settings / Resources. 
 
-### Zeit und Zeitzonen der Docker-Container
+### Time and time zones of docker-container 
 
-Damit die Docker-Container die Zeit und Zeitzonen des Host-Systems übernehmen besteht ein Mapping über ein Volume zwischen `/etc/localtime` des Host-Systems und des Docker-Containers. Dieses ist in der der Datei `docker-compose.yml` für jeden Service hinterlegt:
+In order for the Docker containers to adopt the time and time zones of the host system, there is a mapping via a volume between `/etc/localtime` of the host system and the Docker container. This is stored in the file `docker-compose.yml` for each service:
 
 ```
 volumes:
@@ -26,17 +26,17 @@ volumes:
     - /etc/localtime:/etc/localtime:ro
 ```
 
-Da `/etc/localtime` nur auf Linux-Systemen zur Verfügung steht muss die Zeile
+Since `/etc/localtime` is only available on Linux systems, the line
 
 ```
 - /etc/localtime:/etc/localtime:ro
 ```
 
-für den Betrieb auf Windows-System bei allen Services in der Datei `docker-compose.yml` entfernt werden.
+must be removed for operation on Windows system for all services in the `docker-compose.yml` file.
 
 ### 
 
-Auf lokalen Windows-Umgebungen wird kein Hosts-Eintrag für die Services benötigt. Darum muss bei jedem Service der folgende Eintrag in der Datei `docker-compose.yml` entfernt werden:
+On local Windows environments, no hosts entry is required for the services. Therefore, the following entry in the `docker-compose.yml` file must be removed for each service:
 
 ```
 extra_hosts:
@@ -45,27 +45,27 @@ extra_hosts:
 
 ### Domainname
 
-Der lokale Hostname (z.B. _**onlineberatung.local**_) muss auf die eigene IP-Adresse zeigen. Hier darf _nicht_ die 127.0.0.1 verwendet werden, sondern die IP-Adresse, die dem Netzwerk-Adapter zugewiesen wurde (Einzustellen in der Betriebssystem hosts Datei, bei Windows _C:\Windows\System32\drivers\etc\hosts_).
+The local host name (e.g. _**onlineberatung.local**_) must point to the own IP address. Here _not_ the 127.0.0.1 may be used, but the IP address, which was assigned to the network adapter (to be set in the operating system hosts file, for Windows _C:\Windows\System32\drivers\etc\hosts_).
 
 ### _optional_: Docker Registry
 
-Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. GitHub Packages) bereitgestellt werden. Sollte kein solcher Dienst zur Verfügung stehen, können die Docker Images auch [lokal gebaut](../backend/build-and-load-docker-image.md) werden.
+In order for the containers to be loaded via Docker Compose, they must be made available via a Docker Registry/Repository Manager (e.g. GitHub Packages). If no such service is available, the Docker images can also be [built locally](../backend/build-and-load-docker-image.md).
 
-Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung an GitHub Packages erfolgt:
+As an example, the following shows how authentication to GitHub packages is performed:
 
 ```sh
 echo $GITHUB_TOKEN | docker login https://docker.pkg.github.com -u USERNAME --password-stdin
 ```
 
-Siehe auch die [Dokumentation von Github bzgl. Docker Login](https://docs.github.com/en/packages/guides/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token).
+See also the [documentation from Github regarding Docker Login](https://docs.github.com/en/packages/guides/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token).
 
-Unter Windows in der Git-Bash:
+On Windows in the Git bash:
 
 ```sh
 winpty docker login docker.pkg.github.com
 ```
 
-Anschließend werden die Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
+After that, the access data will be requested and stored for future requests.
 
 ### Node.js und NPM
 
@@ -80,36 +80,36 @@ Anschließend werden die Zugangsdaten abgefragt und für zukünftige Anfragen ge
 
 ### IDE
 
-Folgende Plugins sollten in der IDE installiert sein:
+The following plugins should be installed in the IDE:
 
 - Lombok
 - Maven
-- Codestyle Checker für Google Java Code Style (https://github.com/google/styleguide)
+- Codestyle Checker for Google Java Code Style (https://github.com/google/styleguide)
 
-Für intelliJ kann unter folgendem Link der Google Code Style zum Importieren heruntergeladen werden: https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
+For intelliJ, the Google Code Style can be downloaded at the following link for importing: https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
 
-Zudem sollte beim Compiler Compliance Level Version 1.8.0 (OpenJDK) gewählt werden.
+In addition, compliance level version 1.8.0 (OpenJDK) should be selected for the compiler.
 
-Beispielhaft wird die Konfiguration in Eclipse im Folgenden beschrieben:
+The configuration in Eclipse is described below as an example:
 
-1. Alle allgemeinen Konfigurationsparameter werden in der /resources/application.properties gesetzt. Spezielle (Entwicklungs)umgebungsvariablen, wie z.B. Datenbank-Verbindungsdaten, können in der jeweiligen application-[environment].properties Datei gesetzt werden.
-   Das aktuell verwendete Profil ist in der pom.xml standardmäßig auf "local" gesetzt.
-   Sollte es notwendig sein, das Profil zu ändern gibt es folgende Möglichkeiten:
+1. All general configuration parameters are set in the /resources/application.properties. Special (development) environment variables, such as database connection data, can be set in the respective application-[environment].properties file.
+The currently used profile is set to "local" in the pom.xml by default.
+If it is necessary to change the profile there are the following possibilities:
 
-- Maven beim Command folgendes Property mitgeben: -PactiveSpringProfile=local/dev/prod (Beispiel: mvn install -PactiveSpringProfile=dev)
-- Die "spring.profiles.active" als Environmentvariable in den Run-Configurations festlegen (Rechtsklick auf das Projekt -> "Run As" -> "Run Configurations" -> die jeweilige Konfiguration auswählen -> Reiter "Environment" -> "New")
-- Folgenden JVM System Parameter mitgeben: -Dspring.profiles.active=dev/prod/local
-- Ändern des Werts "spring.profiles.active" in der application.properties (nicht empfohlen, da dann der Platzhalter für Maven fehlt)
+- Maven with the following property in the command: -PactiveSpringProfile=local/dev/prod (Example: mvn install -PactiveSpringProfile=dev)
+- Set the "spring.profiles.active" as environment variable in the run configurations (right click on the project -> "Run As" -> "Run Configurations" -> select the respective configuration -> tab "Environment" -> "New")
+- Enter the following JVM system parameters: -Dspring.profiles.active=dev/prod/local
+- Changing the value "spring.profiles.active" in the application.properties (not recommended, because then the placeholder for Maven is missing)
 
-2. In Eclipse muss unter Umständen zusätzlich noch der Ordner "target/generated-sources" id den Projekteinstellungen ("Java Build Path" -> "Sources") hinzugefügt werden.
+2. In Eclipse, the folder "target/generated-sources" id the project settings ("Java Build Path" -> "Sources") may also need to be added.
 
-3. `maven install` und `maven generate-sources` ausführen.
+3. Run `maven install` and `maven generate-sources`.
 
 ## Pre-Configuration
 
-### Festlegen der Microservices-Service-Versionen
+### Defining the Microservices-Service-Versions
 
-In der Datei `.env` müssen die Pfade zu den Images und die Versionen bzw. Tags für die Microservices angegeben werden, z.B.
+In the `.env` file, the paths to the images and the versions or tags for the microservices must be specified, e.g.
 
 ```
 USER_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-userservice/userservice-image
@@ -134,30 +134,30 @@ CONSULTING_TYPE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-o
 CONSULTING_TYPE_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
 ```
 
-Aktuelle Service-Versionen können auf der [Releases-Seite](../releases/overview.md) gefunden werden.
+Current service versions can be found on the [Releases-Page](../releases/overview.md).
 
-Sollte keine Docker Registry verfügbar sein müssen die Services zuerst [lokal gebaut](../backend/build-and-load-docker-image.md) werden und anschließend in der `docker-compose.yml` hinterlegt werden, z.B.
+If no Docker Registry is available, the services must first be [built locally](../backend/build-and-load-docker-image.md) and then deposited in the `docker-compose.yml`, e.g.
 
 ```
     userservice:
         image: cob/userservice:development
 ```
 
-Andernfalls muss in der `docker-compose.yml` lediglich die `<image_server_url>` mit der URL zur Registry ersetzt werden, der Imagename wird dann durch die jeweiligen Variablen aus Datei `.env` ersetzt.
+Otherwise, in `docker-compose.yml` just replace `<image_server_url>` with the URL to the registry, the image name will then be replaced with the respective variables from file `.env`.
 
-### _optional_: Frontend-Konfiguration anpassen
+### _optional_: Customize frontend configuration
 
-Diese Konfiguration ist nur notwendig, sofern man beim Frontend nicht den Docker-Container, sondern lokale Dateien verwenden möchte.
+This configuration is only necessary if you want to use local files for the frontend instead of the Docker container.
 
-Hierzu muss in der `docker-compose.yml` des Backends ein zusätzliches Volume für den Frontend-Container definiert werden (zusätzlich unter "volumes:"):
+For this, an additional volume for the frontend container must be defined in the `docker-compose.yml` of the backend (additionally under "volumes:"):
 
 `- <LOKALER_ORDNER>:/usr/share/nginx/html`
 
-Die Fronted-Dateien müssen dann in den lokalen Ordner gelegt werden und werden dann anstelle der Frontend-Dateien im Container ausgeliefert.
+The fronted files must then be placed in the local folder and are then delivered in the container instead of the frontend files.
 
-### Dateiberechtigungen unter Linux einstellen
+### Set file permissions on Linux
 
-- [Dateiberechtigungen (nur Linux)](../backend/file-permissions.md)
+- [File permissions (only Linux)](../backend/file-permissions.md)
 
 ### First start
 
@@ -176,6 +176,6 @@ Die Fronted-Dateien müssen dann in den lokalen Ordner gelegt werden und werden 
 
 - [Starting and stopping the services](../backend/starting-and-stopping-the-services.md)
 
-### Docker-Image lokal bauen
+### Build docker-image locally
 
-- [Docker Images lokal bauen und einbinden](../backend/build-and-load-docker-image.md)
+- [build and load-docker-image locally](../backend/build-and-load-docker-image.md)

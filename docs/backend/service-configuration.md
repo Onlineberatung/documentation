@@ -2,25 +2,25 @@
 id: service-configuration
 title: Service configuration
 ---
-Für manche Komponenten ist eine Ersteinrichtung erforderlich.
-Diese sind hier aufgeführt.
+Some components require an initial setup.
+These are listed here.
 
 ## Rocket.Chat
-Bei der ersten Anmeldung muss der Administratoren Account eingerichtet werden.
-Dazu wird einfach den Schritten im Assistenten gefolgt (http://`<HOST>`:3000).
-Bei Schritt 3 "Serverinformationen" sollte die Option `Auto opt in new users for Two Factor via Email` auf `No` gestellt werden.
-Als Typ (Step 4 "Register Server") wird dabei eine lokale Installation (Standalone) gewählt.
+When logging in for the first time, the administrator account must be set up.
+Simply follow the steps in the wizard (http://`<HOST>`:3000).
+At step 3 "Server information" the option `Auto opt in new users for Two Factor via Email` should be set to `No`.
+As type (Step 4 "Register Server") a local installation (standalone) is selected.
 
-__Weitere Konfigurationsschritte:__
+__Further configuration steps:__
 
-### LDAP konfigurieren:
-Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im Administrationsbereich, Menüpunkt _LDAP_, übernehmen (alle nicht aufgelisteten Optionen sollten nicht geändert bzw. auf den Standartwerten belassen werden):
+### Configure LDAP:
+Rocket.Chat still needs to be connected to LDAP - to do this, apply the following settings in the administration area, menu item _LDAP_ (all options not listed should not be changed or left at default values):
 
-| Feld | Wert | Bemerkung |
+| Field | Value | Comment |
 |-|-|-|
 | **Basic Settings** | | |
 | Enable | True | |
-| Login Fallback | True | Wichtig, da sich der initiale Admin ansonsten nicht mehr einloggen kann, da nicht im LDAP vorhanden |
+| Login Fallback | True | Important, because otherwise the initial admin cannot log in anymore, because it is not available in LDAP. |
 | Find user after login | False | |
 | Host | openldap | |
 | Port | 389 | |
@@ -46,9 +46,9 @@ Rocket.Chat muss noch mit LDAP verbunden werden - dazu folgende Einstellungen im
 
 The Rocket.Chat technical user is used for every Rocket.Chat action that involves administrative tasks on groups or users. This ensures that a normal user account's permissions can be limited at the greatest possible level.
 
-1. Rolle anlegen/Rechte festlegen
-* Unter _"Permissions"_ über den Button _"+"_ die Rolle _"technical"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
-* Der Rolle folgende Rechte hinzufügen (Haken setzen):
+1. create role/set permissions
+* Create the role _"technical"_ with scope _"Global"_ under _"Permissions"_ using the button _"+"_. If the role does not appear in the list, the page must be reloaded manually (F5).
+* Add the following rights to the role (check the box):
     * `Add User to Any Private Channel`
     * `Bypass rate limit for REST API`
     * `Clean Channel History`
@@ -59,46 +59,46 @@ The Rocket.Chat technical user is used for every Rocket.Chat action that involve
     * `View Other User Channels`
     * `View Room Administration`
     * `View Direct Messages`
-2. Benutzer anlegen
+2. Create User
 * Under _"Users"_ create a new user _"rocket-chat-technical-user"_ and assign the previous created 
   role _"technical"_. ⚠ This user needs to have the exact username 
   _"rocket-chat-technical-user"_, as it´s used for websocket event filtering.
-* **Weitere Einstellungen des technischen Benutzer:**
-    * Verified = ja
-    * Require password change = nein
-    * Join default channels = Nicht selektiert
-    * Send welcome email = Nicht selektiert
+* **Other settings of the technical user:**
+    * Verified = yes
+    * Require password change = no
+    * Join default channels = Not selected
+    * Send welcome email = Not selected
 
 ### Create system messages user
 
 The Rocket.Chat system messages user is used to write system messages to Rocket.Chat groups. These different message types are defined in the MessageService.
 
-1. Rolle anlegen/Rechte festlegen
-* Unter _"Permissions"_ über den Button _"+"_ die Rolle _"system"_ mit Scope _"Global"_ anlegen. Falls die Rolle nicht in der Liste auftaucht muss die Seite manuell neugeladen werden (F5).
-* Dieser Rolle nun die folgende Rechte zuweisen:
+1. create role/set permissions
+* Create the role _"system"_ with scope _"Global"_ under _"Permissions"_ using the button _"+"_. If the role does not appear in the list, the page must be reloaded manually (F5).
+* Now assign the following permissions to this role:
     * `Bypass rate limit for REST API`
     * `Create Private Channels`
     * `Edit Room`
     * `View Room Administration`
-2. Benutzer anlegen
-* Unter _"Users"_ einen neuen Benutzer _"system"_ anlegen und die Rollen _"user"_ und _"system"_ zuweisen.
-* **Weitere Einstellungen des System-Benutzer:**
-    * Verified = ja
-    * Require password change = nein
-    * Join default channels = Nicht selektiert
-    * Send welcome email = Nicht selektiert
+2. create user
+*Under _"Users"_ create a new user _"system"_ and assign the roles _"user"_ and _"system"_.
+* **Additional settings of the system user:**
+    * Verified = yes
+    * Require password change = no
+    * Join default channels = Not selected
+    * Send welcome email = Not selected
 
-### Bot-User löschen
-Unter _"Users"_ muss noch der BOT (Rocket Cat) gelöscht werden.
+### Delete Bot-User
+Under _"Users"_ the BOT (Rocket Cat) must be deleted.
 
-### Gelesen-Status konfigurieren
-Damit der Gelesen-Status für Nachrichten korrekt von Rocket.Chat getracked wird muss unter _"Administration"_ → _"General_" → _"Unread Count_" folgende Einstellung gesetzt werden: _"All Messages_"
+### Configure read status
+To ensure that the read status for messages is tracked correctly by Rocket.Chat, the following setting must be set under _"Administration"_ → _"General_" → _"Unread Count_": _"All Messages_"
 
-### File-Upload konfigurieren
-Für die File-Uploads wird das Filesystem bevorzugt. Der Upload-Ordner kann über ein Volume dann außerhalb des Docker-Containers gehalten werden.
-Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie folgt angepasst werden:
+### Configure file upload
+The file system is preferred for file uploads. The upload folder can then be kept outside the Docker container via a volume.
+To do this, the configuration must be adapted under _"Administration"_ → _"File Upload"_ as follows:
 
-| Feld | Wert | Bemerkung |
+| Field | Value | Comment |
 |-|-|-|
 | File Uploads Enabled | True | |
 | Maximum File Upload Size (in bytes) | 5242880 | 5MB |
@@ -109,7 +109,7 @@ Dafür muss unter _"Administration"_ → _"File Upload"_ die Konfiguration wie f
 | Storage Type | FileSystem | |
 | File Uploads Enabled in Direct Messages | True | |
 | File System | | |
-| System Path | /app/user_uploads | Dieses Verzeichnis wird auf das Host-System gemounted, damit die hochgeladenen Dateien nicht im Container liegen. Da Rocket.Chat die als eigenen RocketChat-Benutzer mit der UID 99999 ablegt, wird der Besitzer des Verzeichnisses auf dem Host-System auf die UID 99999 gesetzt. Diesen Benutzer gibts es auf dem Linux nicht, aber dadurch können die Rechte für das Verzeichnis eingeschränkt werden. Besitzer: 99999 Gruppe: docker Permissions: 744
+| System Path | /app/user_uploads | This directory is mounted on the host system so that the uploaded files are not in the container. Since Rocket.Chat stores them as its own RocketChat user with UID 99999, the owner of the directory on the host system is set to UID 99999. This user does not exist on Linux, but this can be used to restrict the permissions for the directory. Owner: 99999 Group: docker Permissions: 744
 
 ### Rate Limiter
 For local development both `Rate Limiter` can be deactivated.
@@ -128,73 +128,73 @@ Under `Registration` disable the following entries:
 
 ## Keycloak
 ### Realm
-Es muss der Realm aus dem Projektverzeichnis importiert werden (Verzeichnis im Repo: _./Keycloak_).
+The realm must be imported from the project directory (directory in the repo: _./Keycloak_).
 
-Vor dem Import der Basis-Einstellungen müssen folgende Anpassungen manuell in der Datei _realm-export.json_ vorgenommen werden:
+Before importing the basic settings, the following adjustments must be made manually in the _realm-export.json_ file:
 
 | Name | Value |
 | ---- | ----- |
-| redirectUris | Host mit Wildcard eintragen (z.B. https://anwendung.de/*) |
-| webOrigins | Erlaubte Origins eintragen (z.B. https://anwendung.de) |
-| "clientId": "account" {baseUrl} | Keycloak URL zum Keycloak Account GUI (z.B. /auth/realms/<anwendungs_realm_name>/account) |
-| "clientId": "account" {redirectUris} | Keycloak Redirect URIs zum Keycloak Account GUI (z.B. /auth/realms/<anwendungs_realm_name>/account) |
-| "clientId": "security-admin-console" {baseUrl} | Keycloak URL zum Keycloak Admin GUI (z.B. "/auth/admin/<anwendungs_realm_name>/console/index.html") |
-| "clientId": "security-admin-console" {redirectUris} | Keycloak Redirect URIs zum Keycloak Admin GUI (z.B. "/auth/admin/<anwendungs_realm_name>/console/index.html") |
+| redirectUris | Enter host with wildcard (z.B. https://anwendung.de/*) |
+| webOrigins | Enter allowed Origins (z.B. https://anwendung.de) |
+| "clientId": "account" {baseUrl} | Keycloak URL to Keycloak Account GUI (z.B. /auth/realms/<anwendungs_realm_name>/account) |
+| "clientId": "account" {redirectUris} | Keycloak Redirect URIs to Keycloak Account GUI (z.B. /auth/realms/<anwendungs_realm_name>/account) |
+| "clientId": "security-admin-console" {baseUrl} | Keycloak URL to Keycloak Admin GUI (z.B. "/auth/admin/<anwendungs_realm_name>/console/index.html") |
+| "clientId": "security-admin-console" {redirectUris} | Keycloak Redirect URIs to Keycloak Admin GUI (z.B. "/auth/admin/<anwendungs_realm_name>/console/index.html") |
 | "smtpServer": {port} | SMTP Server Port |
 | "smtpServer": {host} | SMTP Server Host |
-| "smtpServer": {from} | SMTP Absender Adresse |
-| "smtpServer": {fromDisplayName} | SMTP Absender Name |
-| "smtpServer": {user} | SMTP Server Benutzer |
-| "org.keycloak.storage.UserStorageProvider" : "config" : "usersDn" | Distinguished Names für User (z.B. "ou=users,ou=WebApp,dc=anwendung,dc=de") |
-| "org.keycloak.storage.UserStorageProvider" : "config" : "bindDn" | Distinguished Names für Admin (z.B. "cn=admin,dc=anwendung,dc=de") |
+| "smtpServer": {from} | SMTP sender address |
+| "smtpServer": {fromDisplayName} | SMTP sender name |
+| "smtpServer": {user} | SMTP server user |
+| "org.keycloak.storage.UserStorageProvider" : "config" : "usersDn" | Distinguished names for User (z.B. "ou=users,ou=WebApp,dc=anwendung,dc=de") |
+| "org.keycloak.storage.UserStorageProvider" : "config" : "bindDn" | Distinguished names for Admin (z.B. "cn=admin,dc=anwendung,dc=de") |
 
-Um die JSON-Datei zu importieren muss man einen neuen Realm in Keycloak anlegen.
-Dazu öffnet man das DropDownMenü direkt unterhalb des Keycloak-Logos (derzeit ist dort der Master-Realm ausgewählt) und klick auf _"Add realm"_.
-In der sich daraufhin öffnenden Maske lädt man die JSON Datei hoch.
+To import the JSON file you have to create a new realm in Keycloak.
+To do this, open the drop-down menu directly below the Keycloak logo (currently the master realm is selected there) and click on _"Add realm"_.
+In the mask that opens, upload the JSON file.
 
 ### LDAP
-Im Anschluss muss noch die Verbindung zu LDAP aktualisiert werden, da in dem Realm-Export das Passwort nicht mit exportiert wird.
-Dazu geht man auf _"User Federation"_ und wählt dort _"ldap"_ aus. In den sich daraufhin öffnenden Konfigurationsfeldern aktualisiert man das Feld _"Bind Credential"_ mit dem für den LDAP-Admin gesetzten Passwort (Initial-Passwort: admin).
-Die Funktionstüchtigkeit kann mit _"Test authentication"_ geprüft werden.
-Zum Schluss das ganze noch mit dem _"save"_ Button ganz unten speichern.
+Afterwards the connection to LDAP must be updated, because the password is not exported in the realm export.
+To do this, go to _"User Federation"_ and select _"ldap"_. In the configuration fields that open, update the _"Bind Credential"_ field with the password set for the LDAP admin (initial password: admin).
+The functionality can be tested with _"Test authentication"_.
+Finally, save the whole thing with the _"save"_ button at the bottom.
 
-### Admin Benutzer für Registrierungen
-Für die Registrierung neuer Ratsuchender in Keycloak muss ein admin Benutzer über die Benutzerverwaltung von Keycloak eingerichtet werden. Dieser Benutzer benötigt einen Namen, ein Passwort und folgende Rollen-Einstellungen:
+### Admin user for registrations
+To register new advice seekers in Keycloak, an admin user must be set up through Keycloak's user management. This user needs a name, password and the following role settings:
 
-1. Unter _"Client Roles"_ → _"realm-management"_ auswählen und unter _"Assigned Roles"_ sollten folgende Rollen stehen:
+1. under _"Client Roles"_ → select _"realm-management"_ and under _"Assigned Roles"_ should be the following roles:
   * manage-users
   * view-realm
-2. Unter _"Client Roles"_ → _"account"_ auswählen und alle unter _"Assigned Roles"_ entfernen
+2. under _"Client Roles"_ select → _"account"_ and remove all under _"Assigned Roles"_.
 
-### Technischer Benutzer zum Setzen der Masterkeys
-Zum setzen der Masterkeys in den Services muss in Keycloak ein technischer Benutzer über die 
-Benutzerverwaltung eingerichtet werden. Dieser Benutzer benötigt einen Namen, ein Passwort und folgende Rollen-Einstellungen:
+### Technical user for setting the master keys
+To set the master keys in the services, a technical user must be set up in Keycloak via the 
+user management. This user needs a name, a password and the following role settings:
 
-1. Unter _"Client Roles"_ → _"account"_ auswählen und alle unter _"Assigned Roles"_ entfernen
-2. Die Rolle "technical" dem Benutzer hinzugefügen
+1. under _"Client Roles"_, select → _"account"_ and remove all under _"Assigned Roles"_.
+2. add the role "technical" to the user.
 
 ### Password policies
-Die gleichen Password Policies sind auch im UserService implementiert (UserHelper.java).
+The same password policies are also implemented in the UserService (UserHelper.java).
 
-## Verbindungen im Nosqlclient einrichten
-Damit man sich mit dem Nosqlclient mit der MongoDB verbinden kann müssen entsprechende Verbindungen eingerichtet werden. Dazu muss der Nosqlclient aufgerufen werden und oben rechts _"Connect"_ und im folgenden Dialog _"Create New"_ ausgewählt werden.
+## Set up connections in the Nosqlclient
+To connect to MongoDB with the Nosqlclient you have to set up the appropriate connections. To do this you have to call the Nosqlclient and select _"Connect"_ in the upper right corner and _"Create New"_ in the following dialog.
 
-Folgende Verbindungsdaten müssen für die Rocket.Chat-DB verwendet werden:
+The following connection data must be used for the Rocket.Chat DB:
 
 | Name        | Host    | Port  | Database name | Authentication type | Username    | Passwort    | Authentication DB |
 | ----------- | ------- | ----- | ------------- | ------------------- | ----------- | ----------- | ----------------- |
 | Rocket.Chat | mongodb | 27017 | rocketchat    | Scram-Sha-1         | rocketchat* | rocketchat* | rocketchat        |
 
-\* Es handelt sich hierbei um das initiale Passwort bei der Erstinstallation. Dieses muss ggf. noch angepasst werden.
+\* This is the initial password used during the first installation. This password may have to be changed.
 
 ## Microservices
 
-Für alle folgenden Microservices muss ein Hosts-Eintrag in der Datei `docker-compose.yml` erfolgen. Bitte ersetzen Sie die Platzhalter `<app_domain>` und `<internal_server_ip_address>` entsprechend mit Ihren Werten bei der jeweiligen Property `extra_hosts`. Darüber wird sichergestellt, dass die Microservices Verbindungen zu den Services auf dem Server herstellen können.
+For all the following microservices, a hosts entry must be made in the `docker-compose.yml` file. Please replace the `<app_domain>` and `<internal_server_ip_address>` placeholders accordingly with your values at the respective `extra_hosts` property. This ensures that the microservices can make connections to the services on the server.
 
 ## AgencyService
-Die Konfiguration des Services auf dem Server erfolgt in der AgencyService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden.
+The configuration of the service on the server is done in the AgencyService.env. For local development, the corresponding _application-X.properties_ file must be adapted for this.
 
-Folgende Werte müssen zwingend gesetzt werden:
+The following values must be set:
 
 | Name | Description |
 | ---- | ----------- |
@@ -218,9 +218,9 @@ Folgende Werte müssen zwingend gesetzt werden:
 | [CONSULTING_TYPE_NAME]_WHITE_SPOT_AGENCY_ID | Define the white spot agency IDs where needed for every consulting type |
 
 ## MailService
-Die Konfiguration des Services auf dem Server erfolgt in der MailService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden.
+The configuration of the service on the server is done in the MailService.env. For local development, the corresponding _application-X.properties_ file must be adapted for this.
 
-Folgende Werte müssen zwingend gesetzt werden:
+The following values must be set:
 
 | Name | Description |
 | ---- | ----------- |
@@ -245,9 +245,9 @@ Folgende Werte müssen zwingend gesetzt werden:
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
 ## MessageService
-Die Konfiguration des Services auf dem Server erfolgt in der MessageService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden.
+The configuration of the service on the server is done in MessageService.env. For local development, the corresponding _application-X.properties_ file must be adapted for this.
 
-Folgende Werte müssen zwingend gesetzt werden:
+The following values must be set:
 
 | Name | Description |
 | ---- | ----------- |
@@ -277,14 +277,14 @@ Folgende Werte müssen zwingend gesetzt werden:
 | CSRF_COOKIE_PROPERTY | CSRF cookie property name (must match the frontend cookie name!) |
 
 ## UserService
-Die Konfiguration des Services auf dem Server erfolgt in der UserService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden. Die User-ID des technischen Keycloak Benutzers kann direkt in Keycloak eingesehen werden (Menüpunkt _"Users"_).
-Die Rocket.Chat User-ID für den Rocket.Chat Systemuser muss direkt in der MongoDB über den NoSqlClient ermittelt werden. Dazu im NoSqlClient an der Rocket.Chat-Datenbank anmelden und folgende Suchabfrage auf die Collection _users_ ausführen:
+The configuration of the service on the server is done in the UserService.env. For local development, the corresponding _application-X.properties_ file must be adapted for this. The user ID of the technical Keycloak user can be viewed directly in Keycloak (menu item _"Users"_).
+The Rocket.Chat user ID for the Rocket.Chat system user must be determined directly in MongoDB via the NoSqlClient. To do this, log on to the Rocket.Chat database in the NoSqlClient and execute the following search query on the _users_ collection:
 
 ```
-{"username":"<GESUCHTER USERNAME>"}
+{"username":"<SEARCHED USERNAME>"}
 ```
 
-Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
+It is mandatory to set the following values in UserService.env:
 
 | Name | Description |
 | ---- | ----------- |
@@ -341,9 +341,9 @@ Folgende Werte müssen in der UserService.env zwingend gesetzt werden:
 Within the application the user has the possibility to delete the own account. You can configure additional and automatic delete workflows for data privacy reasons. You find the configuration details [here](delete-workflows.md).
 
 ## UploadService
-Die Konfiguration des Services auf dem Server erfolgt in der UploadService.env. Für die lokale Entwicklung muss dafür die entsprechende _application-X.properties_-Datei angepasst werden. 
+The configuration of the service on the server is done in the UploadService.env. For local development, the corresponding _application-X.properties_ file must be adapted for this. 
 
-Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
+The following values must be set in the UploadService.env:
 
 | Name | Description |
 | ---- | ----------- |
@@ -366,10 +366,10 @@ Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
 
 ## LiveService 
 
-Die Konfiguration des Services auf dem Server erfolgt in der LiveService.env. Für die lokale
-Entwicklung muss die application.properties-Datei angepasst werden. 
+The configuration of the service on the server is done in the LiveService.env file.
+development, the application.properties file must be adapted. 
 
-Folgende Werte müssen in der UploadService.env zwingend gesetzt werden:
+The following values must be set in the UploadService.env:
 
 | Name | Description |
 | ---- | ----------- |
@@ -517,5 +517,5 @@ user and the new password.
 9. Under the tab `Bindings` set your new flow for `Direct Grant Flow`
 10. Ensure your admin user configured in `UserService.env` for keycloak has the role `technical` assigned
 
-## Restart aller Services
-Nachdem Änderungen gemacht wurden, sollten alle Services erneut durch *docker-compose restart* neugestartet werden.
+## Restart of all services
+After changes have been made, all services should be restarted again by *docker-compose restart*.

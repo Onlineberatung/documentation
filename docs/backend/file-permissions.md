@@ -2,32 +2,32 @@
 id: file-permissions
 title: File permissions
 ---
-Bei einer Installation des Backends auf einem Server sollten bestimmte Dateiberechtigungen gesetzt werden, damit nicht jeder Benutzer z.B. auf die Konfigurationsdateien mit den Passwörter zugreifen darf.
-Die Berechtigungen unterscheiden sich dabei zwischen dem Live-Deploy-/Dev-/Staging-System und dem Production-System. Dies liegt daran, dass für das Live-Deploy-/Dev-/Staging-System ein CD über den Jenkins eingerichtet werden kann. Hierzu sind andere Berechtigungen notwendig, da ein Remote-Zugriff erfolgt.
+When installing the backend on a server, certain file permissions should be set so that not every user can access the configuration files with the passwords, for example.
+The permissions differ between the live deploy/dev/staging system and the production system. This is because a CD can be set up for the live deploy/dev/staging system via the Jenkins. Other permissions are required for this as remote access is provided.
 
-#### Rechte unter Linux rekursiv getrennt nach Dateien und Verzeichnissen
+#### Permissions under Linux recursively separated by files and directories
 
-Die Standard-Rechte können über folgende Befehle gesetzt werden:
+The default permissions can be set using the following commands:
 
-_Rechte für Verzeichnisse setzen:_
+_Set permissions for directories:_
 ``find <ProjectRoot> -type d -exec chmod 770 {} +``
 
-_Rechte für Dateien setzen:_
+_Set permissions for files:_
 ``find <ProjectRoot> -type f -exec chmod 660 {} +``
 
-_Besitzer für alle Dateien setzen:_
+_set ownership for all files:_
 ``sudo chown -R root <ProjectRoot>``
 
-_Gruppe für alle Dateien setzen:_
+_set group for all files:_
 ``sudo chgrp -R docker <ProjectRoot>``
 
 ## Production System
-Es wird davon ausgegangen, dass Docker als Benutzer ``root`` ausgeführt wird. In diesem Fall sollten den meisten Dateien nur die Rechte ``660 (rw- rw- ---)`` (Dateien) bzw. ``770 rwx rwx ---`` (Verzeichnisse) zugewiesen werden. Nur ein paar wenigen Dateien benötige erweiterte Rechte, da von Benutzern aus Docker-Containern auf diese zugegriffen wird.
+It is assumed that Docker is running as user ``root``. In this case, most files should only be assigned ``660 (rw- rw- ---)`` (files) or ``770 rwx rwx ---`` (directories) permissions. Only a few files need elevated permissions because they are accessed by users from Docker containers.
 
-Die Dateien mit den abweichenden Rechten können der Liste unten entnommen werden.
+The files with different permissions can be seen in the list below.
 
-### Gesamter Verzeichnisbaum mit Dateiberechtigungen
-Vom System erzeuge Daten sind nicht aufgeführt.
+### Entire directory tree with file permissions.
+System generated data is not listed.
 
 ```
 _<ProjectRoot>_/:
@@ -134,10 +134,10 @@ drwx------ 2 root root 4096 Feb 28 13:14 log
 ```
 
 ## Live-Deploy/Dev/Staging system
-Es wird davon ausgegangen, dass Docker als Benutzer ``root`` ausgeführt wird und ein Benutzer für das Deployment über einen Jenkins Mitglied der Gruppe ``docker`` ist. Für die Dateien sind dann die Rechte ``660 (rw- rw- ---)`` (Dateien) bzw. ``700 rwx rwx ---`` (Verzeichnisse) notwendig.
+It is assumed that Docker is running as user ``root`` and a user for deployment via a Jenkins is a member of group ``docker``. Files then require ``660 (rw- rw- ---)`` (files) or ``700 rwx rwx ---`` (directories) permissions.
 
-### Gesamter Verzeichnisbaum mit Dateiberechtigungen
-Vom System erzeuge Daten sind nicht aufgeführt.
+### Entire directory tree with file permissions
+System created data is not listed.
 
 ```
 _<ProjectRoot>_/:
