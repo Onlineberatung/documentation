@@ -1,33 +1,33 @@
 ---
 id: openldap-configuration
-title: OpenLDAP konfigurieren
+title: Configure OpenLDAP
 ---
 
-OpenLDAP speichert in der Grundkonfiguration Passwörter im Klartext. Dies muss über eine Konfigurationsänderung angepasst werden.
+OpenLDAP stores passwords in plain text in the basic configuration. This must be adjusted via a configuration change.
 
-_Hinweis:_ Alle Konfigurationsdateien der folgenden Abschnitte sind im Container im Verzeichnis `/ob-config` zu finden.
+_Note:_ All configuration files of the following sections can be found in the container in the directory `/ob-config`.
 
-_Hinweis:_ Für die lokale Entwicklung können die Konfigurationsschritte optional übersprungen werden, in diesem Fall nur die Schritte unter dem Punkt _Struktur anlegen_ ausführen.
+_Note:_ For local development, the configuration steps can optionally be skipped, in this case only perform the steps under the item _Create structure_.
 
-## Konfigurationsschritte
+## Configuration steps
 
-_Hinweis:_ Die Einstellung können nur über den Config-Benutzer und nicht über den Admin-Benutzer durchgeführt werden. Das Standard-Passwort des Config-Benutzers ist _config_.
+_Note:_ The setting can only be done by the Config user and not by the Admin user. The default password of the config user is _config_.
 
-Alle Befehle müssen im laufenden Docker-Container von OpenLDAP durchgeführt werden. Diese kann durch den folgenden Befehl gestartet werden:
+All commands must be performed while the Docker container of OpenLDAP is running. This can be started by the following command:
 
 `docker exec -it openldap bash`
 
-(Unter Windows muss noch _winpty_ vor _docker_ ergänzt werden)
+(On Windows _winpty_ must be added before _docker_)
 
-**OpenLDAP ppolicy Schema aktivieren**
+**Enable OpenLDAP policy scheme**
 
 `ldapmodify -x -a -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -f /etc/ldap/schema/ppolicy.ldif`
 
-Zur Überprüfung, ob die Änderungen erfolgreich war, kann folgende Abfrage verwendet werden:
+To check if the changes were successful, the following query can be used:
 
 `ldapsearch -x -s one -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -b cn=schema,cn=config cn -LLL`
 
-**OpenLDAP ppolicy overlay aktivieren**
+**Enable OpenLDAP policy overlay**.
 
 _ppolicy-module.ldif:_
 
@@ -40,11 +40,11 @@ olcModuleLoad: ppolicy
 
 `ldapmodify -x -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -f /ob-config/ppolicy-module.ldif`
 
-Zur Überprüfung, ob die Änderungen erfolgreich war, kann folgende Abfrage verwendet werden:
+To check if the changes were successful, the following query can be used:
 
 `ldapsearch -x -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -b cn=config "(objectClass=olcModuleList)" olcModuleLoad -LLL`
 
-**OpenLDAP ppolicy overlay konfigurieren**
+**Configure OpenLDAP policy overlay**.
 
 _ppolicy-conf.ldif:_
 
@@ -59,19 +59,19 @@ olcPPolicyHashCleartext: TRUE
 
 `ldapmodify -x -a -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -f /ob-config/ppolicy-conf.ldif`
 
-Zur Überprüfung, ob die Änderungen erfolgreich war, kann folgende Abfrage verwendet werden:
+To check if the changes were successful, the following query can be used:
 
 `ldapsearch -x -H ldap://localhost -D cn=admin,cn=config -w <PASSWORD CONFIG USER> -b cn=config "(objectClass=olcPpolicyConfig)" -LLL`
 
-## Struktur anlegen
+## Create structure
 
-Die LDAP-Strukur muss angelegt werden.
+The LDAP structure must be created.
 
-_Hinweis:_ Im Gegensatz zur Konfiguration muss die LDAP-Struktur mit dem Admin-User angelegt werden. Das Standard-Passwort des Admin-User ist _admin_.
+_Note:_ Unlike configuration, the LDAP structure must be created with the admin user. The default password of the admin user is _admin_.
 
 `ldapadd -x -D "cn=admin,dc=onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /ob-config/ou-conf.ldif`
 
-Die Struktur ist in der Datei _./openLDAP/ou-conf.ldif_ in LDAP-Ausdrücken beschrieben:
+The structure is described in LDAP expressions in the _./openLDAP/ou-conf.ldif_ file:
 
 ```
 dn: ou=ob,dc=onlineberatung,dc=de
@@ -83,7 +83,7 @@ objectClass: organizationalUnit
 ou: users
 ```
 
-Diese Datei ist für die Ausführung des obigen Befehls bereits im Container gemounted.
+This file is already mounted in the container for the execution of the above command.
 
-Die Struktur kann auch von außerhalb dieses Containers über diesen Befehl angelegt werden:
+The structure can also be created from outside this container using this command:
 `docker exec openldap bash -c "ldapadd -x -D "cn=admin,dc=onlineberatung,dc=de" -w <PASSWORD_ADMIN_USER> -H ldap://localhost -f /ob-config/ou-conf.ldif"`

@@ -2,8 +2,8 @@
 id: login-data-access-links
 title: Login data and access links
 ---
-## Adressen
-Die einzelnen Komponenten sind unter folgenden Adressen erreichbar:
+## Addresses
+The components can be reached at the following addresses:
 
 * Rocket.Chat: http://`<HOST>`:3000
 * Nosqlclient: http://`<HOST>`:3001
@@ -12,7 +12,7 @@ Die einzelnen Komponenten sind unter folgenden Adressen erreichbar:
     * Init-Benutzer: root
     * Init-Passwort: root
 
-Die Anwendung selbst ist unter http://`<HOST>` erreichbar
+The application is accessible at http://`<HOST>`
 
 ## REST API documentation
 The REST API documentation of the single services can be found under the following locations. Please note that the locations on the server should normally be blocked for external access. This access can be configured within the nginx location configurations (e.g. location `/service/agencies/docs` within `./nginx/conf/locations/agencyservice`. Change `deny all` to e.q. `include ip-restrictions.conf;` to allow access for authorized IP addresses only. See [NGINX configuration](../backend/nginx.md) for more details on path whitelisting.

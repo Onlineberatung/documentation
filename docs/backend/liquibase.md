@@ -2,29 +2,29 @@
 id: liquibase
 title: Database versioning with liquibase
 ---
-## Datenbankversionierung mit Liqubase
-Wie auch für die Spring-Properties gibt es für die unterschiedlichen Entwicklungssysteme eigene Liquibase-Properties bzw -Changelog Dateien.
-Diese sind in den Ressourcen unter _/db/changelog/_ zu finden (_userservice-local-master.xml_, _userservice-dev-master.xml_, etc.)
+## Database versioning with liquibase
+As for the Spring properties, there are separate Liquibase properties or changelog files for the different development systems.
+These can be found in the resources under _/db/changelog/_ (_userservice-local-master.xml_, _userservice-dev-master.xml_, etc.).
 
-Jede neue Datenbank-Änderung wird ein ein eigenes ChangeSet-File (in einem eigenen Unterordner) geschrieben und fortlaufend durchnummeriert.
-Dabei ist zu beachten, keine Spring-Variablen für z.B. Ordnerpfade zu verwenden, da diese in Commands über das Maven Liquibase Plugin nicht interpretiert werden können.
+Each new database change is written to a separate ChangeSet file (in its own subfolder) and numbered consecutively.
+It is important not to use Spring variables for e.g. folder paths, as these cannot be interpreted in commands via the Maven Liquibase plugin.
 
-Bei Start des Services werden noch nicht durchgeführte Änderungen an der Datenbank automatisch ausgeführt.
+When the service is started, any changes that have not yet been made to the database are automatically executed.
 
 ### Rollback
-Um einen Rollback durchzuführen, muss ein Maven (Liquibase Plugin) Command abgesetzt werden.
+To perform a rollback, a Maven (Liquibase Plugin) command must be issued.
 
-Beispiel für einen Rollback zurück zu einem bestimmen Zeitpunkt:
+Example of a rollback back to a specific point in time:
 
 ```
 liquibase:rollback -Dliquibase.rollbackDate=2019-04-17T15:00:00 -Dliquibase.url=jdbc:mariadb://caritas.local:3306/test -Dliquibase.username=test -Dliquibase.password=test -Dliquibase.#driver=org.mariadb.jdbc.Driver -Dliquibase.changeLogFile=db/changelog/userservice-local-master.xml
 ```
 
-### Weitere Commands
-Weitere Informationen finden sich unter: http://www.liquibase.org/documentation/maven/index.html#using_configuration_property_files
+### Further Commands
+Further information can be found at: http://www.liquibase.org/documentation/maven/index.html#using_configuration_property_files
 
-### InitSql nicht ausführen
-Damit die initialen Statements nicht ausgeführt werden, muss die Tabelle für Changelogänderungen von Liquibase manuell angelegt und mit den initialen Logs gefüllt werden:
+### Do not execute InitSql
+To ensure that the initial statements are not executed, the table for changelog changes must be created manually by Liquibase and filled with the initial logs:
 
 ```
 CREATE TABLE `DATABASECHANGELOG` (

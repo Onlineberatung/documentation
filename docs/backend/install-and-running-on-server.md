@@ -3,32 +3,32 @@ id: install-and-running-on-server
 title: Installing and running the backend on the server
 ---
 
-Im Folgenden werden die speziellen Voraussetzungen und Tools genannt welche für den Betrieb der Caritas Online-Beratung auf dem (Production-)Server benötigt werden.
+In the following the special requirements and tools are mentioned which are needed for the operation of the Caritas Online-Counseling on the (production) server.
 
-## Voraussetzungen
+## Preconditions
 
 ### docker-compose
 
-Damit die ganze Umgebung mit ihren Abhängigkeiten richtig gestartet werden kann, wird Docker und Docker Compose vorausgesetzt.
+In order to properly launch the whole environment with its dependencies, docker and docker-compose are required.
 
 ### Docker Registry
 
-Damit die Container über Docker Compose geladen werden können müssen diese über eine Docker Registry/Repository Manager (z.B. GitHub Packages) bereitgestellt werden.
-Beispielhaft wird im Folgenden gezeigt wie die Authentifizierung an GitHub Packages erfolgt:
+In order to be able to load the containers via docker-compose, they must be provided via a docker Registry/Repository Manager (e.g. GitHub Packages).
+As an example, the following shows how authentication to GitHub Packages takes place:
 
 ``docker login docker.pkg.github.com``
 
-Unter Windows in der Git-Bash:
+On Windows in the Git bash:
 
 ``winpty docker login docker.pkg.github.com``
 
-Anschließend werden die Zugangsdaten abgefragt und für zukünftige Anfragen gespeichert.
+After that, the access data will be requested and stored for future requests.
 
 ## Pre-Configuration
 
-### Festlegen der Microservices-Service-Versionen
+### Defining the Microservices-Service-Versions
 
-In der Datei `.env` müssen die Pfade zu den Images und die Versionen bzw. Tags für die Microservices angegeben werden, z.B.
+In the `.env` file, the paths to the images and the versions or tags for the microservices must be specified, as shown in the following example
 
 ```
 USER_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-userservice/userservice-image
@@ -53,13 +53,13 @@ CONSULTING_TYPE_SERVICE_IMAGE=docker.pkg.github.com/caritasdeutschland/caritas-o
 CONSULTING_TYPE_SERVICE_VERSION=dockerimage.v.5-release-2020-10-13
 ```
 
-### Dateiberechtigungen
+### File permissions
 
-- [Dateiberechtigungen](../backend/file-permissions.md)
+- [File permissions](../backend/file-permissions.md)
 
-### SSL-Zertifikat installieren
+### Install SSL certificate
 
-- [SSL-Zertifikat installieren](../backend/ssl-certificate.md)
+- [SSL certificate](../backend/ssl-certificate.md)
 
 ### First start
 
