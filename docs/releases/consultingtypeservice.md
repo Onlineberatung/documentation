@@ -27,7 +27,6 @@ Login to mongodb container and login to mongo using mongodb admin username and p
 
 Create mongo DB and users (use strong password generator to generate pwd).
 
-
      use consulting_types
      db.createUser(
 	    {  
@@ -37,11 +36,14 @@ Create mongo DB and users (use strong password generator to generate pwd).
     	} 
      )  
 
-Make sure your ConsultingTypeService.env is updated with following credentials
-    `consultingTypeMongoUser: "consulting_types"`\
-    `consultingTypeMongoPass: "<take from lastpass>"`\
-    `consultingTypeServiceSpringDatasourceUsername: "consultingtypeservice"`\
-    `consultingTypeServiceSpringDatasourcePassword: "<mariadb_pw>"`
+Make sure your ConsultingTypeService.env is updated with following properties
+
+    SPRING_DATASOURCE_USERNAME=consultingtypeservice
+    SPRING_DATASOURCE_PASSWORD=<mariadb_pw>
+    SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/consultingtypeservice
+    SPRING_LIQUIBASE_USER=liquibase
+    SPRING_LIQUIBASE_PASSWORD=<mariadb_liquibase_pw>
+    SPRING_DATA_MONGODB_URI=mongodb://consulting_types:<password>@mongodb:27017/consulting_types?retryWrites=false 
 
 #### Create new ConsultingTypeService database in MariaDB and grant access to users:
     CREATE USER IF NOT EXISTS 'consultingtypeservice'@'%' IDENTIFIED BY '<PASSWORD, see secrets for the target env in LastPass, entry consultingTypeServiceSpringDatasourcePassword>';  
