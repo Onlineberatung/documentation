@@ -39,7 +39,9 @@ Create mongo DB and users (use strong password generator to generate pwd).
 
 Make sure your ConsultingTypeService.env is updated with following credentials
     `consultingTypeMongoUser: "consulting_types"`\
-    `consultingTypeMongoPass: "<take from lastpass>"`
+    `consultingTypeMongoPass: "<take from lastpass>"`\
+    `consultingTypeServiceSpringDatasourceUsername: "consultingtypeservice"`\
+    `consultingTypeServiceSpringDatasourcePassword: "<mariadb_pw>"`
 
 #### Create new ConsultingTypeService database in MariaDB and grant access to users:
     CREATE USER IF NOT EXISTS 'consultingtypeservice'@'%' IDENTIFIED BY '<PASSWORD, see secrets for the target env in LastPass, entry consultingTypeServiceSpringDatasourcePassword>';  
