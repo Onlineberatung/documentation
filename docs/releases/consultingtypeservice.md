@@ -43,7 +43,11 @@ Make sure your ConsultingTypeService.env is updated with following properties
     SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/consultingtypeservice
     SPRING_LIQUIBASE_USER=liquibase
     SPRING_LIQUIBASE_PASSWORD=<mariadb_liquibase_pw>
-    SPRING_DATA_MONGODB_URI=mongodb://consulting_types:<password>@mongodb:27017/consulting_types?retryWrites=false 
+    SPRING_DATA_MONGODB_URI=mongodb://consulting_types:<password>@mongodb:27017/consulting_types?retryWrites=false
+    KEYCLOAK_AUTH_SERVER_URL=https://<base_url>/auth
+    KEYCLOAK_REALM=<your_realm_name>
+    KEYKLOAK_RESOURCE=consultingtype-service
+    KEYCLOAK_PRINCIPAL-ATTRIBUTE=preferred_username
 
 #### Create new ConsultingTypeService database in MariaDB and grant access to users:
     CREATE USER IF NOT EXISTS 'consultingtypeservice'@'%' IDENTIFIED BY '<PASSWORD, see secrets for the target env in LastPass, entry consultingTypeServiceSpringDatasourcePassword>';  
