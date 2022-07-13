@@ -15,6 +15,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2022-07-13
+
+Checkout and pull branch `release-2022-07-13`. Restart docker-compose stack.
+
 ### 2022-05-05
 
 Update the files on the server to the latest of the master branch or checkout `release-2022-05-05` via git.

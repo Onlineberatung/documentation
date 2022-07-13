@@ -11,9 +11,9 @@ Only changes that are necessary to use the requested version are listed in this 
 
 If you want a changelog please see the [project changelog](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/blob/master/CHANGELOG.md).
 
-### Unreleased
+### 2022-07-13
 
-Update tag to `dockerImage.v.XXX` in the `.env` file!
+Update tag to `dockerImage.v.24.release-2022-07-13` in the `.env` file!
 
 Recently in there have been major changes in the consulting type service. MongoDB and MariaDB 
 connectivity has been introduced.  Consultingtypes jsons are now stored in MongoDB collection, 
