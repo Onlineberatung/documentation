@@ -20,17 +20,17 @@ If you want to check the individual service/component please klick on the corres
 ### Own services
 |Service|Current image version|
 |--- |--- |
-|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.51.release-2022-03-29`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.296-release-2022-03-29`|
+|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.53.release-2022-07-13`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.337.release`|
 |[LiveService](../releases/liveservice.md)|`dockerImage.v.38.release-2022-03-29`|
-|[MailService](../releases/mailservice.md)|`dockerImage.v.28.release-2022-05-05`|
-|[MessageService](../releases/messageservice.md)|`dockerImage.v.46.release-2022-03-29`|
+|[MailService](../releases/mailservice.md)|`dockerImage.v.31.release-2022-07-13`|
+|[MessageService](../releases/messageservice.md)|`dockerImage.v.53.release-2022-07-13`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.6.release-2021-06-22`|
 |[UploadService](../releases/uploadservice.md)|`dockerImage.v.36.release-2022-03-29`|
-|[UserService](../releases/userservice.md)|`dockerImage.v.274.release-2022-05-05`|
-|[VideoService](../releases/videoservice.md)|`dockerImage.v.26.release-2022-05-05`|
+|[UserService](../releases/userservice.md)|`dockerImage.v.283.release-2022-07-12`|
+|[VideoService](../releases/videoservice.md)|`dockerImage.v.31.release-2022-07-13`|
 |[StatisticsService](../releases/statisticsservice.md)|`dockerImage.v.5.release-2022-03-29`|
-|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.22.release-2022-05-05`|
+|[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.24.release-2022-07-13`|
  
 ### 3rd party components
 |Component|Current image version|
