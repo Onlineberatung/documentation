@@ -11,9 +11,51 @@ Only changes that are necessary to use the requested version are listed in this 
 
 If you want a changelog please see the [project changelog](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/blob/master/CHANGELOG.md).
 
-### Unreleased
+### 2022-07-13
 
-No unreleased changes yet.
+Update tag to `dockerImage.v.24.release-2022-07-13` in the `.env` file!
+
+Recently in there have been major changes in the consulting type service. MongoDB and MariaDB 
+connectivity has been introduced.  Consultingtypes jsons are now stored in MongoDB collection, 
+and topics reside in MariaDB. Before the next deployment you need to make sure that the databases 
+are correctly prepared.
+
+#### Create new MongoDB connection for ConsultingTypeService:
+Login to mongodb container and login to mongo using mongodb admin username and password
+
+`mongo -u <username> -p <password> --authenticationDatabase=admin`
+
+Create mongo DB and users (use strong password generator to generate pwd).
+
+     use consulting_types
+     db.createUser(
+	    {  
+	    	user: "consulting_types",  
+	    	pwd: "<strong_generated_password>",
+    		    roles: [ { role: "readWrite", db: "consulting_types" } ]  
+    	} 
+     )  
+
+Make sure your ConsultingTypeService.env is updated with following properties
+
+    SPRING_DATASOURCE_USERNAME=consultingtypeservice
+    SPRING_DATASOURCE_PASSWORD=<mariadb_pw>
+    SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/consultingtypeservice
+    SPRING_LIQUIBASE_USER=liquibase
+    SPRING_LIQUIBASE_PASSWORD=<mariadb_liquibase_pw>
+    SPRING_DATA_MONGODB_URI=mongodb://consulting_types:<password>@mongodb:27017/consulting_types?retryWrites=false
+    KEYCLOAK_AUTH_SERVER_URL=https://<base_url>/auth
+    KEYCLOAK_REALM=<your_realm_name>
+    KEYKLOAK_RESOURCE=consultingtype-service
+    KEYCLOAK_PRINCIPAL-ATTRIBUTE=preferred_username
+
+#### Create new ConsultingTypeService database in MariaDB and grant access to users:
+    CREATE USER IF NOT EXISTS 'consultingtypeservice'@'%' IDENTIFIED BY '<PASSWORD, see secrets for the target env in LastPass, entry consultingTypeServiceSpringDatasourcePassword>';  
+    CREATE DATABASE IF NOT EXISTS consultingtypeservice CHARACTER SET utf8 COLLATE utf8_unicode_ci;  
+    GRANT SELECT, INSERT, UPDATE, DELETE ON consultingtypeservice.* TO 'consultingtypeservice'@'%';  
+    FLUSH PRIVILEGES;  
+    GRANT ALTER, CREATE, CREATE VIEW, DELETE, DROP, INDEX, INSERT, REFERENCES, SELECT, SHOW VIEW, TRIGGER, UPDATE, ALTER ROUTINE, EXECUTE ON consultingtypeservice.* TO 'liquibase'@'%';  
+    FLUSH PRIVILEGES;
 
 ### 2022-05-05
 

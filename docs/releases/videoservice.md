@@ -15,6 +15,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2022-07-13
+
+Update tag to `dockerImage.v.31.release-2022-07-13` in the `.env` file - no additional changes necessary.
+
 ### 2022-05-05
 
 Update tag to `dockerImage.v.26.release-2022-05-05` in the `.env` file - no additional changes necessary.
