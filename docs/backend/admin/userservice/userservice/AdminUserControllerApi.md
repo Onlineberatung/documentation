@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**deleteConsultantAgency**](AdminUserControllerApi.md#deleteConsultantAgency) | **DELETE** /useradmin/consultants/{consultantId}/agencies/{agencyId} | Delete a consultant-agency relation [Authorization: Role: user-admin]
 [**generateViolationReport**](AdminUserControllerApi.md#generateViolationReport) | **GET** /useradmin/report | Returns an generated report containing data integration violations. [Authorization: Role: user-admin]
 [**getAgencyConsultants**](AdminUserControllerApi.md#getAgencyConsultants) | **GET** /useradmin/agencies/{agencyId}/consultants | Returns the list of consultants for a given agency Id. [Authorization: Role: user-admin]
+[**getAsker**](AdminUserControllerApi.md#getAsker) | **GET** /useradmin/askers/{askerId} | Get an asker by given id [Authorization: Role: consultant-admin]
 [**getConsultant**](AdminUserControllerApi.md#getConsultant) | **GET** /useradmin/consultants/{consultantId} | Get a consultant by given id [Authorization: Role: consultant-admin]
 [**getConsultantAgencies**](AdminUserControllerApi.md#getConsultantAgencies) | **GET** /useradmin/consultants/{consultantId}/agencies | Returns the list of agencies for a given consultant Id. [Authorization: Role: user-admin]
 [**getConsultants**](AdminUserControllerApi.md#getConsultants) | **GET** /useradmin/consultants | Returns the list of consultants by filter query parameter. [Authorization: Role: consultant-admin]
@@ -169,6 +170,31 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/hal+json
+
+<a name="getAsker"></a>
+# **getAsker**
+> AskerResponseDTO getAsker(askerId)
+
+Get an asker by given id [Authorization: Role: consultant-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **askerId** | **String**| asker id | [default to null]
+
+### Return type
+
+[**AskerResponseDTO**](../model/AskerResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 <a name="getConsultant"></a>
 # **getConsultant**
