@@ -80,13 +80,16 @@ After that, the access data will be requested and stored for future requests.
 
 ### IDE
 
-The following plugins should be installed in the IDE:
+The following plugins should be installed to your IDE:
 
 - Lombok
 - Maven
-- Codestyle Checker for Google Java Code Style (https://github.com/google/styleguide)
+- [Google Java Format](https://github.com/google/google-java-format), e.g. [for IntelliJ](https://plugins.jetbrains.com/plugin/8527-google-java-format/)
 
-For intelliJ, the Google Code Style can be downloaded at the following link for importing: https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
+In case the [plugin is currently broken](https://github.com/google/google-java-format/issues/787) an alternate approach would be:
+
+1. Import the ([obsolete](https://github.com/google/styleguide/issues/687)) [scheme](https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml) (in IntelliJ: Settings > Editor > Code Style)
+2. Set up your tooling for [triggering the Spotless formatter](https://stackoverflow.com/a/70410374/1345094), but with "Program: mvn" and "Arguments: spotless:apply"
 
 In addition, compliance level version 1.8.0 (OpenJDK) should be selected for the compiler.
 
