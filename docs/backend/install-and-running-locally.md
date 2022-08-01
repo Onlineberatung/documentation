@@ -86,7 +86,7 @@ The following plugins should be installed to your IDE:
 - Maven
 - [Google Java Format](https://github.com/google/google-java-format), e.g. [for IntelliJ](https://plugins.jetbrains.com/plugin/8527-google-java-format/)
 
-In case the [plugin is currently broken](https://github.com/google/google-java-format/issues/787) an alternate approach would be:
+In case the [plugin is currently broken](https://github.com/google/google-java-format/issues/787) and the issue cannot be [worked around](https://github.com/google/google-java-format/issues/787#issuecomment-1158034061), an alternate approach would be:
 
 1. Import the ([obsolete](https://github.com/google/styleguide/issues/687)) [scheme](https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml) (in IntelliJ: Settings > Editor > Code Style)
 2. Set up your tooling for [triggering the Spotless formatter](https://stackoverflow.com/a/70410374/1345094), but with "Program: mvn" and "Arguments: spotless:apply"
