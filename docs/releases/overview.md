@@ -20,14 +20,14 @@ If you want to check the individual service/component please klick on the corres
 ### Own services
 |Service|Current image version|
 |--- |--- |
-|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.53.release-2022-07-13`|
-|[Frontend](../releases/frontend.md)|`dockerImage.v.337.release`|
+|[AgencyService](../releases/agencyservice.md)|`dockerImage.v.56.release-2022-08-17`|
+|[Frontend](../releases/frontend.md)|`dockerImage.v.359.hotfix-realm-name`|
 |[LiveService](../releases/liveservice.md)|`dockerImage.v.38.release-2022-03-29`|
-|[MailService](../releases/mailservice.md)|`dockerImage.v.31.release-2022-07-13`|
-|[MessageService](../releases/messageservice.md)|`dockerImage.v.53.release-2022-07-13`|
+|[MailService](../releases/mailservice.md)|`dockerImage.v.36.release-2022-08-17`|
+|[MessageService](../releases/messageservice.md)|`dockerImage.v.58.release-2022-08-17`|
 |[NGINX](../releases/nginx.md)|`dockerImage.v.6.release-2021-06-22`|
 |[UploadService](../releases/uploadservice.md)|`dockerImage.v.36.release-2022-03-29`|
-|[UserService](../releases/userservice.md)|`dockerImage.v.283.release-2022-07-12`|
+|[UserService](../releases/userservice.md)|`dockerImage.v.290.release-2022-08-18`|
 |[VideoService](../releases/videoservice.md)|`dockerImage.v.31.release-2022-07-13`|
 |[StatisticsService](../releases/statisticsservice.md)|`dockerImage.v.5.release-2022-03-29`|
 |[ConsultingTypeService](../releases/consultingtypeservice.md)|`dockerImage.v.24.release-2022-07-13`|

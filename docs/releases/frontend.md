@@ -15,6 +15,10 @@ If you want a changelog please see the [project changelog](https://github.com/Ca
 
 No unreleased changes yet.
 
+### 2022-08-18
+
+Update tag in the `.env` file to `dockerImage.v.359.hotfix-realm-name`.
+
 ### 2022-07-13
 
 Update tag in the `.env` file to `dockerImage.v.337.release`.

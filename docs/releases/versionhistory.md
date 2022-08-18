@@ -13,6 +13,14 @@ For more details please visit the provided link to the specific service/componen
 
 No unreleased changes yet.
 
+### 2022-08-18
+#### Own services
+- [AgencyService](../releases/agencyservice.md)
+- [Frontend](../releases/frontend.md)
+- [MailService](../releases/mailservice.md)
+- [MessageService](../releases/messageservice.md)
+- [UserService](../releases/userservice.md)
+
 ### 2022-07-13
 #### Own services
 - [AgencyService](../releases/agencyservice.md)
