@@ -15,6 +15,91 @@ If you want a changelog please see the project page at https://www.mongodb.com.
 
 No unreleased changes yet.
 
+### 2022-08-17
+
+#### Backup MongoDB:
+
+Add a volume to the docker-compose.yml:
+`- ./data/dump:/dump`
+
+Then trigger the dump:\
+`> docker exec -it mongodb bash`\
+`> mongodump -u <user> -p <password> --archive=/dump --gzip`
+
+Upgrade MMap to WiredTiger\
+`> cd <your_backend_path>`\
+`> git clone https://github.com/RocketChat/docker-mmap-to-wiredtiger-migration /opt/rocketchat-migration`\
+`> cp -r /opt/rocketchat-migration/docker docker`\
+`> docker-compose stop`\
+`> mv docker-compose.yml docker-compose.mmap.yml`\
+`> cp /opt/rocketchat-migration/docker-compose.yml docker-compose.yml`
+
+make the following changes to docker-compose.yml
+for 'mongo' and 'migrator' change\
+`- ./data/db:/data/db`\
+  to\
+`- mongodb_data:/data/db`
+
+add\
+````
+volumes:
+  mongodb_data:
+````
+`> docker-compose up --build -d`
+
+Perform step 3. Upgrade MongoDB 4.0.5 to 4.2, then come back.
+
+`> mv docker-compose.mmap.yml docker-compose.yml`
+
+continue...
+
+Upgrade MongoDB 4.0.5 to 4.2:\
+change the mongo version in the docker-compose.yml:\
+`image: mongo:4.0.5 -> 4.2.1`
+
+also remove --smallfiles from command:\
+`command: --oplogSize 128 --replSet rs0`\
+`> docker-compose stop mongodb`\
+`> docker-compose rm mongodb`\
+`> docker-compose up -d`\
+`> docker exec -it mongodb bash`\
+`> mongo -u <admin>`\
+`> db.adminCommand( { setFeatureCompatibilityVersion: "4.2" } )` → should return "ok": 1
+
+Keyfile Authentication\
+`> cd <your_backend_path>`\
+`> echo "- $(openssl rand -base64 756)" > mongoDB/keyfile.yml`\
+`> cp docker-compose.yml docker-compose.yml.<yyyyMMdd>.<usr>`
+
+remove:\
+`command: --oplogSize 128 --replSet rs0 --storageEngine=wiredTiger`
+
+add:\
+````
+volumes:
+  - ./mongoDB/keyfile.yml:/data/replica.key.tmp
+````
+````
+entrypoint:
+  - bash
+  - -c
+  - |
+      cp /data/replica.key.tmp /data/replica.key
+      chmod 400 /data/replica.key
+      chown mongodb:mongodb /data/replica.key
+      mongod --bind_ip_all --oplogSize 128 --replSet rs0 --keyFile /data/replica.key
+````
+  
+Upgrade MongoDB 4.2 to 4.4:\
+change the mongo version in the docker-compose.yml:\
+`image: mongo:4.2 -> 4.4`\
+`> docker-compose stop mongodb`\
+`> docker-compose rm mongodb`\
+`> docker-compose up -d`\
+`> docker exec -it mongodb bash`\
+`> mongo -u <admin>`\
+`> db.adminCommand( { setFeatureCompatibilityVersion: "4.4" } )` → should return "ok": 1
+
 ### 2020-11-25
 
 _Before_ updating tag to `4.0.5` in the `docker-compose.yml` file the following changes are necessary:
