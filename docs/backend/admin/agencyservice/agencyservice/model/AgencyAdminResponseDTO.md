@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **external** | [**Boolean**](boolean.md) |  | [optional] [default to null]
 **topics** | [**List**](TopicDTO.md) |  | [optional] [default to null]
 **demographics** | [**DemographicsDTO**](DemographicsDTO.md) |  | [optional] [default to null]
-**state** | [**String**](string.md) |  | [optional] [default to null]
 **createDate** | [**String**](string.md) |  | [optional] [default to null]
 **updateDate** | [**String**](string.md) |  | [optional] [default to null]
 **deleteDate** | [**String**](string.md) |  | [optional] [default to null]
