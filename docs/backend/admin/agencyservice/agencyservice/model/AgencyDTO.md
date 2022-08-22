@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **external** | [**Boolean**](boolean.md) |  | [default to null]
 **topicIds** | [**List**](long.md) |  | [optional] [default to null]
 **demographics** | [**DemographicsDTO**](DemographicsDTO.md) |  | [optional] [default to null]
+**tenantId** | [**Long**](long.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
