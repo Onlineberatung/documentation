@@ -24,6 +24,8 @@
 
 *   [Untitled object in Application settings](./application-settings-properties-disablevideoappointments.md) – `https://onlineberatung/consultingtype#/properties/disableVideoAppointments`
 
+*   [Untitled object in Application settings](./application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md) – `https://onlineberatung/consultingtype#/properties/mainTenantSubdomainForSingleDomainMultitenancy`
+
 *   [Untitled object in Consulting type](./consulting-type-definitions-component.md) – `https://onlineberatung/consultingtype#/definitions/Component`
 
 *   [Untitled object in Consulting type](./consulting-type-definitions-radiobutton.md "A group of values where only one can be selected") – `https://onlineberatung/consultingtype#/definitions/RadioButton`

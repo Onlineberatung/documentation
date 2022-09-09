@@ -16,14 +16,15 @@ Settings for application instance
 
 # Application settings Properties
 
-| Property                                                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                             |
-| :-------------------------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [multitenancyWithSingleDomainEnabled](#multitenancywithsingledomainenabled) | `object` | Required | cannot be null | [Application settings](application-settings-properties-multitenancywithsingledomainenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyWithSingleDomainEnabled") |
-| [multitenancyEnabled](#multitenancyenabled)                                 | `object` | Required | cannot be null | [Application settings](application-settings-properties-multitenancyenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyEnabled")                                 |
-| [useTenantService](#usetenantservice)                                       | `object` | Optional | cannot be null | [Application settings](application-settings-properties-usetenantservice.md "https://onlineberatung/consultingtype#/properties/useTenantService")                                       |
-| [enableTenantTheming](#enabletenanttheming)                                 | `object` | Optional | cannot be null | [Application settings](application-settings-properties-enabletenanttheming.md "https://onlineberatung/consultingtype#/properties/enableTenantTheming")                                 |
-| [enableWalkthrough](#enablewalkthrough)                                     | `object` | Optional | cannot be null | [Application settings](application-settings-properties-enablewalkthrough.md "https://onlineberatung/consultingtype#/properties/enableWalkthrough")                                     |
-| [disableVideoAppointments](#disablevideoappointments)                       | `object` | Optional | cannot be null | [Application settings](application-settings-properties-disablevideoappointments.md "https://onlineberatung/consultingtype#/properties/disableVideoAppointments")                       |
+| Property                                                                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                   |
+| :------------------------------------------------------------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [multitenancyWithSingleDomainEnabled](#multitenancywithsingledomainenabled)                       | `object` | Required | cannot be null | [Application settings](application-settings-properties-multitenancywithsingledomainenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyWithSingleDomainEnabled")                       |
+| [multitenancyEnabled](#multitenancyenabled)                                                       | `object` | Required | cannot be null | [Application settings](application-settings-properties-multitenancyenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyEnabled")                                                       |
+| [useTenantService](#usetenantservice)                                                             | `object` | Optional | cannot be null | [Application settings](application-settings-properties-usetenantservice.md "https://onlineberatung/consultingtype#/properties/useTenantService")                                                             |
+| [enableTenantTheming](#enabletenanttheming)                                                       | `object` | Optional | cannot be null | [Application settings](application-settings-properties-enabletenanttheming.md "https://onlineberatung/consultingtype#/properties/enableTenantTheming")                                                       |
+| [enableWalkthrough](#enablewalkthrough)                                                           | `object` | Optional | cannot be null | [Application settings](application-settings-properties-enablewalkthrough.md "https://onlineberatung/consultingtype#/properties/enableWalkthrough")                                                           |
+| [disableVideoAppointments](#disablevideoappointments)                                             | `object` | Optional | cannot be null | [Application settings](application-settings-properties-disablevideoappointments.md "https://onlineberatung/consultingtype#/properties/disableVideoAppointments")                                             |
+| [mainTenantSubdomainForSingleDomainMultitenancy](#maintenantsubdomainforsingledomainmultitenancy) | `object` | Optional | cannot be null | [Application settings](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md "https://onlineberatung/consultingtype#/properties/mainTenantSubdomainForSingleDomainMultitenancy") |
 
 ## multitenancyWithSingleDomainEnabled
 
@@ -132,6 +133,24 @@ Settings for application instance
 ### disableVideoAppointments Type
 
 `object` ([Details](application-settings-properties-disablevideoappointments.md))
+
+## mainTenantSubdomainForSingleDomainMultitenancy
+
+
+
+`mainTenantSubdomainForSingleDomainMultitenancy`
+
+*   is optional
+
+*   Type: `object` ([Details](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md))
+
+*   cannot be null
+
+*   defined in: [Application settings](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md "https://onlineberatung/consultingtype#/properties/mainTenantSubdomainForSingleDomainMultitenancy")
+
+### mainTenantSubdomainForSingleDomainMultitenancy Type
+
+`object` ([Details](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md))
 
 # Application settings Definitions
 
