@@ -18,13 +18,15 @@
 
 *   [Untitled object in Application settings](./application-settings-properties-usetenantservice.md) – `https://onlineberatung/consultingtype#/properties/useTenantService`
 
-*   [Untitled object in Application settings](./application-settings-properties-enabletenanttheming.md) – `https://onlineberatung/consultingtype#/properties/enableTenantTheming`
-
 *   [Untitled object in Application settings](./application-settings-properties-enablewalkthrough.md) – `https://onlineberatung/consultingtype#/properties/enableWalkthrough`
 
 *   [Untitled object in Application settings](./application-settings-properties-disablevideoappointments.md) – `https://onlineberatung/consultingtype#/properties/disableVideoAppointments`
 
 *   [Untitled object in Application settings](./application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md) – `https://onlineberatung/consultingtype#/properties/mainTenantSubdomainForSingleDomainMultitenancy`
+
+*   [Untitled object in Application settings](./application-settings-properties-budibasesso.md) – `https://onlineberatung/consultingtype#/properties/budibaseSSO`
+
+*   [Untitled object in Application settings](./application-settings-properties-useoverviewpage.md) – `https://onlineberatung/consultingtype#/properties/useOverviewPage`
 
 *   [Untitled object in Consulting type](./consulting-type-definitions-component.md) – `https://onlineberatung/consultingtype#/definitions/Component`
 

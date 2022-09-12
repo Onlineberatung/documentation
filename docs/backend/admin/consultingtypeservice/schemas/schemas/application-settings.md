@@ -21,10 +21,11 @@ Settings for application instance
 | [multitenancyWithSingleDomainEnabled](#multitenancywithsingledomainenabled)                       | `object` | Required | cannot be null | [Application settings](application-settings-properties-multitenancywithsingledomainenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyWithSingleDomainEnabled")                       |
 | [multitenancyEnabled](#multitenancyenabled)                                                       | `object` | Required | cannot be null | [Application settings](application-settings-properties-multitenancyenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyEnabled")                                                       |
 | [useTenantService](#usetenantservice)                                                             | `object` | Optional | cannot be null | [Application settings](application-settings-properties-usetenantservice.md "https://onlineberatung/consultingtype#/properties/useTenantService")                                                             |
-| [enableTenantTheming](#enabletenanttheming)                                                       | `object` | Optional | cannot be null | [Application settings](application-settings-properties-enabletenanttheming.md "https://onlineberatung/consultingtype#/properties/enableTenantTheming")                                                       |
 | [enableWalkthrough](#enablewalkthrough)                                                           | `object` | Optional | cannot be null | [Application settings](application-settings-properties-enablewalkthrough.md "https://onlineberatung/consultingtype#/properties/enableWalkthrough")                                                           |
 | [disableVideoAppointments](#disablevideoappointments)                                             | `object` | Optional | cannot be null | [Application settings](application-settings-properties-disablevideoappointments.md "https://onlineberatung/consultingtype#/properties/disableVideoAppointments")                                             |
 | [mainTenantSubdomainForSingleDomainMultitenancy](#maintenantsubdomainforsingledomainmultitenancy) | `object` | Optional | cannot be null | [Application settings](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md "https://onlineberatung/consultingtype#/properties/mainTenantSubdomainForSingleDomainMultitenancy") |
+| [budibaseSSO](#budibasesso)                                                                       | `object` | Optional | cannot be null | [Application settings](application-settings-properties-budibasesso.md "https://onlineberatung/consultingtype#/properties/budibaseSSO")                                                                       |
+| [useOverviewPage](#useoverviewpage)                                                               | `object` | Optional | cannot be null | [Application settings](application-settings-properties-useoverviewpage.md "https://onlineberatung/consultingtype#/properties/useOverviewPage")                                                               |
 
 ## multitenancyWithSingleDomainEnabled
 
@@ -80,24 +81,6 @@ Settings for application instance
 
 `object` ([Details](application-settings-properties-usetenantservice.md))
 
-## enableTenantTheming
-
-
-
-`enableTenantTheming`
-
-*   is optional
-
-*   Type: `object` ([Details](application-settings-properties-enabletenanttheming.md))
-
-*   cannot be null
-
-*   defined in: [Application settings](application-settings-properties-enabletenanttheming.md "https://onlineberatung/consultingtype#/properties/enableTenantTheming")
-
-### enableTenantTheming Type
-
-`object` ([Details](application-settings-properties-enabletenanttheming.md))
-
 ## enableWalkthrough
 
 
@@ -151,6 +134,42 @@ Settings for application instance
 ### mainTenantSubdomainForSingleDomainMultitenancy Type
 
 `object` ([Details](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md))
+
+## budibaseSSO
+
+
+
+`budibaseSSO`
+
+*   is optional
+
+*   Type: `object` ([Details](application-settings-properties-budibasesso.md))
+
+*   cannot be null
+
+*   defined in: [Application settings](application-settings-properties-budibasesso.md "https://onlineberatung/consultingtype#/properties/budibaseSSO")
+
+### budibaseSSO Type
+
+`object` ([Details](application-settings-properties-budibasesso.md))
+
+## useOverviewPage
+
+
+
+`useOverviewPage`
+
+*   is optional
+
+*   Type: `object` ([Details](application-settings-properties-useoverviewpage.md))
+
+*   cannot be null
+
+*   defined in: [Application settings](application-settings-properties-useoverviewpage.md "https://onlineberatung/consultingtype#/properties/useOverviewPage")
+
+### useOverviewPage Type
+
+`object` ([Details](application-settings-properties-useoverviewpage.md))
 
 # Application settings Definitions
 

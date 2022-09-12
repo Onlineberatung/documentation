@@ -1,7 +1,7 @@
 # Untitled boolean in Application settings Schema
 
 ```txt
-https://onlineberatung/consultingtype#/properties/enableTenantTheming/properties/value
+https://onlineberatung/consultingtype#/properties/budibaseSSO/properties/readOnly
 ```
 
 
@@ -10,6 +10,6 @@ https://onlineberatung/consultingtype#/properties/enableTenantTheming/properties
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [application-settings.json*](application-settings.json "open original schema") |
 
-## value Type
+## readOnly Type
 
 `boolean`
