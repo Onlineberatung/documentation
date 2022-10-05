@@ -16,16 +16,20 @@ Settings for application instance
 
 # Application settings Properties
 
-| Property                                                                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                   |
-| :------------------------------------------------------------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [multitenancyWithSingleDomainEnabled](#multitenancywithsingledomainenabled)                       | `object` | Required | cannot be null | [Application settings](application-settings-properties-multitenancywithsingledomainenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyWithSingleDomainEnabled")                       |
-| [multitenancyEnabled](#multitenancyenabled)                                                       | `object` | Required | cannot be null | [Application settings](application-settings-properties-multitenancyenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyEnabled")                                                       |
-| [useTenantService](#usetenantservice)                                                             | `object` | Optional | cannot be null | [Application settings](application-settings-properties-usetenantservice.md "https://onlineberatung/consultingtype#/properties/useTenantService")                                                             |
-| [enableWalkthrough](#enablewalkthrough)                                                           | `object` | Optional | cannot be null | [Application settings](application-settings-properties-enablewalkthrough.md "https://onlineberatung/consultingtype#/properties/enableWalkthrough")                                                           |
-| [disableVideoAppointments](#disablevideoappointments)                                             | `object` | Optional | cannot be null | [Application settings](application-settings-properties-disablevideoappointments.md "https://onlineberatung/consultingtype#/properties/disableVideoAppointments")                                             |
-| [mainTenantSubdomainForSingleDomainMultitenancy](#maintenantsubdomainforsingledomainmultitenancy) | `object` | Optional | cannot be null | [Application settings](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md "https://onlineberatung/consultingtype#/properties/mainTenantSubdomainForSingleDomainMultitenancy") |
-| [budibaseSSO](#budibasesso)                                                                       | `object` | Optional | cannot be null | [Application settings](application-settings-properties-budibasesso.md "https://onlineberatung/consultingtype#/properties/budibaseSSO")                                                                       |
-| [useOverviewPage](#useoverviewpage)                                                               | `object` | Optional | cannot be null | [Application settings](application-settings-properties-useoverviewpage.md "https://onlineberatung/consultingtype#/properties/useOverviewPage")                                                               |
+| Property                                                                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                   |
+| :------------------------------------------------------------------------------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [multitenancyWithSingleDomainEnabled](#multitenancywithsingledomainenabled)                       | `object`      | Required | cannot be null | [Application settings](application-settings-properties-multitenancywithsingledomainenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyWithSingleDomainEnabled")                       |
+| [multitenancyEnabled](#multitenancyenabled)                                                       | `object`      | Required | cannot be null | [Application settings](application-settings-properties-multitenancyenabled.md "https://onlineberatung/consultingtype#/properties/multitenancyEnabled")                                                       |
+| [useTenantService](#usetenantservice)                                                             | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-usetenantservice.md "https://onlineberatung/consultingtype#/properties/useTenantService")                                                             |
+| [enableWalkthrough](#enablewalkthrough)                                                           | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-enablewalkthrough.md "https://onlineberatung/consultingtype#/properties/enableWalkthrough")                                                           |
+| [disableVideoAppointments](#disablevideoappointments)                                             | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-disablevideoappointments.md "https://onlineberatung/consultingtype#/properties/disableVideoAppointments")                                             |
+| [mainTenantSubdomainForSingleDomainMultitenancy](#maintenantsubdomainforsingledomainmultitenancy) | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md "https://onlineberatung/consultingtype#/properties/mainTenantSubdomainForSingleDomainMultitenancy") |
+| [useOverviewPage](#useoverviewpage)                                                               | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-useoverviewpage.md "https://onlineberatung/consultingtype#/properties/useOverviewPage")                                                               |
+| [calcomUrl](#calcomurl)                                                                           | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-calcomurl.md "https://onlineberatung/consultingtype#/properties/calcomUrl")                                                                           |
+| [budibaseAuthClientId](#budibaseauthclientid)                                                     | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-budibaseauthclientid.md "https://onlineberatung/consultingtype#/properties/budibaseAuthClientId")                                                     |
+| [budibaseUrl](#budibaseurl)                                                                       | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-budibaseurl.md "https://onlineberatung/consultingtype#/properties/budibaseUrl")                                                                       |
+| [calendarAppUrl](#calendarappurl)                                                                 | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-calendarappurl.md "https://onlineberatung/consultingtype#/properties/calendarAppUrl")                                                                 |
+| [required](#required)                                                                             | Not specified | Optional | cannot be null | [Application settings](application-settings-properties-required.md "https://onlineberatung/consultingtype#/properties/required")                                                                             |
 
 ## multitenancyWithSingleDomainEnabled
 
@@ -135,24 +139,6 @@ Settings for application instance
 
 `object` ([Details](application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md))
 
-## budibaseSSO
-
-
-
-`budibaseSSO`
-
-*   is optional
-
-*   Type: `object` ([Details](application-settings-properties-budibasesso.md))
-
-*   cannot be null
-
-*   defined in: [Application settings](application-settings-properties-budibasesso.md "https://onlineberatung/consultingtype#/properties/budibaseSSO")
-
-### budibaseSSO Type
-
-`object` ([Details](application-settings-properties-budibasesso.md))
-
 ## useOverviewPage
 
 
@@ -170,6 +156,96 @@ Settings for application instance
 ### useOverviewPage Type
 
 `object` ([Details](application-settings-properties-useoverviewpage.md))
+
+## calcomUrl
+
+
+
+`calcomUrl`
+
+*   is optional
+
+*   Type: `object` ([Details](application-settings-properties-calcomurl.md))
+
+*   cannot be null
+
+*   defined in: [Application settings](application-settings-properties-calcomurl.md "https://onlineberatung/consultingtype#/properties/calcomUrl")
+
+### calcomUrl Type
+
+`object` ([Details](application-settings-properties-calcomurl.md))
+
+## budibaseAuthClientId
+
+
+
+`budibaseAuthClientId`
+
+*   is optional
+
+*   Type: `object` ([Details](application-settings-properties-budibaseauthclientid.md))
+
+*   cannot be null
+
+*   defined in: [Application settings](application-settings-properties-budibaseauthclientid.md "https://onlineberatung/consultingtype#/properties/budibaseAuthClientId")
+
+### budibaseAuthClientId Type
+
+`object` ([Details](application-settings-properties-budibaseauthclientid.md))
+
+## budibaseUrl
+
+
+
+`budibaseUrl`
+
+*   is optional
+
+*   Type: `object` ([Details](application-settings-properties-budibaseurl.md))
+
+*   cannot be null
+
+*   defined in: [Application settings](application-settings-properties-budibaseurl.md "https://onlineberatung/consultingtype#/properties/budibaseUrl")
+
+### budibaseUrl Type
+
+`object` ([Details](application-settings-properties-budibaseurl.md))
+
+## calendarAppUrl
+
+
+
+`calendarAppUrl`
+
+*   is optional
+
+*   Type: `object` ([Details](application-settings-properties-calendarappurl.md))
+
+*   cannot be null
+
+*   defined in: [Application settings](application-settings-properties-calendarappurl.md "https://onlineberatung/consultingtype#/properties/calendarAppUrl")
+
+### calendarAppUrl Type
+
+`object` ([Details](application-settings-properties-calendarappurl.md))
+
+## required
+
+
+
+`required`
+
+*   is optional
+
+*   Type: unknown
+
+*   cannot be null
+
+*   defined in: [Application settings](application-settings-properties-required.md "https://onlineberatung/consultingtype#/properties/required")
+
+### required Type
+
+unknown
 
 # Application settings Definitions
 

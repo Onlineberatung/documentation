@@ -1,7 +1,7 @@
 # Untitled object in Application settings Schema
 
 ```txt
-https://onlineberatung/consultingtype#/properties/budibaseSSO
+https://onlineberatung/consultingtype#/properties/budibaseUrl
 ```
 
 
@@ -10,16 +10,16 @@ https://onlineberatung/consultingtype#/properties/budibaseSSO
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [application-settings.json*](application-settings.json "open original schema") |
 
-## budibaseSSO Type
+## budibaseUrl Type
 
-`object` ([Details](application-settings-properties-budibasesso.md))
+`object` ([Details](application-settings-properties-budibaseurl.md))
 
-# budibaseSSO Properties
+# budibaseUrl Properties
 
 | Property              | Type      | Required | Nullable       | Defined by                                                                                                                                                                     |
 | :-------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [value](#value)       | `boolean` | Required | cannot be null | [Application settings](application-settings-properties-budibasesso-properties-value.md "https://onlineberatung/consultingtype#/properties/budibaseSSO/properties/value")       |
-| [readOnly](#readonly) | `boolean` | Required | cannot be null | [Application settings](application-settings-properties-budibasesso-properties-readonly.md "https://onlineberatung/consultingtype#/properties/budibaseSSO/properties/readOnly") |
+| [value](#value)       | `string`  | Required | cannot be null | [Application settings](application-settings-properties-budibaseurl-properties-value.md "https://onlineberatung/consultingtype#/properties/budibaseUrl/properties/value")       |
+| [readOnly](#readonly) | `boolean` | Required | cannot be null | [Application settings](application-settings-properties-budibaseurl-properties-readonly.md "https://onlineberatung/consultingtype#/properties/budibaseUrl/properties/readOnly") |
 
 ## value
 
@@ -29,15 +29,15 @@ https://onlineberatung/consultingtype#/properties/budibaseSSO
 
 *   is required
 
-*   Type: `boolean`
+*   Type: `string`
 
 *   cannot be null
 
-*   defined in: [Application settings](application-settings-properties-budibasesso-properties-value.md "https://onlineberatung/consultingtype#/properties/budibaseSSO/properties/value")
+*   defined in: [Application settings](application-settings-properties-budibaseurl-properties-value.md "https://onlineberatung/consultingtype#/properties/budibaseUrl/properties/value")
 
 ### value Type
 
-`boolean`
+`string`
 
 ## readOnly
 
@@ -51,7 +51,7 @@ https://onlineberatung/consultingtype#/properties/budibaseSSO
 
 *   cannot be null
 
-*   defined in: [Application settings](application-settings-properties-budibasesso-properties-readonly.md "https://onlineberatung/consultingtype#/properties/budibaseSSO/properties/readOnly")
+*   defined in: [Application settings](application-settings-properties-budibaseurl-properties-readonly.md "https://onlineberatung/consultingtype#/properties/budibaseUrl/properties/readOnly")
 
 ### readOnly Type
 

@@ -24,9 +24,15 @@
 
 *   [Untitled object in Application settings](./application-settings-properties-maintenantsubdomainforsingledomainmultitenancy.md) – `https://onlineberatung/consultingtype#/properties/mainTenantSubdomainForSingleDomainMultitenancy`
 
-*   [Untitled object in Application settings](./application-settings-properties-budibasesso.md) – `https://onlineberatung/consultingtype#/properties/budibaseSSO`
-
 *   [Untitled object in Application settings](./application-settings-properties-useoverviewpage.md) – `https://onlineberatung/consultingtype#/properties/useOverviewPage`
+
+*   [Untitled object in Application settings](./application-settings-properties-calcomurl.md) – `https://onlineberatung/consultingtype#/properties/calcomUrl`
+
+*   [Untitled object in Application settings](./application-settings-properties-budibaseauthclientid.md) – `https://onlineberatung/consultingtype#/properties/budibaseAuthClientId`
+
+*   [Untitled object in Application settings](./application-settings-properties-budibaseurl.md) – `https://onlineberatung/consultingtype#/properties/budibaseUrl`
+
+*   [Untitled object in Application settings](./application-settings-properties-calendarappurl.md) – `https://onlineberatung/consultingtype#/properties/calendarAppUrl`
 
 *   [Untitled object in Consulting type](./consulting-type-definitions-component.md) – `https://onlineberatung/consultingtype#/definitions/Component`
 
