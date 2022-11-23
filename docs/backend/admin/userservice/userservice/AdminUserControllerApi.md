@@ -5,11 +5,14 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**changeAgencyType**](AdminUserControllerApi.md#changeAgencyType) | **POST** /useradmin/agency/{agencyId}/changetype | Change an agency from team-agency to default and vice-versa and switch the associated consultant accounts to team consultant or default consultant. Ongoing team counselings change to 1:1 when converting agency to default status. 1:1 counselings remain single counselings when swapping the agency to team-agency. This endpoint must be used only internally from AgencyService to ensure the regarding agency has been flagged correctly too. [Authorization: Role: user-admin]
+[**createAgencyAdmin**](AdminUserControllerApi.md#createAgencyAdmin) | **POST** /useradmin/agencyadmins | Creates a new Agency Admin [Authorization: Role: user-admin]
 [**createConsultant**](AdminUserControllerApi.md#createConsultant) | **POST** /useradmin/consultants | Creates a new consultant [Authorization: Role: consultant-admin]
 [**createConsultantAgency**](AdminUserControllerApi.md#createConsultantAgency) | **POST** /useradmin/consultants/{consultantId}/agencies | Create a consultant-agency relation [Authorization: Role: user-admin]
+[**deleteAgencyAdmin**](AdminUserControllerApi.md#deleteAgencyAdmin) | **DELETE** /useradmin/agencyadmins/{adminId} | delete an agency admin [Authorization: Role: user-admin]
 [**deleteConsultantAgency**](AdminUserControllerApi.md#deleteConsultantAgency) | **DELETE** /useradmin/consultants/{consultantId}/agencies/{agencyId} | Delete a consultant-agency relation [Authorization: Role: user-admin]
 [**generateViolationReport**](AdminUserControllerApi.md#generateViolationReport) | **GET** /useradmin/report | Returns an generated report containing data integration violations. [Authorization: Role: user-admin]
-[**getAdminById**](AdminUserControllerApi.md#getAdminById) | **GET** /useradmin/admins/{adminId} | Get a admin by given id [Authorization: Role: agency-admin, single-tenant-admin]
+[**getAgencyAdmin**](AdminUserControllerApi.md#getAgencyAdmin) | **GET** /useradmin/agencyadmins/{adminId} | Get an agency admin by given id [Authorization: Role: user-admin]
+[**getAgencyAdmins**](AdminUserControllerApi.md#getAgencyAdmins) | **GET** /useradmin/agencyadmins | Returns the list of agency admins by filter query parameter. [Authorization: Role: user-admin]
 [**getAgencyConsultants**](AdminUserControllerApi.md#getAgencyConsultants) | **GET** /useradmin/agencies/{agencyId}/consultants | Returns the list of consultants for a given agency Id. [Authorization: Role: user-admin]
 [**getAsker**](AdminUserControllerApi.md#getAsker) | **GET** /useradmin/askers/{askerId} | Get an asker by given id [Authorization: Role: consultant-admin]
 [**getConsultant**](AdminUserControllerApi.md#getConsultant) | **GET** /useradmin/consultants/{consultantId} | Get a consultant by given id [Authorization: Role: consultant-admin]
@@ -19,6 +22,7 @@ Method | HTTP request | Description
 [**markAskerForDeletion**](AdminUserControllerApi.md#markAskerForDeletion) | **DELETE** /useradmin/askers/{askerId} | Delete a asker by given id [Authorization: Role: consultant-admin]
 [**markConsultantForDeletion**](AdminUserControllerApi.md#markConsultantForDeletion) | **DELETE** /useradmin/consultants/{consultantId} | Mark a consultant for deletion [Authorization: Role: consultant-admin]
 [**setConsultantAgencies**](AdminUserControllerApi.md#setConsultantAgencies) | **PUT** /useradmin/consultants/{consultantId}/agencies | Set consultant-agency relations [Authorization: Role: user-admin]
+[**updateAgencyAdmin**](AdminUserControllerApi.md#updateAgencyAdmin) | **PUT** /useradmin/agencyadmins/{adminId} | Updates an agency admin [Authorization: Role: user-admin]
 [**updateConsultant**](AdminUserControllerApi.md#updateConsultant) | **PUT** /useradmin/consultants/{consultantId} | Updates a consultant [Authorization: Role: consultant-admin]
 
 
@@ -47,6 +51,31 @@ null (empty response body)
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+<a name="createAgencyAdmin"></a>
+# **createAgencyAdmin**
+> AdminResponseDTO createAgencyAdmin(CreateAgencyAdminDTO)
+
+Creates a new Agency Admin [Authorization: Role: user-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **CreateAgencyAdminDTO** | [**CreateAgencyAdminDTO**](../model/CreateAgencyAdminDTO.md)|  |
+
+### Return type
+
+[**AdminResponseDTO**](../model/AdminResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/hal+json
 
 <a name="createConsultant"></a>
 # **createConsultant**
@@ -99,6 +128,31 @@ null (empty response body)
 - **Content-Type**: application/json
 - **Accept**: Not defined
 
+<a name="deleteAgencyAdmin"></a>
+# **deleteAgencyAdmin**
+> deleteAgencyAdmin(adminId)
+
+delete an agency admin [Authorization: Role: user-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **adminId** | **String**| admin id | [default to null]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
 <a name="deleteConsultantAgency"></a>
 # **deleteConsultantAgency**
 > deleteConsultantAgency(consultantId, agencyId)
@@ -147,21 +201,21 @@ This endpoint does not need any parameter.
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-<a name="getAdminById"></a>
-# **getAdminById**
-> AdminDTO getAdminById(adminId)
+<a name="getAgencyAdmin"></a>
+# **getAgencyAdmin**
+> AdminResponseDTO getAgencyAdmin(adminId)
 
-Get a admin by given id [Authorization: Role: agency-admin, single-tenant-admin]
+Get an agency admin by given id [Authorization: Role: user-admin]
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **adminId** | **String**| adminId id | [default to null]
+ **adminId** | **String**| admin id | [default to null]
 
 ### Return type
 
-[**AdminDTO**](../model/AdminDTO.md)
+[**AdminResponseDTO**](../model/AdminResponseDTO.md)
 
 ### Authorization
 
@@ -171,6 +225,34 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+<a name="getAgencyAdmins"></a>
+# **getAgencyAdmins**
+> AgencyAdminSearchResultDTO getAgencyAdmins(page, perPage, filter, sort)
+
+Returns the list of agency admins by filter query parameter. [Authorization: Role: user-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Number of page where to start in the query (1 &#x3D; first page) | [default to null]
+ **perPage** | **Integer**| Number of items which are being returned per page | [default to null]
+ **filter** | [**AdminFilter**](../model/.md)| The filter parameters to search for. If no filter is set all admins are being returned. | [optional] [default to null]
+ **sort** | [**Sort**](../model/.md)| The sort parameter containing field and order the response should be sorted | [optional] [default to null]
+
+### Return type
+
+[**AgencyAdminSearchResultDTO**](../model/AgencyAdminSearchResultDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
 
 <a name="getAgencyConsultants"></a>
 # **getAgencyConsultants**
@@ -404,6 +486,32 @@ null (empty response body)
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+<a name="updateAgencyAdmin"></a>
+# **updateAgencyAdmin**
+> AdminResponseDTO updateAgencyAdmin(adminId, UpdateAgencyAdminDTO)
+
+Updates an agency admin [Authorization: Role: user-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **adminId** | **String**| agency admin id | [default to null]
+ **UpdateAgencyAdminDTO** | [**UpdateAgencyAdminDTO**](../model/UpdateAgencyAdminDTO.md)|  |
+
+### Return type
+
+[**AdminResponseDTO**](../model/AdminResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/hal+json
 
 <a name="updateConsultant"></a>
 # **updateConsultant**
