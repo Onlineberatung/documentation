@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**createConsultantAgency**](AdminUserControllerApi.md#createConsultantAgency) | **POST** /useradmin/consultants/{consultantId}/agencies | Create a consultant-agency relation [Authorization: Role: user-admin]
 [**deleteConsultantAgency**](AdminUserControllerApi.md#deleteConsultantAgency) | **DELETE** /useradmin/consultants/{consultantId}/agencies/{agencyId} | Delete a consultant-agency relation [Authorization: Role: user-admin]
 [**generateViolationReport**](AdminUserControllerApi.md#generateViolationReport) | **GET** /useradmin/report | Returns an generated report containing data integration violations. [Authorization: Role: user-admin]
+[**getAdminById**](AdminUserControllerApi.md#getAdminById) | **GET** /useradmin/admins/{adminId} | Get a admin by given id [Authorization: Role: agency-admin, single-tenant-admin]
 [**getAgencyConsultants**](AdminUserControllerApi.md#getAgencyConsultants) | **GET** /useradmin/agencies/{agencyId}/consultants | Returns the list of consultants for a given agency Id. [Authorization: Role: user-admin]
 [**getAsker**](AdminUserControllerApi.md#getAsker) | **GET** /useradmin/askers/{askerId} | Get an asker by given id [Authorization: Role: consultant-admin]
 [**getConsultant**](AdminUserControllerApi.md#getConsultant) | **GET** /useradmin/consultants/{consultantId} | Get a consultant by given id [Authorization: Role: consultant-admin]
@@ -136,6 +137,31 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List**](../model/ViolationDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="getAdminById"></a>
+# **getAdminById**
+> AdminDTO getAdminById(adminId)
+
+Get a admin by given id [Authorization: Role: agency-admin, single-tenant-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **adminId** | **String**| adminId id | [default to null]
+
+### Return type
+
+[**AdminDTO**](../model/AdminDTO.md)
 
 ### Authorization
 
