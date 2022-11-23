@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**deleteAgencyAdmin**](AdminUserControllerApi.md#deleteAgencyAdmin) | **DELETE** /useradmin/agencyadmins/{adminId} | delete an agency admin [Authorization: Role: user-admin]
 [**deleteConsultantAgency**](AdminUserControllerApi.md#deleteConsultantAgency) | **DELETE** /useradmin/consultants/{consultantId}/agencies/{agencyId} | Delete a consultant-agency relation [Authorization: Role: user-admin]
 [**generateViolationReport**](AdminUserControllerApi.md#generateViolationReport) | **GET** /useradmin/report | Returns an generated report containing data integration violations. [Authorization: Role: user-admin]
+[**getAdminAgencies**](AdminUserControllerApi.md#getAdminAgencies) | **GET** /useradmin/agencyadmins/{userId}/agencies | Returns the list of agencies for a given admin Id. [Authorization: Role: restricted-agency-admin]
 [**getAgencyAdmin**](AdminUserControllerApi.md#getAgencyAdmin) | **GET** /useradmin/agencyadmins/{adminId} | Get an agency admin by given id [Authorization: Role: user-admin]
 [**getAgencyAdmins**](AdminUserControllerApi.md#getAgencyAdmins) | **GET** /useradmin/agencyadmins | Returns the list of agency admins by filter query parameter. [Authorization: Role: user-admin]
 [**getAgencyConsultants**](AdminUserControllerApi.md#getAgencyConsultants) | **GET** /useradmin/agencies/{agencyId}/consultants | Returns the list of consultants for a given agency Id. [Authorization: Role: user-admin]
@@ -200,6 +201,31 @@ This endpoint does not need any parameter.
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+<a name="getAdminAgencies"></a>
+# **getAdminAgencies**
+> AdminAgencyResponseDTO getAdminAgencies(userId)
+
+Returns the list of agencies for a given admin Id. [Authorization: Role: restricted-agency-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| user Id | [default to null]
+
+### Return type
+
+[**AdminAgencyResponseDTO**](../model/AdminAgencyResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
 
 <a name="getAgencyAdmin"></a>
 # **getAgencyAdmin**

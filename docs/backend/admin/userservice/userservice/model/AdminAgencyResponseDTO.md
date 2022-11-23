@@ -1,4 +1,4 @@
-# ConsultantAgencyResponseDTO
+# AdminAgencyResponseDTO
 ## Properties
 
 Name | Type | Description | Notes
