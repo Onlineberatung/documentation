@@ -259,7 +259,7 @@ This endpoint does not need any parameter.
 
 <a name="getAdminAgencies"></a>
 # **getAdminAgencies**
-> AdminAgencyResponseDTO getAdminAgencies(adminId)
+> List getAdminAgencies(adminId)
 
 Returns the list of agencies for a given admin Id. [Authorization: Role: restricted-agency-admin]
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdminAgencyResponseDTO**](../model/AdminAgencyResponseDTO.md)
+[**List**](../model/long.md)
 
 ### Authorization
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/hal+json
+- **Accept**: application/json
 
 <a name="getAgencyAdmin"></a>
 # **getAgencyAdmin**
