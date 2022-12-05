@@ -36,9 +36,7 @@ To run the application locally you'll need to setup the backend first.
 
 Please follow these steps:
 
-1. [Setup the backend locally](../backend/install-and-running-locally)
 2. [Create core data and import users](../backend/create-core-data-import-users)
-3. [Start the services](../backend/starting-and-stopping-the-services)
 
 ### Starting with local backend
 
@@ -53,7 +51,6 @@ After you're are finished with the setup steps and all services work, run these 
 
 5. Afterwards you can start the frontend with `npm start`
 6. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port (e.g. `proxy_pass http://caritas.local:9000/;`).
-7. [Start the backend](../backend/starting-and-stopping-the-services)
 8. The frontend opens at your configured host. To avoid CORS issues during the login, remove the port and login by just using the host.
 
 ### Starting without local backend

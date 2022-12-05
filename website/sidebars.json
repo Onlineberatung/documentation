@@ -4,28 +4,16 @@
       "general/home",
       "general/git-workflow"
     ],
-    "Project setup": [
-      "setup/setup-backend",
+    "Setup": [
+      "backend/install-and-running-on-cluster",
       "setup/setup-frontend"
     ],
-    "Backend setup and configuration": [
-      "backend/install-and-running-on-server",
-      "backend/install-and-running-locally",
-      "backend/first-start",
-      "backend/service-configuration",
-      "backend/file-permissions",
-      "backend/openldap-configuration",
+    "Configuration and Usage": [
       "backend/create-core-data-import-users",
-      "backend/mailservice-templates",
-      "backend/jenkins",
-      "backend/nginx",
-      "backend/ssl-certificate",
-      "backend/cors-configuration",
-      "backend/video-backend"
+      "backend/mailservice-templates"
     ],
     "Backend in general": [
       "backend/service-overview",
-      "backend/starting-and-stopping-the-services",
       "backend/login-data-access-links",
       "backend/admin-api"
     ],

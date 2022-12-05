@@ -5,9 +5,7 @@ title: Home
 
 ## Project Description
 
-Psychosocial counseling for people in difficult life situations is an essential task of Online-Beratung. Online-Beratung follows the approach of blended counseling which means the systematic and conceptually tailored combination of various digital and analog communication channels in counseling.
-
-The Online-Beratung service is a user-centered, responsive, data protection-compliant and browser-based counseling platform on which psychosocial counseling between those seeking advice and professionals can take place.
+The Online-Beratung counseling service is a user-centered, responsive, data protection-compliant and browser-based counseling platform on which psychosocial counseling between those seeking advice and professionals can take place.
 For offering this professional counseling service online it is important that:
 
 - anonymity is possible,
@@ -15,7 +13,7 @@ For offering this professional counseling service online it is important that:
 - varying consulting settings can be chosen.
 
 There is also a need for such advisory platforms in other sectors, so that we would like to make our developments available to the general public and encourage joint further development.
-Online-Beratung's work on this platform is supported by the German Federal Ministry of Family Affairs.
+The work on this platform is supported by the German Federal Ministry of Family Affairs.
 
 In this documentation you will find information on how to set up, run and contribute to the project.
 

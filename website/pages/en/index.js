@@ -69,24 +69,11 @@ class Index extends React.Component {
         <div className="mainContainer">
           <div className="mainContainer__projectDescription">
             <p>
-              Psychosocial counseling for people in difficult life situations is
-              an essential task of Caritas. Caritas follows the approach of
-              blended counseling which means the systematic and conceptually
-              tailored combination of various digital and analog communication
-              channels in counseling.
-            </p>
-            <p>
-              In Caritas and its professional associations there are more than
-              4000 counseling centers nationwide in the most diverse subject
-              areas. Meanwhile 20 of these subject areas are active in online
-              counseling. In order for this counseling to be networked and
-              tailored to the needs of the individual, Caritas has decided to
-              develop its own counseling platform. The Caritas online counseling
-              service is a user-centered, responsive, data protection-compliant
-              and browser-based counseling platform on which psychosocial
-              counseling between those seeking advice and professionals can take
-              place. For offering this professional counseling service online it
-              is important that:
+              The Online-Beratung counseling service is a user-centered,
+              responsive, data protection-compliant and browser-based counseling
+              platform on which psychosocial counseling between those seeking
+              advice and professionals can take place. For offering this
+              professional counseling service online it is important that:
             </p>
             <ul>
               <li>anonymity is possible,</li>
@@ -98,8 +85,8 @@ class Index extends React.Component {
             <p>
               There is also a need for such advisory platforms in other sectors,
               so that we would like to make our developments available to the
-              general public and encourage joint further development. Caritas'
-              work on this platform is supported by the German Federal Ministry
+              general public and encourage joint further development. The work
+              on this platform is supported by the German Federal Ministry
               of Family Affairs.
             </p>
             <p>
