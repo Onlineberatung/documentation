@@ -2,42 +2,28 @@
 id: create-core-data-import-users
 title: Create core data and import users
 ---
-## AgencyService: Create master data
 
-For the AgencyService, master data (consulting offices, etc.) must be created. For this purpose, the following SQL statements can be executed in the admin (note the order):
+# Entering Data
+
+## Obtaining an authorization token
+
+In order to use the REST APIs to populate the system with data, one has to obtain an authorization bearer token first.
+
+
+## AgencyService: Agency and Diocese CRUD
+
+For the AgencyService, master data (consulting offices, etc.) must be created. By default, one example consulting agency is created in the system at setup.
+For this purpose, the following REST API endpoints should be used (note the order):
 
 ### Create dioceses
-``use agencyservice;``\
-``INSERT INTO agencyservice.diocese (id, name, create_date, update_date) values (NEXTVAL(sequence_diocese), `<dioceseName>`, now(), now());``\
+
 
 ### Create agencies
-``use agencyservice;``\
-``INSERT INTO `agency` (`id`, `diocese_id`, `name`, `description`, `postcode`, `city`, `is_team_agency`, `consulting_type`, `is_offline`, `create_date`, `update_date`) VALUES``\
-``(NEXTVAL(sequence_agency),	1,	'<agencyName>',	'<agencyDescription>',	'<postcode>',	'<city>',	<isTeamAgency>,	<consultingType>,	<isOffline>, now(), now());``\
 
-## UserService: Consultant Import
 
-Consultants can be imported via the UserService. Consultants can be created from scratch or additional consultants can be assigned to existing consultants. The import is currently not designed to change further data for existing consultants.
+## UserService: Consultants CRUD
 
-During the import, the corresponding accounts are created in Keycloak, in Rocket.Chat and in the application database. It also assigns the specified consulting locations to the consultants and adds the consultants to the necessary Rocket.Chat rooms for existing initial requests.
 
-The import is done via a CSV file with the following format (__Headlines must be removed for import__):
-
-### Example import (new creation)
-
-```
-consultant_id,old_id,username,first_name,last_name,email,is_absent,absence_message,"agency_id;roleset,agency_id;roleset"
-,1,mueller,Max,Müller,max.meuller@domain.de,nein,"","300;main,301;main"
-,2,meier,Werner,meier,werner.meier@domain.de,ja,"I am currently not available.","300;main"
-```
-
-### Update example
-
-```
-consultant_id,old_id,username,first_name,last_name,email,is_absent,absence_message,"agency_id;roleset,agency_id;roleset"
-KSJDD88-0339393-9999DDD,,mueller,,max.meuller@domain.de,,,,,"304;main,305;main"
-```
-__Note__: Currently, only the named consulting offices are assigned during an update. There is no update in the user name or email address.
 
 ### Description of the fields
 | Field | Description |

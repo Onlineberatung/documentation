@@ -50,19 +50,12 @@ The steps for deploying to the cluster for local and production use can be found
 
 ### Post-install steps for productive use
 
-1. Access **Keycloak** via `<yourdomain>/auth`, login with the credentials from `values.yaml` and change the passwords of the users
+1. Access **Keycloak** via `<yourdomain>/auth`, login with the credentials from `values-secrets.yaml` and change the passwords of the users
    - `realmadmin`
    - `technical`
-2. Access **RocketChat** via `<yourdomain>:3000`, login with the credentials from `values.yaml` and change the passwords of the users
+2. Access **RocketChat** via `<yourdomain>:3000`, login with the credentials from `values-secrets.yaml` and change the passwords of the users
    - `admin`
    - `technical`
    - `system`
 3. Enter the changed passwords in `values-secrets.yaml`
-4. Deploy the changed values via a `helm upgrade`
-
-### Login data/access links
-
-- [Login data and access links](../backend/login-data-access-links.md)
-
-
-
+4. Deploy the changed values as described in the [public template repository](https://github.com/Onlineberatung/onlineBeratung-k8s-config) via an `helm upgrade`
