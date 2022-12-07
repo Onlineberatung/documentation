@@ -4,118 +4,111 @@ title: Create core data and import users
 ---
 
 # Entering Data
+For the online counselling service, master data (consulting offices, consultants, etc.) need to be
+created. By default, one example consulting agency and one consultant are created in the system at
+setup. For this purpose, the following REST API endpoints should be used.
 
 ## Obtaining an authorization token
+In order to use the REST APIs to populate the system with data, one has to obtain an authorization
+bearer token first.
 
-In order to use the REST APIs to populate the system with data, one has to obtain an authorization bearer token first.
+```
+curl --location --request POST '<baseUrl>/auth/realms/online-beratung/protocol/openid-connect/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'client_id=app' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'username=<admin_user>' \
+--data-urlencode 'password=<admin_password>'
+```
 
+This POST will return a json with a field called `access_token` which has the needed authorization
+token.
 
-## AgencyService: Agency and Diocese CRUD
-
-For the AgencyService, master data (consulting offices, etc.) must be created. By default, one example consulting agency is created in the system at setup.
-For this purpose, the following REST API endpoints should be used (note the order):
-
-### Create dioceses
-
+## AgencyService: Agencies
 
 ### Create agencies
 
-
-## UserService: Consultants CRUD
-
-
-
-### Description of the fields
-| Field | Description |
-|------|--------------|
-| consultant_id | Keycloak-ID |
-| id_old | ID from the old consulting platform |
-| username | Username |
-| first_name | First name |
-| last_name | Last name |
-| email | E-mail address |
-| is_absent | Specifies whether a consultant should be set to absent. Permitted values: yes/no |
-| absence_message | Absence note |
-| agency_rolesets | Consulting center ID; role in the consulting center (can be taken from the consulting type settings in the service). Multiple consulting centers can be specified comma-separated |
-
-The name and location of the CSV file is set in the _application.properties_ via the ``consultant.import.filename``.
-
-## Start import
-
-The import of the consultants can be done by calling the endpoint __/users/consultants/import__ at the UserService (e.g. with Postman). It should be noted that a valid keycloak token of a technical user with the role _"technical"_ must be passed. The call is possible 1x per minute.
-
-### Import log
-
-During the import, a log is written to a file. This file is also located in the root directory of the UserService and has the name 
-"consultants-import.txt". In addition, a timestamp is appended so that the file is not overwritten during multiple runs.
-
-The file contains all necessary data to generate e.g. e-mails to the consultants:
-
-- First name
-- Last name
-- E-mail address
-- Username
-
-## UserService: Import of advice seekers with advice
-
-UserService can be used to import advice seekers with advice. During the import, the corresponding accounts are created in Keycloak, in Rocket.Chat and in the application database. In addition, an initial consultation with welcome message is created. The consultation is assigned to the specified consultation center and the specified consultant.
-
-The import is done via a CSV file with the following format (__The headlines must be removed for the import__):
-
 ```
-id_old,username,email,consultant_id,postcode,agency_id,pw
-219344,helpseeker,asker@problem.com,fc68b24e-bc0f-4cb5-a215-7bef0d79ee2d,53111,168,jjuasd8§$jk!
-,helpseeker2,asker2@problem.com,fc68b24e-bc0f-4cb5-a215-7bef0d79ee2d,53111,168,
+curl --location --request POST '<baseUrl>/agencyadmin/agencies' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/hal+json' \
+--header 'Authorization: <API Key>' \
+--data-raw '{
+  "dioceseId": 1,
+  "name": "<string>",
+  "teamAgency": "<boolean>",
+  "consultingType": "<integer>",
+  "external": "<boolean>",
+  "description": "<string>",
+  "postcode": "<string>",
+  "city": "<string>",
+  "url": "<string>",
+  "topicIds": [
+    "<long>",
+    "<long>"
+  ],
+  "demographics": {
+    "ageFrom": "<integer>",
+    "ageTo": "<integer>",
+    "genders": [
+      "<string>",
+      "<string>"
+    ]
+  },
+  "tenantId": 1
+}'
 ```
 
-### Fields description
-| Field         | Description                                                                                           |
-|---------------|-------------------------------------------------------------------------------------------------------|
-| id_old        | ID from the old consulting platform                                                                   |
-| username      | Username                                                                                              |
-| email         | E-Mail address                                                                                        |
-| consultant_id | keycloak ID of the consultant to be assigned                                                          |
-| postcode      | postal code to be assigned to the consultant (usually comes from the registration)                    |
-| agency_id     | ID of the consultant to be assigned                                                                   |
-| pw            | password (optional). If no password is specified, a generated one will be assigned.                   |
+#### Description of the fields
 
-The name and location of the CSV file is specified in the _application.properties_ via the ``asker.import.filename``.
+| Name               | Type        | Description                                    | Notes                        |
+|--------------------|-------------|------------------------------------------------|------------------------------|
+| **dioceseId**      | **Long**    | ID of the administrative division, should be 1 | [default to null]            |
+| **name**           | **String**  | Name of the agency                             | [default to null]            |
+| **description**    | **String**  | Description of the agency                      | [optional] [default to null] |
+| **postcode**       | **String**  | Postcode of the agency                         | [optional] [default to null] |
+| **city**           | **String**  | City of the agency                             | [optional] [default to null] |
+| **teamAgency**     | **Boolean** | Is a team agency?                              | [default to null]            |
+| **consultingType** | **Integer** | TODO?                                          | [default to null]            |
+| **url**            | **String**  | Leave empty                                    | [optional] [default to null] |
+| **external**       | **Boolean** |                                                | [default to null]            |
+| **topicIds**       | **List**    | Leave empty                                    | [optional] [default to null] |
+| **demographics**   | **Object**  |                                                | [optional] [default to null] |
+| **ageFrom**        | **Integer** |                                                | [optional] [default to null] |
+| **ageTo**          | **Integer** |                                                | [optional] [default to null] |
+| **genders**        | **List**    |                                                | [optional] [default to null] |
+| **tenantId**       | **Long**    | ID of the tenant, should be 1                  | [optional] [default to null] |
 
-The welcome default system message file is also specified in the _application.properties_. Here the consulting type PLatzhalter is replaced with the respective ID of the resort. The files must be located in the same directory as the import file. Here it is important to note that this text file has the same encoding as specified in the import (currently: UTF-8).
+## UserService: Consultants
 
-## Start import
-
-The import of the advice seekers with advice can be done by calling the endpoint __/users/askers/import__ at the UserService (e.g. with Postman). It should be noted that a valid keycloak token of a technical user with the role "technical" must be passed.
-
-### Import log
-
-During the import, a log is written to a file (name and path as specified in _application.properties_). Additionally, a timestamp is appended so that the file is not overwritten during multiple runs.
-
-## UserService: Advice import without advice
-
-UserService can be used to import advice seekers without consultations. During the import, the corresponding accounts are created in Keycloak, in Rocket.Chat and in the application database and the link to the advice center is established. 
-
-The import is done via a CSV file with the following format (__The headlines must be removed for the import__):
-
+### Creating a Consultant
 ```
-id_old,username,email,agency_id,pw
-,asker1,asker1@domain.de,1332,
-1234,asker2,asker2@domain.de,1555,
+curl --location --request POST 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/hal+json' \
+--header 'Authorization: <API Key>' \
+--header 'Cookie: CSRF-TOKEN=test' \
+--data-raw '{
+"username": "<string>",
+"firstname": "<string>",
+"lastname": "<string>",
+"email": "<string>",
+"formalLanguage": "<boolean>",
+"absent": "<boolean>",
+"absenceMessage": "<string>",
+"tenantId": 1
+}'
 ```
 
-### Fields description
-| Field         | Description                                                                                           |
-|---------------|-------------------------------------------------------------------------------------------------------|
-| id_old        | ID from the old consulting platform                                                                   |
-| username      | Username                                                                                              |
-| email         | E-Mail address                                                                                        |
-| agency_id     | ID of the consultant to be assigned                                                                   |
-| pw            | password (optional). If no password is specified, a generated one will be assigned.                   |
+#### Description of the fields
 
-The name and location of the CSV file is set in the _application.properties_ via the ``asker.import.withoutsession.filename``.
-
-The import of the advice seekers with advice can be done by calling the endpoint __/users/askersWithoutSession/import__ at the UserService (e.g. with Postman). It should be noted that a valid keycloak token of a technical user with the role "technical" must be passed.
-
-### Import log
-
-During the import, a log is written to a file (name and path as specified in _application.properties_). Additionally, a timestamp is appended so that the file is not overwritten during multiple runs.
+| Name               | Type        | Description               | Notes                        |
+|--------------------|-------------|---------------------------|------------------------------|
+| **username**       | **String**  | Username                  | [default to null]            |
+| **firstname**      | **String**  | First name                | [default to null]            |
+| **lastname**       | **String**  | Last name                 | [default to null]            |
+| **email**          | **String**  | E-mail address            | [default to null]            |
+| **formalLanguage** | **Boolean** | Is formal language wanted | [default to null]            |
+| **absent**         | **Boolean** | Is absent                 | [default to null]            |
+| **absenceMessage** | **String**  | Absence note              | [optional] [default to null] |
+| **tenantId**       | **Integer** | Tenant ID, should be 1    | [optional] [default to null] |
