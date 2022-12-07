@@ -9,11 +9,11 @@ service, the following REST API endpoints needs to be used.
 By default, one example consulting agency and one consultant are created in the system at
 setup, those can be deleted or disabled.
 
-## Obtaining an authorization token
+## Obtaining an Authorization Token
 In order to use the REST APIs to populate the system with data, one has to obtain an authorization
 bearer token first.
 
-```
+```bash
 curl --location --request POST '<baseUrl>/auth/realms/online-beratung/protocol/openid-connect/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'client_id=app' \
@@ -27,27 +27,27 @@ token.
 
 ## AgencyService: Agencies
 
-### Getting all agencies
+### Getting all Agencies
 
 Use the optional URL parameters for searching/filtering.
 
-```
+```bash
 curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies?q=<string>&page=<integer>&perPage=<integer>&field=<string>&order=<string>' \
 --header 'Accept: application/hal+json' \
 --header 'Authorization: <API Key>'
 ```
 
-### Getting an agency by ID
+### Getting an Agency by ID
 
-```
+```bash
 curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies/<agencyId>' \
 --header 'Accept: application/json' \
 --header 'Authorization: <API Key>'
 ```
 
-### Creating and updating agencies
+### Creating and Updating Agencies
 
-```
+```bash
 curl --location --request POST '<baseUrl>/agencyadmin/agencies' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/hal+json' \
@@ -80,7 +80,7 @@ curl --location --request POST '<baseUrl>/agencyadmin/agencies' \
 
 Use the same format with `PUT '<baseUrl>/agencyadmin/agencies/<agencyId>'` to update an existing agency.
 
-#### Description of the fields
+#### Description of the Fields
 
 | Name               | Type        | Description                                    | Notes                        |
 |--------------------|-------------|------------------------------------------------|------------------------------|
@@ -100,35 +100,35 @@ Use the same format with `PUT '<baseUrl>/agencyadmin/agencies/<agencyId>'` to up
 | **genders**        | **List**    |                                                | [optional] [default to null] |
 | **tenantId**       | **Long**    | ID of the tenant, should be 1                  | [optional] [default to null] |
 
-### Flagging an agency for deletion
+### Flagging an Agency for Deletion
 
-```
+```bash
 curl --location --request DELETE 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies/<agencyId>' \
 --header 'Authorization: <API Key>'
 ```
 
 ## UserService: Consultants
 
-### Getting all consultants
+### Getting all Consultants
 
 Use the optional URL parameters for searching/filtering.
 
-```
+```bash
 curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants?username=<string>&lastname=<string>&email=<string>&agencyId=<long>&absent=<boolean>&page=<integer>&perPage=<integer>&field=<string>&order=<string>' \
 --header 'Accept: application/hal+json' \
 --header 'Authorization: <API Key>'
 ```
 
-### Getting a consultant by ID
+### Getting a Consultant by ID
 
-```
+```bash
 curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants/<consultantId>' \
 --header 'Accept: application/json' \
 --header 'Authorization: <API Key>'
 ```
 
 ### Creating a Consultant
-```
+```bash
 curl --location --request POST 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/hal+json' \
@@ -147,7 +147,7 @@ curl --location --request POST 'https://dev.caritas.dev.virtual-identity.com/use
 
 Use the same format with `PUT '<baseUrl>/useradmin/consultants/<consultantId>'` to update an existing consultant.
 
-#### Description of the fields
+#### Description of the Fields
 
 | Name               | Type        | Description               | Notes                        |
 |--------------------|-------------|---------------------------|------------------------------|
@@ -162,7 +162,7 @@ Use the same format with `PUT '<baseUrl>/useradmin/consultants/<consultantId>'` 
 
 ### Flagging a Consultant for Deletion
 
-```
+```bash
 curl --location --request DELETE 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants/<consultantId>' \
 --header 'Authorization: <API Key>'
 ```
