@@ -4,9 +4,10 @@ title: Create core data and import users
 ---
 
 # Entering Data
-For the online counselling service, master data (consulting offices, consultants, etc.) need to be
-created. By default, one example consulting agency and one consultant are created in the system at
-setup. For this purpose, the following REST API endpoints should be used.
+In order to enter master data (consulting offices, consultants, etc.) for the online counselling
+service, the following REST API endpoints needs to be used.
+By default, one example consulting agency and one consultant are created in the system at
+setup, those can be deleted or disabled.
 
 ## Obtaining an authorization token
 In order to use the REST APIs to populate the system with data, one has to obtain an authorization
@@ -26,7 +27,25 @@ token.
 
 ## AgencyService: Agencies
 
-### Create agencies
+### Getting all agencies
+
+Use the optional URL parameters for searching/filtering.
+
+```
+curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies?q=<string>&page=<integer>&perPage=<integer>&field=<string>&order=<string>' \
+--header 'Accept: application/hal+json' \
+--header 'Authorization: <API Key>'
+```
+
+### Getting an agency by ID
+
+```
+curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies/<agencyId>' \
+--header 'Accept: application/json' \
+--header 'Authorization: <API Key>'
+```
+
+### Creating and updating agencies
 
 ```
 curl --location --request POST '<baseUrl>/agencyadmin/agencies' \
@@ -59,6 +78,8 @@ curl --location --request POST '<baseUrl>/agencyadmin/agencies' \
 }'
 ```
 
+Use the same format with `PUT '<baseUrl>/agencyadmin/agencies/<agencyId>'` to update an existing agency.
+
 #### Description of the fields
 
 | Name               | Type        | Description                                    | Notes                        |
@@ -79,7 +100,32 @@ curl --location --request POST '<baseUrl>/agencyadmin/agencies' \
 | **genders**        | **List**    |                                                | [optional] [default to null] |
 | **tenantId**       | **Long**    | ID of the tenant, should be 1                  | [optional] [default to null] |
 
+### Flagging an agency for deletion
+
+```
+curl --location --request DELETE 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies/<agencyId>' \
+--header 'Authorization: <API Key>'
+```
+
 ## UserService: Consultants
+
+### Getting all consultants
+
+Use the optional URL parameters for searching/filtering.
+
+```
+curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants?username=<string>&lastname=<string>&email=<string>&agencyId=<long>&absent=<boolean>&page=<integer>&perPage=<integer>&field=<string>&order=<string>' \
+--header 'Accept: application/hal+json' \
+--header 'Authorization: <API Key>'
+```
+
+### Getting a consultant by ID
+
+```
+curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants/<consultantId>' \
+--header 'Accept: application/json' \
+--header 'Authorization: <API Key>'
+```
 
 ### Creating a Consultant
 ```
@@ -87,7 +133,6 @@ curl --location --request POST 'https://dev.caritas.dev.virtual-identity.com/use
 --header 'Content-Type: application/json' \
 --header 'Accept: application/hal+json' \
 --header 'Authorization: <API Key>' \
---header 'Cookie: CSRF-TOKEN=test' \
 --data-raw '{
 "username": "<string>",
 "firstname": "<string>",
@@ -99,6 +144,8 @@ curl --location --request POST 'https://dev.caritas.dev.virtual-identity.com/use
 "tenantId": 1
 }'
 ```
+
+Use the same format with `PUT '<baseUrl>/useradmin/consultants/<consultantId>'` to update an existing consultant.
 
 #### Description of the fields
 
@@ -112,3 +159,10 @@ curl --location --request POST 'https://dev.caritas.dev.virtual-identity.com/use
 | **absent**         | **Boolean** | Is absent                 | [default to null]            |
 | **absenceMessage** | **String**  | Absence note              | [optional] [default to null] |
 | **tenantId**       | **Integer** | Tenant ID, should be 1    | [optional] [default to null] |
+
+### Flagging a Consultant for Deletion
+
+```
+curl --location --request DELETE 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants/<consultantId>' \
+--header 'Authorization: <API Key>'
+```
