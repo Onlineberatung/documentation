@@ -32,7 +32,7 @@ These steps are not required for local testing or development setups.
    - Change all Spring profiles to `prod`
    - Enter credentials for a mail server
 3. Changes in `values-secrets.yaml`
-   - Change all default passwords **except**
+   - Change all default passwords and keys **except**
      - `keycloakserviceAdminPassword`
      - `keycloakserviceTechnicalPassword`
      - `rocketTechnicalPassword`
@@ -55,8 +55,12 @@ The steps for deploying to the cluster for local and production use can be found
    - `realmadmin`
    - `technical`
 2. Access **RocketChat** via `<yourdomain>:3000`, login with the credentials from `values-secrets.yaml` and change the passwords of the users
-   - `admin`
+   - `local-admin`
+   - `rocket-chat-technical-user`
+   - `system1`
+3. Enter the changed passwords of the following users in `values-secrets.yaml`
+   - `realmadmin`
    - `technical`
-   - `system`
-3. Enter the changed passwords in `values-secrets.yaml`
+   - `rocket-chat-technical-user`
+   - `system1`
 4. Deploy the changed values as described in the [public template repository](https://github.com/Onlineberatung/onlineBeratung-k8s-config) via an `helm upgrade`

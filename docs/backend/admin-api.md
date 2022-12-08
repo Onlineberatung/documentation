@@ -8,8 +8,8 @@ Please be sure to disable them through access restriction if you don't need them
 You need CSRF header and cookie together with the roles `agency-admin` (AgencyService) respectively `user-admin` (UserService) to be able to call these endpoints.
 
 You can get an overview of these API endpoints via the known Swagger GUI:
-* AgencyService: https://`<HOST>`/service/agencies/docs/
-* UserService: https://`<HOST>`/service/users/docs/
+* AgencyService: https://`<HOST>`/service/agencies/docs/swagger-ui.html
+* UserService: https://`<HOST>`/service/users/docs/swagger-ui.html
 
 or access the generated overview here:
 * [AgencyService Admin API root entry-point](https://github.com/Onlineberatung/documentation/tree/master/docs/backend/admin/agencyservice/RootControllerApi.md)
