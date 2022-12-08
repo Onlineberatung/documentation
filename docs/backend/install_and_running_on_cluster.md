@@ -38,7 +38,6 @@ These steps are not required for local testing or development setups.
      - `rocketTechnicalPassword`
      - `rocketSystemuserPassword`
    - Enter credentials for a mail server
-   - TODO: VERIFY
 
 Both `values.yaml` and `values-secrets.yaml` must be saved for future changes and deployments.
 The `values.yaml` file can be committed and stored in a fork of the repository.
@@ -50,7 +49,9 @@ The steps for deploying to the cluster for local and production use can be found
 
 ### Post-install steps for productive use
 
-1. Access **Keycloak** via `<yourdomain>/auth`, login with the credentials from `values-secrets.yaml` and change the passwords of the users
+1. Access **Keycloak** via `<yourdomain>/auth`, login with the credentials `admin`/`admin` and change the passwords of the users
+   - Keycloak-Admin via `<yourdomain>/auth/realms/master/account/`
+   - `admin`
    - `realmadmin`
    - `technical`
 2. Access **RocketChat** via `<yourdomain>:3000`, login with the credentials from `values-secrets.yaml` and change the passwords of the users

@@ -8,9 +8,11 @@ The components can be reached at the following addresses:
 * Rocket.Chat: http://`<HOST>`:3000
 * Nosqlclient: http://`<HOST>`:3001
 * Keycloak: http://`<HOST>`/auth
+    * Init-User: admin
+    * Init-Password: admin
 * Adminer: http://`<HOST>`:3002
-    * Init-Benutzer: root
-    * Init-Passwort: root
+    * Init-User: root
+    * Init-Password: root
 
 The application is accessible at http://`<HOST>`
 

@@ -12,6 +12,7 @@ setup, those can be deleted or disabled.
 ## Obtaining an Authorization Token
 In order to use the REST APIs to populate the system with data, one has to obtain an authorization
 bearer token first.
+For this, use can use the `admin` <u>user</u> (**NOT** the keycloak admin).
 
 ```bash
 curl --location --request POST '<baseUrl>/auth/realms/online-beratung/protocol/openid-connect/token' \
@@ -32,31 +33,31 @@ token.
 Use the optional URL parameters for searching/filtering.
 
 ```bash
-curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies?q=<string>&page=<integer>&perPage=<integer>&field=<string>&order=<string>' \
+curl --location --request GET '<baseUrl>/service/agencyadmin/agencies?q=<string>&page=<integer>&perPage=<integer>&field=<string>&order=<string>' \
 --header 'Accept: application/hal+json' \
---header 'Authorization: <API Key>'
+--header 'Authorization: Bearer <API Key>'
 ```
 
 ### Getting an Agency by ID
 
 ```bash
-curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies/<agencyId>' \
+curl --location --request GET '<baseUrl>/service/agencyadmin/agencies/<agencyId>' \
 --header 'Accept: application/json' \
---header 'Authorization: <API Key>'
+--header 'Authorization: Bearer <API Key>'
 ```
 
 ### Creating and Updating Agencies
 
 ```bash
-curl --location --request POST '<baseUrl>/agencyadmin/agencies' \
+curl --location --request POST '<baseUrl>/service/agencyadmin/agencies' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/hal+json' \
---header 'Authorization: <API Key>' \
+--header 'Authorization: Bearer <API Key>' \
 --data-raw '{
-  "dioceseId": 1,
+  "dioceseId": 0,
   "name": "<string>",
   "teamAgency": "<boolean>",
-  "consultingType": "<integer>",
+  "consultingType": 1,
   "external": "<boolean>",
   "description": "<string>",
   "postcode": "<string>",
@@ -84,27 +85,27 @@ Use the same format with `PUT '<baseUrl>/agencyadmin/agencies/<agencyId>'` to up
 
 | Name               | Type        | Description                                    | Notes                        |
 |--------------------|-------------|------------------------------------------------|------------------------------|
-| **dioceseId**      | **Long**    | ID of the administrative division, should be 1 | [default to null]            |
+| **dioceseId**      | **Long**    | ID of the administrative division, should be 0 | [default to null]            |
 | **name**           | **String**  | Name of the agency                             | [default to null]            |
 | **description**    | **String**  | Description of the agency                      | [optional] [default to null] |
 | **postcode**       | **String**  | Postcode of the agency                         | [optional] [default to null] |
 | **city**           | **String**  | City of the agency                             | [optional] [default to null] |
-| **teamAgency**     | **Boolean** | Is a team agency?                              | [default to null]            |
-| **consultingType** | **Integer** | TODO?                                          | [default to null]            |
+| **teamAgency**     | **Boolean** | Is a team agency                               | [default to null]            |
+| **consultingType** | **Integer** | ID of the consulting type, should be 1         | [default to null]            |
 | **url**            | **String**  | Leave empty                                    | [optional] [default to null] |
-| **external**       | **Boolean** |                                                | [default to null]            |
+| **external**       | **Boolean** | Is external                                    | [default to null]            |
 | **topicIds**       | **List**    | Leave empty                                    | [optional] [default to null] |
-| **demographics**   | **Object**  |                                                | [optional] [default to null] |
-| **ageFrom**        | **Integer** |                                                | [optional] [default to null] |
-| **ageTo**          | **Integer** |                                                | [optional] [default to null] |
-| **genders**        | **List**    |                                                | [optional] [default to null] |
+| **demographics**   | **Object**  | Demographics object                            | [optional] [default to null] |
+| **ageFrom**        | **Integer** | From Age                                       | [optional] [default to null] |
+| **ageTo**          | **Integer** | To Age                                         | [optional] [default to null] |
+| **genders**        | **List**    | List of genders (MALE,FEMALE,DIVERS)           | [optional] [default to null] |
 | **tenantId**       | **Long**    | ID of the tenant, should be 1                  | [optional] [default to null] |
 
 ### Flagging an Agency for Deletion
 
 ```bash
-curl --location --request DELETE 'https://dev.caritas.dev.virtual-identity.com/agencyadmin/agencies/<agencyId>' \
---header 'Authorization: <API Key>'
+curl --location --request DELETE '<baseUrl>/agencyadmin/agencies/<agencyId>' \
+--header 'Authorization: Bearer <API Key>'
 ```
 
 ## UserService: Consultants
@@ -114,25 +115,25 @@ curl --location --request DELETE 'https://dev.caritas.dev.virtual-identity.com/a
 Use the optional URL parameters for searching/filtering.
 
 ```bash
-curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants?username=<string>&lastname=<string>&email=<string>&agencyId=<long>&absent=<boolean>&page=<integer>&perPage=<integer>&field=<string>&order=<string>' \
+curl --location --request GET '<baseUrl>/useradmin/consultants?username=<string>&lastname=<string>&email=<string>&agencyId=<long>&absent=<boolean>&page=<integer>&perPage=<integer>&field=<string>&order=<string>' \
 --header 'Accept: application/hal+json' \
---header 'Authorization: <API Key>'
+--header 'Authorization: Bearer <API Key>'
 ```
 
 ### Getting a Consultant by ID
 
 ```bash
-curl --location --request GET 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants/<consultantId>' \
+curl --location --request GET '<baseUrl>/useradmin/consultants/<consultantId>' \
 --header 'Accept: application/json' \
---header 'Authorization: <API Key>'
+--header 'Authorization: Bearer <API Key>'
 ```
 
 ### Creating a Consultant
 ```bash
-curl --location --request POST 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants' \
+curl --location --request POST '<baseUrl>/useradmin/consultants' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/hal+json' \
---header 'Authorization: <API Key>' \
+--header 'Authorization: Bearer <API Key>' \
 --data-raw '{
 "username": "<string>",
 "firstname": "<string>",
@@ -163,6 +164,6 @@ Use the same format with `PUT '<baseUrl>/useradmin/consultants/<consultantId>'` 
 ### Flagging a Consultant for Deletion
 
 ```bash
-curl --location --request DELETE 'https://dev.caritas.dev.virtual-identity.com/useradmin/consultants/<consultantId>' \
---header 'Authorization: <API Key>'
+curl --location --request DELETE '<baseUrl>/useradmin/consultants/<consultantId>' \
+--header 'Authorization: Bearer <API Key>'
 ```
