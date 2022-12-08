@@ -12,9 +12,9 @@ You can get an overview of these API endpoints via the known Swagger GUI:
 * UserService: https://`<HOST>`/service/users/docs/
 
 or access the generated overview here:
-* [AgencyService Admin API root entry-point](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/agencyservice/RootControllerApi.md)
-* [AgencyService Admin API endpoints](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/agencyservice/AdminAgencyControllerApi.md)
-* [UserService Admin API root entry-point](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/userservice/RootControllerApi.md)
-* [UserService Admin API endpoints](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/userservice/AdminUserControllerApi.md)
-* [ConsultingTypeService Admin API root entry-point](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/consultingtypeservice/RootControllerApi.md)
-* [ConsultingTypeService Admin API endpoints](https://github.com/CaritasDeutschland/documentation/blob/master/docs/backend/admin/conultingtypeservice/AdminUserControllerApi.md)
+* [AgencyService Admin API root entry-point](https://github.com/Onlineberatung/documentation/tree/master/docs/backend/admin/agencyservice/RootControllerApi.md)
+* [AgencyService Admin API endpoints](https://github.com/Onlineberatung/documentation/tree/master/docs/backend/admin/agencyservice/AdminAgencyControllerApi.md)
+* [UserService Admin API root entry-point](https://github.com/Onlineberatung/documentation/tree/master/docs/backend/admin/userservice/RootControllerApi.md)
+* [UserService Admin API endpoints](https://github.com/Onlineberatung/documentation/tree/master/docs/backend/admin/userservice/AdminUserControllerApi.md)
+* [ConsultingTypeService Admin API root entry-point](https://github.com/Onlineberatung/documentation/tree/master/docs/backend/admin/consultingtypeservice/RootControllerApi.md)
+* [ConsultingTypeService Admin API endpoints](https://github.com/Onlineberatung/documentation/tree/master/docs/backend/admin/conultingtypeservice/AdminUserControllerApi.md)

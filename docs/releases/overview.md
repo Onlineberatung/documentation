@@ -43,13 +43,3 @@ If you want to check the individual service/component please klick on the corres
 |[OpenLDAP](../releases/openldap.md)|`1.4.0`|
 |[RabbitMQ](../releases/rabbitmq.md)|`3.8.18`|
 |[Rocket.Chat](../releases/rocketchat.md)|`3.14.4`|
-
- 
-### Backend stacks
-To tie the services and components together we use a repository called ```backend```.\
-For the VideoBeratung we have a dedicated backend: ```videoBackend```.
-
-|Backend-Component|
-|--- |
-|[Backend](../releases/backend.md)|
-|[VideoBackend](../releases/videobackend.md)|

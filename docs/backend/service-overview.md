@@ -8,11 +8,11 @@ Every REST endpoint is documented, you can find the links [here](../backend/logi
 
 You can find a description and the scope of function of every single service in its repository readme file:
 
-* [AgencyService](https://github.com/CaritasDeutschland/caritas-onlineBeratung-agencyService/blob/master/readme.md)
-* [ConsultingTypeService](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/blob/master/readme.md)
-* [LiveService](https://github.com/CaritasDeutschland/caritas-onlineBeratung-liveService/blob/master/readme.md)
-* [MailService](https://github.com/CaritasDeutschland/caritas-onlineBeratung-mailService/blob/master/readme.md)
-* [MessageService](https://github.com/CaritasDeutschland/caritas-onlineBeratung-messageService/blob/master/readme.md)
-* [UploadService](https://github.com/CaritasDeutschland/caritas-onlineBeratung-uploadService/blob/master/readme.md)
-* [UserService](https://github.com/CaritasDeutschland/caritas-onlineBeratung-userService/blob/master/readme.md)
-* [UserService](https://github.com/CaritasDeutschland/caritas-onlineBeratung-videoService/blob/master/readme.md)
+* [AgencyService](https://github.com/Onlineberatung/onlineBeratung-agencyService/blob/develop/readme.md)
+* [ConsultingTypeService](https://github.com/Onlineberatung/onlineBeratung-consultingTypeService/blob/develop/readme.md)
+* [LiveService](https://github.com/Onlineberatung/onlineBeratung-liveService/blob/develop/readme.md)
+* [MailService](https://github.com/Onlineberatung/onlineBeratung-mailService/blob/develop/readme.md)
+* [MessageService](https://github.com/Onlineberatung/onlineBeratung-messageService/blob/develop/readme.md)
+* [UploadService](https://github.com/Onlineberatung/onlineBeratung-uploadService/blob/develop/readme.md)
+* [UserService](https://github.com/Onlineberatung/onlineBeratung-userService/blob/develop/readme.md)
+* [UserService](https://github.com/Onlineberatung/onlineBeratung-videoService/blob/develop/readme.md)

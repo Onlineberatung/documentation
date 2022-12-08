@@ -32,7 +32,6 @@
     ],
     "Releases of own services": [
       "releases/agencyservice",
-      "releases/backend",
       "releases/consultingtypeservice",
       "releases/frontend",
       "releases/liveservice",
@@ -50,8 +49,7 @@
       "releases/nginx",
       "releases/nosqlclient",
       "releases/openldap",
-      "releases/rocketchat",
-      "releases/videobackend"
+      "releases/rocketchat"
     ]
   }
 }

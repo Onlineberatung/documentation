@@ -39,26 +39,10 @@ class Footer extends React.Component {
             <a href={this.docUrl('general/home.html', this.props.language)}>
               Home
             </a>
-            <a
-              href={this.docUrl(
-                'setup/setup-backend.html',
-                this.props.language
-              )}
-            >
-              Setting up Backend
-            </a>
-            <a
-              href={this.docUrl(
-                'setup/setup-frontend.html',
-                this.props.language
-              )}
-            >
-              Setting up Frontend
-            </a>
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://github.com/CaritasDeutschland">GitHub</a>
+            <a href="https://github.com/Onlineberatung">GitHub</a>
             {this.props.config.twitterUsername && (
               <div className="social">
                 <a
