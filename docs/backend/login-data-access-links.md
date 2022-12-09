@@ -5,25 +5,23 @@ title: Login data and access links
 ## Addresses
 The components can be reached at the following addresses:
 
-* Rocket.Chat: http://`<HOST>`:3000
-* Nosqlclient: http://`<HOST>`:3001
 * Keycloak: http://`<HOST>`/auth
-* Adminer: http://`<HOST>`:3002
-    * Init-Benutzer: root
-    * Init-Passwort: root
+    * Init-User: admin
+    * Init-Password: admin
+* Rocket.Chat: Use kubectl to port-forward port 3000
 
 The application is accessible at http://`<HOST>`
 
 ## REST API documentation
-The REST API documentation of the single services can be found under the following locations. Please note that the locations on the server should normally be blocked for external access. This access can be configured within the nginx location configurations (e.g. location `/service/agencies/docs` within `./nginx/conf/locations/agencyservice`. Change `deny all` to e.q. `include ip-restrictions.conf;` to allow access for authorized IP addresses only. See [NGINX configuration](../backend/nginx.md) for more details on path whitelisting.
+The REST API documentation of the single services can be found under the following locations.
 
-* AgencyService: https://`<HOST>`/service/agencies/docs/
-* LiveService: https://`<HOST>`/service/liveevent/docs/
-* MailService: https://`<HOST>`/service/mails/docs/
-* MessageService: https://`<HOST>`/service/messages/docs/
-* UserService: https://`<HOST>`/service/users/docs/
-* UploadService: https://`<HOST>`/service/uploads/docs/
-* VideoService: https://`<HOST>`/service/videos/docs/
+* AgencyService: https://`<HOST>`/service/agencies/docs/swagger-ui.html
+* LiveService: https://`<HOST>`/service/liveevent/docs/swagger-ui.html
+* MailService: https://`<HOST>`/service/mails/docs/swagger-ui.html
+* MessageService: https://`<HOST>`/service/messages/docs/swagger-ui.html
+* UserService: https://`<HOST>`/service/users/docs/swagger-ui.html
+* UploadService: https://`<HOST>`/service/uploads/docs/swagger-ui.html
+* VideoService: https://`<HOST>`/service/videos/docs/swagger-ui.html
 
 ## Admin API documentation
 Detailed information about the Admin API: [Admin API](../backend/admin-api.md).

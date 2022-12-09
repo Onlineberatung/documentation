@@ -12,8 +12,8 @@
 const users = [];
 
 const siteConfig = {
-  title: 'Caritas Online-Beratung', // Title for your website.
-  url: 'https://caritasdeutschland.github.io', // Your website URL
+  title: 'Online-Beratung', // Title for your website.
+  url: 'https://onlineberatung.github.io', // Your website URL
   baseUrl: '/documentation/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -21,7 +21,7 @@ const siteConfig = {
 
   // Used for publishing and more
   projectName: 'documentation',
-  organizationName: 'caritasdeutschland',
+  organizationName: 'virtualidentityag',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -33,14 +33,14 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/caritas_logo.svg',
-  footerIcon: 'img/caritas_logo.svg',
-  favicon: 'img/favicon.png',
+  // headerIcon: 'img/logo.svg',
+  // footerIcon: 'img/logo.svg',
+  // favicon: 'img/favicon.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#D12C23',
-    secondaryColor: '#96281F',
+    primaryColor: '#00008c',
+    secondaryColor: '#000068',
   },
 
   /* Custom fonts for website */
@@ -58,7 +58,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Caritas Deutschland`,
+  copyright: `Copyright © ${new Date().getFullYear()} Virtual Identity AG`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

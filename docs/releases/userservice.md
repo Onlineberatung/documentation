@@ -9,7 +9,7 @@ This page describes changes/updates for the UserService.
 
 Only changes that are necessary to use the requested version are listed in this document.
 
-If you want a changelog please see the [project changelog](https://github.com/CaritasDeutschland/caritas-onlineBeratung-userService/blob/master/CHANGELOG.md).
+If you want a changelog please see the [project changelog](https://github.com/Onlineberatung/onlineBeratung-userService/blob/develop/CHANGELOG.md).
 
 ### Unreleased
 

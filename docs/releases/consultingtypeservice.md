@@ -9,7 +9,7 @@ This page describes changes/updates for the ConsultingTypeService.
 
 Only changes that are necessary to use the requested version are listed in this document.
 
-If you want a changelog please see the [project changelog](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/blob/master/CHANGELOG.md).
+If you want a changelog please see the [project changelog](https://github.com/Onlineberatung/onlineBeratung-consultingTypeService/blob/develop/CHANGELOG.md).
 
 ### 2022-07-13
 

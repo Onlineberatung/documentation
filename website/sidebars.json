@@ -4,36 +4,19 @@
       "general/home",
       "general/git-workflow"
     ],
-    "Project setup": [
-      "setup/setup-backend",
-      "setup/setup-frontend"
-    ],
-    "Backend setup and configuration": [
-      "backend/install-and-running-on-server",
-      "backend/install-and-running-locally",
-      "backend/first-start",
-      "backend/service-configuration",
-      "backend/file-permissions",
-      "backend/openldap-configuration",
+    "Setup and Configuration": [
+      "backend/install-and-running-on-cluster",
       "backend/create-core-data-import-users",
-      "backend/mailservice-templates",
-      "backend/jenkins",
-      "backend/nginx",
-      "backend/ssl-certificate",
-      "backend/cors-configuration",
-      "backend/video-backend"
+      "backend/mailservice-templates"
     ],
-    "Backend in general": [
+    "Backend Development": [
       "backend/service-overview",
-      "backend/starting-and-stopping-the-services",
       "backend/login-data-access-links",
-      "backend/admin-api"
-    ],
-    "Backend development": [
-      "backend/build-and-load-docker-image",
+      "backend/admin-api",
       "backend/liquibase"
     ],
-    "Frontend": [
+    "Frontend Development": [
+      "setup/setup-frontend",
       "frontend/build",
       "frontend/tools-and-technologies",
       "frontend/testing"
@@ -49,7 +32,6 @@
     ],
     "Releases of own services": [
       "releases/agencyservice",
-      "releases/backend",
       "releases/consultingtypeservice",
       "releases/frontend",
       "releases/liveservice",
@@ -67,8 +49,7 @@
       "releases/nginx",
       "releases/nosqlclient",
       "releases/openldap",
-      "releases/rocketchat",
-      "releases/videobackend"
+      "releases/rocketchat"
     ]
   }
 }

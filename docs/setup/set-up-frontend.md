@@ -3,9 +3,9 @@ id: setup-frontend
 title: Setting up the frontend
 ---
 
-The frontend app for the Caritas Online Beratung has two responsibilities:
+The frontend app for the Online-Beratung counselling service has two responsibilities:
 
-1. Be the executable frontend app for the Caritas Online Beratung
+1. Be the executable frontend app for the counselling service
 2. Provide build tools and app code as a library, so this app can be developed and published in a themed setup
 
 ## General setup
@@ -36,9 +36,7 @@ To run the application locally you'll need to setup the backend first.
 
 Please follow these steps:
 
-1. [Setup the backend locally](../backend/install-and-running-locally)
 2. [Create core data and import users](../backend/create-core-data-import-users)
-3. [Start the services](../backend/starting-and-stopping-the-services)
 
 ### Starting with local backend
 
@@ -52,8 +50,7 @@ After you're are finished with the setup steps and all services work, run these 
 - Remove the `API_URL_FOR_LOCAL_DEVELOPMENT` and `CSRF_WHITELIST_HEADER_FOR_LOCAL_DEVELOPMENT` as you won't need it.
 
 5. Afterwards you can start the frontend with `npm start`
-6. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port (e.g. `proxy_pass http://caritas.local:9000/;`).
-7. [Start the backend](../backend/starting-and-stopping-the-services)
+6. Adjust the backend setup to use the local frontend. For this you can edit `nginx/conf/locations/common.conf` and modify the line mentioning `proxy_pass` to point to your frontend host, including the port (e.g. `proxy_pass http://onlineberatung.localhost:9000/;`).
 8. The frontend opens at your configured host. To avoid CORS issues during the login, remove the port and login by just using the host.
 
 ### Starting without local backend

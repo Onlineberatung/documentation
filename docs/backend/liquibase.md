@@ -17,7 +17,7 @@ To perform a rollback, a Maven (Liquibase Plugin) command must be issued.
 Example of a rollback back to a specific point in time:
 
 ```
-liquibase:rollback -Dliquibase.rollbackDate=2019-04-17T15:00:00 -Dliquibase.url=jdbc:mariadb://caritas.local:3306/test -Dliquibase.username=test -Dliquibase.password=test -Dliquibase.#driver=org.mariadb.jdbc.Driver -Dliquibase.changeLogFile=db/changelog/userservice-local-master.xml
+liquibase:rollback -Dliquibase.rollbackDate=2019-04-17T15:00:00 -Dliquibase.url=jdbc:mariadb://onlineberatung.localhost:3306/test -Dliquibase.username=test -Dliquibase.password=test -Dliquibase.#driver=org.mariadb.jdbc.Driver -Dliquibase.changeLogFile=db/changelog/userservice-local-master.xml
 ```
 
 ### Further Commands
