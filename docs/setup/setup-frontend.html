@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Setting up the frontend · Online-Beratung</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The frontend app for the Online-Beratung counselling service has two responsibilities:"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Setting up the frontend · Online-Beratung"/><meta property="og:type" content="website"/><meta property="og:url" content="https://onlineberatung.github.io/documentation/"/><meta property="og:description" content="The frontend app for the Online-Beratung counselling service has two responsibilities:"/><meta property="og:image" content="https://onlineberatung.github.io/documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://onlineberatung.github.io/documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/documentation/undefined"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/documentation/css/main.css"/><script src="/documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/documentation/"><h2 class="headerTitle">Online-Beratung</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/documentation/docs/general/home" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Frontend Development</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/general/home">Home</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/general/git-workflow">Git workflow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Setup and Configuration</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/install-and-running-on-cluster">Installing and running the backend cluster</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/create-core-data-import-users">Create core data and import users</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/mailservice-templates">Mail templates</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Backend Development</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/service-overview">Service overview</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/login-data-access-links">Login data and access links</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/admin-api">Admin API</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/liquibase">Database versioning with liquibase</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Frontend Development</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/documentation/docs/setup/setup-frontend">Setting up the frontend</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/build">Build</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/tools-and-technologies">Tools and Technologies</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/testing">Testing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Quality Assurance</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/quality-assurance/browser-matrix">Browser matrix</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/quality-assurance/test-cases">Testcases</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/quality-assurance/smoke-testsuite">Smoke Test Suite</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Releases</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/versionhistory">Version History</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Releases of own services</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/agencyservice">AgencyService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/consultingtypeservice">ConsultingTypeService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/frontend">Frontend</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/liveservice">LiveService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/mailservice">MailService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/messageservice">MessageService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/uploadservice">UploadService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/userservice">UserService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/videoservice">VideoService</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Releases of 3rd party components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/adminer">3rd party - Adminer</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/keycloak">3rd party - Keycloak</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/mariadb">3rd party - MariaDB</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/mongodb">3rd party - MongoDB</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/nginx">NGINX</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/nosqlclient">3rd party -  Nosqlclient</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/openldap">3rd party - OpenLDAP</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/rocketchat">3rd party - Rocket.Chat</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Setting up the frontend</h1></header><article><div><span><p>The frontend app for the Online-Beratung counselling service has two responsibilities:</p>
+<ol>
+<li>Be the executable frontend app for the counselling service</li>
+<li>Provide build tools and app code as a library, so this app can be developed and published in a themed setup</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="general-setup"></a><a href="#general-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General setup</h2>
+<p><strong>Node.js</strong> is a JavaScript runtime which will allow us to run a host of tools. In fact node.js even runs a tiny webserver which will enable you to browse the components of the frontend.
+<strong>NPM</strong> is the Node Package Manager and is used to install all packages.</p>
+<ol>
+<li>Install as instructed on <a href="http://nodejs.org">http://nodejs.org</a>.</li>
+<li>(On Windows if asked) choose to also install NPM and add Node.js to your path.</li>
+<li>Check the installation of Node.js and NPM by running <code>node -v</code> or <code>npm -v</code> from your command line.</li>
+<li>Open your command line / terminal / bash</li>
+<li>Navigate to the project folder</li>
+<li>Run <code>npm install</code></li>
+</ol>
+<blockquote>
+<p>IMPORTANT NOTE ON PERMISSIONS: If you experience permission problems while installing Node.js (especially on Mac or Linux machines), never use <code>sudo</code> to install packages with <code>npm</code>.
+Please ask your IT Admins to give you proper permissions or let them do the installation. See <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">https://docs.npmjs.com/getting-started/fixing-npm-permissions</a> for instructions.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="app-setup"></a><a href="#app-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App setup</h2>
+<p>For starting the frontend locally you have two options:</p>
+<ul>
+<li>set up the project locally with your local databases etc. and starting it via docker, go on with <a href="setup-frontend#setup-local-backend">Setup local backend</a></li>
+<li>set up the project on a (dev) server and start the frontend locally and work against said server, go on with <a href="setup-frontend#starting-without-local-backend">Starting without local backend</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="setup-local-backend"></a><a href="#setup-local-backend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup local backend</h3>
+<p>To run the application locally you'll need to setup the backend first.</p>
+<p>Please follow these steps:</p>
+<ol start="2">
+<li><a href="../backend/create-core-data-import-users">Create core data and import users</a></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="starting-with-local-backend"></a><a href="#starting-with-local-backend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Starting with local backend</h3>
+<p>After you're are finished with the setup steps and all services work, run these steps to get your project on the road:</p>
+<ol>
+<li>Open your command line / terminal / bash</li>
+<li>Navigate to the project folder</li>
+<li>Adjust the <a href="../backend/cors-configuration">CORS configuration</a></li>
+<li>Setup your <code>.env</code> file according to the <code>.env.sample</code>.</li>
+</ol>
+<ul>
+<li>Remove the <code>API_URL_FOR_LOCAL_DEVELOPMENT</code> and <code>CSRF_WHITELIST_HEADER_FOR_LOCAL_DEVELOPMENT</code> as you won't need it.</li>
+</ul>
+<ol start="5">
+<li>Afterwards you can start the frontend with <code>npm start</code></li>
+<li>Adjust the backend setup to use the local frontend. For this you can edit <code>nginx/conf/locations/common.conf</code> and modify the line mentioning <code>proxy_pass</code> to point to your frontend host, including the port (e.g. <code>proxy_pass http://onlineberatung.localhost:9000/;</code>).</li>
+<li>The frontend opens at your configured host. To avoid CORS issues during the login, remove the port and login by just using the host.</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="starting-without-local-backend"></a><a href="#starting-without-local-backend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Starting without local backend</h3>
+<p>After you're are finished with the setup steps and all services work, run these steps to get your project on the road:</p>
+<ol>
+<li>Open your command line / terminal / bash</li>
+<li>Navigate to the project folder</li>
+<li>Setup your <code>.env</code> file according to the <code>.env.sample</code>:</li>
+</ol>
+<ul>
+<li>set <code>API_URL_FOR_LOCAL_DEVELOPMENT</code> to the domain you're developing against.</li>
+<li>set <code>CSRF_WHITELIST_HEADER_FOR_LOCAL_DEVELOPMENT</code> to the <code>X-WHITELIST-HEADER</code> you define in the CORS setup: <a href="../backend/cors-configuration#cors-settings-for-local-frontend-development">CORS configuration for local frontend development</a></li>
+</ul>
+<ol start="4">
+<li>Afterwards you can start the frontend with <code>npm start</code>.</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="test"></a><a href="#test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test</h3>
+<p>With <code>npm test</code> you can run the Cypress end-to-end tests with a mocked backend.</p>
+<h3><a class="anchor" aria-hidden="true" id="build"></a><a href="#build" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build</h3>
+<p>By running <code>npm run build</code>, you can build the app for production. The built assets are copied to the <code>build</code> folder.</p>
+<h2><a class="anchor" aria-hidden="true" id="library-setup"></a><a href="#library-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Library setup</h2>
+<h3><a class="anchor" aria-hidden="true" id="theming-and-configuration"></a><a href="#theming-and-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Theming and configuration</h3>
+<p>To use this project as a dependency, you have to:</p>
+<ol>
+<li>Add an <code>.npmrc</code> file with this entry:</li>
+</ol>
+<pre><code class="hljs css language-bash">@caritasdeutschland:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=<span class="hljs-variable">${GITHUB_TOKEN}</span>
+</code></pre>
+<ol start="2">
+<li><a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">Configure a <code>GITHUB_TOKEN</code> environment parameter</a> in the shell (ideally loaded on startup)</li>
+</ol>
+<p>Then you can install the library with <code>npm install @caritasdeutschland/caritas-online-beratung-frontend</code>.</p>
+<p>Afterwards you should fork these files from <a href="https://github.com/CaritasDeutschland/caritas-onlineBeratung-frontend">the frontend repository</a> into the consuming repository:</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">src</span>
+  <span class="hljs-selector-tag">pages</span>
+    <span class="hljs-selector-tag">app</span><span class="hljs-selector-class">.html</span>
+    <span class="hljs-selector-tag">under-construction</span><span class="hljs-selector-class">.html</span>
+  <span class="hljs-selector-tag">resources</span>
+    <span class="hljs-selector-tag">scripts</span>
+      <span class="hljs-selector-tag">i18n</span>
+        <span class="hljs-selector-tag">defaultLocale</span><span class="hljs-selector-class">.ts</span>
+        <span class="hljs-selector-tag">informalLocale</span><span class="hljs-selector-class">.ts</span>
+      <span class="hljs-selector-tag">config</span><span class="hljs-selector-class">.ts</span>
+    <span class="hljs-selector-tag">styles</span>
+      <span class="hljs-selector-tag">settings</span><span class="hljs-selector-class">.scss</span>
+  <span class="hljs-selector-tag">initApp</span><span class="hljs-selector-class">.tsx</span>
+  <span class="hljs-selector-tag">initError</span><span class="hljs-selector-class">.tsx</span>
+</code></pre>
+<p>They can be used to provide the necessary configuration and theming to the consuming app.</p>
+<p>In <code>settings.scss</code> you should replace the file content with <code>@import '~@caritasdeutschland/caritas-online-beratung-frontend/defaults';</code> to use the current defaults and only override what's necessary. By defining a <code>setup-fonts</code> mixin, you can import custom fonts from the stylesheet.</p>
+<p>Furthermore in <code>defaultLocale.ts</code> you should <code>import {defaultLocale as defaults} from '@caritasdeutschland/caritas-online-beratung-frontend';</code> and only override the labels that need to be changed. The same applies analogously to <code>informalLocale</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="cli-scripts"></a><a href="#cli-scripts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI scripts</h3>
+<p>Additionally, these scripts are available:</p>
+<pre><code class="hljs css language-sh"><span class="hljs-comment"># Run the dev server</span>
+@caritasdeutschland/caritas-online-beratung-frontend start
+
+<span class="hljs-comment"># Build the app for production</span>
+@caritasdeutschland/caritas-online-beratung-frontend build
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/backend/liquibase"><span class="arrow-prev">← </span><span>Database versioning with liquibase</span></a><a class="docs-next button" href="/documentation/docs/frontend/build"><span>Build</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#general-setup">General setup</a></li><li><a href="#app-setup">App setup</a><ul class="toc-headings"><li><a href="#setup-local-backend">Setup local backend</a></li><li><a href="#starting-with-local-backend">Starting with local backend</a></li><li><a href="#starting-without-local-backend">Starting without local backend</a></li><li><a href="#test">Test</a></li><li><a href="#build">Build</a></li></ul></li><li><a href="#library-setup">Library setup</a><ul class="toc-headings"><li><a href="#theming-and-configuration">Theming and configuration</a></li><li><a href="#cli-scripts">CLI scripts</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a></div><div><h5>More</h5><a href="https://github.com/Onlineberatung">GitHub</a></div></section><section class="copyright">Copyright © 2022 Virtual Identity AG</section></footer></div></body></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Create core data and import users · Online-Beratung</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Entering Data"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Create core data and import users · Online-Beratung"/><meta property="og:type" content="website"/><meta property="og:url" content="https://onlineberatung.github.io/documentation/"/><meta property="og:description" content="# Entering Data"/><meta property="og:image" content="https://onlineberatung.github.io/documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://onlineberatung.github.io/documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/documentation/undefined"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/documentation/css/main.css"/><script src="/documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/documentation/"><h2 class="headerTitle">Online-Beratung</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/documentation/docs/general/home" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Setup and Configuration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/general/home">Home</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/general/git-workflow">Git workflow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Setup and Configuration</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/install-and-running-on-cluster">Installing and running the backend cluster</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/documentation/docs/backend/create-core-data-import-users">Create core data and import users</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/mailservice-templates">Mail templates</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Backend Development</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/service-overview">Service overview</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/login-data-access-links">Login data and access links</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/admin-api">Admin API</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/backend/liquibase">Database versioning with liquibase</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Frontend Development</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/setup/setup-frontend">Setting up the frontend</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/build">Build</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/tools-and-technologies">Tools and Technologies</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/frontend/testing">Testing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Quality Assurance</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/quality-assurance/browser-matrix">Browser matrix</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/quality-assurance/test-cases">Testcases</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/quality-assurance/smoke-testsuite">Smoke Test Suite</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Releases</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/versionhistory">Version History</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Releases of own services</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/agencyservice">AgencyService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/consultingtypeservice">ConsultingTypeService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/frontend">Frontend</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/liveservice">LiveService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/mailservice">MailService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/messageservice">MessageService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/uploadservice">UploadService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/userservice">UserService</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/videoservice">VideoService</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Releases of 3rd party components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/adminer">3rd party - Adminer</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/keycloak">3rd party - Keycloak</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/mariadb">3rd party - MariaDB</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/mongodb">3rd party - MongoDB</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/nginx">NGINX</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/nosqlclient">3rd party -  Nosqlclient</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/openldap">3rd party - OpenLDAP</a></li><li class="navListItem"><a class="navItem" href="/documentation/docs/releases/rocketchat">3rd party - Rocket.Chat</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Create core data and import users</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="entering-data"></a><a href="#entering-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Entering Data</h1>
+<p>In order to enter master data (consulting offices, consultants, etc.) for the online counselling
+service, the following REST API endpoints needs to be used.
+By default, one example consulting agency and one consultant are created in the system at
+setup, those can be deleted or disabled.</p>
+<h2><a class="anchor" aria-hidden="true" id="obtaining-an-authorization-token"></a><a href="#obtaining-an-authorization-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Obtaining an Authorization Token</h2>
+<p>In order to use the REST APIs to populate the system with data, one has to obtain an authorization
+bearer token first.
+For this, use can use the <code>admin</code> <u>user</u> (<strong>NOT</strong> the keycloak admin).</p>
+<pre><code class="hljs css language-bash">curl --location --request POST <span class="hljs-string">'&lt;baseUrl&gt;/auth/realms/online-beratung/protocol/openid-connect/token'</span> \
+--header <span class="hljs-string">'Content-Type: application/x-www-form-urlencoded'</span> \
+--data-urlencode <span class="hljs-string">'client_id=app'</span> \
+--data-urlencode <span class="hljs-string">'grant_type=password'</span> \
+--data-urlencode <span class="hljs-string">'username=&lt;admin_user&gt;'</span> \
+--data-urlencode <span class="hljs-string">'password=&lt;admin_password&gt;'</span>
+</code></pre>
+<p>This POST will return a json with a field called <code>access_token</code> which has the needed authorization
+token.</p>
+<h2><a class="anchor" aria-hidden="true" id="agencyservice-agencies"></a><a href="#agencyservice-agencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AgencyService: Agencies</h2>
+<h3><a class="anchor" aria-hidden="true" id="getting-all-agencies"></a><a href="#getting-all-agencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting all Agencies</h3>
+<p>Use the optional URL parameters for searching/filtering.</p>
+<pre><code class="hljs css language-bash">curl --location --request GET <span class="hljs-string">'&lt;baseUrl&gt;/service/agencyadmin/agencies?q=&lt;string&gt;&amp;page=&lt;integer&gt;&amp;perPage=&lt;integer&gt;&amp;field=&lt;string&gt;&amp;order=&lt;string&gt;'</span> \
+--header <span class="hljs-string">'Accept: application/hal+json'</span> \
+--header <span class="hljs-string">'Authorization: Bearer &lt;API Key&gt;'</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="getting-an-agency-by-id"></a><a href="#getting-an-agency-by-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting an Agency by ID</h3>
+<pre><code class="hljs css language-bash">curl --location --request GET <span class="hljs-string">'&lt;baseUrl&gt;/service/agencyadmin/agencies/&lt;agencyId&gt;'</span> \
+--header <span class="hljs-string">'Accept: application/json'</span> \
+--header <span class="hljs-string">'Authorization: Bearer &lt;API Key&gt;'</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="creating-and-updating-agencies"></a><a href="#creating-and-updating-agencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating and Updating Agencies</h3>
+<pre><code class="hljs css language-bash">curl --location --request POST <span class="hljs-string">'&lt;baseUrl&gt;/service/agencyadmin/agencies'</span> \
+--header <span class="hljs-string">'Content-Type: application/json'</span> \
+--header <span class="hljs-string">'Accept: application/hal+json'</span> \
+--header <span class="hljs-string">'Authorization: Bearer &lt;API Key&gt;'</span> \
+--data-raw <span class="hljs-string">'{
+  "dioceseId": 0,
+  "name": "&lt;string&gt;",
+  "teamAgency": "&lt;boolean&gt;",
+  "consultingType": 1,
+  "external": "&lt;boolean&gt;",
+  "description": "&lt;string&gt;",
+  "postcode": "&lt;string&gt;",
+  "city": "&lt;string&gt;",
+  "url": "&lt;string&gt;",
+  "topicIds": [
+    "&lt;long&gt;",
+    "&lt;long&gt;"
+  ],
+  "demographics": {
+    "ageFrom": "&lt;integer&gt;",
+    "ageTo": "&lt;integer&gt;",
+    "genders": [
+      "&lt;string&gt;",
+      "&lt;string&gt;"
+    ]
+  },
+  "tenantId": 1
+}'</span>
+</code></pre>
+<p>Use the same format with <code>PUT '&lt;baseUrl&gt;/agencyadmin/agencies/&lt;agencyId&gt;'</code> to update an existing agency.</p>
+<h4><a class="anchor" aria-hidden="true" id="description-of-the-fields"></a><a href="#description-of-the-fields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description of the Fields</h4>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>dioceseId</strong></td><td><strong>Long</strong></td><td>ID of the administrative division, should be 0</td><td>[default to null]</td></tr>
+<tr><td><strong>name</strong></td><td><strong>String</strong></td><td>Name of the agency</td><td>[default to null]</td></tr>
+<tr><td><strong>description</strong></td><td><strong>String</strong></td><td>Description of the agency</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>postcode</strong></td><td><strong>String</strong></td><td>Postcode of the agency</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>city</strong></td><td><strong>String</strong></td><td>City of the agency</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>teamAgency</strong></td><td><strong>Boolean</strong></td><td>Is a team agency</td><td>[default to null]</td></tr>
+<tr><td><strong>consultingType</strong></td><td><strong>Integer</strong></td><td>ID of the consulting type, should be 1</td><td>[default to null]</td></tr>
+<tr><td><strong>url</strong></td><td><strong>String</strong></td><td>Leave empty</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>external</strong></td><td><strong>Boolean</strong></td><td>Is external</td><td>[default to null]</td></tr>
+<tr><td><strong>topicIds</strong></td><td><strong>List</strong></td><td>Leave empty</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>demographics</strong></td><td><strong>Object</strong></td><td>Demographics object</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>ageFrom</strong></td><td><strong>Integer</strong></td><td>From Age</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>ageTo</strong></td><td><strong>Integer</strong></td><td>To Age</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>genders</strong></td><td><strong>List</strong></td><td>List of genders (MALE,FEMALE,DIVERS)</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>tenantId</strong></td><td><strong>Long</strong></td><td>ID of the tenant, should be 1</td><td>[optional] [default to null]</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="flagging-an-agency-for-deletion"></a><a href="#flagging-an-agency-for-deletion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Flagging an Agency for Deletion</h3>
+<pre><code class="hljs css language-bash">curl --location --request DELETE <span class="hljs-string">'&lt;baseUrl&gt;/agencyadmin/agencies/&lt;agencyId&gt;'</span> \
+--header <span class="hljs-string">'Authorization: Bearer &lt;API Key&gt;'</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="userservice-consultants"></a><a href="#userservice-consultants" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UserService: Consultants</h2>
+<h3><a class="anchor" aria-hidden="true" id="getting-all-consultants"></a><a href="#getting-all-consultants" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting all Consultants</h3>
+<p>Use the optional URL parameters for searching/filtering.</p>
+<pre><code class="hljs css language-bash">curl --location --request GET <span class="hljs-string">'&lt;baseUrl&gt;/useradmin/consultants?username=&lt;string&gt;&amp;lastname=&lt;string&gt;&amp;email=&lt;string&gt;&amp;agencyId=&lt;long&gt;&amp;absent=&lt;boolean&gt;&amp;page=&lt;integer&gt;&amp;perPage=&lt;integer&gt;&amp;field=&lt;string&gt;&amp;order=&lt;string&gt;'</span> \
+--header <span class="hljs-string">'Accept: application/hal+json'</span> \
+--header <span class="hljs-string">'Authorization: Bearer &lt;API Key&gt;'</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="getting-a-consultant-by-id"></a><a href="#getting-a-consultant-by-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting a Consultant by ID</h3>
+<pre><code class="hljs css language-bash">curl --location --request GET <span class="hljs-string">'&lt;baseUrl&gt;/useradmin/consultants/&lt;consultantId&gt;'</span> \
+--header <span class="hljs-string">'Accept: application/json'</span> \
+--header <span class="hljs-string">'Authorization: Bearer &lt;API Key&gt;'</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-consultant"></a><a href="#creating-a-consultant" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a Consultant</h3>
+<pre><code class="hljs css language-bash">curl --location --request POST <span class="hljs-string">'&lt;baseUrl&gt;/useradmin/consultants'</span> \
+--header <span class="hljs-string">'Content-Type: application/json'</span> \
+--header <span class="hljs-string">'Accept: application/hal+json'</span> \
+--header <span class="hljs-string">'Authorization: Bearer &lt;API Key&gt;'</span> \
+--data-raw <span class="hljs-string">'{
+"username": "&lt;string&gt;",
+"firstname": "&lt;string&gt;",
+"lastname": "&lt;string&gt;",
+"email": "&lt;string&gt;",
+"formalLanguage": "&lt;boolean&gt;",
+"absent": "&lt;boolean&gt;",
+"absenceMessage": "&lt;string&gt;",
+"tenantId": 1
+}'</span>
+</code></pre>
+<p>Use the same format with <code>PUT '&lt;baseUrl&gt;/useradmin/consultants/&lt;consultantId&gt;'</code> to update an existing consultant.</p>
+<h4><a class="anchor" aria-hidden="true" id="description-of-the-fields-1"></a><a href="#description-of-the-fields-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description of the Fields</h4>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>username</strong></td><td><strong>String</strong></td><td>Username</td><td>[default to null]</td></tr>
+<tr><td><strong>firstname</strong></td><td><strong>String</strong></td><td>First name</td><td>[default to null]</td></tr>
+<tr><td><strong>lastname</strong></td><td><strong>String</strong></td><td>Last name</td><td>[default to null]</td></tr>
+<tr><td><strong>email</strong></td><td><strong>String</strong></td><td>E-mail address</td><td>[default to null]</td></tr>
+<tr><td><strong>formalLanguage</strong></td><td><strong>Boolean</strong></td><td>Is formal language wanted</td><td>[default to null]</td></tr>
+<tr><td><strong>absent</strong></td><td><strong>Boolean</strong></td><td>Is absent</td><td>[default to null]</td></tr>
+<tr><td><strong>absenceMessage</strong></td><td><strong>String</strong></td><td>Absence note</td><td>[optional] [default to null]</td></tr>
+<tr><td><strong>tenantId</strong></td><td><strong>Integer</strong></td><td>Tenant ID, should be 1</td><td>[optional] [default to null]</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="flagging-a-consultant-for-deletion"></a><a href="#flagging-a-consultant-for-deletion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Flagging a Consultant for Deletion</h3>
+<pre><code class="hljs css language-bash">curl --location --request DELETE <span class="hljs-string">'&lt;baseUrl&gt;/useradmin/consultants/&lt;consultantId&gt;'</span> \
+--header <span class="hljs-string">'Authorization: Bearer &lt;API Key&gt;'</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentation/docs/backend/install-and-running-on-cluster"><span class="arrow-prev">← </span><span>Installing and running the backend cluster</span></a><a class="docs-next button" href="/documentation/docs/backend/mailservice-templates"><span>Mail templates</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#obtaining-an-authorization-token">Obtaining an Authorization Token</a></li><li><a href="#agencyservice-agencies">AgencyService: Agencies</a><ul class="toc-headings"><li><a href="#getting-all-agencies">Getting all Agencies</a></li><li><a href="#getting-an-agency-by-id">Getting an Agency by ID</a></li><li><a href="#creating-and-updating-agencies">Creating and Updating Agencies</a></li><li><a href="#flagging-an-agency-for-deletion">Flagging an Agency for Deletion</a></li></ul></li><li><a href="#userservice-consultants">UserService: Consultants</a><ul class="toc-headings"><li><a href="#getting-all-consultants">Getting all Consultants</a></li><li><a href="#getting-a-consultant-by-id">Getting a Consultant by ID</a></li><li><a href="#creating-a-consultant">Creating a Consultant</a></li><li><a href="#flagging-a-consultant-for-deletion">Flagging a Consultant for Deletion</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/documentation/" class="nav-home"></a><div><h5>Docs</h5><a href="/documentation/docs/general/home.html">Home</a></div><div><h5>More</h5><a href="https://github.com/Onlineberatung">GitHub</a></div></section><section class="copyright">Copyright © 2022 Virtual Identity AG</section></footer></div></body></html>
