@@ -3,6 +3,15 @@ id: install-and-running-on-cluster
 title: Installing and running the backend cluster
 ---
 
+# Overview
+
+The information to set up the deployment can be found in 3 different places.
+
+1. This page
+   The main part of this page is to give an basic overview over the required steps and preconditions to set up the system on productive. The exclicit steps referring to the helmcharts will be described in the Readmes of those repos. 
+2. The [public template repository](https://github.com/Onlineberatung/onlineBeratung-k8s-config)
+   This describes the specific steps referring to helm and how to go from the repo to a deployable helmchart. It also describes the prequisites on an technical level, reffering to the ressources needed in k8s.
+3. The [chart itself](https://github.com/Onlineberatung/onlineBeratung-kubernetes/)
 ## Preconditions
 
 ### Kubernetes Cluster
@@ -64,3 +73,8 @@ The steps for deploying to the cluster for local and production use can be found
    - `rocket-chat-technical-user`
    - `system1`
 4. Deploy the changed values as described in the [public template repository](https://github.com/Onlineberatung/onlineBeratung-k8s-config) via an `helm upgrade`
+   
+# Access your deployment as consultant
+As soon as all services are up and running go to <yourdomain> and login as 
+`consultant` with default password `Onbeonbe!12`
+Now it's possible to create an request as asker to the default agency. 
