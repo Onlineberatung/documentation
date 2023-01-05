@@ -63,7 +63,7 @@ The steps for deploying to the cluster for local and production use can be found
    - `admin`
    - `realmadmin`
    - `technical`
-2. Access **RocketChat** via `<yourdomain>:3000`, login with the credentials from `values-secrets.yaml` and change the passwords of the users
+2. Access **RocketChat** via an portforwarding to the rocketchat-service, login with the credentials from `values-secrets.yaml` and change the passwords of the users
    - `local-admin`
    - `rocket-chat-technical-user`
    - `system1`
@@ -72,7 +72,7 @@ The steps for deploying to the cluster for local and production use can be found
    - `technical`
    - `rocket-chat-technical-user`
    - `system1`
-4. Deploy the changed values as described in the [public template repository](https://github.com/Onlineberatung/onlineBeratung-k8s-config) via an `helm upgrade`
+4. Deploy the changed values as described in the [public template repository](https://github.com/Onlineberatung/onlineBeratung-k8s-config) via an `helm upgrade` and restart the messageservice, uploadservice and userservice.
    
 # Access your deployment as consultant
 As soon as all services are up and running go to <yourdomain> and login as 
