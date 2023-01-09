@@ -91,7 +91,7 @@ null (empty response body)
 
 <a name="createAgencyAdmin"></a>
 # **createAgencyAdmin**
-> AdminResponseDTO createAgencyAdmin(CreateAgencyAdminDTO)
+> AdminResponseDTO createAgencyAdmin(CreateAdminDTO)
 
 Creates a new Agency Admin [Authorization: Role: user-admin]
 
@@ -99,7 +99,7 @@ Creates a new Agency Admin [Authorization: Role: user-admin]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **CreateAgencyAdminDTO** | [**CreateAgencyAdminDTO**](../model/CreateAgencyAdminDTO.md)|  |
+ **CreateAdminDTO** | [**CreateAdminDTO**](../model/CreateAdminDTO.md)|  |
 
 ### Return type
 
@@ -167,7 +167,7 @@ null (empty response body)
 
 <a name="createTenantAdmin"></a>
 # **createTenantAdmin**
-> AdminResponseDTO createTenantAdmin(CreateAgencyAdminDTO)
+> AdminResponseDTO createTenantAdmin(CreateAdminDTO)
 
 Creates a new Tenant Admin [Authorization: Role: tenant-admin]
 
@@ -175,7 +175,7 @@ Creates a new Tenant Admin [Authorization: Role: tenant-admin]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **CreateAgencyAdminDTO** | [**CreateAgencyAdminDTO**](../model/CreateAgencyAdminDTO.md)|  |
+ **CreateAdminDTO** | [**CreateAdminDTO**](../model/CreateAdminDTO.md)|  |
 
 ### Return type
 
