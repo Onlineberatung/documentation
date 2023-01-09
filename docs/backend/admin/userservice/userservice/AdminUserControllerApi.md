@@ -9,9 +9,11 @@ Method | HTTP request | Description
 [**createAgencyAdmin**](AdminUserControllerApi.md#createAgencyAdmin) | **POST** /useradmin/agencyadmins | Creates a new Agency Admin [Authorization: Role: user-admin]
 [**createConsultant**](AdminUserControllerApi.md#createConsultant) | **POST** /useradmin/consultants | Creates a new consultant [Authorization: Role: consultant-admin]
 [**createConsultantAgency**](AdminUserControllerApi.md#createConsultantAgency) | **POST** /useradmin/consultants/{consultantId}/agencies | Create a consultant-agency relation [Authorization: Role: user-admin]
+[**createTenantAdmin**](AdminUserControllerApi.md#createTenantAdmin) | **POST** /useradmin/tenantadmins | Creates a new Tenant Admin [Authorization: Role: tenant-admin]
 [**deleteAdminAgencyRelation**](AdminUserControllerApi.md#deleteAdminAgencyRelation) | **DELETE** /useradmin/agencyadmins/{adminId}/agencies/{agencyId} | Delete a admin-agency relation [Authorization: Role: user-admin]
 [**deleteAgencyAdmin**](AdminUserControllerApi.md#deleteAgencyAdmin) | **DELETE** /useradmin/agencyadmins/{adminId} | delete an agency admin [Authorization: Role: user-admin]
 [**deleteConsultantAgency**](AdminUserControllerApi.md#deleteConsultantAgency) | **DELETE** /useradmin/consultants/{consultantId}/agencies/{agencyId} | Delete a consultant-agency relation [Authorization: Role: user-admin]
+[**deleteTenantAdmin**](AdminUserControllerApi.md#deleteTenantAdmin) | **DELETE** /useradmin/tenantadmins/{adminId} | delete tenant admin [Authorization: Role: tenant-admin]
 [**generateViolationReport**](AdminUserControllerApi.md#generateViolationReport) | **GET** /useradmin/report | Returns an generated report containing data integration violations. [Authorization: Role: user-admin]
 [**getAdminAgencies**](AdminUserControllerApi.md#getAdminAgencies) | **GET** /useradmin/agencyadmins/{adminId}/agencies | Returns the list of agencies for a given admin Id. [Authorization: Role: restricted-agency-admin]
 [**getAgencyAdmin**](AdminUserControllerApi.md#getAgencyAdmin) | **GET** /useradmin/agencyadmins/{adminId} | Get an agency admin by given id [Authorization: Role: user-admin]
@@ -22,13 +24,17 @@ Method | HTTP request | Description
 [**getConsultantAgencies**](AdminUserControllerApi.md#getConsultantAgencies) | **GET** /useradmin/consultants/{consultantId}/agencies | Returns the list of agencies for a given consultant Id. [Authorization: Role: user-admin]
 [**getConsultants**](AdminUserControllerApi.md#getConsultants) | **GET** /useradmin/consultants | Returns the list of consultants by filter query parameter. [Authorization: Role: consultant-admin]
 [**getSessions**](AdminUserControllerApi.md#getSessions) | **GET** /useradmin/sessions | Returns the list of sessions by filter query parameter. [Authorization: Role: user-admin]
+[**getTenantAdmin**](AdminUserControllerApi.md#getTenantAdmin) | **GET** /useradmin/tenantadmins/{adminId} | Get a tenant admin by given id [Authorization: Role: tenant-admin]
+[**getTenantAdmins**](AdminUserControllerApi.md#getTenantAdmins) | **GET** /useradmin/tenantadmins | Returns the list of tenant admins by filter query parameter. [Authorization: Role: user-admin]
 [**markAskerForDeletion**](AdminUserControllerApi.md#markAskerForDeletion) | **DELETE** /useradmin/askers/{askerId} | Delete a asker by given id [Authorization: Role: consultant-admin]
 [**markConsultantForDeletion**](AdminUserControllerApi.md#markConsultantForDeletion) | **DELETE** /useradmin/consultants/{consultantId} | Mark a consultant for deletion [Authorization: Role: consultant-admin]
 [**searchAgencyAdmins**](AdminUserControllerApi.md#searchAgencyAdmins) | **GET** /useradmin/agencyadmins/search | Get Agency admins matching the given query [Auth: user-admin]
+[**searchTenantAdmins**](AdminUserControllerApi.md#searchTenantAdmins) | **GET** /useradmin/tenantadmins/search | Get tenant admins matching the given query [Auth: tenant-admin]
 [**setAdminAgenciesRelation**](AdminUserControllerApi.md#setAdminAgenciesRelation) | **PUT** /useradmin/agencyadmins/{adminId}/agencies | Set admin-agency relations [Authorization: Role: user-admin]
 [**setConsultantAgencies**](AdminUserControllerApi.md#setConsultantAgencies) | **PUT** /useradmin/consultants/{consultantId}/agencies | Set consultant-agency relations [Authorization: Role: user-admin]
 [**updateAgencyAdmin**](AdminUserControllerApi.md#updateAgencyAdmin) | **PUT** /useradmin/agencyadmins/{adminId} | Updates an agency admin [Authorization: Role: user-admin]
 [**updateConsultant**](AdminUserControllerApi.md#updateConsultant) | **PUT** /useradmin/consultants/{consultantId} | Updates a consultant [Authorization: Role: consultant-admin]
+[**updateTenantAdmin**](AdminUserControllerApi.md#updateTenantAdmin) | **PUT** /useradmin/tenantadmins/{adminId} | Updates a tenant admin [Authorization: Role: tenant-admin]
 
 
 <a name="changeAgencyType"></a>
@@ -159,6 +165,31 @@ null (empty response body)
 - **Content-Type**: application/json
 - **Accept**: Not defined
 
+<a name="createTenantAdmin"></a>
+# **createTenantAdmin**
+> AdminResponseDTO createTenantAdmin(CreateAgencyAdminDTO)
+
+Creates a new Tenant Admin [Authorization: Role: tenant-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **CreateAgencyAdminDTO** | [**CreateAgencyAdminDTO**](../model/CreateAgencyAdminDTO.md)|  |
+
+### Return type
+
+[**AdminResponseDTO**](../model/AdminResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/hal+json
+
 <a name="deleteAdminAgencyRelation"></a>
 # **deleteAdminAgencyRelation**
 > deleteAdminAgencyRelation(adminId, agencyId)
@@ -222,6 +253,31 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consultantId** | **String**| Consultant Id | [default to null]
  **agencyId** | **Long**| Agency Id | [default to null]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+<a name="deleteTenantAdmin"></a>
+# **deleteTenantAdmin**
+> deleteTenantAdmin(adminId)
+
+delete tenant admin [Authorization: Role: tenant-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **adminId** | **String**| admin id | [default to null]
 
 ### Return type
 
@@ -310,7 +366,7 @@ Name | Type | Description  | Notes
 
 <a name="getAgencyAdmins"></a>
 # **getAgencyAdmins**
-> AgencyAdminSearchResultDTO getAgencyAdmins(page, perPage, filter, sort)
+> AdminSearchResultDTO getAgencyAdmins(page, perPage, filter, sort)
 
 Returns the list of agency admins by filter query parameter. [Authorization: Role: user-admin]
 
@@ -325,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AgencyAdminSearchResultDTO**](../model/AgencyAdminSearchResultDTO.md)
+[**AdminSearchResultDTO**](../model/AdminSearchResultDTO.md)
 
 ### Authorization
 
@@ -491,6 +547,59 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/hal+json
 
+<a name="getTenantAdmin"></a>
+# **getTenantAdmin**
+> AdminResponseDTO getTenantAdmin(adminId)
+
+Get a tenant admin by given id [Authorization: Role: tenant-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **adminId** | **String**| admin id | [default to null]
+
+### Return type
+
+[**AdminResponseDTO**](../model/AdminResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="getTenantAdmins"></a>
+# **getTenantAdmins**
+> AdminSearchResultDTO getTenantAdmins(page, perPage, filter, sort)
+
+Returns the list of tenant admins by filter query parameter. [Authorization: Role: user-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Number of page where to start in the query (1 &#x3D; first page) | [default to null]
+ **perPage** | **Integer**| Number of items which are being returned per page | [default to null]
+ **filter** | [**AdminFilter**](../model/.md)| The filter parameters to search for. If no filter is set all admins are being returned. | [optional] [default to null]
+ **sort** | [**Sort**](../model/.md)| The sort parameter containing field and order the response should be sorted | [optional] [default to null]
+
+### Return type
+
+[**AdminSearchResultDTO**](../model/AdminSearchResultDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
 <a name="markAskerForDeletion"></a>
 # **markAskerForDeletion**
 > markAskerForDeletion(askerId)
@@ -543,7 +652,7 @@ null (empty response body)
 
 <a name="searchAgencyAdmins"></a>
 # **searchAgencyAdmins**
-> AgencyAdminSearchResultDTO searchAgencyAdmins(query, page, perPage, field, order)
+> AdminSearchResultDTO searchAgencyAdmins(query, page, perPage, field, order)
 
 Get Agency admins matching the given query [Auth: user-admin]
 
@@ -559,7 +668,36 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AgencyAdminSearchResultDTO**](../model/AgencyAdminSearchResultDTO.md)
+[**AdminSearchResultDTO**](../model/AdminSearchResultDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+<a name="searchTenantAdmins"></a>
+# **searchTenantAdmins**
+> AdminSearchResultDTO searchTenantAdmins(query, page, perPage, field, order)
+
+Get tenant admins matching the given query [Auth: tenant-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| URL-encoded infix to search for in first name, last name, or email. A non-encoded star symbol searches for all. | [default to null]
+ **page** | **Integer**| Page number (first page &#x3D; 1) | [optional] [default to 1]
+ **perPage** | **Integer**| Number of items returned per page | [optional] [default to 10]
+ **field** | **String**| field to sort by | [optional] [default to FIRSTNAME] [enum: FIRSTNAME, LASTNAME, EMAIL]
+ **order** | **String**| sort order | [optional] [default to ASC] [enum: ASC, DESC]
+
+### Return type
+
+[**AdminSearchResultDTO**](../model/AdminSearchResultDTO.md)
 
 ### Authorization
 
@@ -668,6 +806,32 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ConsultantAdminResponseDTO**](../model/ConsultantAdminResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/hal+json
+
+<a name="updateTenantAdmin"></a>
+# **updateTenantAdmin**
+> AdminResponseDTO updateTenantAdmin(adminId, UpdateTenantAdminDTO)
+
+Updates a tenant admin [Authorization: Role: tenant-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **adminId** | **String**| agency admin id | [default to null]
+ **UpdateTenantAdminDTO** | [**UpdateTenantAdminDTO**](../model/UpdateTenantAdminDTO.md)|  |
+
+### Return type
+
+[**AdminResponseDTO**](../model/AdminResponseDTO.md)
 
 ### Authorization
 
