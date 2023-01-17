@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 
 <a name="getTenantAdmins"></a>
 # **getTenantAdmins**
-> AdminSearchResultDTO getTenantAdmins(page, perPage, filter, sort)
+> List getTenantAdmins(tenantId)
 
 Returns the list of tenant admins by filter query parameter. [Authorization: Role: user-admin]
 
@@ -582,14 +582,11 @@ Returns the list of tenant admins by filter query parameter. [Authorization: Rol
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Number of page where to start in the query (1 &#x3D; first page) | [default to null]
- **perPage** | **Integer**| Number of items which are being returned per page | [default to null]
- **filter** | [**AdminFilter**](../model/.md)| The filter parameters to search for. If no filter is set all admins are being returned. | [optional] [default to null]
- **sort** | [**Sort**](../model/.md)| The sort parameter containing field and order the response should be sorted | [optional] [default to null]
+ **tenantId** | **Integer**| tenant id | [default to null]
 
 ### Return type
 
-[**AdminSearchResultDTO**](../model/AdminSearchResultDTO.md)
+[**List**](../model/AdminResponseDTO.md)
 
 ### Authorization
 
@@ -598,7 +595,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/hal+json
+- **Accept**: application/json
 
 <a name="markAskerForDeletion"></a>
 # **markAskerForDeletion**
