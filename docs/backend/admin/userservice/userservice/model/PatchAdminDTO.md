@@ -1,9 +1,8 @@
-# UpdateTenantAdminDTO
+# PatchAdminDTO
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenantId** | [**Integer**](integer.md) |  | [optional] [default to null]
 **firstname** | [**String**](string.md) |  | [default to null]
 **lastname** | [**String**](string.md) |  | [default to null]
 **email** | [**String**](string.md) |  | [default to null]

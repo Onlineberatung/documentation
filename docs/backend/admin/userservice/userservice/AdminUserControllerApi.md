@@ -28,6 +28,7 @@ Method | HTTP request | Description
 [**getTenantAdmins**](AdminUserControllerApi.md#getTenantAdmins) | **GET** /useradmin/tenantadmins | Returns the list of tenant admins by filter query parameter. [Authorization: Role: user-admin]
 [**markAskerForDeletion**](AdminUserControllerApi.md#markAskerForDeletion) | **DELETE** /useradmin/askers/{askerId} | Delete a asker by given id [Authorization: Role: consultant-admin]
 [**markConsultantForDeletion**](AdminUserControllerApi.md#markConsultantForDeletion) | **DELETE** /useradmin/consultants/{consultantId} | Mark a consultant for deletion [Authorization: Role: consultant-admin]
+[**patchAdminData**](AdminUserControllerApi.md#patchAdminData) | **PATCH** /useradmin/data | Sets or updates the email, first and lastname of authorized admin account [Authorization:  Role: single-tenant-admin, restricted-agency-admin]
 [**searchAgencyAdmins**](AdminUserControllerApi.md#searchAgencyAdmins) | **GET** /useradmin/agencyadmins/search | Get Agency admins matching the given query [Auth: user-admin]
 [**searchTenantAdmins**](AdminUserControllerApi.md#searchTenantAdmins) | **GET** /useradmin/tenantadmins/search | Get tenant admins matching the given query [Auth: tenant-admin]
 [**setAdminAgenciesRelation**](AdminUserControllerApi.md#setAdminAgenciesRelation) | **PUT** /useradmin/agencyadmins/{adminId}/agencies | Set admin-agency relations [Authorization: Role: user-admin]
@@ -646,6 +647,31 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+<a name="patchAdminData"></a>
+# **patchAdminData**
+> AdminResponseDTO patchAdminData(PatchAdminDTO)
+
+Sets or updates the email, first and lastname of authorized admin account [Authorization:  Role: single-tenant-admin, restricted-agency-admin]
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **PatchAdminDTO** | [**PatchAdminDTO**](../model/PatchAdminDTO.md)|  |
+
+### Return type
+
+[**AdminResponseDTO**](../model/AdminResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/hal+json
 
 <a name="searchAgencyAdmins"></a>
 # **searchAgencyAdmins**
