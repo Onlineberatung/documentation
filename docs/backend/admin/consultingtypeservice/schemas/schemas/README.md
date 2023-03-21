@@ -36,8 +36,6 @@
 
 *   [Untitled object in Application settings](./application-settings-properties-legalcontentchangesbysingletenantadminsallowed.md) – `https://onlineberatung/consultingtype#/properties/legalContentChangesBySingleTenantAdminsAllowed`
 
-*   [Untitled object in Application settings](./application-settings-properties-documentationenabled.md) – `https://onlineberatung/consultingtype#/properties/documentationEnabled`
-
 *   [Untitled object in Consulting type](./consulting-type-definitions-component.md) – `https://onlineberatung/consultingtype#/definitions/Component`
 
 *   [Untitled object in Consulting type](./consulting-type-definitions-radiobutton.md "A group of values where only one can be selected") – `https://onlineberatung/consultingtype#/definitions/RadioButton`
@@ -59,8 +57,6 @@
 *   [Untitled object in Consulting type](./consulting-type-properties-welcomemessage.md "Settings for the welcome message") – `https://onlineberatung/consultingtype#/properties/welcomeMessage`
 
 *   [Untitled object in Consulting type](./consulting-type-properties-sessiondatainitializing.md "Settings to control which optional fields for consultation should be initialized for this consultation type") – `https://onlineberatung/consultingtype#/properties/sessionDataInitializing`
-
-*   [Untitled object in Consulting type](./consulting-type-properties-monitoring.md "Settings for the initializing of the monitoring") – `https://onlineberatung/consultingtype#/properties/monitoring`
 
 *   [Untitled object in Consulting type](./consulting-type-properties-roles.md "Role definitions") – `https://onlineberatung/consultingtype#/properties/roles`
 

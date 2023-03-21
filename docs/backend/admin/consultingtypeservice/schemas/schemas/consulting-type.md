@@ -34,7 +34,6 @@ Settings for a consulting type
 | [sendSaveSessionDataMessage](#sendsavesessiondatamessage)                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-sendsavesessiondatamessage.md "https://onlineberatung/consultingtype#/properties/sendSaveSessionDataMessage")                               |
 | [isSetEmailAllowed](#issetemailallowed)                                                 | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-issetemailallowed.md "https://onlineberatung/consultingtype#/properties/isSetEmailAllowed")                                                 |
 | [sessionDataInitializing](#sessiondatainitializing)                                     | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-sessiondatainitializing.md "https://onlineberatung/consultingtype#/properties/sessionDataInitializing")                                     |
-| [monitoring](#monitoring)                                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-monitoring.md "https://onlineberatung/consultingtype#/properties/monitoring")                                                               |
 | [initializeFeedbackChat](#initializefeedbackchat)                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-initializefeedbackchat.md "https://onlineberatung/consultingtype#/properties/initializeFeedbackChat")                                       |
 | [isPeerChat](#ispeerchat)                                                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-ispeerchat.md "https://onlineberatung/consultingtype#/properties/isPeerChat")                                                               |
 | [languageFormal](#languageformal)                                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-languageformal.md "https://onlineberatung/consultingtype#/properties/languageFormal")                                                       |
@@ -370,24 +369,6 @@ Settings to control which optional fields for consultation should be initialized
 ### sessionDataInitializing Type
 
 `object` ([Details](consulting-type-properties-sessiondatainitializing.md))
-
-## monitoring
-
-Settings for the initializing of the monitoring
-
-`monitoring`
-
-*   is optional
-
-*   Type: `object` ([Details](consulting-type-properties-monitoring.md))
-
-*   cannot be null
-
-*   defined in: [Consulting type](consulting-type-properties-monitoring.md "https://onlineberatung/consultingtype#/properties/monitoring")
-
-### monitoring Type
-
-`object` ([Details](consulting-type-properties-monitoring.md))
 
 ## initializeFeedbackChat
 

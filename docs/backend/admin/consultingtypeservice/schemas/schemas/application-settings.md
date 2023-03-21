@@ -30,7 +30,6 @@ Settings for application instance
 | [budibaseUrl](#budibaseurl)                                                                       | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-budibaseurl.md "https://onlineberatung/consultingtype#/properties/budibaseUrl")                                                                       |
 | [calendarAppUrl](#calendarappurl)                                                                 | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-calendarappurl.md "https://onlineberatung/consultingtype#/properties/calendarAppUrl")                                                                 |
 | [legalContentChangesBySingleTenantAdminsAllowed](#legalcontentchangesbysingletenantadminsallowed) | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-legalcontentchangesbysingletenantadminsallowed.md "https://onlineberatung/consultingtype#/properties/legalContentChangesBySingleTenantAdminsAllowed") |
-| [documentationEnabled](#documentationenabled)                                                     | `object`      | Optional | cannot be null | [Application settings](application-settings-properties-documentationenabled.md "https://onlineberatung/consultingtype#/properties/documentationEnabled")                                                     |
 | [required](#required)                                                                             | Not specified | Optional | cannot be null | [Application settings](application-settings-properties-required.md "https://onlineberatung/consultingtype#/properties/required")                                                                             |
 
 ## multitenancyWithSingleDomainEnabled
@@ -248,24 +247,6 @@ Settings for application instance
 ### legalContentChangesBySingleTenantAdminsAllowed Type
 
 `object` ([Details](application-settings-properties-legalcontentchangesbysingletenantadminsallowed.md))
-
-## documentationEnabled
-
-
-
-`documentationEnabled`
-
-*   is optional
-
-*   Type: `object` ([Details](application-settings-properties-documentationenabled.md))
-
-*   cannot be null
-
-*   defined in: [Application settings](application-settings-properties-documentationenabled.md "https://onlineberatung/consultingtype#/properties/documentationEnabled")
-
-### documentationEnabled Type
-
-`object` ([Details](application-settings-properties-documentationenabled.md))
 
 ## required
 
