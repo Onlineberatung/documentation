@@ -524,7 +524,7 @@ Forwarding urls
 
 ## showAskerProfile
 
-True to show asker profile including monitoring for consultants. False, when asker profile and monitoring should not be viewable.
+True to show asker profile for consultants. False, when asker profile should not be viewable.
 
 `showAskerProfile`
 
