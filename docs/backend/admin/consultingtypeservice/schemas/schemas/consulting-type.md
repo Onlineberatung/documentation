@@ -32,8 +32,8 @@ Settings for a consulting type
 | [welcomeMessage](#welcomemessage)                                                       | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-welcomemessage.md "https://onlineberatung/consultingtype#/properties/welcomeMessage")                                                       |
 | [sendFurtherStepsMessage](#sendfurtherstepsmessage)                                     | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-sendfurtherstepsmessage.md "https://onlineberatung/consultingtype#/properties/sendFurtherStepsMessage")                                     |
 | [sendSaveSessionDataMessage](#sendsavesessiondatamessage)                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-sendsavesessiondatamessage.md "https://onlineberatung/consultingtype#/properties/sendSaveSessionDataMessage")                               |
-| [isSetEmailAllowed](#issetemailallowed)                                                 | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-issetemailallowed.md "https://onlineberatung/consultingtype#/properties/isSetEmailAllowed")                                                 |
 | [sessionDataInitializing](#sessiondatainitializing)                                     | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-sessiondatainitializing.md "https://onlineberatung/consultingtype#/properties/sessionDataInitializing")                                     |
+| [monitoring](#monitoring)                                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-monitoring.md "https://onlineberatung/consultingtype#/properties/monitoring")                                                               |
 | [initializeFeedbackChat](#initializefeedbackchat)                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-initializefeedbackchat.md "https://onlineberatung/consultingtype#/properties/initializeFeedbackChat")                                       |
 | [isPeerChat](#ispeerchat)                                                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-ispeerchat.md "https://onlineberatung/consultingtype#/properties/isPeerChat")                                                               |
 | [languageFormal](#languageformal)                                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-languageformal.md "https://onlineberatung/consultingtype#/properties/languageFormal")                                                       |
@@ -326,32 +326,6 @@ The default value is:
 true
 ```
 
-## isSetEmailAllowed
-
-Asker is allowed to set his email when he is registered for at least one consultingType with this setting 'true'
-
-`isSetEmailAllowed`
-
-*   is optional
-
-*   Type: `boolean`
-
-*   cannot be null
-
-*   defined in: [Consulting type](consulting-type-properties-issetemailallowed.md "https://onlineberatung/consultingtype#/properties/isSetEmailAllowed")
-
-### isSetEmailAllowed Type
-
-`boolean`
-
-### isSetEmailAllowed Default Value
-
-The default value is:
-
-```json
-true
-```
-
 ## sessionDataInitializing
 
 Settings to control which optional fields for consultation should be initialized for this consultation type.
@@ -369,6 +343,24 @@ Settings to control which optional fields for consultation should be initialized
 ### sessionDataInitializing Type
 
 `object` ([Details](consulting-type-properties-sessiondatainitializing.md))
+
+## monitoring
+
+Settings for the initializing of the monitoring
+
+`monitoring`
+
+*   is optional
+
+*   Type: `object` ([Details](consulting-type-properties-monitoring.md))
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-monitoring.md "https://onlineberatung/consultingtype#/properties/monitoring")
+
+### monitoring Type
+
+`object` ([Details](consulting-type-properties-monitoring.md))
 
 ## initializeFeedbackChat
 
@@ -524,7 +516,7 @@ Forwarding urls
 
 ## showAskerProfile
 
-True to show asker profile for consultants. False, when asker profile should not be viewable.
+True to show asker profile including monitoring for consultants. False, when asker profile and monitoring should not be viewable.
 
 `showAskerProfile`
 

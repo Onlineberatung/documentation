@@ -60,6 +60,8 @@
 
 *   [Untitled object in Consulting type](./consulting-type-properties-sessiondatainitializing.md "Settings to control which optional fields for consultation should be initialized for this consultation type") – `https://onlineberatung/consultingtype#/properties/sessionDataInitializing`
 
+*   [Untitled object in Consulting type](./consulting-type-properties-monitoring.md "Settings for the initializing of the monitoring") – `https://onlineberatung/consultingtype#/properties/monitoring`
+
 *   [Untitled object in Consulting type](./consulting-type-properties-roles.md "Role definitions") – `https://onlineberatung/consultingtype#/properties/roles`
 
 *   [Untitled object in Consulting type](./consulting-type-properties-roles-properties-consultant.md "Role definitions for consultants") – `https://onlineberatung/consultingtype#/properties/roles/properties/consultant`
