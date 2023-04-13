@@ -1,7 +1,7 @@
 # Untitled object in Consulting type Schema
 
 ```txt
-https://onlineberatung/consultingtype#/properties/voluntaryComponents/items/anyOf/0
+https://onlineberatung/consultingtype#/definitions/RadioButton
 ```
 
 A group of values where only one can be selected.
@@ -10,11 +10,11 @@ A group of values where only one can be selected.
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [consulting-type.json*](consulting-type.json "open original schema") |
 
-## 0 Type
+## RadioButton Type
 
 `object` ([Details](consulting-type-definitions-radiobutton.md))
 
-# 0 Properties
+# RadioButton Properties
 
 | Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                       |
 | :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -32,6 +32,7 @@ Settings for a consulting type
 | [welcomeMessage](#welcomemessage)                                                       | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-welcomemessage.md "https://onlineberatung/consultingtype#/properties/welcomeMessage")                                                       |
 | [sendFurtherStepsMessage](#sendfurtherstepsmessage)                                     | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-sendfurtherstepsmessage.md "https://onlineberatung/consultingtype#/properties/sendFurtherStepsMessage")                                     |
 | [sendSaveSessionDataMessage](#sendsavesessiondatamessage)                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-sendsavesessiondatamessage.md "https://onlineberatung/consultingtype#/properties/sendSaveSessionDataMessage")                               |
+| [isSetEmailAllowed](#issetemailallowed)                                                 | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-issetemailallowed.md "https://onlineberatung/consultingtype#/properties/isSetEmailAllowed")                                                 |
 | [sessionDataInitializing](#sessiondatainitializing)                                     | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-sessiondatainitializing.md "https://onlineberatung/consultingtype#/properties/sessionDataInitializing")                                     |
 | [monitoring](#monitoring)                                                               | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-monitoring.md "https://onlineberatung/consultingtype#/properties/monitoring")                                                               |
 | [initializeFeedbackChat](#initializefeedbackchat)                                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-initializefeedbackchat.md "https://onlineberatung/consultingtype#/properties/initializeFeedbackChat")                                       |
@@ -46,7 +47,6 @@ Settings for a consulting type
 | [isVideoCallAllowed](#isvideocallallowed)                                               | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-isvideocallallowed.md "https://onlineberatung/consultingtype#/properties/isVideoCallAllowed")                                               |
 | [isSubsequentRegistrationAllowed](#issubsequentregistrationallowed)                     | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-issubsequentregistrationallowed.md "https://onlineberatung/consultingtype#/properties/isSubsequentRegistrationAllowed")                     |
 | [isAnonymousConversationAllowed](#isanonymousconversationallowed)                       | `boolean` | Optional | cannot be null | [Consulting type](consulting-type-properties-isanonymousconversationallowed.md "https://onlineberatung/consultingtype#/properties/isAnonymousConversationAllowed")                       |
-| [voluntaryComponents](#voluntarycomponents)                                             | `array`   | Optional | can be null    | [Consulting type](consulting-type-properties-voluntarycomponents.md "https://onlineberatung/consultingtype#/properties/voluntaryComponents")                                             |
 | [requiredComponents](#requiredcomponents)                                               | `object`  | Optional | can be null    | [Consulting type](consulting-type-properties-requiredcomponents.md "https://onlineberatung/consultingtype#/properties/requiredComponents")                                               |
 | [welcomeScreen](#welcomescreen)                                                         | `object`  | Optional | cannot be null | [Consulting type](consulting-type-properties-welcomescreen.md "https://onlineberatung/consultingtype#/properties/welcomeScreen")                                                         |
 
@@ -319,6 +319,32 @@ Indicates whether if the system should send an automatic message with a prompt f
 `boolean`
 
 ### sendSaveSessionDataMessage Default Value
+
+The default value is:
+
+```json
+true
+```
+
+## isSetEmailAllowed
+
+Asker is allowed to set his email when he is registered for at least one consultingType with this setting 'true'
+
+`isSetEmailAllowed`
+
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [Consulting type](consulting-type-properties-issetemailallowed.md "https://onlineberatung/consultingtype#/properties/isSetEmailAllowed")
+
+### isSetEmailAllowed Type
+
+`boolean`
+
+### isSetEmailAllowed Default Value
 
 The default value is:
 
@@ -601,24 +627,6 @@ Indicates whether anonymous 1:1 chats can be performed.
 ### isAnonymousConversationAllowed Type
 
 `boolean`
-
-## voluntaryComponents
-
-Can be provided to display additional fields in the asker profile.
-
-`voluntaryComponents`
-
-*   is optional
-
-*   Type: an array of merged types ([Details](consulting-type-properties-voluntarycomponents-items.md))
-
-*   can be null
-
-*   defined in: [Consulting type](consulting-type-properties-voluntarycomponents.md "https://onlineberatung/consultingtype#/properties/voluntaryComponents")
-
-### voluntaryComponents Type
-
-an array of merged types ([Details](consulting-type-properties-voluntarycomponents-items.md))
 
 ## requiredComponents
 

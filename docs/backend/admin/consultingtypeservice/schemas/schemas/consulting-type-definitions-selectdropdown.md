@@ -1,7 +1,7 @@
 # Untitled object in Consulting type Schema
 
 ```txt
-https://onlineberatung/consultingtype#/properties/voluntaryComponents/items/anyOf/1
+https://onlineberatung/consultingtype#/definitions/SelectDropdown
 ```
 
 A group of values where only one can be selected and is rendered at a time.
@@ -10,11 +10,11 @@ A group of values where only one can be selected and is rendered at a time.
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [consulting-type.json*](consulting-type.json "open original schema") |
 
-## 1 Type
+## SelectDropdown Type
 
 `object` ([Details](consulting-type-definitions-selectdropdown.md))
 
-# 1 Properties
+# SelectDropdown Properties
 
 | Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                             |
 | :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

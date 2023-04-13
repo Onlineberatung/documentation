@@ -1,7 +1,7 @@
 # Untitled object in Consulting type Schema
 
 ```txt
-https://onlineberatung/consultingtype#/properties/voluntaryComponents/items/anyOf/2
+https://onlineberatung/consultingtype#/definitions/TagSelect
 ```
 
 A group of values where multiple can be selected.
@@ -10,11 +10,11 @@ A group of values where multiple can be selected.
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [consulting-type.json*](consulting-type.json "open original schema") |
 
-## 2 Type
+## TagSelect Type
 
 `object` ([Details](consulting-type-definitions-tagselect.md))
 
-# 2 Properties
+# TagSelect Properties
 
 | Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                   |
 | :------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
