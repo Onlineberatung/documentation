@@ -18,6 +18,8 @@
 
 *   [Untitled object in Application settings](./application-settings-properties-usetenantservice.md) – `https://onlineberatung/consultingtype#/properties/useTenantService`
 
+*   [Untitled object in Application settings](./application-settings-properties-useconsultingtypesforagencies.md) – `https://onlineberatung/consultingtype#/properties/useConsultingTypesForAgencies`
+
 *   [Untitled object in Application settings](./application-settings-properties-enablewalkthrough.md) – `https://onlineberatung/consultingtype#/properties/enableWalkthrough`
 
 *   [Untitled object in Application settings](./application-settings-properties-disablevideoappointments.md) – `https://onlineberatung/consultingtype#/properties/disableVideoAppointments`
@@ -59,8 +61,6 @@
 *   [Untitled object in Consulting type](./consulting-type-properties-welcomemessage.md "Settings for the welcome message") – `https://onlineberatung/consultingtype#/properties/welcomeMessage`
 
 *   [Untitled object in Consulting type](./consulting-type-properties-sessiondatainitializing.md "Settings to control which optional fields for consultation should be initialized for this consultation type") – `https://onlineberatung/consultingtype#/properties/sessionDataInitializing`
-
-*   [Untitled object in Consulting type](./consulting-type-properties-monitoring.md "Settings for the initializing of the monitoring") – `https://onlineberatung/consultingtype#/properties/monitoring`
 
 *   [Untitled object in Consulting type](./consulting-type-properties-roles.md "Role definitions") – `https://onlineberatung/consultingtype#/properties/roles`
 
