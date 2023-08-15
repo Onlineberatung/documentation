@@ -683,7 +683,7 @@ Get Agency admins matching the given query [Auth: user-admin]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **String**| URL-encoded infix to search for in first name, last name, or email. A non-encoded star symbol searches for all. | [default to null]
+ **query** | **String**| URL-encoded infix to search for in id first name, last name, or email. A non-encoded star symbol searches for all. | [default to null]
  **page** | **Integer**| Page number (first page &#x3D; 1) | [optional] [default to 1]
  **perPage** | **Integer**| Number of items returned per page | [optional] [default to 10]
  **field** | **String**| field to sort by | [optional] [default to FIRSTNAME] [enum: FIRSTNAME, LASTNAME, EMAIL]
