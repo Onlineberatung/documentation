@@ -625,7 +625,7 @@ null (empty response body)
 
 <a name="markConsultantForDeletion"></a>
 # **markConsultantForDeletion**
-> markConsultantForDeletion(consultantId)
+> markConsultantForDeletion(consultantId, forceDeleteSessions)
 
 Mark a consultant for deletion [Authorization: Role: consultant-admin]
 
@@ -634,6 +634,7 @@ Mark a consultant for deletion [Authorization: Role: consultant-admin]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consultantId** | **String**| consultant id | [default to null]
+ **forceDeleteSessions** | **Boolean**| parameter specifying if consultant sessions need to be removed prior the deletion | [optional] [default to null]
 
 ### Return type
 
