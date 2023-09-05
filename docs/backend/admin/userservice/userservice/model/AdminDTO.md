@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **updateDate** | [**String**](string.md) |  | [optional] [default to null]
 **deleteDate** | [**String**](string.md) |  | [optional] [default to null]
 **tenantId** | [**String**](string.md) |  | [optional] [default to null]
+**tenantName** | [**String**](string.md) |  | [optional] [default to null]
 **tenantSubdomain** | [**String**](string.md) |  | [optional] [default to null]
 **agencies** | [**List**](AgencyAdminResponseDTO.md) |  | [optional] [default to null]
 
