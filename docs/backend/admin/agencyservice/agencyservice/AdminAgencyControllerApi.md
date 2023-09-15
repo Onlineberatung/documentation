@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**createAgencyPostcodeRange**](AdminAgencyControllerApi.md#createAgencyPostcodeRange) | **POST** /agencyadmin/postcoderanges/{agencyId} | Creates a new postcode range for an agency [Authorization: Role: agency-admin] |
 | [**deleteAgency**](AdminAgencyControllerApi.md#deleteAgency) | **DELETE** /agencyadmin/agencies/{agencyId} | Flags an agency as deleted [Authorization: Role: agency-admin] |
 | [**deleteAgencyPostcodeRange**](AdminAgencyControllerApi.md#deleteAgencyPostcodeRange) | **DELETE** /agencyadmin/postcoderanges/{agencyId} | Delete a specific postcode range [Authorization: Role: agency-admin] |
+| [**getAgenciesByTenantId**](AdminAgencyControllerApi.md#getAgenciesByTenantId) | **GET** /agencyadmin/agencies/tenant/{tenantId} | Get an agency [Authorization: Roles: agency-admin and tenant-admin] |
 | [**getAgency**](AdminAgencyControllerApi.md#getAgency) | **GET** /agencyadmin/agencies/{agencyId} | Get an agency [Authorization: Role: agency-admin] |
 | [**getAgencyPostcodeRanges**](AdminAgencyControllerApi.md#getAgencyPostcodeRanges) | **GET** /agencyadmin/postcoderanges/{agencyId} | Get the postcode ranges for an agency [Authorization: Role: agency-admin] |
 | [**getDioceses**](AdminAgencyControllerApi.md#getDioceses) | **GET** /agencyadmin/dioceses | Returns the full list of dioceses [Authorization: Role: agency-admin] |
@@ -143,6 +144,31 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+<a name="getAgenciesByTenantId"></a>
+# **getAgenciesByTenantId**
+> List getAgenciesByTenantId(tenantId)
+
+Get an agency [Authorization: Roles: agency-admin and tenant-admin]
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tenantId** | **Long**| Tenant ID | [default to null] |
+
+### Return type
+
+[**List**](../model/AgencyAdminFullResponseDTO.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 <a name="getAgency"></a>
 # **getAgency**
