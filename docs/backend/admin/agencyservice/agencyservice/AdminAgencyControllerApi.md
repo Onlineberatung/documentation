@@ -12,7 +12,6 @@ All URIs are relative to *http://localhost*
 | [**getAgenciesByTenantId**](AdminAgencyControllerApi.md#getAgenciesByTenantId) | **GET** /agencyadmin/agencies/tenant/{tenantId} | Get an agency [Authorization: Roles: agency-admin and tenant-admin] |
 | [**getAgency**](AdminAgencyControllerApi.md#getAgency) | **GET** /agencyadmin/agencies/{agencyId} | Get an agency [Authorization: Role: agency-admin] |
 | [**getAgencyPostcodeRanges**](AdminAgencyControllerApi.md#getAgencyPostcodeRanges) | **GET** /agencyadmin/postcoderanges/{agencyId} | Get the postcode ranges for an agency [Authorization: Role: agency-admin] |
-| [**getDioceses**](AdminAgencyControllerApi.md#getDioceses) | **GET** /agencyadmin/dioceses | Returns the full list of dioceses [Authorization: Role: agency-admin] |
 | [**searchAgencies**](AdminAgencyControllerApi.md#searchAgencies) | **GET** /agencyadmin/agencies | Returns the list of agencies by search query parameter. [Authorization: Role: agency-admin] |
 | [**updateAgency**](AdminAgencyControllerApi.md#updateAgency) | **PUT** /agencyadmin/agencies/{agencyId} | Updates an agency [Authorization: Role: agency-admin] |
 | [**updateAgencyPostcodeRange**](AdminAgencyControllerApi.md#updateAgencyPostcodeRange) | **PUT** /agencyadmin/postcoderanges/{agencyId} | Updates an existing postcode range for an agency [Authorization: Role: agency-admin] |
@@ -219,32 +218,6 @@ Get the postcode ranges for an agency [Authorization: Role: agency-admin]
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
-
-<a name="getDioceses"></a>
-# **getDioceses**
-> DioceseAdminResultDTO getDioceses(page, perPage)
-
-Returns the full list of dioceses [Authorization: Role: agency-admin]
-
-### Parameters
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**| Number of page where to start in the query (1 &#x3D; first page) | [default to null] |
-| **perPage** | **Integer**| Number of items which are being returned per page | [default to null] |
-
-### Return type
-
-[**DioceseAdminResultDTO**](../model/DioceseAdminResultDTO.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/hal+json
 
 <a name="searchAgencies"></a>
 # **searchAgencies**

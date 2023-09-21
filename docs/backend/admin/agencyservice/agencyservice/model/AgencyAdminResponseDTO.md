@@ -4,7 +4,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 | **id** | **Long** |  | [optional] [default to null] |
-| **dioceseId** | **Long** |  | [optional] [default to null] |
 | **name** | **String** |  | [optional] [default to null] |
 | **description** | **String** |  | [optional] [default to null] |
 | **postcode** | **String** |  | [optional] [default to null] |
